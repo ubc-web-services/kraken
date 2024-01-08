@@ -1,0 +1,25 @@
+{% set cardvideoattributes = create_attribute() %}
+{%
+    set classes = [
+        'ubc-card',
+        'ubc-card--tertiary',
+        'bg-unit-accent',
+        'bg-light',
+        'text-ubc-blue',
+        'border-b-[.5rem]',
+        'border-unit-secondary',
+        'ubc-card--vert',
+        customClasses,
+    ]
+%}
+<article {{ cardvideoattributes.addClass(classes) }}>
+    <div class="ubc-card__media img-cover">
+        {% block video %}{% endblock %}
+    </div>
+    <div class="ubc-card__content first-child--mt-0">
+        <h3 class="card__title">
+            {{ title }}
+        </h3>
+        {% block content %}{% endblock %}
+    </div>
+</article>

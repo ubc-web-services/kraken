@@ -1,0 +1,51 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json"
+name: Secondary Card, with Icon
+status: stable
+group: UBC Web Services
+description: Component to render as a Secondary Card with icon
+props:
+  type: object
+  required:
+    - title
+  properties:
+    title:
+      type: string
+      title: Title
+      description: The title of the card
+    linkText:
+      type: string
+      title: Subtitle
+      description: The text of the card's link
+    link:
+      type: string
+      title: Link
+      format: uri
+      description: The destination of the card link
+      examples:
+        - https://ubc.ca
+    target:
+      type: boolean
+      title: Target
+      description: Open the link in a new tab
+    darkVariant:
+      type: boolean
+      title: Dark variant
+      description: Use the dark secondary card variant
+    customClasses:
+      title: Custom Classes
+      type: string
+      description: Custom classes to apply to the card
+      examples:
+        - my-class another-class
+slots:
+  media:
+    title: Icon Content
+    required: true
+    description: The icon content region
+  content:
+    title: Card Content
+    required: true
+    description: The card content
+libraryOverrides:
+  dependencies:
+    - kraken/global

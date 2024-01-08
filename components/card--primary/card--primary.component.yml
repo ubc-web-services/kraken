@@ -1,0 +1,71 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json"
+name: Primary Card
+status: stable
+group: UBC Web Services
+description: Component to render as a Primary Card
+props:
+  type: object
+  required:
+    - title
+    - color
+    - layout
+  properties:
+    title:
+      type: string
+      title: Title
+      description: The title of the card
+    linkText:
+      type: string
+      title: Subtitle
+      description: The text of the card's link
+    link:
+      type: string
+      title: Link
+      format: uri
+      description: The destination of the card link
+      examples:
+        - https://ubc.ca
+    target:
+      type: boolean
+      title: Target
+      description: Open the link in a new tab
+    color:
+      type: string
+      title: Card color
+      description: The background color of the card
+      enum:
+        - 'bg-unit-primary bg-dark'
+        - 'bg-unit-secondary text-ubc-blue bg-light'
+        - 'bg-unit-tertiary text-ubc-blue bg-light'
+        - 'bg-ubc-grey-1 bg-dark'
+        - 'bg-ubc-grey-4 text-ubc-blue bg-light'
+        - 'bg-cesd-green-light text-ubc-blue bg-light'
+        - 'bg-cesd-blue-light text-ubc-blue bg-light'
+        - 'bg-cesd-stone text-ubc-blue bg-light'
+      default: 'bg-unit-primary bg-dark'
+    layout:
+      type: string
+      title: Layout
+      description: Choose the card layout
+      enum:
+        - ubc-card--vert
+        - ubc-card--horiz
+        - ubc-card--horiz-rev
+      default: ubc-card--vert
+    customClasses:
+      title: Custom Classes
+      type: string
+      description: Custom classes to apply to the card
+      examples:
+        - my-class another-class
+slots:
+  media:
+    title: Image Content
+    description: The image / media content
+  content:
+    title: Card Content
+    required: true
+    description: The card content
+libraryOverrides:
+  dependencies:
+    - kraken/global

@@ -1,0 +1,44 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json"
+name: Masthead, with image
+status: stable
+group: UBC Web Services
+description: Component to render as a masthead with image
+props:
+  type: object
+  required:
+    - background
+  properties:
+    background:
+      type: string
+      title: Background color
+      description: The background colour of the region
+      enum:
+        - 'bg-cesd-blue-lightest bg-light'
+        - 'bg-cesd-green-lightest bg-light'
+        - 'bg-cesd-stone bg-light'
+        - 'bg-ubc-grey-4 bg-light'
+        - 'bg-ubc-grey-5 bg-light'
+        - 'bg-unit-accent bg-light'
+      default: 'bg-ubc-grey-5 bg-light'
+    imageCaption:
+      type: string
+      title: Image Caption
+      description: The caption / credits for the image
+    border:
+      type: boolean
+      title: Border
+      description: Add bottom border
+    customClasses:
+      title: Custom Classes
+      type: string
+      description: Custom classes to apply to the card
+      examples:
+        - my-class another-class
+slots:
+  media:
+    title: Image Content
+    required: true
+    description: The image / media content
+libraryOverrides:
+  dependencies:
+    - kraken/global

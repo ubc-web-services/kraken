@@ -1,0 +1,51 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json"
+name: Basic Card
+status: stable
+group: UBC Web Services
+description: Component to render as a Basic Card
+props:
+  type: object
+  required:
+    - title
+  properties:
+    title:
+      type: string
+      title: Title
+      description: The title of the card
+    subtitle:
+      type: string
+      title: Subtitle
+      description: The subtitle of the card
+    link:
+      type: string
+      title: Link
+      format: uri
+      description: The destination of the card link
+      examples:
+        - https://ubc.ca
+    target:
+      type: boolean
+      title: Target
+      description: Open the link in a new tab
+    isNew:
+      type: boolean
+      title: Is New
+      description: Make the card display the NEW tag
+    altStyle:
+      type: boolean
+      title: Use alternative style (CESD)
+      description: Use the alternative CESD style
+    customClasses:
+      title: Custom Classes
+      type: string
+      description: Custom classes to apply to the card
+      examples:
+        - my-class another-class
+slots:
+  content:
+    title: Card Content
+    required: true
+    description: The card content
+libraryOverrides:
+  dependencies:
+    - kraken/global

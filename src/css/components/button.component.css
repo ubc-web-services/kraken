@@ -1,0 +1,146 @@
+/** @define button */
+
+/*
+* This file contains all styles related to the button component.
+*/
+
+/* flex button */
+.unit-button {
+  @apply inline-flex text-center no-underline border;
+
+  padding: 0.65em 2em;
+  cursor: pointer;
+  transition: all 0.125s ease-out;
+  color: $button-text;
+  border-color: $button-border;
+  background-color: $button-bg;
+}
+
+.unit-button:hover {
+  @apply no-underline shadow-md;
+
+  color: $button-text--hover;
+  border-color: $button-border--hover;
+  background-color: $button-bg--hover;
+}
+
+.unit-button:active {
+  @apply no-underline shadow-md;
+
+  color: $button-text--active;
+  border-color: $button-border--active;
+  background-color: $button-bg--active;
+}
+
+.unit-button--block {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+/* button colour variations */
+.unit-button--light {
+  color: $button-light-text;
+  border-color: $button-light-border;
+  background-color: $button-light-bg;
+}
+
+.unit-button--light:hover {
+  color: $button-light-text--hover;
+  border-color: $button-light-border--hover;
+  background-color: $button-light-bg--hover;
+}
+
+.unit-button--light:active {
+  color: $button-light-text--active;
+  border-color: $button-light-border--active;
+  background-color: $button-light-bg--active;
+}
+
+.unit-button--dark {
+  color: $button-dark-text;
+  border-color: $button-dark-border;
+  background-color: $button-dark-bg;
+}
+
+.unit-button--dark:hover {
+  color: $button-dark-text--hover;
+  border-color: $button-dark-border--hover;
+  background-color: $button-dark-bg--hover;
+}
+
+.unit-button--dark:active {
+  color: $button-dark-text--active;
+  border-color: $button-dark-border--active;
+  background-color: $button-dark-bg--active;
+}
+
+.unit-button--transparent {
+  color: $button-transparent-text;
+  border-color: $button-transparent-border;
+  background-color: $button-transparent-bg;
+}
+
+.unit-button--transparent:hover {
+  color: $button-transparent-text--hover;
+  border-color: $button-transparent-border--hover;
+  background-color: $button-transparent-bg--hover;
+}
+
+.unit-button--transparent:active {
+  color: $button-transparent-text--active;
+  border-color: $button-transparent-border--active;
+  background-color: $button-transparent-bg--active;
+}
+
+.unit-button--simple {
+  @apply relative py-0 pl-0 overflow-hidden tracking-wider border-0;
+
+  padding-right: 1.5em;
+  color: $default-link-color;
+  background: transparent;
+}
+
+.unit-button--simple::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1.5em;
+  height: 100%;
+  content: "";
+  transition-timing-function: ease-out;
+  transition-duration: 0.2s;
+  transition-property: transform;
+  transform: translate3d(0, 0, 0);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1792 1792'%3E%3Cpath fill='%230055b7' d='M1363 877l-742 742q-19 19-45 19t-45-19l-166-166q-19-19-19-45t19-45l531-531-531-531q-19-19-19-45t19-45l166-166q19-19 45-19t45 19l742 742q19 19 19 45t-19 45z'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: top 0.3em center;
+  background-size: 0.85em 0.85em;
+}
+
+.unit-button--simple:hover {
+  text-decoration: none;
+  color: $default-link-color-hover;
+  background: transparent;
+  box-shadow: none;
+}
+
+.unit-button--simple:hover::after,
+.unit-button--simple:focus::after,
+.unit-button--simple:active::after {
+  transform: translate3d(0, 0, 0);
+}
+
+.unit-button--simple:hover::before,
+.unit-button--simple:focus::before,
+.unit-button--simple:active::before {
+  transform: translate3d(4px, 0, 0);
+}
+
+.unit-button-icon {
+  top: 0.5em;
+  width: 1em;
+  height: 1em;
+  margin-left: 0.5em;
+  transform: translateY(0.2em);
+}

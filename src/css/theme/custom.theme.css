@@ -1,0 +1,77 @@
+/** @define custom */
+
+/*
+* This file contains all styles related to the custom theme.
+*/
+
+/* Inline list */
+.list-inline {
+  margin-left: 0;
+  list-style: none;
+}
+
+.list-inline > li {
+  display: inline-block;
+  padding-left: 0;
+}
+
+/* links on coloured backgrounds */
+.bg-dark a:not(.unit-button),
+.bg-dark.text-white a:hover:not(.unit-button) {
+  color: #fff;
+}
+
+/* paragraphs */
+.paragraph--type--text__inner > :first-child,
+.paragraph--type--text > div > div > :first-child {
+  @apply mt-0;
+}
+
+.bg-dark {
+  color: #fff;
+}
+
+.bg-dark a {
+  color: $ubc-blue-polar;
+}
+
+.bg-dark a:hover {
+  color: $ubc-blue-cornflower;
+}
+
+.bg-dark .unit-button--light {
+  color: $ubc-blue-cobalt;
+}
+
+.bg-dark .unit-button--dark {
+  border-color: $ubc-blue-polar;
+}
+
+.bg-dark .unit-button--light:hover,
+.bg-dark .unit-button--dark:hover {
+  color: #fff;
+}
+
+.bg-dark .unit-button--simple::after {
+  content: url("../img/svg/icon-arrow--polar.svg");
+}
+
+.bg-dark .unit-button--simple:hover::after {
+  content: url("../img/svg/icon-arrow--cornflower.svg");
+}
+
+/* SVG Icon fix for cards */
+.paragraph--type--icon-card img {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Views exposed forms */
+.views-exposed-form .form-item {
+  margin-top: 0;
+}
+
+/* image filters */
+.img-greyscale {
+  filter: grayscale(100%);
+}

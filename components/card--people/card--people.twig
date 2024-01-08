@@ -1,0 +1,48 @@
+{% set cardpeopleattributes = create_attribute() %}
+{%
+    set classes = [
+        'border-b',
+        'ubc-card',
+        'ubc-card--people',
+        'border-ubc-grey-1',
+        'ubc-card--vert',
+        customClasses,
+    ]
+%}
+{% set revealedBio %}
+    {% block revealedContent %}{% endblock %}
+{% endset %}
+<article {{ cardpeopleattributes.addClass(classes) }}>
+    <div class="ubc-card__content first-child--mt-0">
+        <div class="relative ubc-card--people__header">
+            {% block image %}{% endblock %}
+            <h3 class="mt-0 card__title">
+                {% if prefix %}{{ prefix }} {% endif %}
+                {{ firstName }} {{ lastName }}
+                {% if suffix %}, {{ suffix }}{% endif %}
+            </h3>
+            {% if jobTitle or department %}
+                <h4 class="mt-2 h5">{{ jobTitle }}{% if department %}, {{ department }}{% endif %}</h4>
+            {% endif %}
+            {% block content %}{% endblock %}
+        </div>
+        {% if pronouns or email or phone or revealedBio %}
+            <div class="js-reveal">
+                <div class="clearfix pt-2 js-reveal__target reveal__target" hidden="hidden">
+                    {% if pronouns %}<p class="mt-0 pronouns">{{ pronouns }}</p>{% endif %}
+                    {% if email %}<p class="mt-0"><a href="mailto:{{ email }}" class="no-underline hover--underline">{{ email }}</a></p>{% endif %}
+                    {% if phone %}<p class="mt-0"><a href="tel:{{ phone }}" class="no-underline hover--underline">{{ phone }}</a></p>{% endif %}
+                    <hr class="clearfix w-full h-0 border-none" />
+                    {{ revealedBio }}
+                </div>
+                <div class="js-reveal__parent reveal__parent">
+                    <div class="js-reveal__trigger reveal__trigger" aria-expanded="false">
+                        <h3>
+                            <span class="sr-only">Details</span>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</article>

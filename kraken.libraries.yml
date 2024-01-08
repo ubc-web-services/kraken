@@ -1,0 +1,284 @@
+# kraken.libraries.yml
+
+## Global Styles & Scripts
+global:
+  css:
+    theme:
+      css/drupal.node.preview.min.css: { minified: true }
+      css/drupal.entity.moderation.min.css: { minified: true }
+      css/drupal.media.min.css: { minified: true }
+      css/drupal.views.min.css: { minified: true }
+      css/clf.drupal.min.css: { minified: true }
+  js:
+    js/kraken.dismiss.min.js: { minified: true }
+    js/kraken.misc.min.js: { minified: true }
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+
+## Theme Custom CSS
+### CSS styles
+css-dev:
+  css:
+    theme:
+      css/styles.css: { minified: true }
+
+## CSS styles (with unused styles purged)
+css-prod:
+  css:
+    theme:
+      css/styles.min.css: { minified: true }
+
+## Theme Custom JS
+### Development JS
+clf-js-dev:
+  version: VERSION
+  js:
+    js/vendors~vue.js: { minified: true, preprocess: false }
+    js/vue.js: { minified: true, preprocess: false }
+
+### Production js
+clf-js-prod:
+  version: VERSION
+  js:
+    js/vendors~vue.min.js: { minified: true, preprocess: false }
+    js/vue.min.js: { minified: true, preprocess: false }
+
+### Bootstrap
+clf-js-bootstrap:
+  version: 5.1
+  css:
+    base:
+      css/bootstrap.5.min.css: { }
+  js:
+    js/vendors~bootstrap.min.js: { minified: true, preprocess: false }
+    js/bootstrap.min.js: { minified: true, preprocess: false }
+
+## CLF Version 8
+clf-8:
+  version: 8.0.0
+  css:
+    base:
+      css/clf.8.min.css: { minified: true }
+
+## CLF Version 7 (legacy)
+### CLF Shared (legacy)
+clf-legacy:
+  version: 7.0.4
+  css:
+    base:
+      css/clf.7.reset.min.css: { minified: true }
+      css/clf.7.local.min.css: { minified: true }
+
+### CLF (blue on white)
+clf-legacy--bw:
+  dependencies:
+    - kraken/clf-legacy
+
+### CLF (white on blue)
+clf-legacy--wb:
+  dependencies:
+    - kraken/clf-legacy
+
+### CLF (white on grey)
+clf-legacy--wg:
+  dependencies:
+    - kraken/clf-legacy
+
+### CLF (grey on white)
+clf-legacy--gw:
+  dependencies:
+    - kraken/clf-legacy
+
+## CLF 7 Additional Styles
+### Widen the CLF (1780px)
+clf-legacy--widen:
+  css:
+    base:
+      css/clf.7.extended.min.css: { minified: true }
+  dependencies:
+    - kraken/clf-legacy
+
+### Widen the CLF more (2400px)
+clf-legacy--widen-more:
+  css:
+    base:
+      css/clf.7.extended.plus.min.css: { minified: true }
+  dependencies:
+    - kraken/clf-legacy--widen
+
+### CLF Dark Mode (one day...)
+clf-dark-mode:
+  version: VERSION
+  css:
+    base:
+      css/clf.8.dark.mode.min.css: { minified: true }
+
+## Whitney Font
+### Development Version
+clf-whitney-dev:
+  version: VERSION
+  css:
+    base:
+      https://cloud.typography.com/7574694/7103192/css/fonts.css: { type: external, minified: true }
+
+### Production Version
+clf-whitney-prod:
+  version: VERSION
+  css:
+    base:
+      https://cloud.typography.com/6804272/781004/css/fonts.css: { type: external, minified: true }
+
+## libraries from starterkit
+dialog:
+  version: VERSION
+  css:
+    component:
+      css/components/dialog.css:
+        weight: -10
+
+dropbutton:
+  version: VERSION
+  css:
+    component:
+      css/components/dropbutton.css:
+        weight: -10
+
+file:
+  version: VERSION
+  css:
+    component:
+      css/components/file.css:
+        weight: -10
+
+image-widget:
+  version: VERSION
+  css:
+    component:
+      css/components/image-widget.css: {  }
+
+indented:
+  version: VERSION
+  css:
+    component:
+      css/components/indented.css: {  }
+
+messages:
+  version: VERSION
+  css:
+    component:
+      css/components/messages.css:
+        weight: -10
+
+node:
+  version: VERSION
+  css:
+    component:
+      css/components/node.css:
+        weight: -10
+
+progress:
+  version: VERSION
+  css:
+    component:
+      css/components/progress.css:
+        weight: -10
+
+search-results:
+  version: VERSION
+  css:
+    component:
+      css/components/search-results.css: {  }
+
+user:
+  version: VERSION
+  css:
+    component:
+      css/components/user.css:
+        weight: -10
+
+## Additional custom libraries
+### Login / Register / Password Reset pages
+drupal-login:
+  version: VERSION
+  css:
+    theme:
+      css/drupal.login.min.css: { minified: true }
+
+### Local Task Files
+local-tasks:
+  version: VERSION
+  css:
+    theme:
+      css/drupal.local.tasks.min.css: { minified: true }
+
+### Maintenance Page
+maintenance-page:
+  version: VERSION
+  css:
+    theme:
+      css/drupal.maintenance.page.min.css: { minified: true }
+
+### System message Files
+system-message:
+  version: VERSION
+  css:
+    theme:
+      css/drupal.system.message.min.css: { minified: true }
+
+### Webform styles
+webform:
+  version: VERSION
+  css:
+    theme:
+      css/drupal.webform.min.css: { minified: true }
+
+## Custom JS Libraries
+### Scroll to top
+scroll:
+  version: VERSION
+  js:
+    js/kraken.scroll.min.js: { minified: true }
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+
+### Sticky-header
+sticky-header:
+  version: VERSION
+  css:
+    theme:
+      css/clf.7.stickynav.css: { minified: true }
+  js:
+    js/kraken.sticky.min.js: { minified: true }
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+
+## Integrations
+### Fontawesome
+fontawesome:
+  version: 4.7.0
+  css:
+    base:
+      https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css: { type: external, minified: true }
+
+### FullCalendar
+fullcalendar:
+  version: 4.4.2
+  css:
+    theme:
+      css/fullcalendar.custom.min.css: { minified: true }
+
+### Tiny Slider
+tiny-slider:
+  version: 2.9.4
+  js:
+    js/vendors~tiny.slider.min.js: { minified: true, preprocess: false }
+    js/tiny.slider.min.js: { minified: true, preprocess: false }
+
+### Twitter
+twitter:
+  js:
+    https://platform.twitter.com/widgets.js: { type: external, minified: true, attributes: { defer: true, async: true, charset: utf-8 } }
+

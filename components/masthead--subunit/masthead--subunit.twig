@@ -1,0 +1,33 @@
+{% set mastheadsubunitattributes = create_attribute() %}
+{% set classes = [
+    'masthead',
+    'masthead--alt',
+    customClasses,
+  ]
+%}
+
+<section {{ mastheadsubunitattributes.addClass(classes) }}>
+  <div class="container px-5 mx-auto masthead__container md--px-4">
+    <div class="masthead__content">
+      <h1 class="masthead__heading max-w-[520px]">
+        {% block title %}{% endblock %}
+      </h1>
+    </div>
+    <figure class="relative m-0 masthead__media img-cover">
+      {% block media %}{% endblock %}
+      {% if imageCaption %}
+        <figcaption class="absolute right-0">
+          {{ imageCaption }}
+        </figcaption>
+      {% endif %}
+    </figure>
+  </div>
+  <figure class="m-0 masthead__media--mobile img-cover">
+    {% block mediaMobile %}{% endblock %}
+    {% if imageCaption %}
+      <figcaption class="absolute right-0">
+        {{ imageCaption }}
+      </figcaption>
+    {% endif %}
+  </figure>
+</section>

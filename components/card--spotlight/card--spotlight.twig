@@ -1,0 +1,31 @@
+{% set cardspotlightattributes = create_attribute() %}
+{% set classes = [
+    'ubc-card',
+    'ubc-card--spotlight',
+    'text-ubc-blue',
+    'bg-light',
+    'group',
+    color,
+    layout ? ' ubc-card--horiz-rev': 'ubc-card--horiz',
+    customClasses,
+  ]
+%}
+<article {{ cardspotlightattributes.addClass(classes) }}>
+  <div class="ubc-card__media img-cover">
+    {% block media %}{% endblock %}
+  </div>
+  <div class="ubc-card__content_wrapper">
+    <div class="ubc-card__content first-child--mt-0">
+      <p class="uppercase ubc-card__meta text-overline">{{ subtitle }}</p>
+      <h3 class="card__title">{{ title }}</h3>
+      {% block content %}{% endblock %}
+    </div>
+    <div class="ubc-card__actions">
+      <p>
+        <a href="{{ link }}" class="unit-button unit-button--light link-expand" {% if target %} target="_blank" {% endif %}>
+         {{ linkText }}
+        </a>
+      </p>
+    </div>
+  </div>
+</article>

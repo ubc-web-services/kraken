@@ -1,0 +1,33 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json"
+name: Plain Card
+status: stable
+group: UBC Web Services
+description: Component to render as a Plain Card
+props:
+  type: object
+  properties:
+    threecolumns:
+      type: boolean
+      title: Make card 3 columns
+      description: Makes the card have three columns in the widest containers
+    customClasses:
+      title: Custom Classes
+      type: string
+      description: Custom classes to apply to the card
+      examples:
+        - my-class another-class
+slots:
+  content:
+    title: First Column Content
+    required: true
+    description: The leftmost column content
+  column2:
+    title: Second Column Content
+    required: true
+    description: The center column content
+  column3:
+    title: Third Column Content
+    description: The rightmost column content
+libraryOverrides:
+  dependencies:
+    - kraken/global
