@@ -1,0 +1,8 @@
+ignore:
+  - '/src/StarterKit.php'
+  - '/kraken.starterkit.yml'
+no_edit: []
+no_rename: []
+info:
+  version: 2.0.0
+  starterkit: null

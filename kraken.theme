@@ -114,14 +114,6 @@ function kraken_preprocess_html(&$variables)
     ],
   ];
 
-  $manifest = [
-    '#tag' => 'link',
-    '#attributes' => [
-      'rel' => 'manifest',
-      'href' => '/' . \Drupal::service('extension.list.theme')->getPath('kraken') . '/img/favicons/site.webmanifest',
-    ],
-  ];
-
   $mask_icon = [
     '#tag' => 'link',
     '#attributes' => [
@@ -181,7 +173,6 @@ function kraken_preprocess_html(&$variables)
   $variables['page']['#attached']['html_head'][] = [$svg_icon, 'svg-icon'];
   $variables['page']['#attached']['html_head'][] = [$apple_touch_icon, 'apple-touch-icon'];
   $variables['page']['#attached']['html_head'][] = [$mask_icon, 'mask-icon'];
-  $variables['page']['#attached']['html_head'][] = [$manifest, 'manifest'];
 
   if (theme_get_setting('clf_fonts') == 'default') {
     $variables['page']['#attached']['html_head'][] = [$google_fonts_preconnect, 'google-fonts-preconnect'];
@@ -435,7 +426,8 @@ function kraken_preprocess_node(&$variables)
   $node = $variables['node'];
   $node_type = $node->getType();
 
-  if ( ($node_type == 'ubc_event') ) {
+  if ( (($node_type == 'ubc_event') && ($node->hasField('field_event_date') && !$node->get('field_event_date')->isEmpty() ))) {
+
     $timezone = date_default_timezone_get();
     $formatter = \Drupal::service('date.formatter');
     $date = $node->get('field_event_date')->getValue();
@@ -462,6 +454,7 @@ function kraken_preprocess_node(&$variables)
     $variables['endday'] = $endday;
     $variables['starttime'] = $starttime;
     $variables['endtime'] = $endtime;
+    $variables['end_date_value'] = $end_date_value;
   }
 }
 
