@@ -1,17 +1,18 @@
-UBC CLF 7 / 8 DRUPAL THEME (aka Kraken)
+UBC CLF DRUPAL THEME (aka Kraken)
 =======================================
 
-A responsive UBC CLF (Common Look and Feel) theme for Drupal 8 using Tailwind and Vue.js. Created by the UBC IT Web Services Department.
+A responsive UBC CLF (Common Look and Feel) theme for Drupal using Tailwind and either Bootstrap / Vue.js. Created by the UBC IT Web Services Department.
 
-Kraken is a theme for Drupal 8 & 9, providing UBC-branded units with the basic structure of the UBC CLF ([Common Look and Feel](https://clf.ubc.ca)).
+Kraken is a theme for Drupal 10+, providing UBC-branded units with the basic structure of the UBC CLF ([Common Look and Feel](https://clf.ubc.ca)).
 
-## IE Support
-This theme *does not* support Internet Explorer. If older browser support is required, it must be added separately or [galactus](https://github.com/ubc-web-services/galactus), an earlier version of the CLF, can be used.
+## Recommended use.
+Include the theme in your project using `composer require ubc-web-services/kraken`
 
-## Rationale
-Why *another* theme? Why not extend the Galactus Drupal 8 / 9 theme?
+Then, use the theme as a starterkit to create your own:
+`cd web`
+`php core/scripts/drupal generate-theme [themename] --name "[themename]" --starterkit kraken --path themes/custom`
 
-As a web developer in Web Services, you should be able to expect that CSS and Javascript are added in a single consistent way in any project. The Galactus theme works as is, however it is intended for general-purpose use by the broader UBC community. Kraken's goal is to add proper dependency management and workflow for Web Service's theme layer in the same way we have done for the application layer. It is intentionally biased and uses specific CSS and Javascript frameworks ([Tailwindcss](https://tailwindcss.com) and [Vuejs](https://vuejs.org)). Both of these are well-supported and flexible enough to work on *any* web project (CLF or not) and provide a consistent set of features and functionality. The benefits are improved reusability, improved ramp up time and improved optics. There should be no hidden features only understood by a single developer.
+You should then alter the generated theme as needed and leave kraken untouched.
 
 ## Using the theme
 
