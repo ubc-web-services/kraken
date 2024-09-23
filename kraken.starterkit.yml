@@ -1,6 +1,6 @@
 ignore:
-  - '/src/StarterKit.php'
   - '/kraken.starterkit.yml'
+  - 'composer.json'
 no_edit: []
 no_rename: []
 info:
