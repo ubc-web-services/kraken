@@ -96,6 +96,3 @@ Once installed and set to default, you can adjust the following theme settings:
 
 ### Planned settings (not yet feature complete)
 - enable dark mode
-- make the primary horizontal navigation 'sticky'
-- make the primary horizontal navigation 'sticky' when scrolling up only
-
