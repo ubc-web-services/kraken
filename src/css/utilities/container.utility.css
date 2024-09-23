@@ -1,9 +1,13 @@
 /** @define container.utility */
 
+.container {
+  width: 100%;
+}
+
 /* adds a set of custom containers */
 
 .container-xs {
-  max-width: 480px;
+  max-width: $breakpoint--xs;
 }
 
 .container-sm {
@@ -11,5 +15,18 @@
 }
 
 .container-md {
-  max-width: 768px;
+  max-width: breakpoint--sm;
+}
+
+
+@media (min-width: $breakpoint--md) {
+  .container {
+      max-width: $breakpoint--md;
+  }
+}
+
+@media (min-width: $breakpoint--lg) {
+  .container {
+      max-width: $breakpoint--lg;
+  }
 }

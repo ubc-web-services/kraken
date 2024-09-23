@@ -1,6 +1,7 @@
 module.exports = {
   blocklist: ["collapse"],
   content: [
+    "./components/**/*.{twig,html,js,css}",
     "./templates/**/*.{twig,html}",
     "./src/**/*.{js,jsx,ts,tsx,vue}",
     "./kraken.theme",
@@ -25,10 +26,6 @@ module.exports = {
       "unit-secondary": "var(--color-secondary)",
       "unit-tertiary": "var(--color-tertiary)",
       "unit-accent": "var(--color-accent)",
-      "unit-primary-alpha": "var(--color-primary-alpha)",
-      "unit-secondary-alpha": "var(--color-secondary-alpha)",
-      "unit-tertiary-alpha": "var(--color-secondary-alpha)",
-      "unit-accent-alpha": "var(--color-accent-alpha)",
       grey: {
         50: "#fafafa",
         100: "#f5f5f5",

@@ -11,9 +11,11 @@ global:
       css/clf.drupal.min.css: { minified: true }
   js:
     js/kraken.dismiss.min.js: { minified: true }
+    js/kraken.video.min.js: { minified: true }
     js/kraken.misc.min.js: { minified: true }
   dependencies:
     - core/drupal
+    - core/once
     - core/drupalSettings
 
 ## Theme Custom CSS
@@ -94,16 +96,19 @@ clf-legacy--gw:
 ### Widen the CLF (1780px)
 clf-legacy--widen:
   css:
-    base:
+    theme:
       css/clf.7.extended.min.css: { minified: true }
+      css/container.utility.xl.min.css: { minified: true }
   dependencies:
     - kraken/clf-legacy
+    - kraken/css-prod
 
 ### Widen the CLF more (2400px)
 clf-legacy--widen-more:
   css:
-    base:
+    theme:
       css/clf.7.extended.plus.min.css: { minified: true }
+      css/container.utility.xxl.min.css: { minified: true }
   dependencies:
     - kraken/clf-legacy--widen
 
@@ -234,6 +239,15 @@ webform:
       css/drupal.webform.min.css: { minified: true }
 
 ## Custom JS Libraries
+### Alert content entities
+alert-display:
+  js:
+    js/kraken.alert.display.min.js: { minified: true }
+  dependencies:
+    - core/drupal
+    - core/once
+    - kraken/clf-js-bootstrap
+
 ### Scroll to top
 scroll:
   version: VERSION
