@@ -4,7 +4,7 @@
 {% set titleattributes = create_attribute() %}
 {% set classes = [
     'ubc-card',
-    'ubc-card--primary',
+    'ubc-card--icon',
     'relative',
     'h-full',
     'hover--cursor-pointer',
@@ -13,21 +13,23 @@
     noShadow ? '': 'shadow hover--shadow-lg',
     imageZoom ? 'img-zoom',
     color ? color: 'bg-transparent bg-light',
-    layout ? layout: 'ubc-card--vert',
     customClasses,
   ]
 %}
 {% set figure_classes = [
     'mt-0',
     'ubc-card__media',
-    'img-cover',
-    'overflow-hidden',
+    'flex-none',
+    'p-6',
+    'flex',
+    'justify-center',
+    'place-items-center',
   ]
 %}
 {% set content_classes = [
     'p-6',
     'flex',
-    'h-full',
+    'w-full',
     'flex-col',
   ]
 %}
@@ -37,27 +39,14 @@
     'mt-0',
   ]
 %}
-{% if layout is same as 'ubc-card--vert' %}
-  {% set layout_classes = [
-      'flex',
-      'flex-col',
-    ]
-  %}
-  {% set figure_layout_classes = [
-      'flex-none',
-      'mt-6',
-      'mx-6',
-    ]
-  %}
-{% endif %}
-{% if layout is same as 'ubc-card--horiz' %}
+{% if layout is same as 'flex-row' %}
   {% set layout_classes = [
       'sm--flex',
       'sm--flex-row',
     ]
   %}
 {% endif %}
-{% if layout is same as 'ubc-card--horiz-rev' %}
+{% if layout is same as 'flex-row-reverse' %}
   {% set layout_classes = [
       'sm--flex',
       'sm--flex-row-reverse',
@@ -82,19 +71,10 @@
   </figure>
   <div{{ contentattributes.addClass(content_classes, horiz_content_classes) }}>
     <div class="py-2 ubc-card__content first-child--mt-0">
-      {% if meta %}
-        <div class="text-sm text-grey-600">{{ meta }}</div>
-      {% endif %}
       <h3{{ title_attributes.addClass(title_classes) }}>
         <a href="{{ link }}" class="no-underline hover--no-underline text-ubc-blue link-expand" {% if target %}
     target="_blank"{% endif %}>
-          {% if titlePrefix %}
-            <span>{{ titlePrefix }}</span>
-          {% endif %}
           {{ title }}
-          {% if titleSuffix %}
-            <span class="mt-0 text-xs text-grey-700">{{ titleSuffix }}</span>
-          {% endif %}
         </a>
       </h3>
       {% block content %}{% endblock %}

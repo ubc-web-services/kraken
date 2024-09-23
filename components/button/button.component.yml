@@ -35,13 +35,9 @@ props:
       enum:
         - unit-button
         - unit-button--dark
-        - unit-button--dark-alt
-        - unit-button--mid
         - unit-button--light
         - unit-button--transparent
-        - unit-button--transparent-light
-        - unit-button--secondary
-        - unit-button--filter
+        - unit-button--outline
         - unit-button--simple
     size:
       type: string
@@ -64,10 +60,6 @@ props:
       type: boolean
       title: Disabled
       description: Make the button disabled
-    destructive:
-      type: boolean
-      title: Destructive
-      description: Make the button destructive
     external:
       type: boolean
       title: External Link

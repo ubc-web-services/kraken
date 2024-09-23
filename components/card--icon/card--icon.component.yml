@@ -1,8 +1,8 @@
 "$schema": "https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json"
-name: Primary Card
+name: Icon Card
 status: stable
 group: UBC Web Services
-description: Component to render as a Primary Card
+description: Component to render as an Icon Card
 props:
   type: object
   required:
@@ -13,18 +13,6 @@ props:
       type: string
       title: Title
       description: The title of the card
-    titlePrefix:
-      type: string
-      title: Title prefix
-      description: The prefix to the card title
-    titleSuffix:
-      type: string
-      title: Title suffix
-      description: The suffix to the card title
-    subtitle:
-      type: string
-      title: Subtitle
-      description: The subtitle of the card
     link:
       type: string
       title: Link
@@ -35,10 +23,6 @@ props:
       type: boolean
       title: Target
       description: Open the link in a new tab
-    meta:
-      type: string
-      title: Metadata
-      description: The metadata for the card (date, tag, etc)
     imageZoom:
       type: boolean
       title: Image Zoom
@@ -72,10 +56,10 @@ props:
       title: Layout
       description: Choose the card layout
       enum:
-        - ubc-card--vert
-        - ubc-card--horiz
-        - ubc-card--horiz-rev
-      default: ubc-card--vert
+        - flex-row
+        - flex-row-reverse
+        - flex-col
+      default: flex-row
     customClasses:
       title: Custom Classes
       type: string
@@ -84,8 +68,8 @@ props:
         - my-class another-class
 slots:
   media:
-    title: Image Content
-    description: The image / media content
+    title: Icon Content
+    description: The image / media / svg content
   content:
     title: Card Content
     required: true

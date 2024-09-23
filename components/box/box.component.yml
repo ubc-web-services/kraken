@@ -22,11 +22,15 @@ props:
       enum:
         - bg-none
         - bg-white
-        - bg-grey-100
-        - bg-primary
-        - bg-secondary
-        - bg-tertiary
-        - bg-accent
+        - bg-black
+        - bg-unit-primary
+        - bg-unit-secondary
+        - bg-unit-tertiary
+        - bg-unit-accent
+        - bg-unit-alt-primary
+        - bg-unit-alt-secondary
+        - bg-unit-alt-tertiary
+        - bg-unit-alt-accent
         - bg-ubc-blue
         - bg-ubc-blue-sea
         - bg-ubc-blue-cobalt
@@ -34,6 +38,14 @@ props:
         - bg-ubc-blue-cornflower
         - bg-ubc-blue-polar
         - bg-ubc-blue-frost
+        - bg-grey-50
+        - bg-grey-100
+        - bg-grey-200
+        - bg-grey-300
+        - bg-grey-500
+        - bg-grey-600
+        - bg-grey-800
+        - bg-grey-900
     margin:
       type: string
       title: Vertical margin

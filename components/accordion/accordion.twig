@@ -4,7 +4,7 @@
   isOpen ? 'is-open',
   customClasses,
 ] %}
-<div {{ accordionattributes.addClass(classes) }}>
+<div {% if id %}id="{{ id }}"{% endif %} {{ accordionattributes.addClass(classes) }}>
 	<div class="accordion js-reveal__parent">
 		<div class="js-reveal__trigger accordion__trigger{% if isOpen %} is-open{% endif %}" {% if isOpen %} aria-expanded="true" {% else %} aria-expanded="false" {% endif %}>
 			<{{ headingLevel }}>

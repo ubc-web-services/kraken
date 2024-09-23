@@ -29,6 +29,10 @@ props:
       type: boolean
       title: Is open
       description: Make the accordion open by default
+    id:
+      type: string
+      title: ID
+      description: The ID of the accordion
     customClasses:
       title: Custom Classes
       type: string

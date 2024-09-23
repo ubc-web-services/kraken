@@ -10,16 +10,17 @@
 %}
 {%
     set innerclasses = [
-        'inline-flex',
+        'inline-block',
         'justify-center',
-        'text-xs',
         'leading-none',
         'place-items-center',
+        'text-xs',
         size ? size: 'w-4 h-4',
         color ? color: 'text-white',
         styleClasses,
     ]
 %}
+
 <span {{ badgeattributes.addClass(classes) }}>
     <span {{ badgeinnerattributes.addClass(innerclasses) }}>
         {% block content %}{% endblock %}
