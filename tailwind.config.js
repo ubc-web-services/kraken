@@ -6,6 +6,7 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx,vue}",
     "./kraken.theme",
     "./safelist.txt",
+    "./UtilityClasses.md"
   ],
   separator: "--",
   theme: {
