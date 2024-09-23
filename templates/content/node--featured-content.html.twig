@@ -65,55 +65,38 @@
  *   in different view modes.
  */
 #}
-{% if not (node.body.isEmpty == true) and content.body is defined %}
-  {% if node.body.summary|length > 0 %}
-    {% set summary = node.body.summary|striptags| check_markup('filtered_text') %}
-  {% else %}
-    {% set summaryraw = content.body.0['#text']|striptags %}
-    {% set summary = summaryraw| truncate(300,true,true)| check_markup('filtered_text') %}
-  {% endif %}
+
+{% set pagetitle = false %}
+{% set text = '' %}
+{% if not (node.field_announcement_image_teaser.isEmpty == true) and content.field_announcement_image_teaser is defined %}
+  {% set text = content.field_announcement_image_teaser.0 %}
+{% endif %}
+{% if not (node.field_event_image_teaser.isEmpty == true) and content.field_event_image_teaser is defined %}
+  {% set text = content.field_event_image_teaser.0 %}
+{% endif %}
+{% if node.bundle == 'ubc_landing_page' %}
+    {% if not (node.field_landing_image_teaser.isEmpty == true) and content.field_landing_image_teaser is defined %}
+        {% set text = content.field_landing_image_teaser.0 %}
+    {% else %}
+        {% set text = label %}
+        {% set pagetitle = true %}
+    {% endif %}
 {% endif %}
 
-{% set link_target = '' %}
-{% set link_url = url %}
-
-{% embed 'kraken:card--primary' with {
-  title: label,
-  titlePrefix: content.field_profile_name_prefix.0,
-  titleSuffix: content.field_profile_name_suffix.0,
-  link: link_url,
-  layout: 'ubc-card--horiz',
-  color: 'bg-white bg-light',
-  target: link_target,
+{% embed 'kraken:masthead' with {
+  text: text,
+  gradient: true,
+  pageTitle: pagetitle,
 } %}
   {% block media %}
-    {% if not (node.field_profile_image.isEmpty == true) and content.field_profile_image is defined %}
-      {{ content.field_profile_image.0 }}
+    {% if not (node.field_announcement_feature_image.isEmpty == true) and content.field_announcement_feature_image is defined %}
+      {{ content.field_announcement_feature_image['0'] }}
     {% endif %}
-  {% endblock %}
-  {% block content %}
-    {% if not (node.field_profile_job_title.isEmpty == true) and content.field_profile_job_title is defined %}
-      <p class="mt-0 text-sm">{{ content.field_profile_job_title.0 }}</p>
+    {% if not (node.field_event_image.isEmpty == true) and content.field_event_image is defined %}
+      {{ content.field_event_image['0'] }}
     {% endif %}
-    {% if not (node.field_profile_department_unit.isEmpty == true) and content.field_profile_department_unit is defined %}
-      <p class="mt-2 text-xs">
-      {%- for tag in content.field_profile_department_unit['#items'] -%}
-          {{- tag.entity.name.value -}}
-          {% if loop.last == false %}, {% endif %}
-      {%- endfor -%}
-      </p>
+    {% if not (node.field_landing_feature_image.isEmpty == true) and content.field_landing_feature_image is defined %}
+      {{ content.field_landing_feature_image['0'] }}
     {% endif %}
-    <p>{{ summary }}</p>
-  {% endblock %}
-  {% block actions %}
-      <p class="text-right">
-      {% embed 'kraken:button' with {
-          link: link_url,
-          text: 'View profile',
-          style: 'unit-button--simple',
-          target: link_target,
-      } %}
-      {% endembed %}
-      </p>
   {% endblock %}
 {% endembed %}

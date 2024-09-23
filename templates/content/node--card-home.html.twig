@@ -65,55 +65,8 @@
  *   in different view modes.
  */
 #}
-{% if not (node.body.isEmpty == true) and content.body is defined %}
-  {% if node.body.summary|length > 0 %}
-    {% set summary = node.body.summary|striptags| check_markup('filtered_text') %}
-  {% else %}
-    {% set summaryraw = content.body.0['#text']|striptags %}
-    {% set summary = summaryraw| truncate(300,true,true)| check_markup('filtered_text') %}
+{% block content %}
+  {% if not (node.field_homepage_cards.isEmpty == true) and content.field_homepage_cards is defined %}
+    {{ content.field_homepage_cards }}
   {% endif %}
-{% endif %}
-
-{% set link_target = '' %}
-{% set link_url = url %}
-
-{% embed 'kraken:card--primary' with {
-  title: label,
-  titlePrefix: content.field_profile_name_prefix.0,
-  titleSuffix: content.field_profile_name_suffix.0,
-  link: link_url,
-  layout: 'ubc-card--horiz',
-  color: 'bg-white bg-light',
-  target: link_target,
-} %}
-  {% block media %}
-    {% if not (node.field_profile_image.isEmpty == true) and content.field_profile_image is defined %}
-      {{ content.field_profile_image.0 }}
-    {% endif %}
-  {% endblock %}
-  {% block content %}
-    {% if not (node.field_profile_job_title.isEmpty == true) and content.field_profile_job_title is defined %}
-      <p class="mt-0 text-sm">{{ content.field_profile_job_title.0 }}</p>
-    {% endif %}
-    {% if not (node.field_profile_department_unit.isEmpty == true) and content.field_profile_department_unit is defined %}
-      <p class="mt-2 text-xs">
-      {%- for tag in content.field_profile_department_unit['#items'] -%}
-          {{- tag.entity.name.value -}}
-          {% if loop.last == false %}, {% endif %}
-      {%- endfor -%}
-      </p>
-    {% endif %}
-    <p>{{ summary }}</p>
-  {% endblock %}
-  {% block actions %}
-      <p class="text-right">
-      {% embed 'kraken:button' with {
-          link: link_url,
-          text: 'View profile',
-          style: 'unit-button--simple',
-          target: link_target,
-      } %}
-      {% endembed %}
-      </p>
-  {% endblock %}
-{% endembed %}
+{% endblock %}

@@ -1,3 +1,4 @@
+{% extends "field--no-wrapper.html.twig" %}
 {#
 /**
  * @file
@@ -37,9 +38,3 @@
  * @see template_preprocess_field()
  */
 #}
-
-{% apply spaceless %}
-{% for item in items %}
-  {{ item.content }}
-{% endfor %}
-{% endapply %}
