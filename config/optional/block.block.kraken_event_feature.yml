@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.content_event_feature
+  module:
+    - node
+    - views
+  theme:
+    - kraken
+id: kraken_event_feature
+theme: kraken
+region: masthead
+weight: 0
+provider: null
+plugin: 'views_block:content_event_feature-block_1'
+settings:
+  id: 'views_block:content_event_feature-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      ubc_event: ubc_event

@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.content_alert_banner
+  module:
+    - views
+  theme:
+    - kraken
+id: kraken_alert_banner
+theme: kraken
+region: alert_region
+weight: 0
+provider: null
+plugin: 'views_block:content_alert_banner-block_1'
+settings:
+  id: 'views_block:content_alert_banner-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }
