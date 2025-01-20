@@ -227,7 +227,7 @@ sticky-header:
   version: VERSION
   css:
     theme:
-      css/clf.7.stickynav.css: { minified: true }
+      css/clf.7.stickynav.min.css: { minified: true }
   js:
     js/kraken.sticky.min.js: { minified: true }
   dependencies:
