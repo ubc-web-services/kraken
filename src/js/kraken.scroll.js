@@ -5,7 +5,7 @@
  *
  */
 (function(Drupal) {
-  Drupal.behaviors.krakenscroll = {
+  Drupal.behaviors.krakenScroll = {
     attach(context, settings) {
       const topbtn = document.querySelector("#totop");
       const topcontainer = document.querySelector("#totop-mask");

@@ -1,11 +1,11 @@
 "use strict";
-(globalThis["webpackChunkkraken"] = globalThis["webpackChunkkraken"] || []).push([["vendors~tiny.slider"],{
+(self["webpackChunkkraken"] = self["webpackChunkkraken"] || []).push([["vendors~tiny.slider"],{
 
 /***/ "./node_modules/tiny-slider/dist/tiny-slider.js":
 /*!******************************************************!*\
   !*** ./node_modules/tiny-slider/dist/tiny-slider.js ***!
   \******************************************************/
-/***/ ((__unused_webpack_module, exports) => {
+/***/ (function(__unused_webpack_module, exports) {
 
 
 
