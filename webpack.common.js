@@ -1,5 +1,4 @@
 // This library allows us to combine paths easily
-const VueLoaderPlugin = require("vue-loader/lib/plugin");
 
 module.exports = {
   entry: {
@@ -11,7 +10,6 @@ module.exports = {
     "kraken.sticky": ["./src/js/kraken.sticky.js"],
     "kraken.video": ["./src/js/kraken.video.js"],
     "tiny.slider": ["./src/js/tiny.slider.js"],
-    vue: ["./src/js/vue.js"],
   },
   optimization: {
     splitChunks: {
@@ -19,11 +17,6 @@ module.exports = {
       cacheGroups: {
         defaultVendors: {
           idHint: "vendors",
-        },
-        vendorvue: {
-          test: /[\\/]node_modules[\\/](vue|vue-scrollto|vue-tiny-slider|vue-slide-up-down|clickout-event)[\\/]/,
-          name: "vendors~vue",
-          chunks: "all",
         },
         vendorbootstrap: {
           test: /[\\/]node_modules[\\/](bootstrap|@popperjs)[\\/]/,
@@ -41,10 +34,6 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.vue$/,
-        loader: "vue-loader",
-      },
       {
         test: /\.m?js$/,
         exclude: /node_modules/,
@@ -67,17 +56,9 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          "vue-style-loader",
-          {
-            loader: "css-loader",
-            options: {
-              importLoaders: 1,
-            },
-          },
           "postcss-loader",
         ],
       },
     ],
   },
-  plugins: [new VueLoaderPlugin()],
 };
