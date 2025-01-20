@@ -13,18 +13,6 @@ use Drupal\image\Entity\ImageStyle;
 use Drupal\Component\Utility\Html;
 
 /**
- * Implements hook_preprocess().
- */
-function kraken_preprocess(&$variables)
-{
-  // load variable in all templates to know if we are using vue or not
-  $variables['clf_vue'] = FALSE;
-  if (theme_get_setting('clf_js') != 'js-bootstrap') {
-    $variables['clf_vue'] = TRUE;
-  }
-}
-
-/**
  * Implements hook_page_attachments_alter().
  */
 function kraken_page_attachments_alter(array &$page)
@@ -47,12 +35,6 @@ function kraken_page_attachments_alter(array &$page)
   if ($clf_widen && $clf_version != '8') {
     $page['#attached']['library'][] = 'kraken/clf-legacy--widen-more';
   }
-
-  $clf_js = theme_get_setting('clf_js');
-  $page['#attached']['library'][] = 'kraken/clf-' . $clf_js;
-
-  $clf_css = theme_get_setting('clf_css');
-  $page['#attached']['library'][] = 'kraken/' . $clf_css;
 
   $clf_sticky = theme_get_setting('clf_sticky');
   if ($clf_sticky) {
