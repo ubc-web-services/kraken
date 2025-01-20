@@ -9,52 +9,17 @@ global:
       css/drupal.media.min.css: { minified: true }
       css/drupal.views.min.css: { minified: true }
       css/clf.drupal.min.css: { minified: true }
+      css/styles.min.css: { minified: true }
   js:
     js/kraken.dismiss.min.js: { minified: true }
     js/kraken.video.min.js: { minified: true }
     js/kraken.misc.min.js: { minified: true }
+    js/vendors~bootstrap.min.js: { minified: true, preprocess: false }
+    js/bootstrap.min.js: { minified: true, preprocess: false }
   dependencies:
     - core/drupal
     - core/once
     - core/drupalSettings
-
-## Theme Custom CSS
-### CSS styles
-css-dev:
-  css:
-    theme:
-      css/styles.css: { minified: true }
-
-## CSS styles (with unused styles purged)
-css-prod:
-  css:
-    theme:
-      css/styles.min.css: { minified: true }
-
-## Theme Custom JS
-### Development JS
-clf-js-dev:
-  version: VERSION
-  js:
-    js/vendors~vue.js: { minified: true, preprocess: false }
-    js/vue.js: { minified: true, preprocess: false }
-
-### Production js
-clf-js-prod:
-  version: VERSION
-  js:
-    js/vendors~vue.min.js: { minified: true, preprocess: false }
-    js/vue.min.js: { minified: true, preprocess: false }
-
-### Bootstrap
-clf-js-bootstrap:
-  version: 5.1
-  css:
-    base:
-      css/bootstrap.5.min.css: { }
-  js:
-    js/vendors~bootstrap.min.js: { minified: true, preprocess: false }
-    js/bootstrap.min.js: { minified: true, preprocess: false }
 
 ## CLF Version 8
 clf-8:

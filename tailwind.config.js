@@ -3,7 +3,7 @@ module.exports = {
   content: [
     "./components/**/*.{twig,html,js,css}",
     "./templates/**/*.{twig,html}",
-    "./src/**/*.{js,jsx,ts,tsx,vue}",
+    "./src/**/*.{js,jsx,ts,tsx}",
     "./kraken.theme",
     "./safelist.txt",
     "./UtilityClasses.md"

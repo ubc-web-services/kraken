@@ -118,36 +118,6 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
     '#default_value' => theme_get_setting('clf_dark_mode'),
   ];
 
-  $form['general']['clf_js'] = [
-    '#type' => 'select',
-    '#title' => t('Javascript library'),
-    '#description' => t('Select whether you\'d like to use the <a href=":url" target="_blank">vue.js</a> library for javascript components or <a href=":bootstrapurl" target="_blank">bootstrap 5</a> libraries (jquery not required). If you choose to use vue.js, you can choose between the development version with debugging tools or the full (production) version for live sites. You can find <a href=":buildsurl" target="_blank">an explanation of the differences here</a>.', [
-      ':url' => 'https://vuejs.org',
-      ':bootstrapurl' => 'https://getbootstrap.com/docs/5.0/getting-started/javascript/',
-      ':buildsurl' => 'https://vuejs.org/v2/guide/installation.html#Explanation-of-Different-Builds',
-    ]),
-    '#default_value' => theme_get_setting('clf_js'),
-    '#options' => [
-      'js-dev' => t('Full Vue.js Development version'),
-      'js-prod' => t('Full Vue.js Production version'),
-      'js-bootstrap' => t('Bootstrap 5'),
-    ],
-  ];
-
-  $form['general']['clf_css'] = [
-    '#type' => 'select',
-    '#title' => t('CSS styles'),
-    '#description' => t('This theme uses the <a href=":url" target="_blank">PurgeCSS</a> library to scan your twig, html and javascript files and remove any CSS utility styles that are not in use. This is provided by the TailwindCSS utility-first CSS library - see <a href=":url2" target="_blank">the Tailwind CSS docs</a> for information on how to configure and control this.', [
-      ':url' => 'https://purgecss.com',
-      ':url2' => 'https://tailwindcss.com/docs/controlling-file-size#writing-purgeable-html',
-    ]),
-    '#default_value' => theme_get_setting('clf_css'),
-    '#options' => [
-      'css-dev' => t('Load all CSS styles (development)'),
-      'css-prod' => t('Load purged CSS styles (production)'),
-    ],
-  ];
-
   $form['general']['cwl_site'] = [
     '#type' => 'checkbox',
     '#title' => t('<strong>Display a CWL Login option</strong>'),
