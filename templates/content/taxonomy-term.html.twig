@@ -39,9 +39,7 @@
 
 <div{{ attributes.setAttribute('id', 'taxonomy-term-' ~ term.id).addClass(classes) }}>
   {{ title_prefix }}
-  {% if not page %}
     <h1{{ title_attributes.addClass(title_classes) }}>{{ name }}</h1>
-  {% endif %}
   {{ title_suffix }}
   <div class="content">
     {{ content }}
