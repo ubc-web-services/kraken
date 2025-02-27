@@ -5,7 +5,7 @@
  *
  */
 (function(Drupal) {
-  Drupal.behaviors.krakensticky = {
+  Drupal.behaviors.krakenSticky = {
     attach(context, settings) {
       const body = document.querySelector("body");
       const unitarea = document.querySelector("#clf7__header");
