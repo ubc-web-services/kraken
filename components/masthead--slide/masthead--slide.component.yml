@@ -1,0 +1,73 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json"
+name: Masthead Slide
+status: stable
+group: UBC Web Services
+description: Component to render as a masthead slide
+props:
+  type: object
+  properties:
+    title:
+      type: string
+      title: Text
+      description: The that is formatted as a title
+    text:
+      type: string
+      title: Text
+      description: The text over top of the image
+    pageTitle:
+      type: boolean
+      title: Is page title
+      description: This setting makes the text an h1
+    backgroundLight:
+      type: boolean
+      title: Light background option
+      description: Is the background light?
+    gradient:
+      type: boolean
+      title: Image gradient
+      description: Add a gradient to the image
+    texture:
+      type: string
+      title: Texture
+      description: Add a background texture?
+    hasImage:
+      type: boolean
+      title: Image option
+      description: Is there an image?
+      default: true
+    link:
+      type: string
+      title: Link
+      description: The destination of the link
+      examples:
+        - https://ubc.ca
+    linkText:
+      type: string
+      title: Link Text
+      description: The text of the link
+      examples:
+        - Read more
+    linkStyle:
+      type: string
+      title: Link
+      description: The styles of the link
+      examples:
+        - unit-button
+    target:
+      type: boolean
+      title: Target
+      description: Open the link in a new tab
+    customClasses:
+      title: Custom Classes
+      type: string
+      description: Custom classes to apply to the masthead
+      examples:
+        - my-class another-class
+slots:
+  media:
+    title: Image Content
+    required: true
+    description: The image / media content
+libraryOverrides:
+  dependencies:
+    - kraken/global

@@ -1,9 +1,7 @@
-/** @define drupal.login */
-
-/*
-* This file contains styles for the default drupal login
-*/
-
+/**
+ * @file
+ * Styles for the default drupal login
+ */
 .rounded {
   border-radius: 0.25rem;
 }
@@ -63,18 +61,18 @@
   padding: 0.75rem 1.5rem;
   text-align: center;
   text-decoration: none;
-  color: #0055b7;
+  color: var(--ubc-blue-cobalt);
   border-width: 1px;
-  border-color: #0055b7;
-  background-color: #fff;
+  border-color: var(--ubc-blue-cobalt);
+  background-color: var(--white);
 }
 
 .form-managed-file .form-submit:hover {
-  color: #fff;
-  border-color: #0055b7;
-  background-color: #0055b7;
+  color: var(--white);
+  border-color: var(--ubc-blue-cobalt);
+  background-color: var(--ubc-blue-cobalt);
 }
 
 body {
-  background-color: #002145;
+  background-color: var(--ubc-blue);
 }

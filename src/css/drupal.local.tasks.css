@@ -1,10 +1,7 @@
-/** @define drupal.local.tasks */
-
-/*
-* This file contains styles for the default drupal tabs
-*/
-@import "config/variables.config.css";
-
+/**
+ * @file
+ * Styles for the default drupal tabs
+ */
 .tabs {
   margin: 1rem 0 0.5rem 0;
   font-size: 1rem;

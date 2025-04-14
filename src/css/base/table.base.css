@@ -1,4 +1,4 @@
-/** @define media */
+/** @define table.base */
 
 /*
 * This file contains all styles related to the table element.
@@ -62,7 +62,7 @@ table caption {
 
 .table--striped tr.odd,
 .table--striped tbody tr:nth-child(2n+1) {
-  background-color: $table-row-striping-color;
+  background-color: rgba(225, 243, 249, 0.5);
 }
 
 .table--striped td,
@@ -71,5 +71,5 @@ table caption {
 }
 
 .table--hover tbody tr:hover {
-  background-color: $table-row-hover-color;
+  background-color: rgba(225, 243, 249, 0.5);
 }

@@ -1,11 +1,10 @@
-/** @define styles */
+/**
+ * @file
+ * This file is the main entry point for primary styles
+ */
 
-/*
-* This file is the main entry point for primary styles
-*/
-
-/* Add CSS variables (uses postcss-simple-vars) */
-@import "config/variables.config.css";
+ /* add css variables */
+ @import "config/variables.config.css";
 
 /* Add normalize and general base styles */
 @import "tailwindcss/base";
@@ -19,8 +18,12 @@
 @import "base/table.base.css";
 @import "base/print.base.css";
 
-/* Import any node assets */
-@import "../../node_modules/tiny-slider/dist/tiny-slider.css";
+/* Add any Drupal specific stylesheets */
+@import "drupal/drupal.node.preview.css";
+@import "drupal/drupal.entity.moderation.css";
+@import "drupal/drupal.media.css";
+@import "drupal/drupal.views.css";
+@import "drupal/clf.drupal.css";
 
 /* Add styles for specific components */
 @import "tailwindcss/components";
@@ -45,7 +48,6 @@
 @import "utilities/min-height.utility.css";
 @import "utilities/skip-link.utility.css";
 @import "utilities/svg.utility.css";
-/* @import "utilities/text-truncate.utility.css"; */
 @import "utilities/ubc-gradient.utility.css";
 @import "utilities/vue.utility.css";
 

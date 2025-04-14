@@ -1,7 +1,7 @@
-@import "config/variables.config.css";
-
-/* alterations to form elements provided by the webform module */
-
+/**
+ * @file
+ * Webform styles
+ */
 .webform-actions {
   margin-top: 1.5rem;
 }
@@ -62,7 +62,7 @@ input[name="custom_composite_table_add"] {
   font-size: 0.75em;
 }
 
-@media (min-width: $breakpoint--xs) {
+@media (min-width: 480px) {
 
   .webform-options-display-two-columns,
   .webform-options-display-three-columns {

@@ -2,18 +2,18 @@
 /*!*********************************!*\
   !*** ./src/js/kraken.scroll.js ***!
   \*********************************/
-/*!
+/*
  * File: scroll.js
  *
  * Desc: js for adding intersection observer to the top top button, revealing it when the totop-mask is outside of the viewport
  *
  */
-(function (Drupal) {
+(function(Drupal) {
   Drupal.behaviors.krakenScroll = {
     attach(context, settings) {
-      var topbtn = document.querySelector("#totop");
-      var topcontainer = document.querySelector("#totop-mask");
-      var observer = new IntersectionObserver(entries => {
+      const topbtn = document.querySelector("#totop");
+      const topcontainer = document.querySelector("#totop-mask");
+      const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
           if (entry.intersectionRatio > 0) {
             topbtn.classList.remove("is-visible");
@@ -32,6 +32,7 @@
     }
   };
 })(Drupal);
+
 /******/ })()
 ;
 //# sourceMappingURL=kraken.scroll.js.map

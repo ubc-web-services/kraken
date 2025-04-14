@@ -10,11 +10,18 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
+/*
+ * File: bootstrap.js
+ *
+ * Desc: js imported from bootstrap
+ *
+ */
 /* Import all plugins from bootstrap */
 
 
 /* Export all plugins from bootstrap */
 /* harmony default export */ __webpack_exports__["default"] = (bootstrap__WEBPACK_IMPORTED_MODULE_0__);
+
 
 /***/ })
 

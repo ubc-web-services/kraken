@@ -1,10 +1,7 @@
-/** @define drupal.maintenance.page */
-
-/*
-* This file contains styles for the drupal maintenance page
-*/
-@import "config/variables.config.css";
-
+/**
+ * @file
+ * Styles for the drupal maintenance page
+ */
 html {
   color: $text-color;
   font-family: var(--text-font-stack);

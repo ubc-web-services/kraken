@@ -11,17 +11,20 @@
 (function (Drupal, once) {
   Drupal.behaviors.krakenVideo = {
     attach(context) {
-      once("js-video", ".media--type-remote-video", context).forEach(item => {
+      once("js-video", ".media--type-remote-video", context).forEach((item) => {
         item.addEventListener("click", () => {
-          var video = item.querySelector(".field--name-field-media-oembed-video");
-          var thumb = item.querySelector(".field--name-thumbnail");
+          const video = item.querySelector(
+            ".field--name-field-media-oembed-video",
+          );
+          const thumb = item.querySelector(".field--name-thumbnail");
           thumb.classList.add("hidden");
           video.removeAttribute("hidden");
         });
       });
-    }
+    },
   };
 })(Drupal, once);
+
 /******/ })()
 ;
 //# sourceMappingURL=kraken.video.js.map

@@ -14,12 +14,15 @@
       var query = window.matchMedia("(max-width: 979px)"),
         body = document.querySelector("body");
       function watch(query) {
-        query.matches ? body.setAttribute("data-screen", "sm") : body.setAttribute("data-screen", "lg");
+        query.matches
+          ? body.setAttribute("data-screen", "sm")
+          : body.setAttribute("data-screen", "lg");
       }
       watch(query), query.addEventListener("change", watch);
-    }
+    },
   };
 })(Drupal);
+
 /******/ })()
 ;
 //# sourceMappingURL=kraken.mediaquery.js.map

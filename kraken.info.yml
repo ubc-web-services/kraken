@@ -4,7 +4,7 @@ description: 'Kraken is a Drupal base theme that provides integration with the U
 package: kraken
 'base theme': false
 starterkit: true
-version: '3.0.1'
+version: '4.0.0'
 core_version_requirement: '>=10'
 generator: 'starterkit_theme:11.0.1'
 
@@ -30,14 +30,9 @@ libraries-override:
   formtips/hoverintent: false
   fullcalendar_view/libraries.fullcalendar-theme: kraken/fullcalendar
 
-ckeditor_stylesheets:
-  - css/styles.min.css
-  - css/drupal.media.min.css
-  - css/drupal.ckeditor.iframe.css
 ckeditor5-stylesheets:
-  - css/drupal.ckeditor.theme.styles.min.css
   - css/drupal.media.min.css
-  - css/drupal.ckeditor.iframe.css
+  - css/drupal.ckeditor.theme.styles.min.css
 
 regions:
   pre_content: 'Pre-content'

@@ -9,15 +9,14 @@ figure.align-center,
 figure.align-left,
 figure.align-right,
 figure.img-and-caption {
-  display: table;
+  @apply table;
 }
 
 figure.align-center figcaption,
 figure.align-left figcaption,
 figure.align-right figcaption,
 figure.img-and-caption figcaption {
-  display: table-caption;
-  caption-side: bottom;
+  @apply table-caption caption-bottom;
 }
 
 .media--type-image {
@@ -34,16 +33,12 @@ figure .media--type-image img {
 
 figure.align-left,
 .align-left.media--type-image {
-  @apply mt-0 mr-leading mb-leading;
-
-  float: left;
+  @apply float-left mt-0 mr-leading mb-leading;
 }
 
 figure.align-right,
 .align-right.media--type-image {
-  @apply mt-0 ml-leading mb-leading;
-
-  float: right;
+  @apply float-right mt-0 ml-leading mb-leading;
 }
 
 .align-right.media--type-image,
@@ -58,8 +53,7 @@ figure.align-center {
 
 figure.align-center > article,
 figure.align-center > div {
-  display: block;
-  max-width: 100%;
+  @apply block max-w-full;
 }
 
 /* paragraphs */
@@ -69,28 +63,28 @@ figure.align-center > div {
 }
 
 .paragraph.bg-ubc-blue {
-  color: #fff;
+  @apply text-white;
 }
 
 .paragraph.bg-ubc-blue a {
-  color: $ubc-blue-polar;
+  @apply text-ubc-blue-polar;
 }
 
 .paragraph.bg-ubc-blue a:hover {
-  color: $ubc-blue-cornflower;
+  @apply text-ubc-blue-cornflower;
 }
 
 .paragraph.bg-ubc-blue .unit-button--light {
-  color: $ubc-blue-cobalt;
+  @apply text-ubc-blue-cobalt;
 }
 
 .paragraph.bg-ubc-blue .unit-button--dark {
-  border-color: $ubc-blue-polar;
+  @apply text-ubc-blue-polar;
 }
 
 .paragraph.bg-ubc-blue .unit-button--light:hover,
 .paragraph.bg-ubc-blue .unit-button--dark:hover {
-  color: #fff;
+  @apply text-white;
 }
 
 .paragraph.bg-ubc-blue .unit-button--simple::after {
@@ -110,9 +104,7 @@ figure.align-center > div {
 
 .pager__items a,
 .pager__items .pager__item--current {
-  @apply block w-12 h-12 mx-1 text-center no-underline border-2 rounded-full text-ubc-blue;
-
-  border-color: transparent;
+  @apply block w-12 h-12 mx-1 text-center no-underline border-2 border-transparent rounded-full text-ubc-blue;
 }
 
 .pager__items a:hover {
@@ -124,7 +116,7 @@ figure.align-center > div {
   @apply font-bold text-center border-ubc-blue-neptune text-grey-900;
 }
 
-@media (min-width: $breakpoint--xxl) {
+@media (min-width: 2400px) {
 
   .pager__items {
     line-height: 2;
@@ -139,16 +131,14 @@ figure.align-center > div {
 .ui-state-highlight,
 .ui-widget-content .ui-state-highlight,
 .ui-widget-header .ui-state-highlight {
-  color: #fff;
-  border: 1px solid $ubc-blue;
-  background: $ubc-blue-cobalt;
+  @apply text-white border border-ubc-blue bg-ubc-blue-cobalt;
 }
 
 /* webform */
 .webform-submission-form legend {
   padding-bottom: 0;
   border-bottom: none;
-  border-bottom: 0.25rem solid $ubc-blue-neptune;
+  border-bottom: 0.25rem solid var(--ubc-blue-neptune);
   font-size: 0.875em;
 }
 
@@ -159,28 +149,25 @@ figure.align-center > div {
 
 .webform-submission-form .fieldset-legend.form-required::after {
   content: " *";
-  color: $input-required-color;
+  color: var(--input-required-color);
   font-weight: 700;
 }
 
 .webform-type-checkboxes > legend {
-  @apply text-ubc-blue;
-
-  text-transform: none;
-  border-bottom: none;
+  @apply normal-case border-b-0 text-ubc-blue;
 }
 
 .webform-submission-form .form-actions {
-  margin-top: 3rem;
+  @apply mt-12;
 }
 
 fieldset.webform-type-checkboxes,
 fieldset.webform-type-radios {
-  box-shadow: none;
+  @apply shadow-none;
 }
 
 .webform-submission-form .fieldset-wrapper {
-  padding: 2rem;
+  @apply p-8;
 }
 
 fieldset fieldset {
@@ -200,17 +187,17 @@ fieldset fieldset legend {
 
 .webform-submission-form .webform-type-radios .fieldset-wrapper,
 .webform-submission-form .webform-type-checkboxes .fieldset-wrapper {
-  padding: 0;
+  @apply p-0;
 }
 
 .webform-submission-form .fieldset-wrapper .form-item.form-radio,
 .webform-submission-form .fieldset-wrapper .form-item.form-checkbox {
-  margin-top: 0;
+  @apply mt-0;
 }
 
 .webform-submission-form .webform-type-radios > legend,
 .webform-submission-form .webform-type-checkboxes > legend {
-  border-bottom: none;
+  @apply border-b-0;
 }
 
 .text-count-message,
@@ -238,11 +225,11 @@ fieldset fieldset legend {
 
 /* misc */
 .text-uppercase {
-  text-transform: uppercase;
+  @apply uppercase;
 }
 
 .text-lowercase {
-  text-transform: lowercase;
+  @apply lowercase;
 }
 
 /* jquery date picker picks up default table styles */
@@ -257,7 +244,7 @@ fieldset fieldset legend {
 
 /* quickedit divs (gah!) */
 [data-quickedit-field-id] {
-  display: inline;
+  @apply inline;
 }
 
 /* Drupal inline images */
@@ -267,8 +254,8 @@ fieldset fieldset legend {
 
 /* Drupal messages */
 .message p:first-of-type {
-  margin-top: 0;
+  @apply mt-0;
 }
 .message p {
-  margin-top: 0.75rem;
+  @apply mt-3;
 }

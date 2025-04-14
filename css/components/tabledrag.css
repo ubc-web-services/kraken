@@ -4,10 +4,10 @@
  */
 
 tr.drag {
-  background-color: #fffff0;
+  background-color: var(--ubc-blue-frost);
 }
 tr.drag-previous {
-  background-color: #ffd;
+  background-color: var(--ubc-blue-polar);
 }
 body div.tabledrag-changed-warning {
   margin-bottom: 0.5em;
