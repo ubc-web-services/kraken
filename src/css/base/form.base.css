@@ -60,7 +60,7 @@ select {
 [type="tel"]:focus,
 [type="color"]:focus,
 textarea:focus {
-  background-color: var(--white);
+  background-color: rgba(var(--white), 1);
 }
 
 ::placeholder {
@@ -84,8 +84,8 @@ textarea:focus {
 .form-disabled [type="color"],
 .form-disabled textarea {
   cursor: not-allowed;
-  border: 2px solid var(--grey-300);
-  background-color: var(--grey-50);
+  border: 2px solid rgba(var(--grey-300), 1);
+  background-color: rgba(var(--grey-50), 1);
 }
 
 /* select element styles */
@@ -111,8 +111,8 @@ legend {
   display: block;
   padding-bottom: 0.5rem;
   text-transform: uppercase;
-  color: var(--ubc-blue-sea);
-  border-bottom: 0.25rem solid var(--ubc-blue-sea);
+  color: rgba(var(--ubc-blue-sea), 1);
+  border-bottom: 0.25rem solid rgba(var(--ubc-blue-sea), 1);
   font-size: 110%;
   font-weight: 600;
 }
@@ -123,7 +123,7 @@ legend {
 
 .form-item-wrapper > label {
   display: block;
-  color: var(--ubc-blue);
+  color: rgba(var(--ubc-blue), 1);
   font-size: 0.875em;
   font-weight: 600;
 }
@@ -164,7 +164,7 @@ legend {
   color: var(--focus-inner-bg);
   border-width: 1px;
   border-color: var(--focus-inner-bg);
-  background-color: var(--white);
+  background-color: rgba(var(--white), 1);
   background-origin: border-box;
   -webkit-appearance: none;
   -moz-appearance: none;
