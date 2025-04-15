@@ -9,6 +9,7 @@ global:
     js/kraken.dismiss.min.js: { minified: true }
     js/kraken.video.min.js: { minified: true }
     js/kraken.misc.min.js: { minified: true }
+    js/kraken.mediaquery.min.js: { minified: true }
     js/vendors~bootstrap.min.js: { minified: true, preprocess: false }
     js/bootstrap.min.js: { minified: true, preprocess: false }
   dependencies:
