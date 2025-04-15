@@ -31,7 +31,6 @@ libraries-override:
   fullcalendar_view/libraries.fullcalendar-theme: kraken/fullcalendar
 
 ckeditor5-stylesheets:
-  - css/drupal.media.min.css
   - css/drupal.ckeditor.theme.styles.min.css
 
 regions:
