@@ -1,0 +1,145 @@
+/**
+ * @file
+ * Webform styles
+ */
+ .webform-actions {
+
+  margin-top: 1.5rem
+}
+ .webform-submission-form .field-prefix,
+.webform-submission-form .field-suffix {
+
+  font-size: .875rem
+}
+ .webform-multiple-table .form-item,
+.webform-mapping-table .form-item,
+.webform-likert-table .form-item,
+.webform-submission-form input.form-color {
+
+  margin-top: 0px
+}
+ .webform-submission-form .fieldset-wrapper {
+
+  margin-top: 1em
+}
+ .text-count-message,
+.description {
+
+  font-size: .875rem;
+
+  color: rgba(var(--grey-700), 1)
+}
+ .form--inline .form-item {
+
+  margin-top: 0px
+}
+ input[type="submit"]:not(.webform-button--submit) {
+
+  display: inline-flex;
+
+  cursor: pointer;
+
+  border-width: 1px;
+
+  border-color: transparent;
+
+  background-color: rgba(var(--ubc-blue), 1);
+
+  padding-left: 1em;
+
+  padding-right: 1em;
+
+  padding-top: .5em;
+
+  padding-bottom: .3em;
+
+  text-align: center;
+
+  font-size: .75rem;
+
+  text-transform: uppercase;
+
+  color: rgba(var(--white), 1);
+
+  text-decoration-line: none;
+
+  transition: all 0.125s ease-out;
+  line-height: 1.3
+}
+ input[type="submit"]:not(.webform-button--submit):hover {
+
+  border-color: transparent;
+
+  background-color: rgba(var(--ubc-blue-sea), 1);
+
+  color: rgba(var(--white), 1);
+
+  text-decoration-line: none;
+
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+}
+ input[name="autocomplete_table_add"],
+input[name="custom_composite_table_add"] {
+
+  margin-top: .5em;
+
+  margin-bottom: .5em
+}
+ .tabledrag-toggle-weight {
+
+  font-size: .75rem
+}
+ @media (min-width: 480px) {
+
+  .webform-options-display-two-columns,
+  .webform-options-display-three-columns {
+
+    margin-top: 0px;
+
+    display: flex;
+
+    -moz-columns: initial;
+
+         columns: initial;
+
+    flex-wrap: wrap
+  }
+
+  .webform-options-display-two-columns div.form-item {
+
+    width: 50%
+  }
+
+  .webform-options-display-three-columns div.form-item {
+
+    width: 33.33333%
+  }
+}
+ .webform-submission-form .checkboxes--wrapper legend,
+.webform-submission-form .webform-checkboxes-other--wrapper legend,
+.webform-submission-form .radios--wrapper legend,
+.webform-submission-form .webform-radios-other--wrapper legend {
+
+  border-bottom-width: 0px;
+
+  padding-bottom: 0px;
+
+  font-size: .875rem;
+
+  text-transform: none;
+
+  color: rgba(var(--ubc-blue), 1)
+}
+ .webform-submission-form .checkboxes--wrapper .fieldset-wrapper,
+.webform-submission-form .webform-checkboxes-other--wrapper .fieldset-wrapper,
+.webform-submission-form .radios--wrapper .fieldset-wrapper,
+.webform-submission-form .webform-radios-other--wrapper .fieldset-wrapper,
+.webform-submission-form :not(.checkboxes--wrapper) .form-item.form-checkbox,
+.webform-submission-form :not(.radios--wrapper) .form-item.form-radio {
+
+  margin-top: .5em
+}

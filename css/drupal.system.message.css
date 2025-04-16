@@ -1,0 +1,70 @@
+/**
+ * @file
+ * Styles for system messages
+ */
+.message {
+  position: relative;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+}
+.message--error {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 124 124 / var(--tw-bg-opacity, 1))
+}
+.message--status {
+  background-color: rgba(var(--ubc-blue-neptune), 1)
+}
+.message--success {
+  --tw-bg-opacity: 1;
+  background-color: rgb(87 237 174 / var(--tw-bg-opacity, 1))
+}
+.message--warning {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 230 5 / var(--tw-bg-opacity, 1))
+}
+.message__close {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  line-height: 1
+}
+.message__close:hover {
+  background-color: rgba(var(--white), 0.5);
+  color: rgba(var(--black), 1);
+  text-decoration-line: none
+}
+.message__icon {
+  margin-right: 1rem;
+  display: inline-block;
+  height: 3rem;
+  width: 3rem;
+  flex: none;
+  color: rgba(var(--ubc-blue), 1)
+}
+@media (min-width: 1720px:) {
+
+  .message {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 2rem
+  }
+
+  .message__icon {
+    margin-right: 2rem;
+    height: 5rem;
+    width: 5rem
+  }
+}
