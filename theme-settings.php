@@ -130,8 +130,9 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
     '#type' => 'checkbox',
     '#title' => t('<strong>Display a CWL Login option</strong>'),
     '#description' => t(
-        '<strong>Check this option if the site should display a CWL Login option on the <a href=":url" target="_blank">drupal login page</a>.</strong><br />Note that this does not implement CWL protection, but simply adds the form to the login page.', [
+        '<strong>Check this option if the site should display a CWL Login option on the <a href=":url" target="_blank">drupal login page</a>.</strong><br />Note that this does not implement CWL protection, but simply adds the form to the login page. If you are using a module like <strong><a href=":url2" target="_blank">Gin Login</a></strong>, you should disable it.', [
         ':url' => '/user',
+        ':url2' => 'https://www.drupal.org/project/gin_login',
         ]
     ),
     '#default_value' => theme_get_setting('cwl_site'),
