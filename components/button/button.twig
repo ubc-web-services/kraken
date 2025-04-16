@@ -11,7 +11,7 @@
 %}
 <a class="{{ classes|join(" ")|trim }}" href="{{ link }}"{% if target %}
     target="_blank"{% endif %} {% if id %}
-    id="{{ id }}"{% endif %}>
+    id="{{ id }}"{% endif %} data-component-id="kraken:button">
   {% block before %}{% endblock %}
   {{ text }}
   {% block after %}{% endblock %}
