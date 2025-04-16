@@ -10,8 +10,7 @@
 }
 
 .chosen-container a {
-  text-decoration: none;
-  color: var(--ubc-blue-cobalt) !important;
+  @apply no-underline !text-ubc-blue-cobalt;
 }
 
 .form-select a.chosen-single,

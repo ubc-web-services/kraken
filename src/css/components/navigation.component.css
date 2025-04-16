@@ -87,7 +87,7 @@
 
 /* ensure collapsed nav is visible on large screens */
 [data-screen=lg] .subnav.widget-accordion .subnav__links[hidden] {
-  display: block!important;
+  display: block !important;
 }
 
 /* vue subanv */

@@ -16,9 +16,15 @@
   --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
   --grid-item--max-width: calc((100% - var(--total-gap-width)) / var(--grid-column-count));
 
-  @apply p-8 my-0 mb-8 bg-grey-100;
+  @apply grid p-8 my-0 mb-8 bg-grey-100;
 
-  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr));
   grid-gap: var(--grid-layout-gap);
+}
+
+@media screen and (min-width: 980px) {
+
+  .nav--is-pinned table.sticky-header {
+    top: 45px !important;
+  }
 }

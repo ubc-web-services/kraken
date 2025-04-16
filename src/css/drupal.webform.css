@@ -32,21 +32,14 @@
 }
 
 input[type="submit"]:not(.webform-button--submit) {
-  @apply inline-flex text-center no-underline uppercase border text-xs cursor-pointer pt-[.5em] px-[1em] pb-[.3em];
+  @apply inline-flex text-center no-underline uppercase border text-xs cursor-pointer pt-[.5em] px-[1em] pb-[.3em] text-white bg-ubc-blue border-transparent;
 
   transition: all 0.125s ease-out;
-  color: var(--button-text);
-  border-color: var(--button-border);
-  background-color: var(--button-bg);
   line-height: 1.3;
 }
 
 input[type="submit"]:not(.webform-button--submit):hover {
-  @apply no-underline shadow-md;
-
-  color: var(--button-text--hover);
-  border-color: var(--button-border--hover);
-  background-color: var(--button-bg--hover);
+  @apply text-white no-underline border-transparent shadow-md bg-ubc-blue-sea;
 }
 
 input[name="autocomplete_table_add"],
@@ -78,7 +71,7 @@ input[name="custom_composite_table_add"] {
 .webform-submission-form .webform-checkboxes-other--wrapper legend,
 .webform-submission-form .radios--wrapper legend,
 .webform-submission-form .webform-radios-other--wrapper legend {
-  @apply pb-0 normal-case text-ubc-blue border-b-0 text-sm;
+  @apply pb-0 text-sm normal-case border-b-0 text-ubc-blue;
 }
 
 .webform-submission-form .checkboxes--wrapper .fieldset-wrapper,

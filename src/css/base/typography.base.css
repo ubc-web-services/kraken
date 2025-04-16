@@ -20,7 +20,7 @@ body {
 /* heading elements */
 h1,
 .h1 {
-  @apply text-6xl mb-0;
+  @apply mb-0 text-6xl;
   margin-top: calc(var(--leading) * 3.5rem);
   font-family: var(--alternate-font-stack);
   font-weight: var(--title-weight);
@@ -38,7 +38,7 @@ h2,
 
 h3,
 .h3 {
-  @apply text-5xl mb-0;
+  @apply mb-0 text-5xl;
   margin-top: calc(var(--leading) * 1.75rem);
   letter-spacing: 0.025em;
   font-family: var(--alternate-font-stack);
@@ -48,7 +48,7 @@ h3,
 
 h4,
 .h4 {
-  @apply text-2xl mb-0;
+  @apply mb-0 text-2xl;
   margin-top: calc(var(--leading) * 1.25rem);
   letter-spacing: 0.025em;
   font-family: var(--alternate-font-stack);
@@ -58,7 +58,7 @@ h4,
 
 h5,
 .h5 {
-  @apply text-base mb-0;
+  @apply mb-0 text-base;
   margin-top: calc(var(--leading) * 1rem);
   letter-spacing: 0.05em;
   font-family: var(--alternate-font-stack);
@@ -68,7 +68,7 @@ h5,
 
 h6,
 .h6 {
-  @apply text-sm mb-0;
+  @apply mb-0 text-sm;
   margin-top: calc(var(--leading) * 1rem);
   letter-spacing: 0.05em;
   font-family: var(--alternate-font-stack);
@@ -100,7 +100,7 @@ p,
 pre,
 table,
 blockquote {
-  @apply mt-leading mb-0;
+  @apply mb-0 mt-leading;
 }
 
 b,
@@ -114,7 +114,7 @@ code {
 }
 
 kbd {
-  @apply inline-block border border-grey-300 shadow-sm;
+  @apply inline-block border shadow-sm border-grey-300;
   text-wrap: nowrap;
   border-radius: 3px;
   font-weight: 600;
@@ -137,37 +137,6 @@ sup {
 
 sub {
   bottom: -0.25em;
-}
-
-/* Lists */
-ul,
-ol,
-dl {
-  @apply my-3;
-}
-
-ul ul,
-ol ol,
-ul ol,
-ol ul {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-ul {
-  @apply pl-6;
-
-  list-style-type: disc;
-}
-
-ol {
-  @apply pl-6;
-
-  list-style-type: decimal;
-}
-
-dt {
-  text-transform: uppercase;
 }
 
 /* Blockquote */
@@ -213,28 +182,20 @@ cite span,
   @apply text-left bg-transparent text-ubc-blue;
 }
 
-/* Tables */
-table {
-  margin-top: 0.75rem;
-}
-
 /* horizontal rule element */
 hr,
 .hr {
-  @apply my-3 mx-0 border-t border-grey-300
+  @apply mx-0 my-3 border-t border-grey-300;
 }
 
 .hr--styled {
-  max-width: 7rem;
-  margin: 0.75rem 0;
-  border-top: 0.25rem solid var(--ubc-blue);
+  @apply max-w-[7rem] mx-0 my-3 border-t border-ubc-blue;
 }
 
 /* Text utilities */
 .text-lead {
-  @apply text-xl;
+  @apply mb-0 text-xl;
   margin-top: calc(var(--leading) * 1.5rem);
-  margin-bottom: 0;
   font-family: var(--alternate-font-stack);
   line-height: var(--leading);
 }
