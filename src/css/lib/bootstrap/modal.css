@@ -57,7 +57,7 @@
 }
 
 .modal-content {
-  @apply relative flex flex-column w-full pointer-events-auto outline-none bg-white shadow;
+  @apply relative flex flex-col w-full pointer-events-auto outline-none bg-white shadow;
 
   border-radius: 0.3rem;
   background-clip: padding-box;
