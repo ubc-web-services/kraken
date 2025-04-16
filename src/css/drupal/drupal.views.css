@@ -22,10 +22,3 @@
   grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr));
   grid-gap: var(--grid-layout-gap);
 }
-
-@media screen and (min-width: 980px) {
-
-  .nav--is-pinned table.sticky-header {
-    top: 45px !important;
-  }
-}

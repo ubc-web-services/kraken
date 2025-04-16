@@ -4,45 +4,43 @@
 .fc-popover .fc-header .fc-close,
 a.fc-more,
 a[data-goto] {
-  cursor: pointer;
+  @apply cursor-pointer;
 }
 
 .fc-bg,
 .fc-row .fc-bgevent-skeleton,
 .fc-row .fc-highlight-skeleton {
-  bottom: 0;
+  @apply bottom-0;
 }
 
 .fc {
-  text-align: left;
+  @apply text-left;
   direction: ltr;
 }
 
 .fc-rtl {
-  text-align: right;
+  @apply text-right;
 }
 
 body .fc {
-  font-size: 1em;
+  @apply text-[1em];
 }
 
 .fc-highlight {
-  opacity: 0.3;
-  background: #bce8f1;
+  @apply opacity-30 bg-[#bce8f1];
 }
 
 .fc-bgevent {
-  opacity: 0.3;
-  background: #8fdf82;
+  @apply opacity-30 bg-[#8fdf82];
 }
 
 .fc-nonbusiness {
+  @apply bg-[#d7d7d7];
   background: #d7d7d7;
 }
 
 .fc-popover {
-  position: absolute;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  @apply absolute shadow-sm;
 }
 
 .fc-popover .fc-header {
@@ -217,7 +215,7 @@ a[data-goto]:hover {
 .fc-event,
 .fc-event:hover {
   text-decoration: none;
-  color: var(--white);
+  color: #fff;
 }
 
 .fc-not-allowed,
@@ -438,26 +436,25 @@ a.fc-more:hover {
 .fc-unthemed td,
 .fc-unthemed th,
 .fc-unthemed thead {
-  border-color: var(--grey-300);
+  @apply border-grey-300;
 }
 
 .fc-unthemed .fc-popover {
-  background-color: var(--white);
+  @apply bg-white;
 }
 
 .fc-unthemed .fc-divider,
 .fc-unthemed .fc-list-heading td,
 .fc-unthemed .fc-popover .fc-header {
-  background: var(--grey-100);
+  @apply bg-grey-100;
 }
 
 .fc-bg td.fc-today {
-  position: relative;
-  /* background: #fcf8e3 */
-  border: 2px inset var(--ubc-blue);
+  @apply border-[2px] border-ubc-blue border-[inset] relative;
 }
 
 .fc-bg td.fc-today::after {
+  @apply bg-ubc-blue;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -465,11 +462,10 @@ a.fc-more:hover {
   width: 100%;
   height: 2px;
   content: "";
-  background-color: var(--ubc-blue);
 }
 
 .fc-bg .fc-other-month {
-  background-color: var(--grey-100);
+  @apply bg-grey-100;
 }
 
 .fc-unthemed .fc-disabled-day {
@@ -568,15 +564,11 @@ a.fc-more:hover {
 }
 
 .fc-button-primary {
-  color: var(--white);
-  border-color: var(--ubc-blue);
-  background-color: var(--ubc-blue);
+  @apply text-white border-ubc-blue bg-ubc-blue;
 }
 
 .fc-button-primary:hover {
-  color: var(--white);
-  border-color: var(--ubc-blue-sea);
-  background-color: var(--ubc-blue-sea);
+  @apply text-white border-ubc-blue-sea bg-ubc-blue-sea;
 }
 
 .fc-button-primary:focus {
@@ -585,16 +577,12 @@ a.fc-more:hover {
 }
 
 .fc-button-primary:disabled {
-  color: var(--black);
-  border-color: var(--grey-100);
-  background-color: var(--grey-100);
+  @apply text-black border-grey-100 bg-grey-100;
 }
 
 .fc-button-primary:not(:disabled).fc-button-active,
 .fc-button-primary:not(:disabled):active {
-  color: var(--white);
-  border-color: var(--ubc-blue-cobalt);
-  background-color: var(--ubc-blue-cobalt);
+  @apply text-white border-ubc-blue-cobalt bg-ubc-blue-cobalt;
 }
 
 .fc-button-primary:not(:disabled).fc-button-active:focus,
@@ -647,7 +635,7 @@ a.fc-more:hover {
 }
 
 .fc-unthemed .fc-list-item:hover td {
-  background-color: var(--grey-100);
+  @apply bg-grey-100;
 }
 
 .fc-toolbar {
@@ -739,8 +727,8 @@ a.fc-more:hover {
   }
 
   .fc-event {
-    color: var(--black) !important;
-    background: var(--white) !important;
+    color: #000 !important;
+    background: #fff !important;
     page-break-inside: avoid;
   }
 
@@ -750,8 +738,7 @@ a.fc-more:hover {
   .fc th,
   .fc thead,
   .fc-row {
-    border-color:var(--grey-300) !important;
-    background: var(--white) !important;
+    @apply !border-grey-300 !bg-white;
   }
 
   .fc tbody .fc-row {

@@ -4,43 +4,29 @@
 * This file contains styles for the drupal content moderation form
 */
 .entity-moderation-form {
-  position: relative;
-  display: block;
-  padding: 0 0.5rem;
-  background-color: rgba(var(--white), 0.5);
-  font-size: 75%;
+  @apply relative block px-2 py-0 bg-white/50 text-sm;
 }
 
 .entity-moderation-form__item {
-  display: block;
-  margin: 0 0.5rem;
+  @apply block my-0 mx-2;
 }
 
 .entity-moderation-form__item:last-child {
-  margin-right: 0.5rem;
+  @apply mr-2;
 }
 
 .entity-moderation-form__item .button {
-  display: block;
-  width: 100%;
-  margin-bottom: 1em;
-  padding: 0.5rem 1.25rem;
-  text-align: center;
-  color: var(--white);
-  border: 1px solid var(--ubc-blue);
-  background-color: var(--ubc-blue);
+  @apply text-white border border-ubc-blue bg-ubc-blue w-full block mb-[1em] px-5 py-2 text-center;
 }
 
 .entity-moderation-form__item .button:hover {
-  text-decoration: none;
-  border: 1px solid var(--ubc-blue-sea);
-  background-color: var(--ubc-blue-sea);
+  @apply no-underline border-ubc-blue-sea bg-ubc-blue-sea;
 }
 
 @media (min-width: 640px) {
 
   .entity-moderation-form {
-    display: flex;
+    @apply flex;
   }
 
   .entity-moderation-form__item {
@@ -49,6 +35,6 @@
 
   .entity-moderation-form__item:first-child,
   .entity-moderation-form__item:last-child {
-    flex: none;
+    @apply flex-none;
   }
 }

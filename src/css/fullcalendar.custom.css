@@ -8,5 +8,5 @@
 @import "lib/fullcalendar/fc.list.css";
 
 .fc-body .fc-scroller {
-  height: auto !important;
+  @apply !h-auto
 }

@@ -132,7 +132,6 @@ img.align-right {
   filter: grayscale(100%);
 }
 
-
 /* add play button on top of image thumbnail */
 .media--type-remote-video {
   position: relative;

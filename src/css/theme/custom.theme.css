@@ -30,7 +30,7 @@
 .widget-color-box.bg-ubc-blue,
 .widget-color-box.bg-ubc-blue-sea,
 .widget-color-box.bg-ubc-blue-cobalt {
-  color: var(--white);
+  color: #fff;
 }
 
 .bg-dark a:not(.unit-button),
@@ -40,7 +40,7 @@
 .widget-color-box.bg-ubc-blue a:not(.unit-button),
 .widget-color-box.bg-ubc-blue-sea a:not(.unit-button),
 .widget-color-box.bg-ubc-blue-cobalt a:not(.unit-button)  {
-  color: var(--ubc-blue-polar);
+  @apply text-ubc-blue-polar;
 }
 
 .bg-dark a:not(.unit-button):hover,
@@ -50,7 +50,7 @@
 .widget-color-box.bg-ubc-blue a:not(.unit-button):hover,
 .widget-color-box.bg-ubc-blue-sea a:not(.unit-button):hover,
 .widget-color-box.bg-ubc-blue-cobalt a:not(.unit-button):hover {
-  color: var(--ubc-blue-cornflower);
+  @apply text-ubc-blue-cornflower;
 }
 
 .bg-dark .unit-button--light,
@@ -60,7 +60,7 @@
 .widget-color-box.bg-ubc-blue .unit-button--light,
 .widget-color-box.bg-ubc-blue-sea .unit-button--light,
 .widget-color-box.bg-ubc-blue-cobalt .unit-button--light {
-  color: var(--ubc-blue-cobalt);
+  @apply text-ubc-blue-cobalt;
 }
 
 .bg-dark .unit-button--dark,
@@ -70,7 +70,7 @@
 .widget-color-box.bg-ubc-blue .unit-button--dark,
 .widget-color-box.bg-ubc-blue-sea .unit-button--dark,
 .widget-color-box.bg-ubc-blue-cobalt .unit-button--dark {
-  color: var(--ubc-blue-polar);
+  @apply text-ubc-blue-polar;
 }
 
 .bg-dark .unit-button--simple,
@@ -99,7 +99,7 @@
 .widget-color-box.bg-ubc-blue-sea .unit-button--simple:hover,
 .widget-color-box.bg-ubc-blue-cobalt .unit-button--simple,
 .widget-color-box.bg-ubc-blue-cobalt .unit-button--simple:hover {
-  color: var(--white);
+  color: #fff;
 }
 
 .bg-dark .unit-button--simple::after,

@@ -101,7 +101,7 @@
   transition: opacity 0.15s ease;
   text-align: center;
   opacity: 0.5;
-  color: var(--white);
+  color: #fff;
   border: 0;
   background: 0 0;
 }
@@ -120,7 +120,7 @@
 .carousel-control-prev:hover {
   text-decoration: none;
   opacity: 0.9;
-  color: var(--white);
+  color: #fff;
   outline: 0;
 }
 
@@ -180,7 +180,7 @@
   border: 0;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
-  background-color: var(--white);
+  background-color: #fff;
   background-clip: padding-box;
 }
 
@@ -202,5 +202,5 @@
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
   text-align: center;
-  color: var(--white);
+  color: #fff;
 }

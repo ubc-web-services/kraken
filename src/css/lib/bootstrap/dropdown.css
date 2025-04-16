@@ -22,9 +22,9 @@
   padding: 0;
   list-style: none;
   text-align: left;
-  border: 1px solid rgba(var(--black), 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
-  background-color: var(--white);
+  background-color: #fff;
   background-clip: padding-box;
 }
 
@@ -142,7 +142,7 @@
   overflow: hidden;
   height: 0;
   margin: 0;
-  border-top: 1px solid rgba(var(--black), 0.15);
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .dropdown-item {
@@ -159,14 +159,12 @@
 
 .dropdown-item:focus,
 .dropdown-item:hover {
-  background-color: var(--ubc-blue-frost);
+  @apply bg-ubc-blue-frost;
 }
 
 .dropdown-item.active,
 .dropdown-item:active {
-  text-decoration: none;
-  color: var(--white);
-  background-color: var(--ubc-blue-sky);
+  @apply bg-ubc-blue-sky no-underline text-white;
 }
 
 .dropdown-item.disabled,
@@ -181,11 +179,11 @@
 }
 
 .dropdown-header {
+  @apply text-grey-500;
   display: block;
   margin-bottom: 0;
   padding: 0.5rem 1rem;
   white-space: nowrap;
-  color: var(--grey-500);
   font-size: 0.875rem;
 }
 

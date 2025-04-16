@@ -3,13 +3,12 @@
  * Styles for the default drupal tabs
  */
 .tabs {
-  margin: 1rem 0 0.5rem 0;
-  font-size: 1rem;
+  @apply mx-0 mt-4 mb-2 text-base;
 }
 
 .tabs--primary,
 .tabs--secondary {
-  width: 99%;
+  @apply w-[99%];
 }
 
 .tabs--primary {

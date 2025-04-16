@@ -60,10 +60,9 @@
 }
 
 .fc-dayGrid-view .fc-day-top .fc-week-number {
+  @apply text-grey-500 bg-grey-50;
   min-width: 1.5em;
   text-align: center;
-  color: var(--grey-500);
-  background-color: var(--grey-50);
 }
 
 .fc-dayGrid-view td.fc-week-number {
@@ -76,8 +75,8 @@
 }
 
 .fc-day-header {
+  @apply text-black;
   text-transform: uppercase;
-  color: var(--black);
   font-weight: normal;
 }
 

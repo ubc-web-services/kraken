@@ -130,8 +130,8 @@
 }
 
 .fc-time-grid-event-inset {
-  -webkit-box-shadow: 0 0 0 1px var(--white);
-  box-shadow: 0 0 0 1px var(--white);
+  -webkit-box-shadow: 0 0 0 1px #fff;
+  box-shadow: 0 0 0 1px #fff;
 }
 
 .fc-time-grid-event.fc-not-start {
@@ -217,7 +217,7 @@
   border-style: solid;
   border-color: inherit;
   border-radius: 5px;
-  background: var(--white);
+  background: #fff;
 }
 
 .fc-time-grid .fc-now-indicator-line {
