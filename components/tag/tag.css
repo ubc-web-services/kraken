@@ -5,7 +5,7 @@
     padding: .25em .5em;
     border-radius: .25em;
     font-size: .75em;
-    background-color: var(--color-primary);
+    background-color: rgba(var(--color-primary), 1);
     color: white;
   }
 
