@@ -230,7 +230,7 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
     '#type' => 'color',
     '#title' => t('Unit Bar Colour'),
     '#description' => t(
-        'See design specifications for <a href=":url" title="Learn more about the Unit Name background colours" target="_blank">Unit Name background colours</a>. This colour will be set as a variable that can be used in your css as <code>--color-primary</code>.', [
+        'See design specifications for <a href=":url" title="Learn more about the Unit Name background colours" target="_blank">Unit Name background colours</a>.', [
         ':url' => 'https://clf.ubc.ca/parts-of-the-clf/#unit-colors',
         ]
     ),
@@ -244,7 +244,7 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
     '#type' => 'color',
     '#title' => t('Unit Primary Colour'),
     '#description' => t(
-        'This colour will be set as a variable that can be used in your css as <code>--color-primary</code>. It is often also used as the Unit Bar Colour above.', [
+        'This colour will be set as a variable that can be used in your css as <code>rgba(var(--color-primary), 1)</code>. It is often also used as the Unit Bar Colour above.', [
         ':url' => 'https://clf.ubc.ca/parts-of-the-clf/#unit-colors',
         ]
     ),
@@ -258,7 +258,7 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
     '#type' => 'color',
     '#title' => t('Unit Secondary Colour'),
     '#description' => t(
-        'This colour will be set as a variable that can be used in your css as <code>--color-secondary</code>.)', [
+        'This colour will be set as a variable that can be used in your css as <code>rgba(var(--color-secondary), 1)</code>.)', [
         ':url' => 'https://clf.ubc.ca/parts-of-the-clf/#unit-colors',
         ]
     ),
@@ -272,7 +272,7 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
     '#type' => 'color',
     '#title' => t('Unit Tertiary Colour'),
     '#description' => t(
-        'This colour will be set as a variable that can be used in your css as <code>--color-tertiary</code>.', [
+        'This colour will be set as a variable that can be used in your css as <code>rgba(var(--color-tertiary), 1)</code>.', [
         ':url' => 'https://clf.ubc.ca/parts-of-the-clf/#unit-colors',
         ]
     ),
@@ -286,7 +286,7 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
     '#type' => 'color',
     '#title' => t('Unit Accent Colour'),
     '#description' => t(
-        'This colour will be set as a variable that can be used in your css as <code>--color-accent</code>.=', [
+        'This colour will be set as a variable that can be used in your css as <code>rgba(var(--color-accent), 1)</code>.=', [
         ':url' => 'https://clf.ubc.ca/parts-of-the-clf/#unit-colors',
         ]
     ),
