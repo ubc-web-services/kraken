@@ -238,9 +238,7 @@ function kraken_preprocess_html(&$variables)
   }
 
   /* add a body class if we are using the bootstrap js framework */
-  if (theme_get_setting('clf_js') == 'js-bootstrap') {
-    $variables['attributes']['class'][] = 'js-bootstrap';
-  }
+  $variables['attributes']['class'][] = 'js-bootstrap';
 
   // Add inline banner colour.
   $unitbar_color = theme_get_setting('clf_theme_unitbar_colour');

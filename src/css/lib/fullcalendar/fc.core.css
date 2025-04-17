@@ -4,43 +4,45 @@
 .fc-popover .fc-header .fc-close,
 a.fc-more,
 a[data-goto] {
-  @apply cursor-pointer;
+  cursor: pointer;
 }
 
 .fc-bg,
 .fc-row .fc-bgevent-skeleton,
 .fc-row .fc-highlight-skeleton {
-  @apply bottom-0;
+  bottom: 0;
 }
 
 .fc {
-  @apply text-left;
+  text-align: left;
   direction: ltr;
 }
 
 .fc-rtl {
-  @apply text-right;
+  text-align: right;
 }
 
 body .fc {
-  @apply text-[1em];
+  font-size: 1em;
 }
 
 .fc-highlight {
-  @apply opacity-30 bg-[#bce8f1];
+  opacity: 0.3;
+  background: #bce8f1;
 }
 
 .fc-bgevent {
-  @apply opacity-30 bg-[#8fdf82];
+  opacity: 0.3;
+  background: #8fdf82;
 }
 
 .fc-nonbusiness {
-  @apply bg-[#d7d7d7];
-  background: #d7d7d7;
+  background: rgba(var(--grey-300), 1);
 }
 
 .fc-popover {
-  @apply absolute shadow-sm;
+  position: absolute;
+  box-shadow: 0 2px 6px rgba(var(--black), 0.15);
 }
 
 .fc-popover .fc-header {
@@ -134,6 +136,7 @@ a[data-goto]:hover {
   border-right: 0 hidden transparent;
   border-bottom: 0 hidden transparent;
   border-left: 0 hidden transparent;
+  margin-top: 0;
 }
 
 .fc-row:first-child table {
@@ -201,7 +204,7 @@ a[data-goto]:hover {
 .fc-event {
   position: relative;
   display: block;
-  border: 1px solid #bbb;
+  border: 1px solid rgba(var(--grey-400), 1);
   border-radius: 3px;
   font-size: 0.85em;
   line-height: 1.4;
@@ -215,7 +218,7 @@ a[data-goto]:hover {
 .fc-event,
 .fc-event:hover {
   text-decoration: none;
-  color: #fff;
+  color: rgba(var(--white), 1);
 }
 
 .fc-not-allowed,
@@ -253,7 +256,7 @@ a[data-goto]:hover {
 
 .fc-event.fc-selected {
   z-index: 9999 !important;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 5px rgba(var(--black), 0.2);
 }
 
 .fc-event.fc-selected::after {
@@ -265,11 +268,11 @@ a[data-goto]:hover {
   left: -1px;
   content: "";
   opacity: 0.25;
-  background: #000;
+  background: rgba(var(--black), 1);
 }
 
 .fc-event.fc-dragging.fc-selected {
-  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 7px rgba(var(--black), 0.3);
 }
 
 .fc-event.fc-dragging:not(.fc-selected) {
@@ -331,7 +334,7 @@ a[data-goto]:hover {
   border-style: solid;
   border-color: inherit;
   border-radius: 4px;
-  background: #fff;
+  background: rgba(var(--white), 1);
 }
 
 .fc-ltr .fc-h-event.fc-selected .fc-start-resizer,
@@ -436,25 +439,25 @@ a.fc-more:hover {
 .fc-unthemed td,
 .fc-unthemed th,
 .fc-unthemed thead {
-  @apply border-grey-300;
+  border-color: rgba(var(--grey-300), 1);
 }
 
 .fc-unthemed .fc-popover {
-  @apply bg-white;
+  background-color: rgba(var(--white), 1);
 }
 
 .fc-unthemed .fc-divider,
 .fc-unthemed .fc-list-heading td,
 .fc-unthemed .fc-popover .fc-header {
-  @apply bg-grey-100;
+  background: rgba(var(--grey-200), 1);
 }
 
 .fc-bg td.fc-today {
-  @apply border-[2px] border-ubc-blue border-[inset] relative;
+  position: relative;
+  border: 2px inset rgba(var(--ubc-blue), 1);
 }
 
 .fc-bg td.fc-today::after {
-  @apply bg-ubc-blue;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -462,10 +465,11 @@ a.fc-more:hover {
   width: 100%;
   height: 2px;
   content: "";
+  background-color: rgba(var(--ubc-blue), 1);
 }
 
 .fc-bg .fc-other-month {
-  @apply bg-grey-100;
+  background-color: rgba(var(--grey-100), 1);
 }
 
 .fc-unthemed .fc-disabled-day {
@@ -539,7 +543,7 @@ a.fc-more:hover {
   -ms-user-select: none;
   user-select: none;
   vertical-align: middle;
-  color: #212529;
+  color: rgba(var(--grey-900), 1);
   border: 1px solid transparent;
   border-radius: 0.25em;
   background-color: transparent;
@@ -564,11 +568,15 @@ a.fc-more:hover {
 }
 
 .fc-button-primary {
-  @apply text-white border-ubc-blue bg-ubc-blue;
+  color: white;
+  border-color: rgba(var(--ubc-blue), 1);
+  background-color: rgba(var(--ubc-blue), 1);
 }
 
 .fc-button-primary:hover {
-  @apply text-white border-ubc-blue-sea bg-ubc-blue-sea;
+  color: white;
+  border-color: rgba(var(--ubc-blue-sea), 1);
+  background-color: rgba(var(--ubc-blue-sea), 1);
 }
 
 .fc-button-primary:focus {
@@ -577,12 +585,16 @@ a.fc-more:hover {
 }
 
 .fc-button-primary:disabled {
-  @apply text-black border-grey-100 bg-grey-100;
+  color: black;
+  border-color: rgba(var(--grey-100), 1);
+  background-color: rgba(var(--grey-100), 1);
 }
 
 .fc-button-primary:not(:disabled).fc-button-active,
 .fc-button-primary:not(:disabled):active {
-  @apply text-white border-ubc-blue-cobalt bg-ubc-blue-cobalt;
+  color: white;
+  border-color: rgba(var(--ubc-blue-cobalt), 1);
+  background-color: rgba(var(--ubc-blue-cobalt), 1);
 }
 
 .fc-button-primary:not(:disabled).fc-button-active:focus,
@@ -635,7 +647,7 @@ a.fc-more:hover {
 }
 
 .fc-unthemed .fc-list-item:hover td {
-  @apply bg-grey-100;
+  background-color: rgba(var(--grey-100), 1);
 }
 
 .fc-toolbar {
@@ -727,8 +739,8 @@ a.fc-more:hover {
   }
 
   .fc-event {
-    color: #000 !important;
-    background: #fff !important;
+    color: black !important;
+    background: white !important;
     page-break-inside: avoid;
   }
 
@@ -738,7 +750,9 @@ a.fc-more:hover {
   .fc th,
   .fc thead,
   .fc-row {
-    @apply !border-grey-300 !bg-white;
+
+    border-color: rgba(var(--grey-300), 1) !important;
+    background: white !important;
   }
 
   .fc tbody .fc-row {

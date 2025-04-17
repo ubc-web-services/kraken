@@ -96,5 +96,5 @@
 }
 
 .fc-unthemed .fc-list-empty {
-  @apply bg-grey-300;
+  background-color: rgba(var(--grey-200), 1);
 }
