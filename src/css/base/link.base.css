@@ -1,4 +1,4 @@
-/** @define links */
+/** @define link.base */
 
 /*
 * This file contains basic link styles.
@@ -10,15 +10,15 @@ button {
 
 a {
   text-decoration: underline;
-  color: $default-link-color;
+  color: var(--default-link-color);
 }
 
 a:hover {
-  color: $default-link-color-hover;
+  color: var(--default-link-color-hover);
 }
 
 a:active {
-  color: $default-link-color-active;
+  color: var(--default-link-color-active);
 }
 
 /* accessibly hidden links and content */

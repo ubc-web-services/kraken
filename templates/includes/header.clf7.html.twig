@@ -13,7 +13,7 @@
             {% else %}
             <input id="q" type="text" name="q" placeholder="Search this website" class="inline-block w-auto mr-2" style="width:auto;">
             {% endif %}
-            <input type="hidden" name="label" value="Search" />
+            <input type="hidden" name="label" value="{{ unit_name }}" />
             {% if searchdomain_option %}
             <input type="hidden" name="site" value="{{ searchdomain_option }}" />
             {% else %}

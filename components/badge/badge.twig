@@ -21,7 +21,7 @@
     ]
 %}
 
-<span {{ badgeattributes.addClass(classes) }}>
+<span {{ badgeattributes.addClass(classes) }} data-component-id="kraken:badge">
     <span {{ badgeinnerattributes.addClass(innerclasses) }}>
         {% block content %}{% endblock %}
     </span>

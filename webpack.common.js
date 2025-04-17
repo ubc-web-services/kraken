@@ -10,7 +10,6 @@ module.exports = {
     "kraken.scroll": ["./src/js/kraken.scroll.js"],
     "kraken.sticky": ["./src/js/kraken.sticky.js"],
     "kraken.video": ["./src/js/kraken.video.js"],
-    "tiny.slider": ["./src/js/tiny.slider.js"],
   },
   optimization: {
     splitChunks: {
@@ -24,42 +23,8 @@ module.exports = {
           name: "vendors~bootstrap",
           chunks: "all",
         },
-        vendortinyslider: {
-          test: /[\\/]node_modules[\\/](tiny-slider)[\\/]/,
-          name: "vendors~tiny.slider",
-          chunks: "all",
-        },
       },
     },
     chunkIds: "named",
-  },
-  module: {
-    rules: [
-      {
-        test: /\.m?js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: [
-              [
-                "@babel/preset-env",
-                {
-                  targets: {
-                    esmodules: true,
-                  },
-                },
-              ],
-            ],
-          },
-        },
-      },
-      {
-        test: /\.css$/,
-        use: [
-          "postcss-loader",
-        ],
-      },
-    ],
   },
 };

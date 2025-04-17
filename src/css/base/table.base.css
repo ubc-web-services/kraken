@@ -1,13 +1,12 @@
-/** @define media */
+/** @define table.base */
 
 /*
 * This file contains all styles related to the table element.
 */
 
 table {
-  @apply w-full text-left;
+  @apply w-full text-left mt-leading;
 
-  margin-top: var(--leading);
   border-spacing: 0;
   border-collapse: collapse;
 }
@@ -33,9 +32,8 @@ th {
 }
 
 table caption {
-  @apply text-ubc-blue;
+  @apply px-4 py-0 text-ubc-blue;
 
-  padding: 1rem 0;
   font-size: 120%;
   font-weight: 600;
 }
@@ -48,9 +46,7 @@ table caption {
 }
 
 .table--plain tr {
-  @apply border-b-0;
-
-  background-color: transparent !important;
+  @apply border-b-0 !bg-transparent;
 }
 
 .table--condensed th,
@@ -62,14 +58,15 @@ table caption {
 
 .table--striped tr.odd,
 .table--striped tbody tr:nth-child(2n+1) {
-  background-color: $table-row-striping-color;
+  @apply bg-ubc-blue-cornflower/20;
 }
 
 .table--striped td,
 .table--striped th {
   padding-left: 0.75rem;
+  @apply pl-3;
 }
 
 .table--hover tbody tr:hover {
-  background-color: $table-row-hover-color;
+  @apply bg-ubc-blue-cornflower/30;
 }

@@ -4,16 +4,12 @@
 global:
   css:
     theme:
-      css/drupal.node.preview.min.css: { minified: true }
-      css/drupal.entity.moderation.min.css: { minified: true }
-      css/drupal.media.min.css: { minified: true }
-      css/drupal.views.min.css: { minified: true }
-      css/clf.drupal.min.css: { minified: true }
       css/styles.min.css: { minified: true }
   js:
     js/kraken.dismiss.min.js: { minified: true }
     js/kraken.video.min.js: { minified: true }
     js/kraken.misc.min.js: { minified: true }
+    js/kraken.mediaquery.min.js: { minified: true }
     js/vendors~bootstrap.min.js: { minified: true, preprocess: false }
     js/bootstrap.min.js: { minified: true, preprocess: false }
   dependencies:
@@ -63,7 +59,6 @@ clf-legacy--widen:
   css:
     theme:
       css/clf.7.extended.min.css: { minified: true }
-      css/container.utility.xl.min.css: { minified: true }
   dependencies:
     - kraken/clf-legacy
     - kraken/css-prod
@@ -73,7 +68,6 @@ clf-legacy--widen-more:
   css:
     theme:
       css/clf.7.extended.plus.min.css: { minified: true }
-      css/container.utility.xxl.min.css: { minified: true }
   dependencies:
     - kraken/clf-legacy--widen
 
@@ -235,29 +229,8 @@ sticky-header:
     - core/drupalSettings
 
 ## Integrations
-### Fontawesome
-fontawesome:
-  version: 4.7.0
-  css:
-    base:
-      https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css: { type: external, minified: true }
-
 ### FullCalendar
 fullcalendar:
-  version: 4.4.2
   css:
     theme:
       css/fullcalendar.custom.min.css: { minified: true }
-
-### Tiny Slider
-tiny-slider:
-  version: 2.9.4
-  js:
-    js/vendors~tiny.slider.min.js: { minified: true, preprocess: false }
-    js/tiny.slider.min.js: { minified: true, preprocess: false }
-
-### Twitter
-twitter:
-  js:
-    https://platform.twitter.com/widgets.js: { type: external, minified: true, attributes: { defer: true, async: true, charset: utf-8 } }
-

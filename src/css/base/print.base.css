@@ -1,4 +1,4 @@
-/** @define print */
+/** @define print.base */
 
 /*
 * This file contains basic print styles - from html5 boilerplate
@@ -10,8 +10,8 @@
   *,
   *::before,
   *::after {
-    color: #000 !important;
-    background: #fff !important;
+    color: rgba(var(--black), 1) !important;
+    background: rgba(var(--white), 1) !important;
 
     /* Black prints faster */
     box-shadow: none !important;
@@ -21,7 +21,7 @@
   a,
   a:visited {
     text-decoration: underline !important;
-    color: #000 !important;
+    color: rgba(var(--black), 1) !important;
   }
 
   a[href]::after {
@@ -48,7 +48,7 @@
   pre,
   blockquote {
     page-break-inside: avoid;
-    border: 1px solid #999;
+    border: 1px solid rgba(var(--grey-500), 1);
   }
 
   /*

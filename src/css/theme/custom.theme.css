@@ -1,4 +1,4 @@
-/** @define custom */
+/** @define custom.theme */
 
 /*
 * This file contains all styles related to the custom theme.
@@ -6,13 +6,11 @@
 
 /* Inline list */
 .list-inline {
-  margin-left: 0;
-  list-style: none;
+  @apply ml-0 list-none;
 }
 
 .list-inline > li {
-  display: inline-block;
-  padding-left: 0;
+  @apply inline-block pl-0;
 }
 
 /* paragraphs */
@@ -42,7 +40,7 @@
 .widget-color-box.bg-ubc-blue a:not(.unit-button),
 .widget-color-box.bg-ubc-blue-sea a:not(.unit-button),
 .widget-color-box.bg-ubc-blue-cobalt a:not(.unit-button)  {
-  color: $ubc-blue-polar;
+  @apply text-ubc-blue-polar;
 }
 
 .bg-dark a:not(.unit-button):hover,
@@ -52,7 +50,7 @@
 .widget-color-box.bg-ubc-blue a:not(.unit-button):hover,
 .widget-color-box.bg-ubc-blue-sea a:not(.unit-button):hover,
 .widget-color-box.bg-ubc-blue-cobalt a:not(.unit-button):hover {
-  color: $ubc-blue-cornflower;
+  @apply text-ubc-blue-cornflower;
 }
 
 .bg-dark .unit-button--light,
@@ -62,7 +60,7 @@
 .widget-color-box.bg-ubc-blue .unit-button--light,
 .widget-color-box.bg-ubc-blue-sea .unit-button--light,
 .widget-color-box.bg-ubc-blue-cobalt .unit-button--light {
-  color: $ubc-blue-cobalt;
+  @apply text-ubc-blue-cobalt;
 }
 
 .bg-dark .unit-button--dark,
@@ -72,7 +70,7 @@
 .widget-color-box.bg-ubc-blue .unit-button--dark,
 .widget-color-box.bg-ubc-blue-sea .unit-button--dark,
 .widget-color-box.bg-ubc-blue-cobalt .unit-button--dark {
-  border-color: $ubc-blue-polar;
+  @apply text-ubc-blue-polar;
 }
 
 .bg-dark .unit-button--simple,
@@ -136,7 +134,7 @@
 /* light cards */
 .ubc-card.bg-light,
 .ubc-card.bg-light a:hover:not(.unit-button) {
-  color: $text-color;
+  color: var(--text-color);
 }
 
 .ubc-card.bg-light a:not(.unit-button)  {
@@ -148,11 +146,11 @@
 }
 
 .ubc-card.bg-light .unit-button--light {
-  color: $black;
+  @apply text-black;
 }
 
 .ubc-card.bg-light .unit-button--dark {
-  border-color: $white;
+  @apply border-white;
 }
 
 .ubc-card.bg-light .unit-button--simple {
@@ -172,13 +170,12 @@
 
 /* SVG Icon fix for cards */
 .paragraph--type--icon-card img {
-  margin-right: auto;
-  margin-left: auto;
+  @apply mx-auto;
 }
 
 /* Views exposed forms */
 .views-exposed-form .form-item {
-  margin-top: 0;
+  @apply mt-0;
 }
 
 /* image filters */
@@ -187,13 +184,6 @@
 }
 
 .keyline-bottom::after {
-  position: absolute;
-  display: block;
-  background: #fff;
-  height: 1px;
-  width: 40%;
-  left: 30%;
+  @apply absolute block bg-white h-[1px] w-[40%] left-[30%] bottom-[-5px] opacity-50;
   content: '';
-  bottom: -5px;
-  opacity: .5;
 }

@@ -4,5 +4,5 @@
  */
 
 .node--unpublished {
-  background-color: #fff4f4;
+  background-color: var(--ubc-blue-frost);
 }

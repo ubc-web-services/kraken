@@ -1,9 +1,22 @@
-/** @define drupal.ckeditor.theme.styles */
-
-/*
-* Imports all custom styles and prefixes them with the '.ck-editor' class to prevent style bleed in adnim theme. This is done via the postcss config.
-*/
+/**
+ * @file
+ * Imports all custom styles and prefixes them with the '.ck-editor'
+ * class to prevent style bleed in adnim theme. This is done via the postcss config.
+ */
 @import url("styles.css");
+
+/* add some default variables */
+:root {
+    --color-link: #0055b7;
+    --color-link-hover: #002145;
+    --color-link-active: #002145;
+    --leading: 1.625;
+    --base-font-size: 1rem;
+    --text-font-stack: "Whitney SSm A", "Whitney SSm B", Arial, sans-serif;
+    --alternate-font-stack: var(--text-font-stack);
+    --code-font-stack:  menlo, monaco, consolas, "Liberation Mono", "Courier New", monospace;
+    --base-line-height: var(--leading);
+}
 
 /* alter the behaviour inside the editor becuase of different markup vs front end */
 @media (min-width:768px) {

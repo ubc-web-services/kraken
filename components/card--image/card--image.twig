@@ -66,7 +66,7 @@
     buttonClasses ? buttonClasses: 'unit-button unit-button--transparent group-hover--bg-ubc-blue text-sm',
   ]
 %}
-<article{{ cardimageattributes.addClass(classes) }}>
+<article{{ cardimageattributes.addClass(classes) }} data-component-id="kraken:card--image">
   <figure{{ figure_attributes.addClass(figure_classes) }}>
     {% block media %}{% endblock %}
   </figure>

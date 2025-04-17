@@ -4,109 +4,72 @@
 * This file contains all styles related to the button component.
 */
 
-/* flex button */
 .unit-button {
-  @apply inline-flex text-center no-underline border;
-
-  padding: 0.65em 2em;
-  cursor: pointer;
+  @apply inline-flex text-center no-underline border px-[2em] py-[.65em] cursor-pointer;
+  color: var(--button-text);
+  background-color: var(--button-bg);
+  border-color: var(--button-border);
   transition: all 0.125s ease-out;
-  color: $button-text;
-  border-color: $button-border;
-  background-color: $button-bg;
 }
 
-.unit-button:hover {
-  @apply no-underline shadow-md;
-
-  color: $button-text--hover;
-  border-color: $button-border--hover;
-  background-color: $button-bg--hover;
-}
-
+.unit-button:hover,
 .unit-button:active {
   @apply no-underline shadow-md;
-
-  color: $button-text--active;
-  border-color: $button-border--active;
-  background-color: $button-bg--active;
+  color: var(--button-text--hover);
+  background-color: var(--button-bg--hover);
+  border-color: var(--button-border--hover);
 }
 
 .unit-button--block {
-  display: block;
-  width: 100%;
-  text-align: center;
+  @apply block w-full text-center;
 }
 
-/* button colour variations */
 .unit-button--light {
-  color: $button-light-text;
-  border-color: $button-light-border;
-  background-color: $button-light-bg;
+  color: var(--button-light-text);
+  background-color: var(--button-light-bg);
+  border-color: var(--button-light-border);
 }
 
-.unit-button--light:hover {
-  color: $button-light-text--hover;
-  border-color: $button-light-border--hover;
-  background-color: $button-light-bg--hover;
-}
-
+.unit-button--light:hover,
 .unit-button--light:active {
-  color: $button-light-text--active;
-  border-color: $button-light-border--active;
-  background-color: $button-light-bg--active;
+  color: var(--button-light-text--hover);
+  background-color: var(--button-light-bg--hover);
+  border-color: var(--button-light-border--hover);
 }
 
 .unit-button--dark {
-  color: $button-dark-text;
-  border-color: $button-dark-border;
-  background-color: $button-dark-bg;
+  color: var(--button-dark-text);
+  background-color: var(--button-dark-bg);
+  border-color: var(--button-dark-border);
 }
 
-.unit-button--dark:hover {
-  color: $button-dark-text--hover;
-  border-color: $button-dark-border--hover;
-  background-color: $button-dark-bg--hover;
-}
-
+.unit-button--dark:hover,
 .unit-button--dark:active {
-  color: $button-dark-text--active;
-  border-color: $button-dark-border--active;
-  background-color: $button-dark-bg--active;
+  color: var(--button-dark-text--hover);
+  background-color: var(--button-dark-bg--hover);
+  border-color: var(--button-dark-border--hover);
 }
 
 .unit-button--transparent {
-  color: $button-transparent-text;
-  border-color: $button-transparent-border;
-  background-color: $button-transparent-bg;
+  color: var(--button-transparent-text);
+  background-color: var(--button-transparent-bg);
+  border-color: var(--button-transparent-border);
 }
 
-.unit-button--transparent:hover {
-  color: $button-transparent-text--hover;
-  border-color: $button-transparent-border--hover;
-  background-color: $button-transparent-bg--hover;
-}
-
+.unit-button--transparent:hover,
 .unit-button--transparent:active {
-  color: $button-transparent-text--active;
-  border-color: $button-transparent-border--active;
-  background-color: $button-transparent-bg--active;
+  color: var(--button-transparent-text--hover);
+  background-color: var(--button-transparent-bg--hover);
+  border-color: var(--button-transparent-border--hover);
 }
 
 .unit-button--simple {
-  @apply relative py-0 pl-0 overflow-hidden tracking-wider border-0;
-
-  padding-right: 1.5em;
-  color: $default-link-color;
-  background: transparent;
+  @apply relative py-0 pl-0 overflow-hidden tracking-wider border-0 bg-transparent pr-[1.5em];
+  color: var(--default-link-color);
 }
 
 .unit-button--simple::before {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 1.5em;
-  height: 100%;
+  @apply absolute top-0 right-0 w-[1.5em] h-full;
   content: "";
   transition-timing-function: ease-out;
   transition-duration: 0.2s;
@@ -119,9 +82,8 @@
 }
 
 .unit-button--simple:hover {
-  text-decoration: none;
-  color: $default-link-color-hover;
-  background: transparent;
+  @apply no-underline bg-transparent;
+  color: var(--default-link-color-hover);
   box-shadow: none;
 }
 

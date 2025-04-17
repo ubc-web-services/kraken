@@ -1,0 +1,73 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json"
+name: Featurette
+status: stable
+group: UBC Web Services
+description: Component to render as a Featurette
+props:
+  type: object
+  required:
+    - title
+    - layout
+  properties:
+    title:
+      type: string
+      title: Title
+      description: The title of the featurette
+    link:
+      type: string
+      title: Link
+      description: The destination of the featurette link
+      examples:
+        - https://ubc.ca
+    linkText:
+      type: string
+      title: Link Text
+      description: The text that is linked
+      examples:
+        - 'Read more'
+    target:
+      type: boolean
+      title: Target
+      description: Open the link in a new tab
+    layout:
+      type: string
+      title: Layout
+      description: Choose the featurette layout (text position)
+    meta:
+      type: string
+      title: Metadata
+      description: The metadata for the featurette (date, tag, etc)
+    imageZoom:
+      type: boolean
+      title: Image Zoom
+      description: Add the image zoom effect
+    noShadow:
+      type: boolean
+      title: Remove Featurette Shadow
+      description: Remove the featurette shadow effect
+    buttonClasses:
+      type: string
+      title: Button Classes
+      description: The classes that will be applied to the button
+      examples:
+        - 'unit-button unit-button--transparent'
+    customClasses:
+      title: Custom Classes
+      type: string
+      description: Custom classes to apply to the card
+      examples:
+        - my-class another-class
+slots:
+  media:
+    title: Media Content
+    required: true
+    description: The image / media content
+  content:
+    title: Text Content
+    description: Text region content
+  actions:
+    title: Card Actions
+    description: The card actions
+libraryOverrides:
+  dependencies:
+    - kraken/global

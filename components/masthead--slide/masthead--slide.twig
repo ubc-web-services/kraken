@@ -1,0 +1,66 @@
+{% set mastheadattributes = create_attribute() %}
+{% set mastheadcontainerattributes = create_attribute() %}
+{% set classes = [
+    'masthead',
+    'relative',
+    'img-cover',
+    'relative',
+    'carousel-item',
+    'bg-ubc-blue',
+    'md--h-[400px]',
+    'w-full',
+    gradient ? 'md--has-gradient-left--after': 'gradient--none',
+    backgroundLight ?  'bg-light': 'bg-dark',
+    customClasses,
+    texture,
+  ]
+%}
+{% set containerClasses = [
+    'container',
+    'relative',
+    'z-40',
+    'flex',
+    'flex-col',
+    'justify-end',
+    'px-5',
+    'py-16',
+    'mx-auto',
+    'text-white',
+    'md--px-4',
+    'md--bg-none',
+    'md--absolute',
+    'md--inset-0',
+    'carousel__content',
+    'md--h-[400px]',
+    customContainerClasses,
+  ]
+%}
+
+<div {{ mastheadattributes.addClass(classes) }} data-component-id="kraken:masthead--slide">
+  {% block media %}{% endblock %}
+  <div {{ mastheadcontainerattributes.addClass(containerClasses) }} >
+    {% if pageTitle %}
+      <h1 class="mt-0 text-white heading-responsive">
+      {{ title }}
+      </h1>
+    {% else %}
+      <h2 class="mt-0 text-white heading-responsive">
+        {{ title }}
+      </h2>
+    {% endif %}
+    {% if text %}
+      <p class="text-hug text-measure-lg">{{ text }}</p>
+    {% endif %}
+    {% if link %}
+     <p>
+        {% embed 'ubcit:button' with {
+            link: link,
+            text: linkText,
+            style: linkStyle,
+            target: target,
+        } %}
+        {% endembed %}
+        </p>
+    {% endif %}
+  </div>
+</div>

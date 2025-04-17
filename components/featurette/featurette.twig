@@ -1,0 +1,95 @@
+{% set featuretteimageattributes = create_attribute() %}
+{% set featurette_attributes = create_attribute() %}
+{% set figure_attributes = create_attribute() %}
+{% set title_attributes = create_attribute() %}
+{% set link_attributes = create_attribute() %}
+{% set button_attributes = create_attribute() %}
+{% set layoutclean = layout|clean_class %}
+{% if ((layoutclean is same as 'text-right') or (layoutclean is same as 'place-content-center-text-right') or (layoutclean is same as 'mt-auto-text-right')) %}
+  {% set gradient =  'has-gradient-right--after' %}
+{% endif %}
+{% if ((layoutclean is same as 'text-center') or (layoutclean is same as 'place-content-center-text-center')) %}
+  {% set gradient =  'has-gradient-top--after' %}
+{% endif %}
+{% if ((layoutclean is same as 'text-left') or (layoutclean is same as 'place-content-center-text-left') or (layoutclean is same as 'mt-auto-text-left') or layout == '') %}
+  {% set gradient =  'has-gradient-left--after' %}
+{% endif %}
+{% if ((layoutclean is same as 'mt-auto-text-center')) %}
+  {% set gradient =  'has-gradient-bottom--after' %}
+{% endif %}
+{%
+  set classes = [
+    'featurette',
+    'relative',
+    'bg-dark',
+    'hover--cursor-pointer',
+    noShadow ? '': 'shadow hover--shadow-lg',
+    'group',
+    'min-h-[250px]',
+    customClasses,
+  ]
+%}
+{%
+  set figure_classes = [
+    'img-cover',
+    'featurette__media',
+    'my-0',
+    'object-center',
+    gradient,
+    'absolute',
+    'inset-0',
+  ]
+%}
+{%
+  set content_classes = [
+    layout ? layout: 'mt-auto text-center',
+    'p-12',
+    'featurette__content',
+    'first-child--mt-0',
+    'w-full',
+    'z-20',
+    'md--p-12',
+    'relative',
+    'flex',
+    'flex-col',
+  ]
+%}
+{%
+  set title_classes = [
+    'mt-0',
+  ]
+%}
+{%
+  set link_classes = [
+    'no-underline',
+    'hover--no-underline',
+    'link-expand',
+  ]
+%}
+{%
+  set button_classes = [
+    buttonClasses ? buttonClasses: 'unit-button unit-button--transparent group-hover--bg-ubc-blue text-sm',
+  ]
+%}
+<article{{ featuretteimageattributes.addClass(classes) }} data-component-id="kraken:featurette">
+  <figure{{ figure_attributes.addClass(figure_classes) }}>
+    {% block media %}{% endblock %}
+  </figure>
+  <div{{ featurette_attributes.addClass(content_classes) }}>
+    {% if meta %}
+      <div class="text-sm">{{ meta }}</div>
+    {% endif %}
+    {% if link %}
+      <h3{{ title_attributes.addClass(title_classes) }}>
+        <a{{ link_attributes.addClass(link_classes) }} href="{{ link }}" {% if target %}
+      target="_blank"{% endif %} rel="bookmark">{{ title }}</a>
+      </h3>
+    {% else %}
+      <h3{{ title_attributes.addClass(title_classes) }}>{{ title }}</h3>
+    {% endif %}
+      {% block content %}{% endblock %}
+    <div class="w-full mt-auto ubc-card__actions">
+      {% block actions %}{% endblock %}
+    </div>
+  </div>
+</article>
