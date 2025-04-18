@@ -243,10 +243,6 @@ function kraken_preprocess_html(&$variables)
 
   // Add inline banner colour.
   $unitbar_color = theme_get_setting('clf_theme_unitbar_colour');
-  $primary_color = theme_get_setting('clf_theme_unit_colour');
-  $secondary_color = theme_get_setting('clf_theme_secondary_colour');
-  $tertiary_color = theme_get_setting('clf_theme_tertiary_colour');
-  $accent_color = theme_get_setting('clf_theme_accent_colour');
   $link_color = theme_get_setting('clf_theme_link_colour');
   $link_hover_color = theme_get_setting('clf_theme_link_hover_colour');
   $link_active_color = theme_get_setting('clf_theme_link_active_colour');
@@ -263,29 +259,29 @@ function kraken_preprocess_html(&$variables)
     $sansseriffonts = '"Whitney SSm A", "Whitney SSm B", Arial, sans-serif';
   }
 
-  // Convert hex to RGB array
-  if ($primary_color && $rgb_array = Color::hexToRgb($primary_color)) {
-    // Convert array to string. ie: "255, 102, 0".
-    $primary_color = implode(', ', $rgb_array);
-  }
-  if ($secondary_color && $rgb_array = Color::hexToRgb($secondary_color)) {
-    $secondary_color = implode(', ', $rgb_array);
-  }
-  if ($tertiary_color && $rgb_array = Color::hexToRgb($tertiary_color)) {
-    $tertiary_color = implode(', ', $rgb_array);
-  }
-  if ($accent_color && $rgb_array = Color::hexToRgb($accent_color)) {
-    $accent_color = implode(', ', $rgb_array);
+  /* map theme values to variable names */
+  $color_keys = [
+    'clf_theme_unit_colour' => 'color-primary',
+    'clf_theme_secondary_colour' => 'color-secondary',
+    'clf_theme_tertiary_colour' => 'color-tertiary',
+    'clf_theme_accent_colour' => 'color-accent',
+  ];
+  $css_variables = [];
+  /* get settings and convert to rgb */
+  foreach ($color_keys as $theme_key => $variable_name) {
+    $hex = theme_get_setting($theme_key);
+    if ($hex && $rgb = Color::hexToRgb($hex)) {
+      $rgb_string = implode(', ', $rgb);
+      $variables[$variable_name] = $rgb_string;
+      $css_variables[] = "--$variable_name: rgba($rgb_string, 1) !important;";
+    }
   }
 
   $variables['page']['#attached']['html_head'][] = [
     [
       '#tag' => 'style',
       '#value' => ':root {
-        --color-primary: rgba(' . $primary_color . ', 1) !important;
-        --color-secondary: rgba(' . $secondary_color . ', 1) !important;
-        --color-tertiary: rgba(' . $tertiary_color . ', 1) !important;
-        --color-accent: rgba(' . $accent_color . ', 1) !important;
+        ' . implode(' ', $css_variables) . '
         --color-link: ' . $link_color . ';
         --color-link-hover: ' . $link_hover_color . ';
         --color-link-active: ' . $link_active_color . ';
