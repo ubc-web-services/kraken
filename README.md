@@ -74,7 +74,7 @@ Once installed and set to default, you can adjust the following theme settings:
 
 - switch between v.7 and v.8 of the CLF (note that v.7 of the CLF is not from the CDN and contains a subset of the full CLF).
 - adjust the CSS and Javascript you load between development and production versions.
-- set the theme colour options and have those same colours available using the `rgba(var(--color-primary), 1)`, `--color-secondary` and `--color-accent` CSS variables. These are also mapped to Tailwind classes.
+- set the theme colour options and have those same colours available using the `var(--color-primary)`, `--color-secondary` and `--color-accent` CSS variables. These are also mapped to Tailwind classes.
 - change the base font size and line heights to adjust the overall relative sizing and vertical spacing of the type.
 - add a CWL login option to the login page.
 - optionally load the CLF fonts from the Google Fonts service.

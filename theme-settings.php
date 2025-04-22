@@ -232,7 +232,7 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
       '#type' => 'color',
       '#title' => t('Unit Primary Colour (deprecated)'),
       '#description' => t(
-        'This colour will be set as a variable that can be used in your css as <code>rgba(var(--color-primary), 1)</code>.)'
+        'This colour will be set as a variable that can be used in your css as <code>var(--color-primary)</code>.)'
       ),
       '#size' => 7,
       '#maxlength' => 7,
