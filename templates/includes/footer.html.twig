@@ -22,7 +22,7 @@
         {% endif %}
         {% if phone_option %}<br /><a href="tel:{{ phone_option|replace({' ':'-'}) }}">{{ phone_option }}</a>{% endif %}
         {% if fax_option %}<br />{{ fax_option }}{% endif %}
-        {% if email_option %}<br />E-mail <a href="mailto:{{ email_option }}" title="Email {{ unit_name }}" class="text-ubc-blue-cobalt hover--text-ubc-blue-neptune">{{ email_option }}</a> {% endif %}
+        {% if email_option %}<br />E-mail <a href="mailto:{{ email_option }}" title="Email {{ unit_name }}" >{{ email_option }}</a> {% endif %}
         {% if website_option %}<br />Website {{ website_option }}{% endif %}
       </p>
       </div>
