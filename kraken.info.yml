@@ -11,8 +11,8 @@ dependencies:
   - ubc-web-services:ubc_ckeditor_widgets
 
 libraries:
-  - kraken/messages
   - core/normalize
+  - kraken/messages
   - kraken/global
 
 libraries-extend:

@@ -4,6 +4,7 @@
 global:
   css:
     theme:
+      css/bootstrap.5.min.css: { minified: true }
       css/styles.min.css: { minified: true }
   js:
     js/kraken.dismiss.min.js: { minified: true }
