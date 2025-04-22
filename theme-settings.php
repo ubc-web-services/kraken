@@ -214,18 +214,6 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
     ],
     ];
 
-    $form['vpr']['unit_signature'] = [
-    '#type' => 'managed_file',
-    '#required' => false,
-    '#title' => t('<strong>Unit signature (SVG)</strong><br>* ensure that svg is trimmed to artwork bounds.'),
-    '#description' => t('This option allows an SVG of signature to be uploaded, which is then displayed in the unit footer.'),
-    '#default_value' => theme_get_setting('unit_signature'),
-    '#upload_location' => 'public://unit-signature/',
-    '#upload_validators' => array(
-      'file_validate_extensions' => array('svg'),
-    ),
-    ];
-
     $form['unit']['clf_theme_unitbar_colour'] = [
     '#type' => 'color',
     '#title' => t('Unit Bar Colour'),
@@ -244,7 +232,7 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
       '#type' => 'color',
       '#title' => t('Unit Primary Colour (deprecated)'),
       '#description' => t(
-        'This colour will be set as a variable that can be used in your css as <code>rgba(var(--color-primary), 1)</code>.)'
+        'This colour will be set as a variable that can be used in your css as <code>var(--color-primary)</code>.)'
       ),
       '#size' => 7,
       '#maxlength' => 7,
@@ -859,6 +847,18 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
     ),
     '#default_value' => theme_get_setting('clf_fontawesome'),
     ];
+
+    $form['extra']['unit_signature'] = [
+      '#type' => 'managed_file',
+      '#required' => false,
+      '#title' => t('<strong>Unit signature (SVG)</strong><br>* ensure that svg is trimmed to artwork bounds.'),
+      '#description' => t('This option allows an SVG of signature to be uploaded, which is then displayed in the unit footer.'),
+      '#default_value' => theme_get_setting('unit_signature'),
+      '#upload_location' => 'public://unit-signature/',
+      '#upload_validators' => array(
+        'file_validate_extensions' => array('svg'),
+      ),
+      ];
 
     if ($file_id = $form_state->getValue(['unit_signature', '0'])) {
         $file = \Drupal::entityTypeManager()->getStorage('file')->load($file_id);
