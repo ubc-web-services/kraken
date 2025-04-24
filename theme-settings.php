@@ -310,7 +310,7 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
     '#type' => 'color',
     '#title' => t('Unit Link Colour'),
     '#description' => t(
-        'This colour will be set as a variable that can be used in your css as <code>--color-link</code>.',
+        'This colour will be set as a variable that can be used in your css as <code>--default-color-link</code>.',
         [
         ':url' => 'https://clf.ubc.ca/parts-of-the-clf/#unit-colors',
         ]
@@ -325,7 +325,7 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
     '#type' => 'color',
     '#title' => t('Unit Link Hover Colour'),
     '#description' => t(
-        'This colour will be set as a variable that can be used in your css as <code>--color-link-hover</code>.',
+        'This colour will be set as a variable that can be used in your css as <code>--default-color-link-hover</code>.',
         [
         ':url' => 'https://clf.ubc.ca/parts-of-the-clf/#unit-colors',
         ]
@@ -340,7 +340,7 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
     '#type' => 'color',
     '#title' => t('Unit Link Active Colour'),
     '#description' => t(
-        'This colour will be set as a variable that can be used in your css as <code>--color-link-active</code>.',
+        'This colour will be set as a variable that can be used in your css as <code>--default-color-link-active</code>.',
         [
         ':url' => 'https://clf.ubc.ca/parts-of-the-clf/#unit-colors',
         ]

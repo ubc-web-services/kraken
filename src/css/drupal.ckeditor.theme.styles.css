@@ -7,9 +7,6 @@
 
 /* add some default variables */
 :root {
-    --color-link: #0055b7;
-    --color-link-hover: #002145;
-    --color-link-active: #002145;
     --leading: 1.625;
     --base-font-size: 1rem;
     --text-font-stack: "Whitney SSm A", "Whitney SSm B", Arial, sans-serif;

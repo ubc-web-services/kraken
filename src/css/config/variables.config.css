@@ -40,9 +40,9 @@
     --text-color: rgba(var(--grey-900), 1);
 
     --default-text-color: var(--text-color);
-    --default-link-color: rgba(var(--ubc-blue-cobalt), 1);
-    --default-link-color-hover: rgba(var(--ubc-blue), 1);
-    --default-link-color-active: rgba(var(--ubc-blue), 1);
+    --default-color-link: rgba(var(--ubc-blue-cobalt), 1);
+    --default-color-link-hover: rgba(var(--ubc-blue), 1);
+    --default-color-link-active: rgba(var(--ubc-blue), 1);
 
     --title-weight: 600;
 
