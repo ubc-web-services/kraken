@@ -138,11 +138,11 @@
 }
 
 .ubc-card.bg-light a:not(.unit-button)  {
-  color: var(--color-link);
+  color: var(--default-color-link);
 }
 
 .ubc-card.bg-light a:not(.unit-button):hover {
-  color: var(--color-link-hover);
+  color: var(--default-color-link-hover);
 }
 
 .ubc-card.bg-light .unit-button--light {
@@ -154,12 +154,12 @@
 }
 
 .ubc-card.bg-light .unit-button--simple {
-  color: var(--color-link);
+  color: var(--default-color-link);
 }
 
 .ubc-card.bg-light .unit-button--simple:hover,
 .ubc-card.bg-light.group:hover .unit-button--simple {
-  color: var(--color-link-hover);
+  color: var(--default-color-link-hover);
 }
 
 .ubc-card.bg-light .unit-button--simple::after,
