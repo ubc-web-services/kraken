@@ -10,15 +10,15 @@ button {
 
 a {
   text-decoration: underline;
-  color: var(--default-link-color);
+  color: var(--color-link);
 }
 
 a:hover {
-  color: var(--default-link-color-hover);
+  color: var(--color-link-hover);
 }
 
 a:active {
-  color: var(--default-link-color-active);
+  color: var(--color-link-active);
 }
 
 /* accessibly hidden links and content */
