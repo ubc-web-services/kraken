@@ -47,6 +47,10 @@ props:
       type: boolean
       title: Figure Styles
       description: Add styles to the figure element
+    titleStyles:
+      type: boolean
+      title: Title Styles
+      description: Add styles to the title element
     noShadow:
       type: boolean
       title: Remove Card Shadow
