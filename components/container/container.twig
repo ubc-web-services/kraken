@@ -1,0 +1,35 @@
+{% set containerattributes = create_attribute() %}
+{% set headerattributes = create_attribute() %}
+{% set titleattributes = create_attribute() %}
+{% set contentattributes = create_attribute() %}
+{% set innercontentattributes = create_attribute() %}
+{% set classes = [
+    backgroundColor ? backgroundColor: 'bg-white',
+    verticalSpacing ? verticalSpacing: 'py-0 my-0',
+    customClasses,
+] %}
+{% set containerClasses = [
+    width ? width: 'no-container',
+] %}
+{% set headerClasses = [
+    customHeaderClasses,
+] %}
+{% set titleClasses = [
+    customTitleClasses,
+    titleRight ? 'text-right',
+] %}
+{% set innerClasses = [
+    customInnerClasses,
+] %}
+
+
+<section {% if id %}id="{{ id }}"{% endif %}{{ containerattributes.addClass(classes) }} data-component-id="kraken:container">
+  {% if title %}
+  <header{{ headerattributes.addClass(containerClasses, headerClasses) }}>
+    <h2{{ titleattributes.addClass(titleClasses) }}>{{ title }}</h2>
+  </header>
+  {% endif %}
+  <div{{ contentattributes.addClass(containerClasses, innerClasses) }}>
+    {% block content %}{% endblock %}
+  </div>
+</section>

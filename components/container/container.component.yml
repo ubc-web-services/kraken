@@ -1,0 +1,100 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Container
+status: stable
+group: UBC Web Services
+description: Component to render as a container
+props:
+  type: object
+  properties:
+    width:
+      type: string
+      title: Region width
+      description: The maximum width of the region
+      enum:
+        - no-container
+        - container px-4 mx-auto md--px-0
+        - container px-4 mx-auto md--px-0 md--max-w-5xl
+    backgroundColor:
+      type: string
+      title: Background color
+      description: Add a background color
+      enum:
+        - bg-none
+        - bg-white
+        - bg-black
+        - bg-unit-primary
+        - bg-unit-secondary
+        - bg-unit-tertiary
+        - bg-unit-accent
+        - bg-ubc-blue
+        - bg-ubc-blue-sea
+        - bg-ubc-blue-cobalt
+        - bg-ubc-blue-neptune
+        - bg-ubc-blue-cornflower
+        - bg-ubc-blue-polar
+        - bg-ubc-blue-frost
+        - bg-ubc-grey-1
+        - bg-ubc-grey-2
+        - bg-ubc-grey-3
+        - bg-ubc-grey-4
+        - bg-ubc-grey-5
+        - bg-ubc-grey-6
+        - bg-grey-50
+        - bg-grey-100
+        - bg-grey-200
+        - bg-grey-300
+        - bg-grey-500
+        - bg-grey-600
+        - bg-grey-800
+        - bg-grey-900
+    verticalSpacing:
+      type: string
+      title: Vertical / Inner Spacing
+      description: The vertical / inner spacing classes to apply
+    title:
+      type: string
+      title: Text
+      description: The region text
+      examples:
+        - Find out more
+    titleRight:
+      type: boolean
+      title: Title Right
+      description: Display the title aligned to the right
+    customClasses:
+      title: Custom Classes
+      type: string
+      description: Custom classes to apply to the region
+      examples:
+        - my-class another-class
+    customHeaderClasses:
+      title: Custom Header Classes
+      type: string
+      description: Custom classes to apply to the region header
+      examples:
+        - my-class another-class
+    customTitleClasses:
+      title: Custom Title Classes
+      type: string
+      description: Custom classes to apply to the region title
+      examples:
+        - my-class another-class
+    customInnerClasses:
+      title: Custom Inner Content Classes
+      type: string
+      description: Custom classes to apply to the inner region content (eg. for layout)
+      examples:
+        - grid grid-cols-3 gap-6
+    id:
+      title: ID
+      type: string
+      description: An ID that will be applied to the button (#my-id)
+      examples:
+        - my-id
+slots:
+  content:
+    title: Inner Content
+    description: Inner region content
+libraryOverrides:
+  dependencies:
+    - greencollege/global

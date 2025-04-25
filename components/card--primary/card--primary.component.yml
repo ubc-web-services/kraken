@@ -43,10 +43,22 @@ props:
       type: boolean
       title: Image Zoom
       description: Add the image zoom effect
+    figureStyles:
+      type: boolean
+      title: Figure Styles
+      description: Add styles to the figure element
     noShadow:
       type: boolean
       title: Remove Card Shadow
       description: Remove the card shadow effect
+    insetImage:
+      type: boolean
+      title: Inset image content
+      description: Inset the image content from the edges
+    insetContent:
+      type: boolean
+      title: Inset card content
+      description: Inset the card content from the edges
     color:
       type: string
       title: Card color
@@ -95,4 +107,4 @@ slots:
     description: The card actions
 libraryOverrides:
   dependencies:
-    - kraken/global
+    - greencollege/global

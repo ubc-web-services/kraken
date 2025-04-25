@@ -22,10 +22,11 @@
     'ubc-card__media',
     'img-cover',
     'overflow-hidden',
+    figureStyles,
   ]
 %}
 {% set content_classes = [
-    'p-6',
+    insetContent ? 'p-6',
     'flex',
     'h-full',
     'flex-col',
@@ -45,8 +46,7 @@
   %}
   {% set figure_layout_classes = [
       'flex-none',
-      'mt-6',
-      'mx-6',
+      insetImage ? 'mt-6 mx-6',
     ]
   %}
 {% endif %}
