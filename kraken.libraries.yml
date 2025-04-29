@@ -208,6 +208,15 @@ alert-display:
     - core/once
     - kraken/clf-js-bootstrap
 
+### Bootstrap Carousel
+bs-carousel:
+  js:
+    js/kraken.carousel.min.js: { minified: true, preprocess: false }
+  dependencies:
+    - core/drupal
+    - core/once
+    - core/jquery
+
 ### Scroll to top
 scroll:
   version: VERSION
