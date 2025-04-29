@@ -26,7 +26,7 @@
   ]
 %}
 {% set content_classes = [
-    insetContent ? 'p-6',
+    noInsetContent ? '': 'p-6',
     'flex',
     'h-full',
     'flex-col',
@@ -47,7 +47,7 @@
   %}
   {% set figure_layout_classes = [
       'flex-none',
-      insetImage ? 'mt-6 mx-6',
+      noInsetImage ? '': 'mt-6 mx-6',
     ]
   %}
 {% endif %}
