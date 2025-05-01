@@ -24,6 +24,7 @@
 @import "drupal/drupal.media.css";
 @import "drupal/drupal.views.css";
 @import "drupal/clf.drupal.css";
+@import "drupal/drupal.theme.css";
 
 /* Add styles for specific components */
 @import "tailwindcss/components";
