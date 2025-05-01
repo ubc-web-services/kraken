@@ -1,8 +1,7 @@
 /*
  * File: ubcit.carousel.js
  *
- * Desc: js for misc scripts in the theme
- *
+ * Desc: js for carousel
  */
 (function (Drupal, once, $) {
     Drupal.behaviors.krakenCarousel = {
@@ -14,4 +13,3 @@
       },
     };
   })(Drupal, once, jQuery);
-
