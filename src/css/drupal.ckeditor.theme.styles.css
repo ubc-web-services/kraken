@@ -22,3 +22,32 @@
         max-width: 100%;
     }
 }
+
+.text-align-right > .ckeditor5-icons__widget,
+.text-align-left > .ckeditor5-icons__widget,
+.text-align-center > .ckeditor5-icons__widget {
+    display: inline-block;
+}
+
+/* ensure white text is visible */
+.text-white,
+.unit-button--transparent {
+  text-shadow: rgba(0, 0, 0, .5) 1px 0 10px;
+}
+
+/* make invisible anchors visible */
+.anchor-invisible {
+  display: inline-block !important;
+  font-size: .875em;
+  position: relative !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+.anchor-invisible::after {
+  content: " (only visible in edit mode)"
+}
+
+form[class~="node-form"] a[class~="anchor-invisible"] {
+  visibility: visible;
+}
