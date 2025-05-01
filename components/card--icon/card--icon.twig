@@ -20,23 +20,25 @@
     'mt-0',
     'ubc-card__media',
     'flex-none',
-    'p-6',
     'flex',
     'justify-center',
     'place-items-center',
+    noInsetImage ? '': 'p-6',
+    figureStyles,
   ]
 %}
 {% set content_classes = [
-    'p-6',
     'flex',
     'w-full',
     'flex-col',
+    noInsetContent ? '': 'p-6',
   ]
 %}
 {%
   set title_classes = [
     'text-xl',
     'mt-0',
+    titleStyles,
   ]
 %}
 {% if layout is same as 'flex-row' %}

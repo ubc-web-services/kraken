@@ -140,7 +140,7 @@
 }
 
 .carousel-indicators [data-bs-target] {
-  @apply inline-block w-4 h-4 m-2 border-2 border-white rounded-full cursor-pointer;
+  @apply inline-block w-4 h-4 m-2 border-0 border-white rounded-full cursor-pointer;
 	transition: .4s ease-in-out;
 }
 
@@ -150,9 +150,11 @@
   }
 }
 
+/*
 .carousel-indicators .active {
     @apply border-8;
 }
+*/
 
 .carousel-caption {
   @apply text-white absolute right-[15%] bottom-[1.25rem] left-[15%] py-5 text-center;

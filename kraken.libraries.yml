@@ -62,7 +62,6 @@ clf-legacy--widen:
       css/clf.7.extended.min.css: { minified: true }
   dependencies:
     - kraken/clf-legacy
-    - kraken/css-prod
 
 ### Widen the CLF more (2400px)
 clf-legacy--widen-more:
@@ -206,7 +205,15 @@ alert-display:
   dependencies:
     - core/drupal
     - core/once
-    - kraken/clf-js-bootstrap
+
+### Bootstrap Carousel
+bs-carousel:
+  js:
+    js/kraken.carousel.min.js: { minified: true, preprocess: false }
+  dependencies:
+    - core/drupal
+    - core/once
+    - core/jquery
 
 ### Scroll to top
 scroll:

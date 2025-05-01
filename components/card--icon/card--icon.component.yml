@@ -60,6 +60,22 @@ props:
         - flex-row-reverse
         - flex-col
       default: flex-row
+    figureStyles:
+      type: boolean
+      title: Figure Styles
+      description: Add styles to the figure element
+    titleStyles:
+      type: boolean
+      title: Title Styles
+      description: Add styles to the title element
+    noInsetImage:
+      type: boolean
+      title: Remove image inset
+      description: Remove the image inset so that it aligns to the edges
+    noInsetContent:
+      type: boolean
+      title: Remove card inset
+      description: Remove the card content inset so that it aligns to the edges
     customClasses:
       title: Custom Classes
       type: string

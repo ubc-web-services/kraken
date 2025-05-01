@@ -47,18 +47,22 @@ props:
       type: boolean
       title: Figure Styles
       description: Add styles to the figure element
+    titleStyles:
+      type: boolean
+      title: Title Styles
+      description: Add styles to the title element
     noShadow:
       type: boolean
       title: Remove Card Shadow
       description: Remove the card shadow effect
-    insetImage:
+    noInsetImage:
       type: boolean
-      title: Inset image content
-      description: Inset the image content from the edges
-    insetContent:
+      title: Remove image inset
+      description: Remove the image inset so that it aligns to the edges
+    noInsetContent:
       type: boolean
-      title: Inset card content
-      description: Inset the card content from the edges
+      title: Remove card inset
+      description: Remove the card content inset so that it aligns to the edges
     color:
       type: string
       title: Card color
