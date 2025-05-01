@@ -169,11 +169,6 @@ function kraken_preprocess_html(&$variables)
     $variables['#attached']['library'][] = 'kraken/clf-whitney-prod';
   }
 
-  // Add Fontawesome library if set.
-  if (theme_get_setting('clf_fontawesome') == true) {
-    $variables['#attached']['library'][] = 'kraken/fontawesome';
-  }
-
   $variables['layout_option'] = theme_get_setting('clf_layout');
   $variables['color_version'] = theme_get_setting('clf_version');
 
