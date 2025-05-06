@@ -3,7 +3,7 @@
  * Styles for system messages
  */
 .message {
-  @apply relative flex items-center my-6 py-4 px-12 shadow;
+  @apply relative flex items-center px-12 py-4 my-6 shadow;
 }
 
 .message--error {
@@ -27,14 +27,14 @@
 }
 
 .message__close:hover {
-  @apply bg-white/50 text-black no-underline;
+  @apply text-black no-underline bg-white/50;
 }
 
 .message__icon {
-  @apply inline-block flex-none w-12 h-12 mr-4 text-ubc-blue;
+  @apply flex-none inline-block w-12 h-12 mr-4 text-ubc-blue;
 }
 
-@media (min-width: 1720px:) {
+@media (min-width: 1720px) {
 
   .message {
     @apply py-8 pl-8;
@@ -43,4 +43,5 @@
   .message__icon {
     @apply w-20 h-20 mr-8;
   }
+
 }
