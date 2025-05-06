@@ -750,7 +750,6 @@ a.fc-more:hover {
   .fc th,
   .fc thead,
   .fc-row {
-
     border-color: rgba(var(--grey-300), 1) !important;
     background: white !important;
   }
