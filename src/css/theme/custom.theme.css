@@ -70,7 +70,7 @@
 .widget-color-box.bg-ubc-blue .unit-button--dark,
 .widget-color-box.bg-ubc-blue-sea .unit-button--dark,
 .widget-color-box.bg-ubc-blue-cobalt .unit-button--dark {
-  @apply text-ubc-blue-polar;
+  @apply border-ubc-blue-polar;
 }
 
 .bg-dark .unit-button--simple,
