@@ -111,4 +111,4 @@ slots:
     description: The card actions
 libraryOverrides:
   dependencies:
-    - greencollege/global
+    - kraken/global
