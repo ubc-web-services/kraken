@@ -190,13 +190,6 @@ system-message:
     theme:
       css/drupal.system.message.min.css: { minified: true }
 
-### Webform styles
-webform:
-  version: VERSION
-  css:
-    theme:
-      css/drupal.webform.min.css: { minified: true }
-
 ## Custom JS Libraries
 ### Alert content entities
 alert-display:

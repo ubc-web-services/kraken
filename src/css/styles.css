@@ -23,6 +23,7 @@
 @import "drupal/drupal.entity.moderation.css";
 @import "drupal/drupal.media.css";
 @import "drupal/drupal.views.css";
+@import "drupal/drupal.webform.css";
 @import "drupal/clf.drupal.css";
 @import "drupal/drupal.theme.css";
 
@@ -30,6 +31,7 @@
 @import "tailwindcss/components";
 @import "components/accordion.component.css";
 @import "components/button.component.css";
+@import "components/card.component.css";
 @import "components/carousel.component.css";
 @import "components/chosen.component.css";
 @import "components/message.component.css";

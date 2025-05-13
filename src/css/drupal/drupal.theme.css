@@ -88,11 +88,11 @@ figure.align-center > div {
 }
 
 .paragraph.bg-ubc-blue .unit-button--simple::after {
-  content: url("../img/svg/icon-arrow--polar.svg");
+  content: url("../img/svg/icon-caret--white.svg");
 }
 
 .paragraph.bg-ubc-blue .unit-button--simple:hover::after {
-  content: url("../img/svg/icon-arrow--cornflower.svg");
+  content: url("../img/svg/icon-caret--white.svg");
 }
 
 /* views pager */
