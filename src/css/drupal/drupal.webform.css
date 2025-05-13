@@ -82,3 +82,7 @@ input[name="custom_composite_table_add"] {
 .webform-submission-form :not(.radios--wrapper) .form-item.form-radio {
   @apply mt-[.5em];
 }
+
+.webform-submission-form .form-item-wrapper>label {
+  display: inline-block;
+}

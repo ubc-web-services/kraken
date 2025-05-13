@@ -97,4 +97,4 @@ slots:
     description: Inner region content
 libraryOverrides:
   dependencies:
-    - greencollege/global
+    - kraken/global
