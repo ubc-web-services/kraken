@@ -31,14 +31,13 @@
   @apply mt-0;
 }
 
-input[type="submit"]:not(.webform-button--submit) {
+.webform-submission-form  input[type="submit"]:not(.webform-button--submit) {
   @apply inline-flex text-center no-underline uppercase border text-xs cursor-pointer pt-[.5em] px-[1em] pb-[.3em] text-white bg-ubc-blue border-transparent;
-
   transition: all 0.125s ease-out;
   line-height: 1.3;
 }
 
-input[type="submit"]:not(.webform-button--submit):hover {
+.webform-submission-form  input[type="submit"]:not(.webform-button--submit):hover {
   @apply text-white no-underline border-transparent shadow-md bg-ubc-blue-sea;
 }
 
