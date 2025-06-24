@@ -1,5 +1,4 @@
-# Set Defaults for the start Theme Settings Form (via export)
-
+# Set Defaults for the Theme Settings Form
 features:
   logo: true
   name: true
