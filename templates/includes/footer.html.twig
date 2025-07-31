@@ -7,7 +7,7 @@
         {% if campus_option %}
         <div id="ubc7-address-campus">{% if campus_option == 'vancouver' %}Vancouver Campus{% endif %}{% if campus_option == 'okanagan' %}Okanagan Campus{% endif %}</div>
         {% endif %}
-        <p class="text-xs md--text-sm xl--text-base">
+        <p class="text-sm">
         {% if address_option %}{{ address_option }}<br />{% endif %}
         {% if locality_option or region_option or country_option or postal_option %}
         <span>
@@ -20,8 +20,8 @@
           {% if postal_option %}<br />{{ postal_option }}{% endif %}
         </span>
         {% endif %}
-        {% if phone_option %}<br /><a href="tel:{{ phone_option|replace({' ':'-'}) }}">{{ phone_option }}</a>{% endif %}
-        {% if fax_option %}<br />{{ fax_option }}{% endif %}
+        {% if phone_option %}<br />Tel <a href="tel:{{ phone_option|replace({' ':'-'}) }}">{{ phone_option }}</a>{% endif %}
+        {% if fax_option %}<br />Fax {{ fax_option }}{% endif %}
         {% if email_option %}<br />E-mail <a href="mailto:{{ email_option }}" title="Email {{ unit_name }}" >{{ email_option }}</a> {% endif %}
         {% if website_option %}<br />Website {{ website_option }}{% endif %}
       </p>
