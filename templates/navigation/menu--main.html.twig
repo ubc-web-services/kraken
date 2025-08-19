@@ -25,7 +25,7 @@
 {% macro menu_links(items, attributes, menu_level) %}
   {% import _self as menus %}
   {% if items %}
-    <ul{{ attributes.addClass(menu_level == 0 ? 'nav clearfix my-0' : 'dropdown-menu') }}>
+    <ul{{ attributes.addClass(menu_level == 0 ? ['nav', 'clearfix', 'my-0'] : ['dropdown-menu']) }}>
     {% for item in items %}
       {%
         set classes = [
@@ -47,7 +47,7 @@
           {{ link(item.title, item.url, {'class': ['navbar-link']}) }}
       {% endif %}
       {% if item.below %}
-        {{ menus.menu_links(item.below, attributes.removeClass('nav', 'navbar-nav'), menu_level + 1) }}
+        {{ menus.menu_links(item.below, attributes.removeClass('navbar-nav'), menu_level + 1) }}
         </div>
       {% endif %}
       </li>
