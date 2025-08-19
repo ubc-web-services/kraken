@@ -2,6 +2,27 @@
  * @file
  * Styles to provide a local equivalent to the CDN version of the CLF
  */
+ /* utilities from bootstrap for visibility */
+.collapse:not(.show):not(.in) {
+  display: none;
+}
+
+.collapsing {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  transition: height 0.35s ease;
+}
+
+.collapse.in,
+.collapse.show {
+  height: auto;
+}
+
+.open > .dropdown-menu,
+.dropdown-menu.show {
+  display: block !important;
+}
 
 /* CLF resets */
 .clearfix {
