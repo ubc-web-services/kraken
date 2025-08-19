@@ -29,7 +29,7 @@
 }
 
 .dropdown-menu:not(.show) {
-  display: none;
+  display: none !important;
 }
 
 .dropdown-menu.show {
@@ -164,7 +164,7 @@
 
 .dropdown-item.active,
 .dropdown-item:active {
-  @apply bg-ubc-blue-sky no-underline text-white;
+  @apply text-white no-underline bg-ubc-blue-sky;
 }
 
 .dropdown-item.disabled,

@@ -672,7 +672,7 @@ a#ubc7-global-utility-no-script {
 }
 #ubc7-unit-menu .dropdown .btn-group .btn,
 #ubc7-unit-menu .dropdown .btn-group button {
-  @apply z-[1] box-border h-[41px] bg-none shadow-[0_0_0_transparent] leading-10 my-0 py-0 rounded-none;
+  @apply z-[1] box-border bg-none shadow-[0_0_0_transparent] leading-10 my-0 py-0 rounded-none;
 }
 #ubc7-unit-menu .dropdown .btn-group a.btn {
   @apply block pl-5 mr-0 text-left md--pl-3;
@@ -897,6 +897,9 @@ a#ubc7-global-utility-no-script {
   #ubc7-unit-menu.navbar .nav {
     @apply relative left-0 block m-0;
   }
+  #ubc7-unit-menu.navbar .nav.dropdown-menu {
+    @apply absolute;
+  }
   #ubc7-unit-menu.navbar .nav > li {
     @apply float-left;
   }
@@ -945,13 +948,14 @@ a#ubc7-global-utility-no-script {
   #ubc7-unit-menu .nav-collapse .dropdown-menu a,
   #ubc7-unit-menu .nav-collapse .nav > li > a,
   #ubc7-unit-menu .nav-collapse .nav > li .dropdown-menu a {
-    @apply block clear-both whitespace-nowrap text-[#002145] font-normal px-5 py-[3px];
+    @apply block clear-both whitespace-nowrap text-[#002145] font-normal;
   }
   #ubc7-unit-menu .nav-collapse .dropdown-menu a:hover,
   #ubc7-unit-menu .nav-collapse .nav > li > a:hover,
   #ubc7-unit-menu .nav-collapse .nav > li .dropdown-menu a:hover {
     @apply text-[#fff];
   }
+  #ubc7-unit-menu .nav-collapse .nav > li .dropdown-menu a,
   #ubc7-unit-menu .nav-collapse .nav > li .dropdown-menu .nav-header {
     @apply px-5 py-[3px];
   }
@@ -992,7 +996,7 @@ a#ubc7-global-utility-no-script {
   #ubc7-unit-menu .dropdown .btn-group a.btn {
     @apply h-[45px] leading-[45px];
   }
-  #ubc7-unit-menu .nav-collapse .nav.dropdown-menu > li > a {
+  #ubc7-unit-menu .nav-collapse .dropdown-menu > li > a {
     @apply leading-5;
   }
 }
@@ -1113,7 +1117,8 @@ a#ubc7-global-utility-no-script {
     @apply flex-1 py-1;
   }
   #ubc7-unit-name,
-  #ubc7-unit-name a {
+  #ubc7-unit-name a,
+  #ubc7-unit .ubc7-single-element a {
     @apply mt-0;
   }
   #ubc7-unit-identifier {
