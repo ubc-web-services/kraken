@@ -112,7 +112,7 @@ kraken.settings:
       type: color_hex
       label: 'Unit link:active color'
     clf_theme_leading:
-      type: float
+      type: string
       label: 'Type leading value'
     clf_theme_base_font_size:
       type: string
