@@ -15,7 +15,7 @@
   <ol{{ list_attributes.addClass('list-inline', 'my-0').setAttribute('aria-labelledby', 'system-breadcrumb') }}>
   {% for item in breadcrumb %}
     {% if item.url %}
-      <li><a href="{{ item.url }}" class="text-ubc-blue-cobalt crumb">{{ item.text }}</a>
+      <li><a href="{{ item.url }}" class="crumb">{{ item.text }}</a>
     {% else %}
       <li class="no-underline text-ubc-blue crumb--active">{{ item.text }}
     {% endif %}
