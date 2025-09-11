@@ -29,7 +29,7 @@ h1,
 
 h2,
 .h2 {
-  @apply text-[2.625rem] mb-0;
+  @apply mb-0 text-4xl;
   margin-top: calc(var(--leading) * 2.25rem);
   font-family: var(--alternate-font-stack);
   font-weight: var(--title-weight);
@@ -38,7 +38,7 @@ h2,
 
 h3,
 .h3 {
-  @apply mb-0 text-5xl;
+  @apply mb-0 text-3xl;
   margin-top: calc(var(--leading) * 1.75rem);
   letter-spacing: 0.025em;
   font-family: var(--alternate-font-stack);
@@ -95,6 +95,27 @@ h6,
   }
 }
 
+/* heading siblings */
+h1 + h2 {
+  margin-top: calc(var(--leading) * 1.125rem);
+}
+
+h2 + h3 {
+  margin-top: calc(var(--leading) * 1rem);
+}
+
+h3 + h4 {
+  margin-top: calc(var(--leading) * .875rem);
+}
+
+h4 + h5 {
+  margin-top: calc(var(--leading) * .75rem);
+}
+
+h5 + h6 {
+  margin-top: calc(var(--leading) * .5rem);
+}
+
 /* text and list elements */
 p,
 pre,
@@ -148,8 +169,17 @@ blockquote {
   font-family: var(--alternate-font-stack);
 }
 
-blockquote p:first-of-type {
-  margin-top: 0;
+blockquote::before {
+  position: absolute;
+  top: 2rem;
+  left: 3rem;
+  height: 1.5em;
+  width: 1.5em;
+  background-image: url("../img/svg/icon-quote-open--ubc-blue.svg");
+  background-size: 1.5em 1.5em;
+  background-position: center;
+  background-repeat: no-repeat;
+  content: "";
 }
 
 blockquote p:last-of-type {
