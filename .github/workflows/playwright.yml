@@ -18,11 +18,15 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps 
     - name: Setup DDEV
-      uses: ddev/github-action-setup-ddev@1
-      with:
-        version: stable
+      uses: ddev/github-action-setup-ddev@v1
     - name: Start DDEV
       run: ddev start
+    - name: Install composer dependencies
+      run: ddev poser
+    - name: Symlink the theme into the web/themes/custom directory
+      run: ddev symlink-project
+    - name: Install Drupal and set the theme
+      run: ddev install
     - name: Get DDEV URL
       id: ddev_url
       run: |
