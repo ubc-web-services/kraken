@@ -17,11 +17,23 @@ jobs:
       run: npm ci 
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps 
+    - name: Setup DDEV
+      uses: ddev/github-action-setup-ddev@1
+      with:
+        version: stable
+    - name: Start DDEV
+      run: ddev start
+    - name: Get DDEV URL
+      id: ddev_url
+      run: |
+        URL=$(ddev describe --json | jq -r '.urls[0]')
+        echo "baseURL=$URL" >> $GITHUB_ENV
     - name: Run Playwright tests
       run: npx playwright test tests/unitTesting
       env:
         USERNAME: ${{ secrets.USERNAME }}
         PASSWORD: ${{ secrets.PASSWORD }}
+        baseURL: ${{ env.baseURL }}
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
