@@ -30,7 +30,7 @@ jobs:
     - name: Get DDEV URL
       id: ddev_url
       run: |
-        URL=$(ddev describe --json | jq -r '.urls[0]')
+        URL=$(ddev describe -j | jq -r .raw.services.web.https_url)
         echo "BASE_URL=$URL" >> $GITHUB_ENV
     - name: Run Playwright tests
       run: npx playwright test tests/unitTesting
