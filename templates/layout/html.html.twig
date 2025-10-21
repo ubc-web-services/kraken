@@ -39,6 +39,13 @@
     ]
   %}
 {% endif %}
+{% if clf_sticky %}
+  {%
+    set stickyClasses = [
+      'md--scroll-pt-[60px]',
+    ]
+  %}
+{% endif %}
 {% if layout_option == 'full' %}
   {%
     set layoutClasses = [
@@ -60,7 +67,7 @@
   %}
 {% endif %}
 <!DOCTYPE html>
-<html{{ html_attributes.addClass(modClasses).addClass(layoutClasses) }}>
+<html{{ html_attributes.addClass(modClasses, layoutClasses, stickyClasses, 'smooth-scroll') }}>
   <head>
     <head-placeholder token="{{ placeholder_token|raw }}">
     <title>{{ head_title|safe_join(' | ') }}</title>

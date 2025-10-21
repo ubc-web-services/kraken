@@ -169,6 +169,7 @@ function kraken_preprocess_html(&$variables)
     $variables['#attached']['library'][] = 'kraken/clf-whitney-prod';
   }
 
+  $variables['clf_sticky'] = theme_get_setting('clf_sticky') ? TRUE : FALSE;
   $variables['layout_option'] = theme_get_setting('clf_layout');
   $variables['color_version'] = theme_get_setting('clf_version');
 
