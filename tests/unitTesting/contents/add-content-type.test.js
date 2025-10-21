@@ -5,7 +5,7 @@ test.describe('Generic Test Suite - adds a content type', () => {
 
   test.beforeEach(async ({ page, baseURL }) => {
     await doLogin(page, baseURL);
-    await page.goto('/admin/structure/types/add');
+    await page.goto('/admin/structure/types');
   });
 
   test('Types in the name and description boxes', async ({ page }) => {
@@ -17,7 +17,10 @@ test.describe('Generic Test Suite - adds a content type', () => {
 
     if (exists) {
         console.log('Content type already exists. Skipping creation.');
+        await expect(page.locator('#block-claro-page-title')).toContainText('Content types');
     } else {
+
+      await page.goto('/admin/structure/types/add');
 
       // Type Name
       await page.fill('[data-drupal-selector="edit-name"]', title);
@@ -27,11 +30,10 @@ test.describe('Generic Test Suite - adds a content type', () => {
 
       // Save changes
       await page.locator('[data-drupal-selector="edit-save-continue"]').click();
+
+      // Verify the page content
+      await expect(page.locator('#block-claro-page-title')).toContainText('Manage fields');
     }
-
-    // Verify the page content
-    await expect(page.locator('#block-claro-page-title')).toContainText('Manage fields');
-
   });
 
 });
