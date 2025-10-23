@@ -9,7 +9,7 @@ test.describe('Generic Test Suite - adds a content block', () => {
 
   const pageURL = '/test'
 
-  test('Create a basic page and place a block', async ({ page }) => {
+  test('Create a basic page and place a block', async ({ page }, testInfo) => {
     await page.goto(pageURL);
     const titleMessage = 'Playwright Test Basic Page';
     const bodyMessage = 'Playwright body text';
@@ -62,7 +62,11 @@ test.describe('Generic Test Suite - adds a content block', () => {
 
     // Verify and Configure block
     await expect(page.locator('h1.ui-dialog-title', { hasText: 'Configure block' })).toBeVisible();
-    await page.locator('a.vertical-tabs__menu-link >> text=Pages').click();
+    if (testInfo.project.name === 'chromium') {
+      await page.locator('a.vertical-tabs__menu-link >> text=Pages').click();
+    } else if (testInfo.project.name === 'Mobile Chrome') {
+      await page.locator('[data-drupal-selector="edit-visibility-request-path"]').click();
+    }
     await page.fill('[data-drupal-selector="edit-visibility-request-path-pages"]', pageURL);
 
     // Save block

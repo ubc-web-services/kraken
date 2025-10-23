@@ -9,7 +9,7 @@ test.describe('Generic Test Suite - adds a content type', () => {
   });
 
   test('Types in the name and description boxes', async ({ page }) => {
-    const title = 'Playwright Content Type';
+    const title = `Playwright-${Date.now()}`;
     const description = 'Playwright description text';
 
     const titles = await page.locator('#block-claro-content .menu-label').allTextContents();
