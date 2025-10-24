@@ -118,7 +118,6 @@ h5 + h6 {
 
 /* text and list elements */
 p,
-pre,
 table,
 blockquote {
   @apply mb-0 mt-leading;
@@ -129,17 +128,18 @@ strong {
   font-weight: 600;
 }
 
+code,
+kbd,
+pre,
+samp {
+  font-family: var(--code-font-stack);
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+}
+
 kbd,
 code {
   @apply py-[.125em] px-[.25em] bg-grey-100 text-[.875em];
-}
-
-kbd {
-  @apply inline-block border shadow-sm border-grey-300;
-  text-wrap: nowrap;
-  border-radius: 3px;
-  font-weight: 600;
-  line-height: 1;
 }
 
 code,
@@ -150,6 +150,30 @@ samp,
 .text--code {
   position: relative;
   vertical-align: baseline;
+}
+
+pre {
+  @apply relative p-4 border rounded-sm bg-grey-100 border-grey-300 my-leading text-grey-800;
+  direction: ltr;
+  font-style: normal;
+  min-width: 200px;
+  tab-size: 4;
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+pre code {
+  background: unset;
+  border-radius: 0;
+  padding: 0;
+}
+
+kbd {
+  @apply inline-block border shadow-sm border-grey-300;
+  text-wrap: nowrap;
+  border-radius: 3px;
+  font-weight: 600;
+  line-height: 1;
 }
 
 sup {
