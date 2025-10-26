@@ -1,19 +1,19 @@
 {
   "name": "ubc-web-services/kraken",
-  "description": "A Drupal 10 UBC CLF theme",
+  "description": "A Drupal UBC CLF theme",
   "type": "drupal-theme",
   "authors": [{
     "name": "O'Toole, James",
     "email": "james.otoole@ubc.ca"
   }],
   "require": {},
-    "require-dev": {
-        "drupal/coder": "^8.3.16",
-        "drush/drush": "^12.5 || ^13.3"
-    },
-    "config": {
-        "sort-packages": true,
-        "allow-plugins": {
+  "require-dev": {
+      "drupal/coder": "^8.3.16",
+      "drush/drush": "^12.5 || ^13.3"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
       "dealerdirect/phpcodesniffer-composer-installer": true,
       "php-http/discovery": true,
       "tbachert/spi": false
