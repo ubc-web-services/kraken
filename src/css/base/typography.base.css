@@ -4,7 +4,6 @@
 * This file contains default typographic styles for text.
 */
 
-
 html {
   color: var(--text-color);
   font-family: var(--text-font-stack);
@@ -16,32 +15,6 @@ body {
   font-size: var(--base-font-size);
   line-height: var(--line-height-base);
 }
-
-/* Reset bottom margins - don't think tailwnd needs this */
-/*
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-ol,
-dl,
-blockquote,
-pre,
-form,
-fieldset,
-label,
-input,
-textarea,
-select,
-button,
-table {
-  margin-bottom: 0;
-}
-*/
 
 /* Headings */
 h1,
@@ -181,104 +154,6 @@ hr {
   margin-top: calc(var(--text-xl) * var(--scale-ratio));
   margin-bottom: calc(var(--text-xl) * var(--scale-ratio));
 }
-
-/** MOVE THESE **/
-/* Tables */
-/*
-table {
-  font-size: var(--text-base);
-  line-height: var(--line-height-base);
-  margin-top: calc(var(--text-base) * var(--scale-ratio));
-  margin-bottom: calc(var(--text-base) * var(--scale-ratio));
-  width: 100%;
-  border-collapse: collapse;
-}
-
-caption {
-  font-size: var(--text-lg);
-  margin-top: calc(var(--text-base) * var(--scale-ratio));
-  text-align: left;
-}
-
-thead th {
-  text-align: left;
-}
-
-th,
-td {
-  padding: calc(var(--text-base) / var(--scale-ratio))
-    calc(var(--text-base) / var(--scale-ratio) * 1.5);
-}
-
-th {
-  font-weight: 600;
-}
-*/
-
-/** MOVE THESE **/
-/* Forms */
-/*
-form {
-  margin-top: calc(var(--text-base) * var(--scale-ratio));
-}
-
-fieldset {
-  margin-top: calc(var(--text-base) * var(--scale-ratio));
-  padding: calc(var(--text-base) * var(--scale-ratio));
-}
-
-legend {
-  font-size: var(--text-lg);
-  padding: 0 calc(var(--text-base) / var(--scale-ratio));
-}
-
-label {
-  display: block;
-  font-size: var(--text-base);
-  margin-top: calc(var(--text-base) * var(--scale-ratio));
-  line-height: var(--line-height-base);
-}
-
-input,
-textarea,
-select {
-  font-size: var(--text-base);
-  line-height: var(--line-height-base);
-  margin-top: calc(var(--text-base) / var(--scale-ratio));
-  padding: calc(var(--text-base) / var(--scale-ratio))
-    calc(var(--text-base) / var(--scale-ratio) * 1.5);
-  width: 100%;
-  max-width: 100%;
-}
-
-textarea {
-  min-height: calc(var(--text-base) * var(--scale-ratio) * 5);
-  resize: vertical;
-}
-*/
-
-/** MOVE THESE **/
-/* Form element specific rules */
-/*
-input[type="checkbox"],
-input[type="radio"] {
-  width: auto;
-  margin-top: 0;
-  margin-right: calc(var(--text-base) / var(--scale-ratio));
-  vertical-align: middle;
-}
-
-input[type="submit"],
-input[type="button"],
-input[type="reset"] {
-  font-size: var(--text-base);
-  line-height: var(--line-height-base);
-  margin-top: calc(var(--text-base) * var(--scale-ratio));
-  padding: calc(var(--text-base) / var(--scale-ratio))
-    calc(var(--text-base) * var(--scale-ratio));
-  width: auto;
-}
-*/
 
 /* Remove top margin from first child */
 :where(
