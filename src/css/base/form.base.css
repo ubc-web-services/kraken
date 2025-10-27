@@ -10,7 +10,9 @@ form {
 }
 
 fieldset {
+  @apply border border-ubc-blue;
   margin-top: calc(var(--text-base) * var(--scale-ratio));
+  margin-bottom: calc(var(--text-base) * var(--scale-ratio));
   padding: calc(var(--text-base) * var(--scale-ratio));
 }
 
