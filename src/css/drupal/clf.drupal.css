@@ -3,26 +3,6 @@
 /*
 * This file overrides some default CLF styles
 */
-fieldset {
-  @apply border-0;
-}
-
-fieldset fieldset {
-  @apply px-0 pb-0 mt-0 shadow-none;
-}
-
-fieldset fieldset legend {
-  @apply normal-case border-b-[.125rem] text-sm;
-}
-
-input[type="search"] {
-  @apply box-border
-}
-
-.views-exposed-form {
-  @apply mt-12;
-}
-
 .node--unpublished .unpublished {
   @apply absolute top-0 right-0 left-0 h-0 text-center uppercase break-words text-[#d8d8d8] text-[5em] leading-none font-bold overflow-visible;
   font-family: Impact, "Arial Narrow", Helvetica, sans-serif;
@@ -42,14 +22,6 @@ input[type="search"] {
 
 #block-userlogin .item-list li + li {
   @apply float-right mr-0;
-}
-
-.description {
-  @apply text-xs text-grey-500;
-}
-
-.masthead__img img {
-  @apply object-cover w-full h-full;
 }
 
 /* for UBC Ckeditor Widgets styles - need to create a new branch before committing */

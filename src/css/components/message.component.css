@@ -56,3 +56,11 @@
     @apply w-16 h-16 mr-8;
   }
 }
+
+.message p:first-of-type {
+  @apply mt-0;
+}
+.message p {
+  @apply mt-3;
+}
+
