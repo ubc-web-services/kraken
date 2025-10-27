@@ -476,9 +476,9 @@ function kraken_form_search_form_alter(&$form, FormStateInterface $form_state, $
   $form['basic']['#attributes']['class'][] = 'sm--flex';
   $form['basic']['keys']['#attributes']['placeholder'] = t('Search...');
   $form['basic']['keys']['#attributes']['class'][] = 'py-[.65em]';
-  $form['basic']['submit']['#attributes']['class'][] = 'unit-button unit-button--dark self-end flex-none mt-6 sm--mt-0';
-  $form['help_link']['#options']['attributes']['class'] = 'unit-button unit-button--light text-xs mt-6';
-  $form['advanced']['submit']['#attributes']['class'][] = 'unit-button unit-button--dark';
+  $form['basic']['submit']['#attributes']['class'][] = 'unit-button--dark self-end flex-none mt-6 sm--mt-0';
+  $form['help_link']['#options']['attributes']['class'] = 'unit-button--light text-xs mt-6';
+  $form['advanced']['submit']['#attributes']['class'][] = 'unit-button--dark';
 }
 
 /**
