@@ -512,7 +512,7 @@ function kraken_form_views_exposed_form_alter(&$form, FormStateInterface $form_s
 {
   $form['actions']['#attributes']['class'][] = 'flex justify-end';
   $form['actions']['submit']['#attributes']['class'][] = 'unit-button--block';
-  $form['actions']['reset']['#attributes']['class'][] = 'unit-button ml-3 mt-auto';
+  $form['actions']['reset']['#attributes']['class'][] = 'ml-3 mt-auto';
 }
 
 /**
