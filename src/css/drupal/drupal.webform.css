@@ -6,6 +6,10 @@
   @apply mt-6;
 }
 
+.webform-submission-form legend {
+  @apply pb-0 border-b-[.25rem] border-ubc-blue-neptune text-sm;
+}
+
 .webform-submission-form .field-prefix,
 .webform-submission-form .field-suffix {
   @apply text-sm;
@@ -50,7 +54,7 @@ input[name="custom_composite_table_add"] {
   @apply text-xs;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 400px) {
 
   .webform-options-display-two-columns,
   .webform-options-display-three-columns {
@@ -84,25 +88,6 @@ input[name="custom_composite_table_add"] {
 
 .webform-submission-form .form-item-wrapper>label {
   display: inline-block;
-}
-
-/* review and consoldidate with above */
-
-@media (min-width: 400px) {
-  .webform-options-display-two-columns,
-  .webform-options-display-three-columns {
-    @apply flex flex-wrap mt-0 columns-[initial]
-  }
-  .webform-options-display-two-columns div.form-item {
-    @apply w-half;
-  }
-  .webform-options-display-three-columns div.form-item {
-    @apply w-one-third;
-  }
-}
-
-.webform-submission-form legend {
-  @apply pb-0 border-b-[.25rem] border-ubc-blue-neptune text-sm;
 }
 
 .webform-submission-form .fieldset-legend.form-required {

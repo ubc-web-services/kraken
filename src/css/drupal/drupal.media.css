@@ -1,6 +1,103 @@
 /** @define drupal.media */
 
+/* image filters */
+.img-greyscale {
+  filter: grayscale(100%);
+}
+
 /* drupal media */
+
+/* add margin to images */
+.image-inline:not(:where(figure .image-inline)) {
+  @apply mt-leading;
+}
+
+/* don't let floated images float on tiny screens */
+figure.align-left,
+figure.align-right,
+img.align-left,
+img.align-right,
+.media.align-left,
+.media.align-right {
+  @apply float-none mx-auto mb-leading;
+}
+
+figure.align-left,
+figure.align-right {
+  @apply mt-leading;
+}
+
+img[data-entity-type="file"]:not(
+  .align-left,
+  .align-center,
+  .align-right):not(:where(figure img)) {
+  @apply mt-leading;
+}
+
+figure.align-center,
+img.align-center {
+  @apply mx-auto mt-leading;
+}
+
+.media.align-center {
+  @apply table mx-auto;
+}
+
+@media screen and (min-width: 640px) {
+
+  figure.align-left,
+  img.align-left,
+  .media.align-left {
+    @apply float-left mr-leading;
+  }
+
+  figure.align-right,
+  img.align-right,
+  .media.align-right {
+    @apply float-right ml-leading;
+  }
+
+  /* set a max width for floated media items */
+  [class^="widget-"].align-left,
+  [class^="widget-"].align-right {
+    @apply max-w-md;
+  }
+
+}
+
+/* Remote video - play button over image thumbnail */
+.media--type-remote-video.media--view-mode--featured-content {
+  @apply my-0;
+}
+
+.media--type-remote-video {
+  @apply relative;
+}
+
+.media--type-remote-video .field--name-thumbnail {
+  @apply w-full cursor-pointer;
+}
+
+.media--type-remote-video .field--name-thumbnail img {
+  @apply w-full;
+}
+
+.media--type-remote-video .field--name-thumbnail:after {
+  @apply absolute top-0 left-0 w-full h-full;
+  background-image: url("../img/svg/icon-play.svg");
+  background-position: center;
+  background-size: 4rem 4rem;
+  background-repeat: no-repeat;
+  content: '';
+}
+
+@media (min-width: 768px) {
+  .media--type-remote-video .field--name-thumbnail:after {
+    background-size: 7.5rem 7.5rem;
+  }
+}
+
+/*
 .ubc-card__media .media--type-image,
 figure .media--type-image {
   @apply mt-0;
@@ -32,11 +129,13 @@ figure.align-right,
 .media.align-right {
   @apply mb-4;
 }
+*/
 
+/*
 figure img {
   @apply !mt-0;
-}
-
+}*/
+/*
 .drupal-media.align-left,
 .drupal-media.align-right,
 .media.align-left,
@@ -96,12 +195,6 @@ img.align-right {
 
 }
 
-/* specific overrides */
-.carousel__cell .media--type-remote-video,
-.media--type-remote-video.media--view-mode--featured-content {
-  @apply my-0;
-}
-
 @media (max-width: 767px) {
 
   figure.align-left,
@@ -125,42 +218,13 @@ img.align-right {
   }
 
 }
+*/
 
-/* image filters */
-.img-greyscale {
-  filter: grayscale(100%);
-}
 
-/* add play button on top of image thumbnail */
-.media--type-remote-video {
-  @apply relative;
-}
-
-.media--type-remote-video .field--name-thumbnail {
-  @apply w-full cursor-pointer;
-}
-
-.media--type-remote-video .field--name-thumbnail img {
-  @apply w-full;
-}
-
-.media--type-remote-video .field--name-thumbnail:after {
-  @apply absolute top-0 left-0 w-full h-full;
-  background-image: url("../img/svg/icon-play.svg");
-  background-position: center;
-  background-size: 4rem 4rem;
-  background-repeat: no-repeat;
-  content: '';
-}
-
-@media (min-width: 768px) {
-  .media--type-remote-video .field--name-thumbnail:after {
-    background-size: 7.5rem 7.5rem;
-  }
-}
 
 /** review and consolidate with above **/
 /* drupal media */
+/*
 figure.align-center,
 figure.align-left,
 figure.align-right,
@@ -189,12 +253,12 @@ figure .media--type-image img {
 
 figure.align-left,
 .align-left.media--type-image {
-  @apply float-left mt-0 mr-leading mb-leading;
+  @apply float-left mt-leading mr-leading mb-leading;
 }
 
 figure.align-right,
 .align-right.media--type-image {
-  @apply float-right mt-0 ml-leading mb-leading;
+  @apply float-right mt-leading ml-leading mb-leading;
 }
 
 .align-right.media--type-image,
@@ -211,3 +275,10 @@ figure.align-center > article,
 figure.align-center > div {
   @apply block max-w-full;
 }
+
+.field--name-field-profile-office,
+.field--name-field-event-map,
+.img-and-caption {
+  @apply my-6;
+}
+*/

@@ -22,7 +22,7 @@
   grid-gap: var(--grid-layout-gap);
 }
 
-/* adjustment for views styicy header - probably don't need this */
+/* adjustment for views sticky header - probably don't need this */
 @media screen and (min-width: 980px) {
 
   .nav--is-pinned table.sticky-header {

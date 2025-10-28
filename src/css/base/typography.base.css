@@ -1,7 +1,7 @@
 /** @define typography */
 
 /*
-* This file contains default typographic styles for text.
+* This file contains default typographic styles for text elements.
 */
 
 html {
@@ -116,7 +116,7 @@ ol {
 }
 
 li {
-  margin-top: calc(var(--text-base) / var(--scale-ratio));
+  margin-top: calc(var(--text-xs) / var(--scale-ratio));
 }
 
 /* Nested lists */
