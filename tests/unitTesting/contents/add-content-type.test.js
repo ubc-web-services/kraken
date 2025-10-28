@@ -12,28 +12,19 @@ test.describe('Generic Test Suite - adds a content type', () => {
     const title = `Playwright-${Date.now()}`;
     const description = 'Playwright description text';
 
-    const titles = await page.locator('#block-claro-content .menu-label').allTextContents();
-    const exists = titles.some(name => name.includes(title));
+    await page.goto('/admin/structure/types/add');
 
-    if (exists) {
-        console.log('Content type already exists. Skipping creation.');
-        await expect(page.locator('#block-claro-page-title')).toContainText('Content types');
-    } else {
+    // Type Name
+    await page.fill('[data-drupal-selector="edit-name"]', title);
 
-      await page.goto('/admin/structure/types/add');
+    // Type Description
+    await page.fill('[data-drupal-selector="edit-description"]', description);
 
-      // Type Name
-      await page.fill('[data-drupal-selector="edit-name"]', title);
+    // Save changes
+    await page.locator('[data-drupal-selector="edit-save-continue"]').click();
 
-      // Type Description
-      await page.fill('[data-drupal-selector="edit-description"]', description);
-
-      // Save changes
-      await page.locator('[data-drupal-selector="edit-save-continue"]').click();
-
-      // Verify the page content
-      await expect(page.locator('#block-claro-page-title')).toContainText('Manage fields');
-    }
+    // Verify the page content
+    await expect(page.locator('#block-claro-page-title')).toContainText('Manage fields');
   });
 
 });
