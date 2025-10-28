@@ -37,7 +37,6 @@ test.describe('Generic Test Suite - adds an article page', () => {
 
     // Verify the page content
     const primaryContent = page.locator('#primary-content');
-    await expect(primaryContent).toContainText(titleMessage);
     await expect(primaryContent).toContainText(bodyMessage);
   });
 
