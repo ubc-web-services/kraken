@@ -33,7 +33,7 @@
       'js-dismiss',
     ]
   %}
-  {{ attach_library('kraken/system-message') }}
+  {{ attach_library('kraken/messages') }}
   <div aria-label="{{ status_headings[type] }}"{{ attributes.setAttribute('class', classes)|without('role', 'aria-label').setAttribute('role', 'status').setAttribute('aria-live', 'polite') }}>
       <button class="js-dismiss__trigger message__close" data-dismiss="message">&times;</button>
       <svg role="img" class="message__icon">

@@ -5,44 +5,6 @@
 */
 
 /* Lists */
-ul,
-ol,
-dl {
-  @apply my-3;
-}
-
-h2 + ul,
-h2 + ol,
-h2 + dl,
-h3 + ul,
-h3 + ol,
-h3 + dl,
-h4 + ul,
-h4 + ol,
-h4 + dl,
-h5 + ul,
-h5 + ol,
-h5 + dl,
-h6 + ul,
-h6 + ol,
-h6 + dl {
-  @apply mt-leading;
-}
-
-ul > ul,
-ol > ol,
-ul > ol,
-ol > ul {
-  @apply my-0;
-}
-
-ul ul,
-ul ol,
-ol ol,
-ol ul {
-  @apply pl-6;
-}
-
 ul {
   list-style-type: disc;
 }

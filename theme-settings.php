@@ -107,28 +107,28 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
 
     $form['general']['clf_widen'] = [
     '#type' => 'checkbox',
-    '#title' => t('<strong>Widen the CLF (v.7) to 1720px</strong>'),
+    '#title' => t('Widen the CLF (v.7) to 1720px'),
     '#description' => t('By default, version 7 of the CLF is constrained to 1200px wide. This option adds an additional 1720px (adjustable in CSS) breakpoint to the CLF required regions (does not effect content regions)'),
     '#default_value' => theme_get_setting('clf_widen'),
     ];
 
     $form['general']['clf_widen_more'] = [
     '#type' => 'checkbox',
-    '#title' => t('<strong>Widen the CLF (v.7) to 2400px</strong>'),
+    '#title' => t('Widen the CLF (v.7) to 2400px'),
     '#description' => t('This option adds an additional 2400px (adjustable in CSS) breakpoint to the CLF required regions (does not effect content regions)'),
     '#default_value' => theme_get_setting('clf_widen_more'),
     ];
 
     $form['general']['clf_dark_mode'] = [
     '#type' => 'checkbox',
-    '#title' => t('<strong>Load Dark Mode stylesheet</strong>'),
+    '#title' => t('Load Dark Mode stylesheet'),
     '#description' => t('Allow a Dark Mode option to be loaded if a user\'s preferences ask for it. This option requires additional CSS and is only supported for CLF 8+.'),
     '#default_value' => theme_get_setting('clf_dark_mode'),
     ];
 
     $form['general']['cwl_site'] = [
     '#type' => 'checkbox',
-    '#title' => t('<strong>Display a CWL Login option</strong>'),
+    '#title' => t('Display a CWL Login option'),
     '#description' => t(
         '<strong>Check this option if the site should display a CWL Login option on the <a href=":url" target="_blank">drupal login page</a>.</strong><br />Note that this does not implement CWL protection, but simply adds the form to the login page. If you are using a module like <strong><a href=":url2" target="_blank">Gin Login</a></strong>, you should disable it.', [
         ':url' => '/user',
@@ -159,7 +159,7 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
 
     $form['general']['clf_sticky'] = [
     '#type' => 'checkbox',
-    '#title' => t('<strong>Make the top navigation sticky?</strong>'),
+    '#title' => t('Make the top navigation sticky?'),
     '#description' => t('This option allows the top navigation to stay pinned to the top of the page when scrolling.'),
     '#default_value' => theme_get_setting('clf_sticky'),
     ];
@@ -190,7 +190,7 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
 
     $form['unit']['clf_faculty'] = [
     '#type' => 'checkbox',
-    '#title' => t('<strong>Is your unit part of a Faculty?</strong>'),
+    '#title' => t('Is your unit part of a Faculty?'),
     '#default_value' => theme_get_setting('clf_faculty'),
     ];
 
@@ -837,7 +837,7 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
 
     $form['extra']['clf_fontawesome'] = [
     '#type' => 'checkbox',
-    '#title' => t('<strong>Use Fontawesome 4.7.x</strong>'),
+    '#title' => t('Use Fontawesome 4.7.x'),
     '#description' => t(
         'Add all Fontawesome icon fonts to the site. <a href=":url" target="_blank">Read the documentation</a>.<br /><small>*Note: unless you\'re using the minimal CLF, version 3.x of the fontawesome library is included with the CLF package. Before enabling this option, please consider using a more efficient alternative, such as SVGs or a generating a free custom icon font through a service like <a href=":url_fontello" target="_blank">Fontello</a> or <a href=":url_icomoon" target="_blank">Icomoon</a>.</small>', [
           ':url' => 'http://fontawesome.io/icons/',
@@ -851,8 +851,8 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
     $form['extra']['unit_signature'] = [
       '#type' => 'managed_file',
       '#required' => false,
-      '#title' => t('<strong>Unit signature (SVG)</strong><br>* ensure that svg is trimmed to artwork bounds.'),
-      '#description' => t('This option allows an SVG of signature to be uploaded, which is then displayed in the unit footer.'),
+      '#title' => t('Unit signature (SVG)'),
+      '#description' => t('This option allows an SVG of signature to be uploaded, which is then displayed in the unit footer.<br><strong>* ensure that svg is trimmed to artwork bounds.</strong>'),
       '#default_value' => theme_get_setting('unit_signature'),
       '#upload_location' => 'public://unit-signature/',
       '#upload_validators' => array(
