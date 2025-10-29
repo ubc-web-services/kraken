@@ -30,7 +30,8 @@ figure.align-right {
 img[data-entity-type="file"]:not(
   .align-left,
   .align-center,
-  .align-right):not(:where(figure img)) {
+  .align-right):not(:where(figure img)),
+img:not(:where(.ubc-card img)) {
   @apply mt-leading;
 }
 

@@ -73,8 +73,3 @@
 [data-quickedit-field-id] {
   @apply inline;
 }
-
-/* Drupal inline images */
-.node__content .field--name-field-media-image img {
-  @apply mt-leading;
-}

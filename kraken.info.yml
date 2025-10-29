@@ -10,20 +10,17 @@ generator: 'starterkit_theme:11.0.1'
 
 libraries:
   - core/normalize
-  - kraken/messages
   - kraken/global
 
 libraries-extend:
-  user/drupal.user:
-    - kraken/user
-  core/drupal.dropbutton:
-    - kraken/dropbutton
   core/drupal.dialog:
     - kraken/dialog
-  file/drupal.file:
-    - kraken/file
+  core/drupal.dropbutton:
+    - kraken/dropbutton
   core/drupal.progress:
     - kraken/progress
+  user/drupal.user:
+    - kraken/user
 
 libraries-override:
   formtips/formtips: false

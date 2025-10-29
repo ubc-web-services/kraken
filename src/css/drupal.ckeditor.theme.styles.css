@@ -15,7 +15,7 @@
     --base-line-height: var(--leading);
 }
 
-/* alter the behaviour inside the editor becuase of different markup vs front end */
+/* alter the behaviour inside the editor because of different markup vs front end */
 @media (min-width:768px) {
     .media.align-left,
     .media.align-right {

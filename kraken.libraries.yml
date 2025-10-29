@@ -107,51 +107,12 @@ dropbutton:
       css/components/dropbutton.css:
         weight: -10
 
-file:
-  version: VERSION
-  css:
-    component:
-      css/components/file.css:
-        weight: -10
-
-image-widget:
-  version: VERSION
-  css:
-    component:
-      css/components/image-widget.css: {  }
-
-indented:
-  version: VERSION
-  css:
-    component:
-      css/components/indented.css: {  }
-
-messages:
-  version: VERSION
-  css:
-    component:
-      css/components/messages.css:
-        weight: -10
-
-node:
-  version: VERSION
-  css:
-    component:
-      css/components/node.css:
-        weight: -10
-
 progress:
   version: VERSION
   css:
     component:
       css/components/progress.css:
         weight: -10
-
-search-results:
-  version: VERSION
-  css:
-    component:
-      css/components/search-results.css: {  }
 
 user:
   version: VERSION
@@ -181,13 +142,6 @@ maintenance-page:
   css:
     theme:
       css/drupal.maintenance.page.min.css: { minified: true }
-
-### System message Files
-system-message:
-  version: VERSION
-  css:
-    theme:
-      css/drupal.system.message.min.css: { minified: true }
 
 ## Custom JS Libraries
 ### Alert content entities

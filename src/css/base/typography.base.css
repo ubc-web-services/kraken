@@ -365,3 +365,12 @@ hr,
   height: 0;
   opacity: 0;
 }
+
+/* indent styles */
+.indented {
+  @apply ml-8;
+}
+
+[dir="rtl"] .indented {
+  @apply ml-0 mr-8;
+}
