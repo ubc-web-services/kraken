@@ -4,16 +4,6 @@
 * This file contains all styles related to the table element.
 */
 
-
-
-
-
-
-
-
-
-
-
 table {
   @apply w-full text-left;
   border-spacing: 0;

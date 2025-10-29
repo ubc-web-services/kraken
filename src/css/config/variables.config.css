@@ -68,7 +68,7 @@
     --error: 255, 124, 124; /* #ff7c7c */
     --warning: 248, 230, 5; /* #f8e605 */
     --success: 87, 237, 174; /* #57edae */
-    --status: rgba(var(--ubc-blue-neptune), 1);
+    --status: 64, 180, 229; /* #40b4e5 */
     --text-color: rgba(var(--grey-900), 1);
 
     --default-text-color: var(--text-color);
