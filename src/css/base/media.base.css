@@ -118,3 +118,8 @@ object {
 .img-rounded img {
   border-radius: 9999px;
 }
+
+/* image filters */
+.img-greyscale {
+  filter: grayscale(100%);
+}
