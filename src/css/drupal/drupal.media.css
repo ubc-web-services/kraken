@@ -6,6 +6,10 @@
 }
 
 /* drupal media */
+figure img,
+img[data-entity-type="file"] {
+  @apply mt-0;
+}
 
 /* add margin to images */
 .image-inline:not(:where(figure .image-inline)) {
@@ -30,8 +34,7 @@ figure.align-right {
 img[data-entity-type="file"]:not(
   .align-left,
   .align-center,
-  .align-right):not(:where(figure img)),
-img:not(:where(.ubc-card img)) {
+  .align-right):not(:where(figure img)) {
   @apply mt-leading;
 }
 

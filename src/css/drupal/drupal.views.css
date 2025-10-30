@@ -22,6 +22,10 @@
   grid-gap: var(--grid-layout-gap);
 }
 
+.views-exposed-form .form-item {
+  @apply mt-0;
+}
+
 /* adjustment for views sticky header - probably don't need this */
 @media screen and (min-width: 980px) {
 

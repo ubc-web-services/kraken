@@ -136,3 +136,12 @@ ol.item-list,
     @apply pl-8;
   }
 }
+
+/* Inline list */
+.list-inline {
+  @apply ml-0 list-none;
+}
+
+.list-inline > li {
+  @apply inline-block pl-0;
+}

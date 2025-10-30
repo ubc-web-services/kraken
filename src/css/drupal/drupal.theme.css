@@ -4,45 +4,6 @@
 * This file contains all styles used to modify Drupal makrup to match the theme.
 */
 
-/* paragraphs */
-.paragraph--type--text__inner > :first-child,
-.paragraph--type--text > div > div > :first-child {
-  @apply mt-0;
-}
-
-.paragraph.bg-ubc-blue {
-  @apply text-white;
-}
-
-.paragraph.bg-ubc-blue a {
-  @apply text-ubc-blue-polar;
-}
-
-.paragraph.bg-ubc-blue a:hover {
-  @apply text-ubc-blue-cornflower;
-}
-
-.paragraph.bg-ubc-blue .unit-button--light {
-  @apply text-ubc-blue-cobalt;
-}
-
-.paragraph.bg-ubc-blue .unit-button--dark {
-  @apply text-ubc-blue-polar;
-}
-
-.paragraph.bg-ubc-blue .unit-button--light:hover,
-.paragraph.bg-ubc-blue .unit-button--dark:hover {
-  @apply text-white;
-}
-
-.paragraph.bg-ubc-blue .unit-button--simple::after {
-  content: url("../img/svg/icon-caret--white.svg");
-}
-
-.paragraph.bg-ubc-blue .unit-button--simple:hover::after {
-  content: url("../img/svg/icon-caret--white.svg");
-}
-
 /* js text counter */
 .text-count-message {
   @apply text-sm text-grey-700;
