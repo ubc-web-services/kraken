@@ -11,9 +11,16 @@ img[data-entity-type="file"] {
   @apply mt-0;
 }
 
-/* add margin to images */
-.image-inline:not(:where(figure .image-inline)) {
+/* add margin to media without figure containers */
+.image-inline:not(:where(figure .image-inline)),
+.media--type-image:not(:where(figure .media--type-image)),
+.media--type-remote-video:not(:where(figure .media--type-remote-video)) {
   @apply mt-leading;
+}
+
+/* make embedded video full width when not aligned */
+figure:not(.align-left, .align-center, .align-right):has(.media--type-remote-video)  {
+  width: 100%;
 }
 
 /* don't let floated images float on tiny screens */
@@ -61,10 +68,10 @@ img.align-center {
     @apply float-right ml-leading;
   }
 
-  /* set a max width for floated media items */
-  [class^="widget-"].align-left,
-  [class^="widget-"].align-right {
-    @apply max-w-md;
+  /* set a max width for floated items */
+  .align-left,
+  .align-right {
+    @apply max-w-[50%];
   }
 
 }
