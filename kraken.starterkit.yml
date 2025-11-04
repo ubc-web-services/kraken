@@ -1,6 +1,7 @@
 ignore:
   - '/kraken.starterkit.yml'
   - 'composer.json'
+  - '.ddev'
 no_edit: []
 no_rename: []
 info:
