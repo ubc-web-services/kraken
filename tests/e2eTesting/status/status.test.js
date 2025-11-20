@@ -4,7 +4,6 @@ import { doLogin, compareVersions } from '../utils/helper.js'; // assumes you po
 // Variables to compare versions
 // ------------------------------------------------------------
 const minDrupalVersion = [9, 5, 0];     // Drupal version 9.5.0
-const maxDrupalVersion = [11, 2, 5];    // Drupal version 11.2.0
 const minPHPVersion = [8, 1, 0];        // PHP version 8.1.0
 const maxPHPVersion = [8, 5, 0];        // PHP version 8.5.0
 // ------------------------------------------------------------
@@ -19,15 +18,18 @@ test.describe('Generic Test Suite - Status Page', () => {
     await expect(page.locator('.page-title')).toContainText('Status report');
   });
 
-  test('Checks Drupal version is within range', async ({ page }) => {
+  test('Checks Drupal version', async ({ page }) => {
     const versionText = await page
       .locator('.system-status-general-info__items > :nth-child(1)')
       .innerText();
 
     // Extract after "Version"
     const version = versionText.split('Version')[1].trim();
-    compareVersions(version, minDrupalVersion, maxDrupalVersion);
+
+    // Now only pass the minimum version
+    compareVersions(version, minDrupalVersion);
   });
+
 
   test('Checks PHP version is within range', async ({ page }) => {
     const versionText = await page

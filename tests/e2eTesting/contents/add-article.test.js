@@ -36,7 +36,7 @@ test.describe('Generic Test Suite - adds an article page', () => {
     await page.locator('[data-drupal-selector="edit-submit"]').click();
 
     // Verify the page content
-    const primaryContent = page.locator('#primary-content');
+    const primaryContent = page.locator('.field--name-body.field__item p');
     await expect(primaryContent).toContainText(bodyMessage);
   });
 

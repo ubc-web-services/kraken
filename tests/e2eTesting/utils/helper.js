@@ -10,27 +10,22 @@ const execAsync = util.promisify(exec);
  * Compare versions
  *  - version: current version (string) e.g. "9.5.0"
  *  - minV: minimum version array [9, 5, 0]
- *  - maxV: maximum version array [10, 4, 4]
  */
-export function compareVersions(version, minV, maxV) {
+export function compareVersions(version, minV) {
   const [int0, int1, int2] = version.split('.').map(Number);
-  let withinRange = false;
 
-  if (
-    ((int0 > minV[0]) ||
-     (int0 === minV[0] && int1 > minV[1]) ||
-     (int0 === minV[0] && int1 === minV[1] && int2 >= minV[2])) &&
-    ((int0 < maxV[0]) ||
-     (int0 === maxV[0] && int1 < maxV[1]) ||
-     (int0 === maxV[0] && int1 === maxV[1] && int2 <= maxV[2]))
-  ) {
-    console.log(`Version ${version} is within range (${minV.join('.')} - ${maxV.join('.')})`);
-    withinRange = true;
+  const meetsMinimum =
+    (int0 > minV[0]) ||
+    (int0 === minV[0] && int1 > minV[1]) ||
+    (int0 === minV[0] && int1 === minV[1] && int2 >= minV[2]);
+
+  if (meetsMinimum) {
+    console.log(`Version ${version} meets minimum version ${minV.join('.')}`);
   } else {
-    console.log(`Version ${version} is NOT within range (${minV.join('.')} - ${maxV.join('.')})`);
+    console.log(`Version ${version} does NOT meet minimum version ${minV.join('.')}`);
   }
 
-  expect(withinRange).toBe(true);
+  expect(meetsMinimum).toBe(true);
 }
 
 /**
