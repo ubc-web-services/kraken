@@ -19,6 +19,8 @@ jobs:
       uses: ddev/github-action-setup-ddev@v1
     - name: Start DDEV
       run: ddev start
+    - name: Get DDEV add-ons
+      run: ddev add-on get ddev/ddev-drupal-contrib
     - name: Install composer dependencies
       run: ddev poser
     - name: Symlink the theme into the web/themes/custom directory
