@@ -1,7 +1,9 @@
 name: Playwright Tests
 on:
   pull_request:
-    branches: [ main, master] 
+    branches: [ main, master]
+  push:
+    branches: [ test ] 
 jobs:
   test:
     timeout-minutes: 60 
@@ -33,7 +35,7 @@ jobs:
         URL=$(ddev describe -j | jq -r .raw.services.web.https_url)
         echo "BASE_URL=$URL" >> $GITHUB_ENV
     - name: Run Playwright tests
-      run: npx playwright test tests/e2eTesting
+      run: npx playwright test tests
       env:
         USERNAME: ${{ secrets.USERNAME }}
         PASSWORD: ${{ secrets.PASSWORD }}
