@@ -70,6 +70,7 @@
     --success: 87, 237, 174; /* #57edae */
     --status: 64, 180, 229; /* #40b4e5 */
     --text-color: rgba(var(--grey-900), 1);
+    --heading-color: rgba(var(--ubc-blue-sea), 1);
 
     --default-text-color: var(--text-color);
     --default-color-link: rgba(var(--ubc-blue-cobalt), 1);

@@ -45,6 +45,7 @@ img.align-center {
   @apply mx-auto mt-leading;
 }
 
+.align-center,
 .media.align-center {
   @apply table mx-auto;
 }
