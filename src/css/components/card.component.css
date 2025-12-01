@@ -19,14 +19,14 @@
 
 .ubc-card--horiz,
 .widget-card--horizontal .ubc-card--horiz {
-    @apply grid grid-cols-12;
+    @apply grid grid-cols-1;
     container-type: inline-size;
     container-name: horizontalcard;
 }
 
 .ubc-card--horiz-rev,
 .widget-card--horizontal .ubc-card--horiz-rev {
-    @apply grid grid-cols-12;
+    @apply grid grid-cols-1;
     container-type: inline-size;
     container-name: horizontalcardrev;
 }
@@ -45,6 +45,11 @@
 /* horizontalcard larger than 30rem wide (480px) */
 @container horizontalcard (min-width: 30rem) {
 
+    .ubc-card--horiz,
+    .widget-card--horizontal .ubc-card--horiz {
+        @apply grid-cols-12;
+    }
+
     .ubc-card--horiz .ubc-card__media,
     .widget-card--horizontal .ubc-card--horiz .ubc-card__media {
         @apply col-span-3 col-start-1 row-start-1;
@@ -59,6 +64,11 @@
 
 /* horizontalcardrev larger than 30rem wide (480px) */
 @container horizontalcardrev (min-width: 30rem) {
+
+    .ubc-card--horiz-rev,
+    .widget-card--horizontal .ubc-card--horiz-rev {
+        @apply grid-cols-12;
+    }
 
     .ubc-card--horiz-rev .ubc-card__media,
     .widget-card--horizontal .ubc-card--horiz-rev .ubc-card__media {
