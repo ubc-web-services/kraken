@@ -44,14 +44,14 @@
 %}
 
 {% if multiple %}
-  <ul{{ attributes.addClass('inline-flex', 'list-none', 'pl-0') }}>
+  <ul{{ attributes.addClass('inline-flex', 'list-none', 'pl-0', 'my-0') }}>
     {% for item in items %}
       <li{{ item.attributes.addClass('tag') }}>{{ item.content }}</li>
     {% endfor %}
   </ul>
 {% else %}
   {% for item in items %}
-    <ul{{ attributes.addClass('inline-flex', 'list-none', 'pl-0') }}>
+    <ul{{ attributes.addClass('inline-flex', 'list-none', 'pl-0', 'my-0') }}>
       <li{{ item.attributes.addClass('tag') }}>{{ item.content }}</li>
     </ul>
   {% endfor %}
