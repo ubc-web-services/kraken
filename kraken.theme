@@ -248,7 +248,7 @@ function kraken_preprocess_html(&$variables)
   $seriffonts = 'var(--text-font-stack)';
   $codefonts = 'menlo, monaco, consolas, "Liberation Mono", "Courier New", monospace';
   if (theme_get_setting('clf_fonts') == 'default') {
-    $sansseriffonts = 'Catamaran, Arial, sans-serif';
+    $sansseriffonts = 'open sans, Arial, sans-serif';
     $seriffonts = 'merriweather, georgia, cambria, "Times New Roman", times, serif';
   }
   if ((theme_get_setting('clf_fonts') == 'legacy-dev') || (theme_get_setting('clf_fonts') == 'legacy-prod')) {
