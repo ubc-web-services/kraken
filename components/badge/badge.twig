@@ -1,3 +1,23 @@
+{#
+	/**
+	* @file
+	* Component to render a badge.
+	*/
+
+	/* Usage example: */
+
+    {% embed 'kraken:badge' with {
+        background: 'bg-ubc-grey-1',
+        size: 'h-8 w-8',
+        styleClasses: 'm-1 font-semibold tracking-tighter',
+        color: 'text-white',
+    } %}
+        {% block content %}
+            NEW
+        {% endblock %}
+    {% endembed %}
+#}
+
 {% set badgeattributes = create_attribute() %}
 {% set badgeinnerattributes = create_attribute() %}
 {%
