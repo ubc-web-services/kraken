@@ -8,7 +8,9 @@
   }],
   "require": {},
   "require-dev": {
+      "drupal/canvas": "^1.0",
       "drupal/coder": "^8.3.16",
+      "drupal/devel": "^5.5",
       "drush/drush": "^12.5 || ^13.3"
   },
   "config": {
