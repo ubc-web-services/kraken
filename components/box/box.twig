@@ -1,3 +1,25 @@
+{#
+	/**
+	* @file
+	* Component to render a box.
+	*/
+
+	/* Usage example: */
+
+    {% embed 'kraken:box' with {
+        background: 'bg-ubc-blue',
+        align: 'w-full',
+        padding: 'p-6',
+        margin: 'my-0',
+        customClasses: 'p-6',
+        color: 'text-white',
+    } %}
+        {% block content %}
+            Some text here
+        {% endblock %}
+    {% endembed %}
+#}
+
 {% set boxattributes = create_attribute() %}
 {% set classes = [
     'widget-color-box',

@@ -5,6 +5,11 @@ group: UBC Web Services
 description: Component to render as a coloured box
 props:
   type: object
+  required:
+    - align
+    - background
+    - margin
+    - padding
   properties:
     align:
       type: string
@@ -15,6 +20,13 @@ props:
         - align-left
         - align-right
         - align-full
+      meta:enum:
+        align-center: Center aligned
+        align-left: Left aligned
+        align-right: Right aligned
+        align-full: Full Width
+      default: align-center
+      examples: ['align-center']
     background:
       type: string
       title: Background color
@@ -27,10 +39,6 @@ props:
         - bg-unit-secondary
         - bg-unit-tertiary
         - bg-unit-accent
-        - bg-unit-alt-primary
-        - bg-unit-alt-secondary
-        - bg-unit-alt-tertiary
-        - bg-unit-alt-accent
         - bg-ubc-blue
         - bg-ubc-blue-sea
         - bg-ubc-blue-cobalt
@@ -46,6 +54,31 @@ props:
         - bg-grey-600
         - bg-grey-800
         - bg-grey-900
+      meta:enum:
+        bg-none: No background colour
+        bg-white: White background
+        bg-black: Black background
+        bg-unit-primary: Unit Primary background
+        bg-unit-secondary: Unit Secondary background
+        bg-unit-tertiary: Unit Tertiary background
+        bg-unit-accent: Unit Accent background
+        bg-ubc-blue: UBC Blue background
+        bg-ubc-blue-sea: 'UBC Blue: Sea background'
+        bg-ubc-blue-cobalt: 'UBC Blue: Cobalt background'
+        bg-ubc-blue-neptune: 'UBC Blue: Neptune background'
+        bg-ubc-blue-cornflower: 'UBC Blue: Cornflower background'
+        bg-ubc-blue-polar: 'UBC Blue: Polar background'
+        bg-ubc-blue-frost: 'UBC Blue: Frost background'
+        bg-grey-50: 'Grey: 50 background'
+        bg-grey-100: 'Grey: 100 background'
+        bg-grey-200: 'Grey: 200 background'
+        bg-grey-300: 'Grey: 300 background'
+        bg-grey-500: 'Grey: 500 background'
+        bg-grey-600: 'Grey: 600 background'
+        bg-grey-800: 'Grey: 800 background'
+        bg-grey-900: 'Grey: 900 background'
+      default: bg-white
+      examples: ['bg-white']
     margin:
       type: string
       title: Vertical margin
@@ -56,6 +89,14 @@ props:
         - my-6
         - my-12
         - my-16
+      meta:enum:
+        my-0: No vertical margin
+        my-4: Small vertical margins
+        my-6: Normal vertical margins
+        my-12: Large vertical margins
+        my-16: Extra-large vertical margins
+      default: my-6
+      examples: ['my-6']
     padding:
       type: string
       title: Padding
@@ -66,6 +107,14 @@ props:
         - p-6
         - p-12
         - p-16
+      meta:enum:
+        p-0: No padding
+        p-4: Small padding
+        p-6: Normal padding
+        p-12: Large padding
+        p-16: Extra-large padding
+      default: p-6
+      examples: ['p-6']
     dropshadow:
       type: boolean
       title: Dropshadow
@@ -74,8 +123,6 @@ props:
       title: Custom Classes
       type: string
       description: Custom classes to apply to the box
-      examples:
-        - my-class another-class
 slots:
   content: # {% block content %}.
     title: Color box Content
