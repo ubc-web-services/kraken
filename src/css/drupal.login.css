@@ -55,13 +55,13 @@
 }
 
 .form-managed-file .form-submit {
-  @apply block py-3 px-6 text-center no-underline text-ubc-blue-cobalt border border-ubc-blue-cobalt bg-white;
+  @apply block px-6 py-3 text-center no-underline bg-white border text-ubc-blue-cobalt border-ubc-blue-cobalt;
 }
 
 .form-managed-file .form-submit:hover {
-  @apply text-white bg-ubc-blue-cobalt border border-ubc-blue-cobalt;
+  @apply text-white border bg-ubc-blue-cobalt border-ubc-blue-cobalt;
 }
 
-body {
+html, body {
   @apply bg-ubc-blue;
 }
