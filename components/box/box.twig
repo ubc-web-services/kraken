@@ -7,12 +7,13 @@
 	/* Usage example: */
 
     {% embed 'kraken:box' with {
-        background: 'bg-ubc-blue',
         align: 'w-full',
-        padding: 'p-6',
-        margin: 'my-0',
-        customClasses: 'p-6',
+        background: 'bg-ubc-blue',
         color: 'text-white',
+        customClasses: 'p-6',
+        dropshadow: false,
+        margin: 'my-0',
+        padding: 'p-6',
     } %}
         {% block content %}
             Some text here
