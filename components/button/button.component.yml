@@ -14,20 +14,16 @@ props:
       title: Link
       description: The button link
       format: uri
-      examples:
-        - https://ubc.ca
+      examples: ['https://ubc.ca','/news']
     text:
       type: string
       title: Text
       description: The button text
-      examples:
-        - Read more
+      examples: ['Read more','Learn more here']
     customClasses:
       title: Custom Classes
       type: string
       description: Custom classes to apply to the button
-      examples:
-        - my-class another-class
     style:
       type: string
       title: Style
@@ -39,6 +35,15 @@ props:
         - unit-button--transparent
         - unit-button--outline
         - unit-button--simple
+      meta:enum:
+        unit-button: Default button
+        unit-button--dark: Dark button
+        unit-button--light: Light button
+        unit-button--transparent: Transparent button
+        unit-button--outline: Outlined button
+        unit-button--simple: Simple button
+      default: unit-button
+      examples: ['unit-button']
     size:
       type: string
       title: Size
@@ -46,16 +51,23 @@ props:
       enum:
         - text-xs
         - text-sm
+        - text-base
         - text-lg
         - text-xl
         - text-2xl
         - text-3xl
+      meta:enum:
+        text-xs: Extra small text
+        text-sm: Small text
+        text-base: Regular text
+        text-lg: Large text
+        text-xl: Extra large text
+        text-2xl: 2xl text
+        text-3xl: 3xl text
     variant:
       type: string
       title: Variant
       description: Add a variant to alter the style further
-      enum:
-        - unit-button--small
     disabled:
       type: boolean
       title: Disabled
@@ -72,13 +84,11 @@ props:
       title: ID
       type: string
       description: An ID that will be applied to the button (#my-id)
-      examples:
-        - my-id
 slots:
-  before: # {% block before %}.
+  before:
     title: Button Icon Before
     description: A region to place an icon before the button text
-  after: # {% block after %}.
+  after:
     title: Button Icon After
     description: A region to place an icon after the button text
 libraryOverrides:
