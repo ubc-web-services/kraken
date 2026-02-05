@@ -39,10 +39,7 @@ figure.align-right {
   @apply mt-leading;
 }
 
-img[data-entity-type="file"]:not(
-  .align-left,
-  .align-center,
-  .align-right):not(:where(figure img)) {
+img[data-entity-type="file"]:not(:where(figure img)) {
   @apply mt-leading;
 }
 
