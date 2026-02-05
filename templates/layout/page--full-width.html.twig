@@ -1,0 +1,21 @@
+{% extends "page.html.twig" %}
+
+ {% block primary_content %}
+    <div{{ main_content_attributes.addClass('col-span-full', 'mt-12', 'pb-12').setAttribute('id', 'primary-content') }}>
+        {% if page.heading %}
+        {{ page.heading }}
+        {% endif %}
+        {% if page.help %}
+        <div id="help-region">{{ page.help }}</div>
+        {% endif %}
+        <section class="section">
+        {% if page.highlighted %}
+            <div id="highlighted">{{ page.highlighted }}</div>
+        {% endif %}
+        {% block content %}
+            {{ page.content }}
+        {% endblock content %}
+        </section>
+    </div>
+{% endblock primary_content %}
+
