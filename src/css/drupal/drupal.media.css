@@ -1,9 +1,15 @@
 /** @define drupal.media */
 
 /* drupal media */
+
 figure img,
 img[data-entity-type="file"] {
   @apply mt-0;
+}
+
+figure > div,
+figure .field--type-image {
+  display: table-cell;
 }
 
 /* add margin to media without figure containers */
