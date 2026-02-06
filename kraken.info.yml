@@ -31,19 +31,22 @@ ckeditor5-stylesheets:
   - css/drupal.ckeditor.theme.styles.min.css
 
 regions:
-  pre_content: 'Pre-content'
-  search: 'Search'
+  pre_content: Pre-content
+  search: Search
   primary_menu: 'Primary menu'
   secondary_menu: 'Secondary menu'
-  alert_region: 'Alert region'
-  masthead: 'Masthead'
-  breadcrumb: 'Breadcrumb'
-  heading: 'Heading'
-  help: 'Help'
-  highlighted: 'Highlighted'
-  content: 'Content'
-  sidebar_primary: 'Primary Sidebar'
-  sidebar_secondary: 'Secondary Sidebar'
+  masthead: Masthead
+  breadcrumb: Breadcrumb
+  masthead_lower: 'Masthead Lower'
+  sidebar_primary_upper: 'Left Sidebar: Upper'
+  sidebar_secondary_upper: 'Right Sidebar: Upper'
+  heading: Heading
+  help: Help
+  highlighted: Highlighted
+  content: Content
+  sidebar_primary: 'Left Sidebar'
+  sidebar_secondary: 'Right Sidebar'
+  grid: Grid content
   secondary_content: 'Secondary Content'
-  prefooter: 'Pre-Footer'
+  prefooter: Pre-Footer
   drawer: 'Off Canvas Drawer'

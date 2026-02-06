@@ -1,21 +1,59 @@
 {% extends "page.html.twig" %}
 
- {% block primary_content %}
-    <div{{ main_content_attributes.addClass('col-span-full', 'mt-12', 'pb-12').setAttribute('id', 'primary-content') }}>
+{% block main_grid %}
+
+  <div{{ attributes.addClass(grid_classes, leftupper_classes, leftlower_classes, leftside_classes, rightupper_classes, rightlower_classes, rightside_classes, 'fullwidth-content').setAttribute('id', 'main-grid') }}>
+
+    {% block sidebar_primary_upper %}
+      {% if sidebar_primary_upper_exists %}
+        <section{{ sidebar_primary_upper_attributes.setAttribute('id', 'sidebar-primary_upper') }}>
+          {{ page.sidebar_primary_upper }}
+        </section>
+      {% endif %}
+    {% endblock sidebar_primary_upper %}
+
+    {% block sidebar_secondary_upper %}
+      {% if sidebar_secondary_upper_exists %}
+        <section{{ sidebar_secondary_upper_attributes.setAttribute('id', 'sidebar-secondary_upper') }}>
+          {{ page.sidebar_secondary_upper }}
+        </section>
+      {% endif %}
+    {% endblock sidebar_secondary_upper %}
+
+    {% block primary_content %}
+      <div{{ main_content_attributes.setAttribute('id', 'primary-content') }}>
         {% if page.heading %}
-        {{ page.heading }}
+          {{ page.heading }}
         {% endif %}
         {% if page.help %}
-        <div id="help-region">{{ page.help }}</div>
+          <div id="help-region">{{ page.help }}</div>
         {% endif %}
         <section class="section">
-        {% if page.highlighted %}
+          {% if page.highlighted %}
             <div id="highlighted">{{ page.highlighted }}</div>
-        {% endif %}
-        {% block content %}
+          {% endif %}
+          {% block content %}
             {{ page.content }}
-        {% endblock content %}
+          {% endblock content %}
         </section>
-    </div>
-{% endblock primary_content %}
+      </div>
+    {% endblock primary_content %}
 
+    {% block sidebar_primary %}
+      {% if sidebar_primary_exists %}
+        <section{{ sidebar_primary_attributes.setAttribute('id', 'sidebar-primary') }}>
+          {{ page.sidebar_primary }}
+        </section>
+      {% endif %}
+    {% endblock sidebar_primary %}
+
+    {% block sidebar_secondary %}
+      {% if sidebar_secondary_exists %}
+        <section{{ sidebar_secondary_attributes.setAttribute('id', 'sidebar-secondary') }}>
+          {{ page.sidebar_secondary }}
+        </section>
+      {% endif %}
+    {% endblock sidebar_secondary %}
+
+  </div>
+{% endblock main_grid %}
