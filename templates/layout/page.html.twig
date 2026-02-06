@@ -147,7 +147,6 @@
   %}
 {% endif %}
 
-
 <noscript>
   <strong>We're sorry but this site doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
 </noscript>
@@ -166,11 +165,17 @@
     {% endif %}
   {% endblock clftop %}
 
+  {% block alert_region %}
+    {% if page.alert_region %}
+      {{ page.alert_region }}
+    {% endif %}
+  {% endblock alert_region %}
+
   {% block masthead %}
     {% if page.masthead %}
-    <section id="masthead" class="overflow-hidden masthead">
-      {{ page.masthead }}
-    </section>
+      <section id="masthead" class="overflow-hidden masthead">
+        {{ page.masthead }}
+      </section>
     {% endif %}
   {% endblock masthead %}
 

@@ -35,6 +35,7 @@ regions:
   search: Search
   primary_menu: 'Primary menu'
   secondary_menu: 'Secondary menu'
+  alert_region: 'Alert region'
   masthead: Masthead
   breadcrumb: Breadcrumb
   masthead_lower: 'Masthead Lower'
