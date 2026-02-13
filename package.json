@@ -26,6 +26,7 @@
     "css": "TAILWIND_MODE=build NODE_ENV=production postcss ./src/css/*.css -d  ./css --ext min.css",
     "js": "webpack --config webpack.dev.js && webpack --config webpack.prod.js",
     "prod": "TAILWIND_MODE=build NODE_ENV=production postcss ./src/css/*.css -d ./css --ext min.css && webpack --config webpack.prod.js",
+    "build": "npm run prod",
     "test:visual": "playwright test",
     "test:visual:ui": "playwright test --ui",
     "test:visual:report": "playwright show-report",
