@@ -34,6 +34,10 @@
   @apply mt-0 text-base;
 }
 
+.accordion__content {
+  @apply pt-leading;
+}
+
 /* responsive text style - disabled by default */
 /*
 @media (min-width: 1720px) {
