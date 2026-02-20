@@ -159,9 +159,9 @@
 
   {% block clftop %}
     {% if (clf_version == '8') %}
-      {% include '@es/includes/header.html.twig' %}
+      {% include '@kraken/includes/header.html.twig' %}
     {% else %}
-      {% include '@es/includes/header.clf7.html.twig' %}
+      {% include '@kraken/includes/header.clf7.html.twig' %}
     {% endif %}
   {% endblock clftop %}
 
@@ -287,13 +287,13 @@
 
   {% block clfbottom %}
     {% if (clf_version == '8') %}
-      {% include '@es/includes/footer.html.twig' %}
+      {% include '@kraken/includes/footer.html.twig' %}
     {% else %}
-      {% include '@es/includes/footer.clf7.html.twig' %}
+      {% include '@kraken/includes/footer.clf7.html.twig' %}
     {% endif %}
-    {% include '@es/includes/totop-button.html.twig' %}
+    {% include '@kraken/includes/totop-button.html.twig' %}
   {% endblock clfbottom %}
 
 </div>
 
-{% include '@es/includes/svg.html.twig' %}
+{% include '@kraken/includes/svg.html.twig' %}
