@@ -1,3 +1,39 @@
+
+{#
+	/**
+	* @file
+	* Component to render a primary card.
+	*/
+
+	/* Usage example: */
+  {% embed 'kraken:card--primary' with {
+    color: 'bg-ubc-blue bg-dark',
+    customClasses: 'lostsa-custom-classes scooby yeah',
+    figureStyles: 'mt-4',
+    imageZoom: true,
+    layout: 'ubc-card--vert',
+    link: 'https://ubc.ca',
+    meta: 'January 14, 2026',
+    noInsetContent: false,
+    noInsetImage: false,
+    noShadow: false,
+    subtitle: 'Subtitle text',
+    target: true,
+    title: 'Blockchain icons are nice',
+    titlePrefix: 'Mr.',
+    titleStyles: 'text-orange',
+    titleSuffix: 'MFA',
+
+  } %}
+    {% block media %}
+      <img src="[some-src]">
+    {% endblock %}
+    {% block content %}
+      <p class="line-clamp-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    {% endblock %}
+  {% endembed %}
+#}
+
 {% set cardprimaryattributes = create_attribute() %}
 {% set figureattributes = create_attribute() %}
 {% set contentattributes = create_attribute() %}
