@@ -8,17 +8,15 @@
   }],
   "require": {},
   "require-dev": {
-      "drupal/canvas": "^1.0",
       "drupal/coder": "^8.3.16",
       "drupal/devel": "^5.5",
-      "drupal/gin": "^5.0",
-      "drupal/gin_toolbar": "^3.0",
       "drush/drush": "^12.5 || ^13.3"
   },
   "config": {
     "sort-packages": true,
     "allow-plugins": {
       "dealerdirect/phpcodesniffer-composer-installer": true,
+      "drupal/core-composer-scaffold": true,
       "php-http/discovery": true,
       "tbachert/spi": false
     }

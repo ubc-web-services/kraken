@@ -5,8 +5,5 @@
 ## Example: "ddev install"
 
 vendor/bin/drush site:install --yes
-vendor/bin/drush theme:install kraken gin --yes
-vendor/bin/drush pm:install canvas devel gin_toolbar --yes
-vendor/bin/drush config:set system.theme admin gin --yes
 vendor/bin/drush config:set system.theme default kraken --yes
 vendor/bin/drush user:password admin admin --yes
