@@ -9,16 +9,12 @@ props:
     link:
       type: string
       title: Link
-      format: uri
       description: The tag link
-      examples:
-        - https://ubc.ca
+      examples: ['https://ubc.ca','/news']
     customClasses:
       title: Custom Classes
       type: string
       description: Custom classes to apply to the tag
-      examples:
-        - my-class another-class
 slots:
   content:
       title: Content
