@@ -14,7 +14,12 @@ props:
       type: string
       title: Text
       description: The text over top of the image
-    pageTitle:
+    showText:
+      type: boolean
+      title: Show the text?
+      description: This allows the text to be shown
+      default: true
+    isPageTitle:
       type: boolean
       title: Is page title
       description: This setting makes the text an h1
@@ -35,24 +40,24 @@ props:
       title: Image option
       description: Is there an image?
       default: true
+    showLink:
+      type: boolean
+      title: Show the link?
+      description: This allows the link to be shown
+      default: false
     link:
       type: string
       title: Link
       description: The destination of the link
-      examples:
-        - https://ubc.ca
+      examples: ['https://ubc.ca','/news']
     linkText:
       type: string
       title: Link Text
       description: The text of the link
-      examples:
-        - Read more
     linkStyle:
       type: string
       title: Link
       description: The styles of the link
-      examples:
-        - unit-button
     target:
       type: boolean
       title: Target
@@ -61,8 +66,6 @@ props:
       title: Custom Classes
       type: string
       description: Custom classes to apply to the masthead
-      examples:
-        - my-class another-class
 slots:
   media:
     title: Image Content

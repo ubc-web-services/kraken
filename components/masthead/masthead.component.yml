@@ -5,14 +5,12 @@ group: UBC Web Services
 description: Component to render as a masthead with image
 props:
   type: object
-  required:
-    - background
   properties:
     text:
       type: string
       title: Text
       description: The text over top of the image
-    pageTitle:
+    isPageTitle:
       type: boolean
       title: Is page title
       description: This setting makes the text an h1
@@ -28,8 +26,6 @@ props:
       title: Custom Classes
       type: string
       description: Custom classes to apply to the masthead
-      examples:
-        - my-class another-class
 slots:
   media:
     title: Image Content
