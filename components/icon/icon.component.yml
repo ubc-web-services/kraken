@@ -52,29 +52,24 @@ props:
         - icon-user
         - icon-vimeo
         - icon-youtube
+      examples: ['icon-mail','icon-youtube']
     size:
       type: string
       title: Icon Size
       description: The size of the icon
-      examples:
-        - h-4 w-4, h-6 w-6
+      examples: ['h-4 w-4','h-6 w-6']
     color:
       type: string
       title: Icon colour
       description: The colour to apply to the icon
       enum:
         - text-current
-        - text-none
         - text-white
         - text-black
         - text-unit-primary
         - text-unit-secondary
         - text-unit-tertiary
         - text-unit-accent
-        - text-unit-alt-primary
-        - text-unit-alt-secondary
-        - text-unit-alt-tertiary
-        - text-unit-alt-accent
         - text-ubc-blue
         - text-ubc-blue-sea
         - text-ubc-blue-cobalt
@@ -82,20 +77,59 @@ props:
         - text-ubc-blue-cornflower
         - text-ubc-blue-polar
         - text-ubc-blue-frost
+        - text-ubc-grey-1
+        - text-ubc-grey-2
+        - text-ubc-grey-3
+        - text-ubc-grey-4
+        - text-ubc-grey-5
+        - text-ubc-grey-6
         - text-grey-50
         - text-grey-100
         - text-grey-200
         - text-grey-300
+        - text-grey-400
         - text-grey-500
         - text-grey-600
+        - text-grey-700
         - text-grey-800
         - text-grey-900
+      meta:enum:
+        text-current: Current Colour text
+        text-white: White text
+        text-black: Black text
+        text-unit-primary: Unit Primary text
+        text-unit-secondary: Unit Secondary text
+        text-unit-tertiary: Unit Tertiary text
+        text-unit-accent: Unit Accent text
+        text-ubc-blue: UBC Blue text
+        text-ubc-blue-sea: 'UBC Blue: Sea text'
+        text-ubc-blue-cobalt: 'UBC Blue: Cobalt text'
+        text-ubc-blue-neptune: 'UBC Blue: Neptune text'
+        text-ubc-blue-cornflower: 'UBC Blue: Cornflower text'
+        text-ubc-blue-polar: 'UBC Blue: Polar text'
+        text-ubc-blue-frost: 'UBC Blue: Frost text'
+        text-ubc-grey-1: 'UBC Grey: 1 (darkest)'
+        text-ubc-grey-2: 'UBC Grey: 2'
+        text-ubc-grey-3: 'UBC Grey: 3'
+        text-ubc-grey-4: 'UBC Grey: 4'
+        text-ubc-grey-5: 'UBC Grey: 5'
+        text-ubc-grey-6: 'UBC Grey: 6 (lightest)'
+        text-grey-50: 'Grey: 50 text'
+        text-grey-100: 'Grey: 100 text'
+        text-grey-200: 'Grey: 200 text'
+        text-grey-300: 'Grey: 300 text'
+        text-grey-400: 'Grey: 400 text'
+        text-grey-500: 'Grey: 500 text'
+        text-grey-600: 'Grey: 600 text'
+        text-grey-700: 'Grey: 700 text'
+        text-grey-800: 'Grey: 800 text'
+        text-grey-900: 'Grey: 900 text'
+      default: text-black
+      examples: ['text-black']
     customClasses:
       title: Custom Classes
       type: string
       description: Custom classes to apply to the icon
-      examples:
-        - my-class another-class
 libraryOverrides:
   dependencies:
     - kraken/global

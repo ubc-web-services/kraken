@@ -2,6 +2,16 @@
  * @file
  * Styles for the default drupal login
  */
+
+html,
+body {
+  @apply bg-ubc-blue;
+}
+
+form h2 {
+  @apply pb-4 text-xl font-normal text-grey-500;
+}
+
 .rounded {
   border-radius: 0.25rem;
 }
@@ -55,13 +65,21 @@
 }
 
 .form-managed-file .form-submit {
-  @apply block py-3 px-6 text-center no-underline text-ubc-blue-cobalt border border-ubc-blue-cobalt bg-white;
+  @apply block px-6 py-3 text-center no-underline bg-white border text-ubc-blue-cobalt border-ubc-blue-cobalt;
 }
 
 .form-managed-file .form-submit:hover {
-  @apply text-white bg-ubc-blue-cobalt border border-ubc-blue-cobalt;
+  @apply text-white border bg-ubc-blue-cobalt border-ubc-blue-cobalt;
 }
 
-body {
-  @apply bg-ubc-blue;
+.button.samlauth-auth-login-link {
+  @apply text-lg rounded-sm block text-center no-underline border px-[2em] py-[.65em] cursor-pointer text-center;
+  color: rgba(var(--white), 1);
+  background-color: rgba(var(--ubc-blue), 1);
+  border-color: transparent;
+  transition: all 0.125s ease-out;
+}
+
+.button.samlauth-auth-login-link:hover {
+  background-color: rgba(var(--ubc-blue-cobalt), 1);
 }

@@ -21,10 +21,12 @@ props:
         - h5
         - h6
       default: h3
+      examples: ['h3']
     title:
       type: string
       title: Title
       description: The title to use as a trigger
+      examples: ['Find out more','Show details']
     isOpen:
       type: boolean
       title: Is open
@@ -37,8 +39,6 @@ props:
       title: Custom Classes
       type: string
       description: Custom classes to apply to the accordion
-      examples:
-        - my-class another-class
 slots:
   content: # {% block content %}.
     title: Accordion Content

@@ -1,3 +1,23 @@
+{#
+	/**
+	* @file
+	* Component to render a masthead.
+	*/
+
+	/* Usage example: */
+  {% embed 'kraken:masthead' with {
+    backgroundLight: false,
+    customClasses: 'lostsa-custom-classes scooby yeah',
+    gradient: true,
+    isPageTitle: true,
+    text: 'A small amount of text',
+  } %}
+    {% block media %}
+      <img src="[img-src]">
+    {% endblock %}
+  {% endembed %}
+#}
+
 {% set mastheadattributes = create_attribute() %}
 {% set classes = [
     'masthead',
@@ -15,7 +35,7 @@
   </figure>
   <div class="container absolute inset-0 z-40 flex flex-col justify-end px-5 mx-auto md--px-4">
     <div class="p-16 max-w-[640px] xl--max-w-[768px]">
-      {% if pageTitle %}
+      {% if isPageTitle %}
         <h1 class="mt-0 heading-responsive">{{ text }}</h1>
       {% else %}
         <div class="mt-0 heading-responsive">

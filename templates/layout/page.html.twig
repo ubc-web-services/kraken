@@ -60,10 +60,14 @@
 #}
 {% set main_content_attributes = create_attribute() %}
 {% set breadcrumb_attributes = create_attribute() %}
+{% set sidebar_primary_upper_attributes = create_attribute() %}
+{% set sidebar_secondary_upper_attributes = create_attribute() %}
 {% set sidebar_primary_attributes = create_attribute() %}
 {% set sidebar_secondary_attributes = create_attribute() %}
 {% set secondary_content_attributes = create_attribute() %}
 {% set prefooter_attributes = create_attribute() %}
+{% set sidebar_primary_upper_exists = page.sidebar_primary_upper|render|striptags('<img><video><audio><drupal-render-placeholder>')|trim is not empty %}
+{% set sidebar_secondary_upper_exists = page.sidebar_secondary_upper|render|striptags('<img><video><audio><drupal-render-placeholder>')|trim is not empty %}
 {% set sidebar_primary_exists = page.sidebar_primary|render|striptags('<img><video><audio><drupal-render-placeholder>')|trim is not empty %}
 {% set sidebar_secondary_exists = page.sidebar_secondary|render|striptags('<img><video><audio><drupal-render-placeholder>')|trim is not empty %}
 
@@ -73,105 +77,76 @@
     'grid',
     'grid-cols-1',
     'md--grid-cols-12',
-    'gap-x-8',
+    'gap-8',
+    'my-12',
     'px-5',
     'mx-auto',
     'md--px-4',
   ]
 %}
-{%
-  set breadcrumb_classes = [
-    'col-span-full',
-  ]
-%}
-{%
-  set main_content_classes = [
-    'col-span-full',
-    'md--col-span-6',
-    'md--row-span-2',
-    'md--col-start-4',
-    'md--row-start-2',
-    'mt-12',
-    'pb-12',
-  ]
-%}
-{%
-  set sidebar_primary_classes = [
-    'col-span-full',
-    'md--col-span-3',
-    'md--col-start-1',
-    'md--row-start-2',
-  ]
-%}
-{%
-  set sidebar_secondary_classes = [
-    'col-span-full',
-    'md--col-span-3',
-    'md--row-span-2',
-    'md--col-start-10',
-    'md--row-start-2',
-  ]
-%}
-{%
-  set secondary_content_classes = [
-    'col-span-full',
-  ]
-%}
-{% if not sidebar_primary_exists and not sidebar_secondary_exists %}
+{% if sidebar_primary_upper_exists %}
   {%
-    set main_content_classes = [
-      'col-span-full',
-      'md--col-span-10',
-      'md--col-start-2',
-      'lg--col-span-8',
-      'lg--col-start-3',
-      'mt-12',
-      'pb-12',
+    set leftupper_classes = [
+      'has-sidebar-left-upper',
     ]
   %}
 {% endif %}
-{% if sidebar_primary_exists and not sidebar_secondary_exists %}
+{% if sidebar_primary_exists %}
   {%
-    set main_content_classes = [
-      'col-span-full',
-      'md--col-span-8',
-      'md--row-span-2',
-      'md--col-start-1',
-      'md--row-start-2',
-      'mt-12',
-      'pb-12',
-    ]
-  %}
-  {%
-    set sidebar_primary_classes = [
-      'col-span-full',
-      'md--col-span-4',
-      'md--row-start-2',
-      'md--col-start-9',
+    set leftlower_classes = [
+      'has-sidebar-left-lower',
     ]
   %}
 {% endif %}
-{% if sidebar_secondary_exists and not sidebar_primary_exists %}
+{% if sidebar_primary_upper_exists and sidebar_primary_exists %}
   {%
-    set main_content_classes = [
-      'col-span-full',
-      'md--col-span-8',
-      'md--row-span-2',
-      'md--col-start-5',
-      'md--row-start-2',
-      'mt-12',
-      'pb-12',
+    set leftside_classes = [
+      'has-sidebars-left',
     ]
   %}
   {%
-    set sidebar_secondary_classes = [
-      'col-span-full',
-      'md--col-span-4',
-      'md--row-start-2',
-      'md--col-start-1',
+    set leftlower_classes = [
+      '',
+    ]
+  %}
+  {%
+    set leftupper_classes = [
+      '',
     ]
   %}
 {% endif %}
+{% if sidebar_secondary_upper_exists %}
+  {%
+    set rightupper_classes = [
+      'has-sidebar-right-upper',
+    ]
+  %}
+{% endif %}
+{% if sidebar_secondary_exists %}
+  {%
+    set rightlower_classes = [
+      'has-sidebar-right-lower',
+    ]
+  %}
+{% endif %}
+{% if sidebar_secondary_upper_exists and sidebar_secondary_exists %}
+  {%
+    set rightside_classes = [
+      'has-sidebars-right',
+    ]
+  %}
+  {%
+    set rightlower_classes = [
+      '',
+    ]
+  %}
+  {%
+    set rightupper_classes = [
+      '',
+    ]
+  %}
+{% endif %}
+
 <noscript>
   <strong>We're sorry but this site doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
 </noscript>
@@ -182,77 +157,142 @@
     {{ page.pre_content }}
   {% endif %}
 
-  {% if (clf_version == '8') %}
-    {% include '@kraken/includes/header.html.twig' %}
-  {% else %}
-    {% include '@kraken/includes/header.clf7.html.twig' %}
-  {% endif %}
+  {% block clftop %}
+    {% if (clf_version == '8') %}
+      {% include '@kraken/includes/header.html.twig' %}
+    {% else %}
+      {% include '@kraken/includes/header.clf7.html.twig' %}
+    {% endif %}
+  {% endblock clftop %}
 
-  {% if page.masthead %}
-  <section id="masthead" class="overflow-hidden masthead">
-    {{ page.masthead }}
-  </section>
-  {% endif %}
-  <div id="unit-content">
-    <main>
-      <div{{ attributes.addClass(grid_classes) }}>
+  {% block alert_region %}
+    {% if page.alert_region %}
+      {{ page.alert_region }}
+    {% endif %}
+  {% endblock alert_region %}
 
-        {% if page.breadcrumb %}
-          <div{{ breadcrumb_attributes.addClass(breadcrumb_classes) }}>
-            {{ page.breadcrumb }}
+  {% block masthead %}
+    {% if page.masthead %}
+      <section id="masthead" class="overflow-hidden masthead">
+        {{ page.masthead }}
+      </section>
+    {% endif %}
+  {% endblock masthead %}
+
+  {% block unitcontent %}
+    <div id="unit-content">
+      <main>
+
+        {% block breadcrumb %}
+          {% if page.breadcrumb %}
+            <div{{ breadcrumb_attributes.addClass('container', 'px-5', 'mx-auto', 'md--px-4') }}>
+              {{ page.breadcrumb }}
+            </div>
+          {% endif %}
+        {% endblock breadcrumb %}
+
+        {% block masthead_lower %}
+          {% if page.masthead_lower %}
+            <section id="masthead_lower" class="overflow-hidden masthead_lower">
+              {{ page.masthead_lower }}
+            </section>
+          {% endif %}
+        {% endblock masthead_lower %}
+
+        {% block main_grid %}
+          <div{{ attributes.addClass(grid_classes, leftupper_classes, leftlower_classes, leftside_classes, rightupper_classes, rightlower_classes, rightside_classes).setAttribute('id', 'main-grid') }}>
+
+            {% block sidebar_primary_upper %}
+              {% if sidebar_primary_upper_exists %}
+                <section{{ sidebar_primary_upper_attributes.setAttribute('id', 'sidebar-primary_upper') }}>
+                  {{ page.sidebar_primary_upper }}
+                </section>
+              {% endif %}
+            {% endblock sidebar_primary_upper %}
+
+            {% block sidebar_secondary_upper %}
+              {% if sidebar_secondary_upper_exists %}
+                <section{{ sidebar_secondary_upper_attributes.setAttribute('id', 'sidebar-secondary_upper') }}>
+                  {{ page.sidebar_secondary_upper }}
+                </section>
+              {% endif %}
+            {% endblock sidebar_secondary_upper %}
+
+            {% block primary_content %}
+              <div{{ main_content_attributes.setAttribute('id', 'primary-content') }}>
+                {% if page.heading %}
+                  {{ page.heading }}
+                {% endif %}
+                {% if page.help %}
+                  <div id="help-region">{{ page.help }}</div>
+                {% endif %}
+                <section class="section">
+                  {% if page.highlighted %}
+                    <div id="highlighted">{{ page.highlighted }}</div>
+                  {% endif %}
+                  {% block content %}
+                    {{ page.content }}
+                  {% endblock content %}
+                </section>
+              </div>
+            {% endblock primary_content %}
+
+            {% block sidebar_primary %}
+              {% if sidebar_primary_exists %}
+                <section{{ sidebar_primary_attributes.setAttribute('id', 'sidebar-primary') }}>
+                  {{ page.sidebar_primary }}
+                </section>
+              {% endif %}
+            {% endblock sidebar_primary %}
+
+            {% block sidebar_secondary %}
+              {% if sidebar_secondary_exists %}
+                <section{{ sidebar_secondary_attributes.setAttribute('id', 'sidebar-secondary') }}>
+                  {{ page.sidebar_secondary }}
+                </section>
+              {% endif %}
+            {% endblock sidebar_secondary %}
+
           </div>
-        {% endif %}
+        {% endblock main_grid %}
 
-        <div{{ main_content_attributes.addClass(main_content_classes).setAttribute('id', 'primary-content') }}>
-          {% if page.heading %}
-            {{ page.heading }}
+        {% block grid %}
+          {% if page.grid %}
+            <section id="grid-region" class="container grid grid-cols-1 gap-12 px-5 mx-auto my-12 md--px-4 sm--grid-cols-2 md--grid-cols-3">
+              {{ page.grid }}
+            </section>
           {% endif %}
-          {% if page.help %}
-            <div id="help-region">{{ page.help }}</div>
+        {% endblock grid %}
+
+
+        {% block secondary_content %}
+          {% if page.secondary_content %}
+            <section{{ secondary_content_attributes.setAttribute('id', 'secondary-content').addClass('container', 'px-5', 'mx-auto', 'md--px-4') }}>
+              {{ page.secondary_content }}
+            </section>
           {% endif %}
-          <section class="section">
-            {% if page.highlighted %}
-              <div id="highlighted">{{ page.highlighted }}</div>
-            {% endif %}
-            {{ page.content }}
-          </section>
-        </div>
+        {% endblock secondary_content %}
 
-        {% if sidebar_primary_exists %}
-          <section{{ sidebar_primary_attributes.addClass(sidebar_primary_classes).setAttribute('id', 'sidebar-primary') }}>
-            {{ page.sidebar_primary }}
-          </section>
-        {% endif %}
+        {% block prefooter %}
+          {% if page.prefooter %}
+            <div{{ prefooter_attributes.setAttribute('id', 'prefooter-content') }}>
+              {{ page.prefooter }}
+            </div>
+          {% endif %}
+        {% endblock prefooter %}
 
-        {% if sidebar_secondary_exists %}
-          <section{{ sidebar_secondary_attributes.addClass(sidebar_secondary_classes).setAttribute('id', 'sidebar-secondary') }}>
-            {{ page.sidebar_secondary }}
-          </section>
-        {% endif %}
+      </main>
+    </div>
+  {% endblock unitcontent %}
 
-        {% if page.secondary_content %}
-          <section{{ secondary_content_attributes.addClass(secondary_content_classes).setAttribute('id', 'secondary-content') }}>
-            {{ page.secondary_content }}
-          </section>
-        {% endif %}
-
-      </div>
-
-      {% if page.prefooter %}
-        <div{{ prefooter_attributes.setAttribute('id', 'prefooter-content') }}>
-          {{ page.prefooter }}
-        </div>
-      {% endif %}
-
-    </main>
-  </div>
-
-  {% if (clf_version == '8') %}
-    {% include '@kraken/includes/footer.html.twig' %}
-  {% else %}
-    {% include '@kraken/includes/footer.clf7.html.twig' %}
-  {% endif %}
-  {% include '@kraken/includes/totop-button.html.twig' %}
+  {% block clfbottom %}
+    {% if (clf_version == '8') %}
+      {% include '@kraken/includes/footer.html.twig' %}
+    {% else %}
+      {% include '@kraken/includes/footer.clf7.html.twig' %}
+    {% endif %}
+    {% include '@kraken/includes/totop-button.html.twig' %}
+  {% endblock clfbottom %}
 
 </div>
 

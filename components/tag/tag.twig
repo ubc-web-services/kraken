@@ -1,3 +1,21 @@
+{#
+	/**
+	* @file
+	* Component to render a tag.
+	*/
+
+	/* Usage example: */
+
+    {% embed 'kraken:tag' with {
+        link: 'https://ubc.ca',
+        customClasses: 'p-6',
+    } %}
+        {% block content %}
+            Some text here
+        {% endblock %}
+    {% endembed %}
+#}
+
 {%
   set classes = [
   'tag',

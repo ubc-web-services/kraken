@@ -1,3 +1,32 @@
+{#
+	/**
+	* @file
+	* Component to render a masthead slide.
+	*/
+
+	/* Usage example: */
+  {% embed 'kraken:masthead--slide' with {
+    backgroundLight: false,
+    customClasses: 'lostsa-custom-classes scooby yeah',
+    gradient: true,
+    hasImage: true,
+    isPageTitle: true,
+    link: 'https://ubc.ca',
+    linkStyle: 'p-12',
+    linkText: 'Read more',
+    showLink: true,
+    showText: true,
+    target: true,
+    text: 'A small amount of text',
+    texture: 'texture-class',
+    title: 'I am a title',
+  } %}
+    {% block media %}
+      <img src="[img-src]">
+    {% endblock %}
+  {% endembed %}
+#}
+
 {% set mastheadattributes = create_attribute() %}
 {% set mastheadcontainerattributes = create_attribute() %}
 {% set classes = [
@@ -39,7 +68,7 @@
 <div {{ mastheadattributes.addClass(classes) }} data-component-id="kraken:masthead--slide">
   {% block media %}{% endblock %}
   <div {{ mastheadcontainerattributes.addClass(containerClasses) }} >
-    {% if pageTitle %}
+    {% if isPageTitle %}
       <h1 class="mt-0 text-white heading-responsive">
       {{ title }}
       </h1>
@@ -48,10 +77,10 @@
         {{ title }}
       </h2>
     {% endif %}
-    {% if text %}
+    {% if showText %}
       <p class="text-hug text-measure-lg">{{ text }}</p>
     {% endif %}
-    {% if link %}
+    {% if showLink %}
      <p>
         {% embed 'ubcit:button' with {
             link: link,

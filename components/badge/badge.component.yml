@@ -5,39 +5,76 @@ group: UBC Web Services
 description: Component to render as a Badge
 props:
   type: object
+  required:
+    - background
+    - color
   properties:
     background:
       type: string
       title: Background
       description: The background color of the badge
       enum:
-        - bg-none
-        - bg-white
-        - bg-black
-        - bg-unit-primary
-        - bg-unit-secondary
-        - bg-unit-tertiary
-        - bg-unit-accent
-        - bg-unit-alt-primary
-        - bg-unit-alt-secondary
-        - bg-unit-alt-tertiary
-        - bg-unit-alt-accent
-        - bg-ubc-blue
-        - bg-ubc-blue-sea
-        - bg-ubc-blue-cobalt
-        - bg-ubc-blue-neptune
-        - bg-ubc-blue-cornflower
-        - bg-ubc-blue-polar
-        - bg-ubc-blue-frost
-        - bg-grey-50
-        - bg-grey-100
-        - bg-grey-200
-        - bg-grey-300
-        - bg-grey-500
-        - bg-grey-600
-        - bg-grey-800
-        - bg-grey-900
-      default: bg-unit-primary
+        - 'bg-none'
+        - 'bg-white'
+        - 'bg-unit-primary'
+        - 'bg-unit-secondary'
+        - 'bg-unit-tertiary'
+        - 'bg-unit-accent'
+        - 'bg-ubc-blue'
+        - 'bg-ubc-blue-sea'
+        - 'bg-ubc-blue-cobalt'
+        - 'bg-ubc-blue-neptune'
+        - 'bg-ubc-blue-cornflower'
+        - 'bg-ubc-blue-polar'
+        - 'bg-ubc-blue-frost'
+        - 'bg-ubc-grey-1'
+        - 'bg-ubc-grey-2'
+        - 'bg-ubc-grey-3'
+        - 'bg-ubc-grey-4'
+        - 'bg-ubc-grey-5'
+        - 'bg-ubc-grey-6'
+        - 'bg-grey-50'
+        - 'bg-grey-100'
+        - 'bg-grey-200'
+        - 'bg-grey-300'
+        - 'bg-grey-400'
+        - 'bg-grey-500'
+        - 'bg-grey-600'
+        - 'bg-grey-700'
+        - 'bg-grey-800'
+        - 'bg-grey-900'
+      meta:enum:
+        'bg-none': No background
+        'bg-white': White background
+        'bg-unit-primary': Unit Primary background
+        'bg-unit-secondary': Unit Secondary background
+        'bg-unit-tertiary': Unit Tertiary background
+        'bg-unit-accent': Unit Accent background
+        'bg-ubc-blue': UBC Blue background
+        'bg-ubc-blue-sea': 'UBC Blue: Sea background'
+        'bg-ubc-blue-cobalt': 'UBC Blue: Cobalt background'
+        'bg-ubc-blue-neptune': 'UBC Blue: Neptune background'
+        'bg-ubc-blue-cornflower': 'UBC Blue: Cornflower background'
+        'bg-ubc-blue-polar': 'UBC Blue: Polar background'
+        'bg-ubc-blue-frost': 'UBC Blue: Frost background'
+        'bg-ubc-grey-1': 'UBC Grey 1: Darkest background'
+        'bg-ubc-grey-2': 'UBC Grey 2 background'
+        'bg-ubc-grey-3': 'UBC Grey 3 background'
+        'bg-ubc-grey-4': 'UBC Grey 4 background'
+        'bg-ubc-grey-5': 'UBC Grey 5 background'
+        'bg-ubc-grey-6': 'UBC Grey 6: Lightest background'
+        'bg-grey-50': 'Grey: 50 background'
+        'bg-grey-100': 'Grey: 100 background'
+        'bg-grey-200': 'Grey: 200 background'
+        'bg-grey-300': 'Grey: 300 background'
+        'bg-grey-400': 'Grey: 400 background'
+        'bg-grey-500': 'Grey: 500 background'
+        'bg-grey-600': 'Grey: 600 background'
+        'bg-grey-700': 'Grey: 700 background'
+        'bg-grey-800': 'Grey: 800 background'
+        'bg-grey-900': 'Grey: 900 background'
+      default: bg-ubc-blue
+      examples: ['bg-ubc-blue']
     color:
       type: string
       title: Color
@@ -49,10 +86,6 @@ props:
         - text-unit-secondary
         - text-unit-tertiary
         - text-unit-accent
-        - text-unit-alt-primary
-        - text-unit-alt-secondary
-        - text-unit-alt-tertiary
-        - text-unit-alt-accent
         - text-ubc-blue
         - text-ubc-blue-sea
         - text-ubc-blue-cobalt
@@ -60,34 +93,68 @@ props:
         - text-ubc-blue-cornflower
         - text-ubc-blue-polar
         - text-ubc-blue-frost
+        - text-ubc-grey-1
+        - text-ubc-grey-2
+        - text-ubc-grey-3
+        - text-ubc-grey-4
+        - text-ubc-grey-5
+        - text-ubc-grey-6
         - text-grey-50
         - text-grey-100
         - text-grey-200
         - text-grey-300
+        - text-grey-400
         - text-grey-500
         - text-grey-600
+        - text-grey-700
         - text-grey-800
         - text-grey-900
+      meta:enum:
+        text-white: White text
+        text-black: Black text
+        text-unit-primary: Unit Primary text
+        text-unit-secondary: Unit Secondary text
+        text-unit-tertiary: Unit Tertiary text
+        text-unit-accent: Unit Accent text
+        text-ubc-blue: UBC Blue text
+        text-ubc-blue-sea: 'UBC Blue: Sea text'
+        text-ubc-blue-cobalt: 'UBC Blue: Cobalt text'
+        text-ubc-blue-neptune: 'UBC Blue: Neptune text'
+        text-ubc-blue-cornflower: 'UBC Blue: Cornflower text'
+        text-ubc-blue-polar: 'UBC Blue: Polar text'
+        text-ubc-blue-frost: 'UBC Blue: Frost text'
+        text-ubc-grey-1: 'UBC Grey: 1 (darkest)'
+        text-ubc-grey-2: 'UBC Grey: 2'
+        text-ubc-grey-3: 'UBC Grey: 3'
+        text-ubc-grey-4: 'UBC Grey: 4'
+        text-ubc-grey-5: 'UBC Grey: 5'
+        text-ubc-grey-6: 'UBC Grey: 6 (lightest)'
+        text-grey-50: 'Grey: 50 text'
+        text-grey-100: 'Grey: 100 text'
+        text-grey-200: 'Grey: 200 text'
+        text-grey-300: 'Grey: 300 text'
+        text-grey-400: 'Grey: 400 text'
+        text-grey-500: 'Grey: 500 text'
+        text-grey-600: 'Grey: 600 text'
+        text-grey-700: 'Grey: 700 text'
+        text-grey-800: 'Grey: 800 text'
+        text-grey-900: 'Grey: 900 text'
       default: text-white
+      examples: ['text-white']
     size:
       type: string
       title: Badge Size
       description: The size of the badge
-      examples:
-        - h-4 w-4, h-6 w-6
+      examples: ['h-4 w-4','h-6 w-6']
       default: h-4 w-4
     customClasses:
       title: Custom Classes
       type: string
       description: Custom classes to apply to the badge outer wrapper for placement
-      examples:
-        - absolute top-0 left-0
     styleClasses:
       title: Style Classes
       type: string
       description: Custom classes to apply to the badge inner wrapper for styling
-      examples:
-        - font-semibold leading-6
 slots:
   content: # {% block content %}.
     title: Badge Content

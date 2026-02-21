@@ -13,18 +13,17 @@ props:
       type: string
       title: Title
       description: The title of the card
+      examples: ['Exciting things happening on campus','Join us for the celebration']
     link:
       type: string
       title: Link
       description: The destination of the card link
-      examples:
-        - https://ubc.ca
+      examples: ['https://ubc.ca','/news']
     linkText:
       type: string
       title: Link Text
       description: The text that is linked
-      examples:
-        - 'Read more'
+      examples: ['Read more']
     target:
       type: boolean
       title: Target
@@ -43,7 +42,18 @@ props:
         - 'text-center'
         - 'text-left'
         - 'text-right'
+      meta:enum:
+        'mt-auto text-center': Text Bottom Center
+        'mt-auto text-left': Text Bottom Left
+        'mt-auto text-right': Text Bottom Right
+        'place-content-center text-center': Text Middle Center
+        'place-content-center text-left': Text Middle Left
+        'place-content-center text-right': Text Middle Right
+        'text-center': Text Top Center
+        'text-left': Text Top Left
+        'text-right': Text Top Right
       default: 'mt-auto text-center'
+      examples: ['mt-auto text-center']
     meta:
       type: string
       title: Metadata
@@ -60,14 +70,12 @@ props:
       type: string
       title: Button Classes
       description: The classes that will be applied to the button
-      examples:
-        - 'unit-button unit-button--transparent'
+      examples: ['unit-button unit-button--transparent']
     customClasses:
       title: Custom Classes
       type: string
       description: Custom classes to apply to the card
-      examples:
-        - my-class another-class
+      examples: ['my-class another-class']
 slots:
   media:
     title: Media Content

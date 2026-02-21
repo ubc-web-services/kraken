@@ -1,10 +1,33 @@
+{#
+	/**
+	* @file
+	* Component to render a button.
+	*/
+
+	/* Usage example: */
+
+    {% embed 'kraken:button' with {
+      customClasses: 'text test-me',
+      disabled: true,
+      external: true,
+      id: 'my-id',
+      link: 'https://ubc.ca',
+      size: 'text-sm',
+      style: 'unit-button--light',
+      target: true,
+      text: 'this is the link title',
+      variant: 'unit-button--small',
+    } %}
+    {% endembed %}
+#}
+
 {%
   set classes = [
     'unit-button',
-    style|clean_class,
-    size|clean_class,
+    style,
+    size,
     customClasses,
-    variant|clean_class,
+    variant,
     disabled ? 'unit-button--disabled',
     external ? 'link-external',
 ]

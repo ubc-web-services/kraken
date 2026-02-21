@@ -1,3 +1,21 @@
+{#
+	/**
+	* @file
+	* Component to render an icon.
+	*/
+
+	/* Usage example: */
+
+    {% embed 'kraken:icon' with {
+        icon: 'icon-mail',
+        size: 'h-4 w-4',
+        color: 'text-current',
+        customClasses: 'p-6',
+
+    } %}
+    {% endembed %}
+#}
+
 {% set iconattributes = create_attribute() %}
 {%
   set classes = [

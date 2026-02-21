@@ -1,10 +1,36 @@
+{#
+	/**
+	* @file
+	* Component to render a container.
+	*/
+
+	/* Usage example: */
+  {% embed 'kraken:container' with {
+    backgroundColor: 'bg-white bg-light',
+    customClasses: 'lostsa-custom-classes scooby yeah',
+    customHeaderClasses: 'my-header-class',
+    customInnerClasses: 'my-inner-class',
+    customTitleClasses: 'my-title-class',
+    id: 'my-id',
+    title: 'Blockchain icons are nice',
+    titleRight: false,
+    verticalSpacing: 'my-6',
+    width: 'no-container',
+
+  } %}
+    {% block content %}
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    {% endblock %}
+  {% endembed %}
+#}
+
 {% set containerattributes = create_attribute() %}
 {% set headerattributes = create_attribute() %}
 {% set titleattributes = create_attribute() %}
 {% set contentattributes = create_attribute() %}
 {% set innercontentattributes = create_attribute() %}
 {% set classes = [
-    backgroundColor ? backgroundColor: 'bg-white',
+    backgroundColor ? backgroundColor: 'bg-white bg-light',
     verticalSpacing ? verticalSpacing: 'py-0 my-0',
     customClasses,
 ] %}

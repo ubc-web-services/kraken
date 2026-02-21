@@ -5,6 +5,11 @@ group: UBC Web Services
 description: Component to render as a coloured box
 props:
   type: object
+  required:
+    - align
+    - background
+    - margin
+    - padding
   properties:
     align:
       type: string
@@ -15,37 +20,79 @@ props:
         - align-left
         - align-right
         - align-full
+      meta:enum:
+        align-center: Center aligned
+        align-left: Left aligned
+        align-right: Right aligned
+        align-full: Full Width
+      default: align-center
+      examples: ['align-center']
     background:
       type: string
       title: Background color
       description: Add a background color
       enum:
-        - bg-none
-        - bg-white
-        - bg-black
-        - bg-unit-primary
-        - bg-unit-secondary
-        - bg-unit-tertiary
-        - bg-unit-accent
-        - bg-unit-alt-primary
-        - bg-unit-alt-secondary
-        - bg-unit-alt-tertiary
-        - bg-unit-alt-accent
-        - bg-ubc-blue
-        - bg-ubc-blue-sea
-        - bg-ubc-blue-cobalt
-        - bg-ubc-blue-neptune
-        - bg-ubc-blue-cornflower
-        - bg-ubc-blue-polar
-        - bg-ubc-blue-frost
-        - bg-grey-50
-        - bg-grey-100
-        - bg-grey-200
-        - bg-grey-300
-        - bg-grey-500
-        - bg-grey-600
-        - bg-grey-800
-        - bg-grey-900
+        - 'bg-none'
+        - 'bg-white bg-light'
+        - 'bg-unit-primary bg-dark'
+        - 'bg-unit-secondary bg-light'
+        - 'bg-unit-tertiary bg-light'
+        - 'bg-unit-accent bg-dark'
+        - 'bg-ubc-blue bg-dark'
+        - 'bg-ubc-blue-sea bg-dark'
+        - 'bg-ubc-blue-cobalt bg-dark'
+        - 'bg-ubc-blue-neptune bg-dark'
+        - 'bg-ubc-blue-cornflower bg-light'
+        - 'bg-ubc-blue-polar bg-light'
+        - 'bg-ubc-blue-frost bg-light'
+        - 'bg-ubc-grey-1 bg-dark'
+        - 'bg-ubc-grey-2 bg-dark'
+        - 'bg-ubc-grey-3 bg-light'
+        - 'bg-ubc-grey-4 bg-light'
+        - 'bg-ubc-grey-5 bg-light'
+        - 'bg-ubc-grey-6 bg-light'
+        - 'bg-grey-50 bg-light'
+        - 'bg-grey-100 bg-light'
+        - 'bg-grey-200 bg-light'
+        - 'bg-grey-300 bg-light'
+        - 'bg-grey-400 bg-light'
+        - 'bg-grey-500 bg-dark'
+        - 'bg-grey-600 bg-dark'
+        - 'bg-grey-700 bg-dark'
+        - 'bg-grey-800 bg-dark'
+        - 'bg-grey-900 bg-dark'
+      meta:enum:
+        'bg-none': No background
+        'bg-white bg-light': White background
+        'bg-unit-primary bg-dark': Unit Primary background
+        'bg-unit-secondary bg-light': Unit Secondary background
+        'bg-unit-tertiary bg-light': Unit Tertiary background
+        'bg-unit-accent bg-dark': Unit Accent background
+        'bg-ubc-blue bg-dark': UBC Blue background
+        'bg-ubc-blue-sea bg-dark': 'UBC Blue: Sea background'
+        'bg-ubc-blue-cobalt bg-dark': 'UBC Blue: Cobalt background'
+        'bg-ubc-blue-neptune bg-dark': 'UBC Blue: Neptune background'
+        'bg-ubc-blue-cornflower bg-light': 'UBC Blue: Cornflower background'
+        'bg-ubc-blue-polar bg-light': 'UBC Blue: Polar background'
+        'bg-ubc-blue-frost bg-light': 'UBC Blue: Frost background'
+        'bg-ubc-grey-1 bg-dark': 'UBC Grey 1: Darkest background'
+        'bg-ubc-grey-2 bg-dark': 'UBC Grey 2 background'
+        'bg-ubc-grey-3 bg-light': 'UBC Grey 3 background'
+        'bg-ubc-grey-4 bg-light': 'UBC Grey 4 background'
+        'bg-ubc-grey-5 bg-light': 'UBC Grey 5 background'
+        'bg-ubc-grey-6 bg-light': 'UBC Grey 6: Lightest background'
+        'bg-grey-50 bg-light': 'Grey: 50 background'
+        'bg-grey-100 bg-light': 'Grey: 100 background'
+        'bg-grey-200 bg-light': 'Grey: 200 background'
+        'bg-grey-300 bg-light': 'Grey: 300 background'
+        'bg-grey-400 bg-light': 'Grey: 400 background'
+        'bg-grey-500 bg-dark': 'Grey: 500 background'
+        'bg-grey-600 bg-dark': 'Grey: 600 background'
+        'bg-grey-700 bg-dark': 'Grey: 700 background'
+        'bg-grey-800 bg-dark': 'Grey: 800 background'
+        'bg-grey-900 bg-dark': 'Grey: 900 background'
+      default: 'bg-white bg-light'
+      examples: ['bg-white bg-light']
     margin:
       type: string
       title: Vertical margin
@@ -56,6 +103,14 @@ props:
         - my-6
         - my-12
         - my-16
+      meta:enum:
+        my-0: No vertical margin
+        my-4: Small vertical margins
+        my-6: Normal vertical margins
+        my-12: Large vertical margins
+        my-16: Extra-large vertical margins
+      default: my-6
+      examples: ['my-6']
     padding:
       type: string
       title: Padding
@@ -66,6 +121,14 @@ props:
         - p-6
         - p-12
         - p-16
+      meta:enum:
+        p-0: No padding
+        p-4: Small padding
+        p-6: Normal padding
+        p-12: Large padding
+        p-16: Extra-large padding
+      default: p-6
+      examples: ['p-6']
     dropshadow:
       type: boolean
       title: Dropshadow
@@ -74,8 +137,6 @@ props:
       title: Custom Classes
       type: string
       description: Custom classes to apply to the box
-      examples:
-        - my-class another-class
 slots:
   content: # {% block content %}.
     title: Color box Content
