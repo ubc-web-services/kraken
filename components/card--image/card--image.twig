@@ -1,3 +1,38 @@
+
+{#
+	/**
+	* @file
+	* Component to render an image card.
+	*/
+
+	/* Usage example: */
+  {% embed 'kraken:card--image' with {
+    buttonClasses: 'unit-button'
+    color: 'bg-ubc-blue bg-dark',
+    customClasses: 'lostsa-custom-classes scooby yeah',
+    imageZoom: true,
+    layout: 'place-content-center text-center',
+    link: 'https://ubc.ca',
+    linkText: 'Read more',
+    meta: 'January 14, 2026',
+    noShadow: false,
+    title: 'Blockchain icons are nice',
+    target: true,
+  } %}
+    {% block media %}
+      {% embed 'kraken:icon' with {
+      icon: 'icon-search',
+      size: 'w-12 h-12',
+      color: 'text-ubc-grey-3',
+      } %}
+      {% endembed %}
+    {% endblock %}
+    {% block content %}
+      <p class="line-clamp-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    {% endblock %}
+  {% endembed %}
+#}
+
 {% set cardimageattributes = create_attribute() %}
 {% set card_attributes = create_attribute() %}
 {% set figure_attributes = create_attribute() %}

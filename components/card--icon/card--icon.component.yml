@@ -7,18 +7,19 @@ props:
   type: object
   required:
     - title
+    - color
     - layout
   properties:
     title:
       type: string
       title: Title
       description: The title of the card
+      examples: ['Exciting things happening on campus','Join us for the celebration']
     link:
       type: string
       title: Link
       description: The destination of the card link
-      examples:
-        - https://ubc.ca
+      examples: ['https://ubc.ca','/news']
     target:
       type: boolean
       title: Target
@@ -36,7 +37,7 @@ props:
       title: Card color
       description: The background color of the card
       enum:
-        - 'bg-transparent bg-light'
+        - 'bg-none'
         - 'bg-white bg-light'
         - 'bg-unit-primary bg-dark'
         - 'bg-unit-secondary bg-light'
@@ -49,8 +50,54 @@ props:
         - 'bg-ubc-blue-cornflower bg-light'
         - 'bg-ubc-blue-polar bg-light'
         - 'bg-ubc-blue-frost bg-light'
+        - 'bg-ubc-grey-1 bg-dark'
+        - 'bg-ubc-grey-2 bg-dark'
+        - 'bg-ubc-grey-3 bg-light'
+        - 'bg-ubc-grey-4 bg-light'
+        - 'bg-ubc-grey-5 bg-light'
+        - 'bg-ubc-grey-6 bg-light'
+        - 'bg-grey-50 bg-light'
         - 'bg-grey-100 bg-light'
-      default: 'bg-transparent bg-light'
+        - 'bg-grey-200 bg-light'
+        - 'bg-grey-300 bg-light'
+        - 'bg-grey-400 bg-light'
+        - 'bg-grey-500 bg-dark'
+        - 'bg-grey-600 bg-dark'
+        - 'bg-grey-700 bg-dark'
+        - 'bg-grey-800 bg-dark'
+        - 'bg-grey-900 bg-dark'
+      meta:enum:
+        'bg-none': No background
+        'bg-white bg-light': White background
+        'bg-unit-primary bg-dark': Unit Primary background
+        'bg-unit-secondary bg-light': Unit Secondary background
+        'bg-unit-tertiary bg-light': Unit Tertiary background
+        'bg-unit-accent bg-dark': Unit Accent background
+        'bg-ubc-blue bg-dark': UBC Blue background
+        'bg-ubc-blue-sea bg-dark': 'UBC Blue: Sea background'
+        'bg-ubc-blue-cobalt bg-dark': 'UBC Blue: Cobalt background'
+        'bg-ubc-blue-neptune bg-dark': 'UBC Blue: Neptune background'
+        'bg-ubc-blue-cornflower bg-light': 'UBC Blue: Cornflower background'
+        'bg-ubc-blue-polar bg-light': 'UBC Blue: Polar background'
+        'bg-ubc-blue-frost bg-light': 'UBC Blue: Frost background'
+        'bg-ubc-grey-1 bg-dark': 'UBC Grey 1: Darkest background'
+        'bg-ubc-grey-2 bg-dark': 'UBC Grey 2 background'
+        'bg-ubc-grey-3 bg-light': 'UBC Grey 3 background'
+        'bg-ubc-grey-4 bg-light': 'UBC Grey 4 background'
+        'bg-ubc-grey-5 bg-light': 'UBC Grey 5 background'
+        'bg-ubc-grey-6 bg-light': 'UBC Grey 6: Lightest background'
+        'bg-grey-50 bg-light': 'Grey: 50 background'
+        'bg-grey-100 bg-light': 'Grey: 100 background'
+        'bg-grey-200 bg-light': 'Grey: 200 background'
+        'bg-grey-300 bg-light': 'Grey: 300 background'
+        'bg-grey-400 bg-light': 'Grey: 400 background'
+        'bg-grey-500 bg-dark': 'Grey: 500 background'
+        'bg-grey-600 bg-dark': 'Grey: 600 background'
+        'bg-grey-700 bg-dark': 'Grey: 700 background'
+        'bg-grey-800 bg-dark': 'Grey: 800 background'
+        'bg-grey-900 bg-dark': 'Grey: 900 background'
+      default: 'bg-white bg-light'
+      examples: ['bg-white bg-light']
     layout:
       type: string
       title: Layout
@@ -59,13 +106,18 @@ props:
         - flex-row
         - flex-row-reverse
         - flex-col
+      meta:enum:
+        flex-row: Horizontal, image left
+        flex-row-reverse: Horizontal, image right
+        flex-col: Vertical
       default: flex-row
+      examples: ['flex-row']
     figureStyles:
-      type: boolean
+      type: string
       title: Figure Styles
       description: Add styles to the figure element
     titleStyles:
-      type: boolean
+      type: string
       title: Title Styles
       description: Add styles to the title element
     noInsetImage:
@@ -80,8 +132,6 @@ props:
       title: Custom Classes
       type: string
       description: Custom classes to apply to the card
-      examples:
-        - my-class another-class
 slots:
   media:
     title: Icon Content
