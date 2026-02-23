@@ -24,6 +24,9 @@ clf-8:
   css:
     base:
       css/clf.8.min.css: { minified: true }
+  js:
+    https://cdndevl2.cdn.ubc.ca/ubc/ubc-brand/latest/js/ubc-digital-brand.js: { type: external, minified: true, attributes: { defer: true, async: true, charset: utf-8 } }
+
 
 ## CLF Version 7 (legacy)
 ### CLF Shared (legacy)

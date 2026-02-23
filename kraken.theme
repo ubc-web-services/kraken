@@ -268,7 +268,10 @@ function kraken_preprocess_html(&$variables)
         --alternate-font-stack: ' . $seriffonts . ';
         --code-font-stack:  ' . $codefonts . ';
       }
-      #ubc7-unit { background-color: ' . $unitbar_color . ' !important; }',
+      #ubc7-unit { background-color: ' . $unitbar_color . ' !important; }
+      ubc-header {
+        --ubc-unit-background-color: ' . $unitbar_color . ';
+      }',
     ],
     'unit-colour-css',
   ];
