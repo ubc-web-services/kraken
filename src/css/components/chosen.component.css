@@ -5,12 +5,19 @@
 */
 
 /* chosen styles */
+/** @define chosen */
+
+/*
+* This file contains all styles related to the Chosen library - it isn't needed if the chosen library is not included.
+*/
+
+/* chosen styles */
 .chosen-container {
   font-size: inherit;
 }
 
 .chosen-container a {
-  @apply no-underline !text-ubc-blue-cobalt;
+  @apply no-underline;
 }
 
 .form-select a.chosen-single,
@@ -21,12 +28,11 @@
   max-width: 100%;
   height: auto;
   margin: 0;
-  padding: 0.5rem 1rem;
-  color: var(--input-select-text);
-  border: 2px solid var(--input-select-border) !important;
-  border-radius: var(--input-border-radius);
+  padding: 0;
+  border: none !important;
+  border-radius: 0;
   background-color: var(--input-select-bg);
-  background-image: url(../img/svg/icon-select-down--grey.svg);
+  background-image: none;
   background-repeat: no-repeat;
   background-position: right 0.5rem center;
   background-size: 1.5em 1.5em;
@@ -34,12 +40,19 @@
   appearance: none;
 }
 
-.form-select .chosen-container-active a.chosen-single {
-  background-image: url(../img/svg/icon-select-up--grey.svg);
+.form-select .chosen-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25em;
 }
 
-.chosen-container .chosen-drop {
-  @apply border border-t-0 shadow-lg border-ubc-blue-neptune;
+.chosen-container-single .chosen-single div {
+  display: none !important;
+}
+
+.chosen-container .chosen-drop,
+.chosen-container-active .chosen-drop {
+  @apply border border-t-0 shadow-lg !border-grey-300;
 }
 
 .chosen-container-single .chosen-search input[type="text"] {
@@ -56,20 +69,34 @@
 }
 
 .chosen-container .chosen-results {
-  color: var(--grey-900);
+  color: rgba(var(--grey-900), 1);
 }
 
 .chosen-container .chosen-results li {
-  @apply text-base;
-
   padding: 0.75rem 0.5rem;
 }
 
 .chosen-container .chosen-results li.highlighted {
-  background-color: var(--ubc-blue-cobalt);
+  background-color: rgba(var(--ubc-blue), 1) !important;
   background-image: none;
 }
 
 .chosen-container-single .chosen-drop {
   border-radius: 0 0 0 0;
+}
+
+.chosen-container-multi .chosen-choices {
+  padding: 0 !important;
+  width: 100%;
+}
+
+.chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+  margin: 0 !important;
+  padding: 0!important;
+  font-size: inherit !important;
+}
+
+.chosen-container-multi .chosen-choices li.search-choice {
+  margin: 0 ;
+  padding: .35em 1.125em .35em .35em !important;
 }

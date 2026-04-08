@@ -1,6 +1,7 @@
 ignore:
   - '/kraken.starterkit.yml'
   - 'composer.json'
+  - 'composer.lock'
   - '.ddev'
   - 'README-VISUAL-TESTING.md'
   - 'CONTRIBUTING.md'
