@@ -40,6 +40,12 @@
   appearance: none;
 }
 
+.form-select .chosen-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25em;
+}
+
 .chosen-container-single .chosen-single div {
   display: none !important;
 }
@@ -77,4 +83,20 @@
 
 .chosen-container-single .chosen-drop {
   border-radius: 0 0 0 0;
+}
+
+.chosen-container-multi .chosen-choices {
+  padding: 0 !important;
+  width: 100%;
+}
+
+.chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+  margin: 0 !important;
+  padding: 0!important;
+  font-size: inherit !important;
+}
+
+.chosen-container-multi .chosen-choices li.search-choice {
+  margin: 0 ;
+  padding: .35em 1.125em .35em .35em !important;
 }
