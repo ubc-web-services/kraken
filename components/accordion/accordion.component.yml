@@ -40,9 +40,8 @@ props:
       type: string
       description: Custom classes to apply to the accordion
 slots:
-  content: # {% block content %}.
+  content:
     title: Accordion Content
-    required: true
     description: The accordion content
 libraryOverrides:
   dependencies:
