@@ -156,9 +156,8 @@ props:
       type: string
       description: Custom classes to apply to the badge inner wrapper for styling
 slots:
-  content: # {% block content %}.
+  content:
     title: Badge Content
-    required: true
     description: The badge content
 libraryOverrides:
   dependencies:
