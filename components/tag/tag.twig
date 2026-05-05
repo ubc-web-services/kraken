@@ -15,13 +15,13 @@
         {% endblock %}
     {% endembed %}
 #}
-
+{% set tagattributes = create_attribute() %}
 {%
   set classes = [
   'tag',
   customClasses,
 ]
 %}
-<{% if link %}a href="{{ link }}"{% else %}span{% endif %} class="{{ classes|join(" ")|trim }}" data-component-id="kraken:tag">
+<{% if link %}a {{ tagattributes }} href="{{ link }}"{% else %}span{% endif %} class="{{ classes|join(" ")|trim }}" data-component-id="kraken:tag">
   {% block content %}{% endblock %}
 </{% if link %}a{% else %}span{% endif %}>
