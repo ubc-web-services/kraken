@@ -15,7 +15,6 @@
     } %}
     {% endembed %}
 #}
-
 {% set iconattributes = create_attribute() %}
 {%
   set classes = [
@@ -25,6 +24,6 @@
     customClasses,
 ]
 %}
-<svg class="{{ classes|join(" ")|trim }}" role="presentation" data-component-id="kraken:icon">
+<svg {{ iconattributes }} class="{{ classes|join(" ")|trim }}" role="presentation" data-component-id="kraken:icon">
   <use xlink:href="#{{ icon }}"></use>
 </svg>
