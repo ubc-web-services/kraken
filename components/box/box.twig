@@ -8,8 +8,7 @@
 
     {% embed 'kraken:box' with {
         align: 'w-full',
-        background: 'bg-ubc-blue',
-        color: 'text-white',
+        background: 'bg-ubc-blue bg-dark',
         customClasses: 'p-6',
         dropshadow: false,
         margin: 'my-0',
@@ -20,7 +19,6 @@
         {% endblock %}
     {% endembed %}
 #}
-
 {% set boxattributes = create_attribute() %}
 {% set classes = [
     'widget-color-box',
