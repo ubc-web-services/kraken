@@ -27,8 +27,7 @@
     {% endblock %}
   {% endembed %}
 #}
-
-{% set cardimageattributes = create_attribute() %}
+{% set imagecard_attributes = create_attribute() %}
 {% set card_attributes = create_attribute() %}
 {% set figure_attributes = create_attribute() %}
 {% set title_attributes = create_attribute() %}
@@ -42,11 +41,11 @@
     'min-h-full',
     'hover--cursor-pointer',
     'flex',
-    'shadow',
-    'hover--shadow-lg',
     'group',
     'isolate',
     'has-gradient--after',
+    noShadow ? '': 'shadow hover--shadow-lg',
+    imageZoom ? 'img-zoom',
     customClasses,
   ]
 %}
@@ -96,7 +95,7 @@
     buttonClasses ? buttonClasses: 'unit-button unit-button--transparent group-hover--bg-ubc-blue text-sm',
   ]
 %}
-<article{{ cardimageattributes.addClass(classes) }} data-component-id="kraken:card--image">
+<article{{ imagecard_attributes.addClass(classes) }} data-component-id="kraken:card--image">
   <figure{{ figure_attributes.addClass(figure_classes) }}>
     {% block media %}{% endblock %}
   </figure>

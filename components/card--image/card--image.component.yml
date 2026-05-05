@@ -79,7 +79,6 @@ props:
 slots:
   media:
     title: Media Content
-    required: true
     description: The image / media content
   content:
     title: Text Content
