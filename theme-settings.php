@@ -855,7 +855,7 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
       '#required' => false,
       '#title' => t('Unit signature (SVG)'),
       '#description' => t('This option allows an SVG of signature to be uploaded, which is then displayed in the unit footer.<br><strong>* ensure that svg is trimmed to artwork bounds.</strong>'),
-      '#default_value' => $themeSettingsProvider->getSetting(('unit_signature', 'kraken'),
+      '#default_value' => $themeSettingsProvider->getSetting('unit_signature', 'kraken'),
       '#upload_location' => 'public://unit-signature/',
       '#upload_validators' => array(
         'file_validate_extensions' => array('svg'),
