@@ -138,7 +138,6 @@ slots:
     description: The image / media / svg content
   content:
     title: Card Content
-    required: true
     description: The card content
   actions:
     title: Card Actions

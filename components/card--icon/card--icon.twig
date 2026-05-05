@@ -33,8 +33,7 @@
     {% endblock %}
   {% endembed %}
 #}
-
-{% set cardprimaryattributes = create_attribute() %}
+{% set iconcardattributes = create_attribute() %}
 {% set figureattributes = create_attribute() %}
 {% set contentattributes = create_attribute() %}
 {% set titleattributes = create_attribute() %}
@@ -77,21 +76,21 @@
     titleStyles,
   ]
 %}
-{% if layout is same as 'flex-row' %}
+{% if layout == 'flex-row' %}
   {% set layout_classes = [
       'sm--flex',
       'sm--flex-row',
     ]
   %}
 {% endif %}
-{% if layout is same as 'flex-row-reverse' %}
+{% if layout == 'flex-row-reverse' %}
   {% set layout_classes = [
       'sm--flex',
       'sm--flex-row-reverse',
     ]
   %}
 {% endif %}
-{% if layout is same as 'ubc-card--horiz' or layout is same as 'ubc-card--horiz-rev' %}
+{% if layout == 'ubc-card--horiz' or layout == 'ubc-card--horiz-rev' %}
   {% set figure_layout_classes = [
       'sm--max-w-[300px]',
       'sm--shrink-0',
@@ -103,13 +102,13 @@
     ]
   %}
 {% endif %}
-<article{{ cardprimaryattributes.addClass(classes, layout_classes) }} data-component-id="kraken:card--icon">
+<article{{ iconcardattributes.addClass(classes, layout_classes) }} data-component-id="kraken:card--icon">
   <figure{{ figureattributes.addClass(figure_classes, figure_layout_classes) }}>
     {% block media %}{% endblock %}
   </figure>
   <div{{ contentattributes.addClass(content_classes, horiz_content_classes) }}>
     <div class="py-2 ubc-card__content first-child--mt-0">
-      <h3{{ title_attributes.addClass(title_classes) }}>
+      <h3{{ titleattributes.addClass(title_classes) }}>
         <a href="{{ link }}" class="no-underline hover--no-underline text-ubc-blue link-expand" {% if target %}
     target="_blank"{% endif %}>
           {{ title }}
