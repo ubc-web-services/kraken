@@ -6,12 +6,10 @@
 
 	/* Usage example: */
   {% embed 'kraken:featurette' with {
-    buttonClasses: 'unit-button',
     customClasses: 'lostsa-custom-classes scooby yeah',
     imageZoom: true,
-    layout: 'mt-auto text-center'',
+    layout: 'mt-auto text-center',
     link: 'https://ubc.ca',
-    linkText: 'Read more',
     meta: 'Jan.16, 2026',
     noShadow: true,
     target: true,
@@ -41,23 +39,22 @@
   {% endembed %}
 #}
 
-{% set featuretteimageattributes = create_attribute() %}
 {% set featurette_attributes = create_attribute() %}
 {% set figure_attributes = create_attribute() %}
+{% set featuretteinner_attributes = create_attribute() %}
 {% set title_attributes = create_attribute() %}
 {% set link_attributes = create_attribute() %}
-{% set button_attributes = create_attribute() %}
 {% set layoutclean = layout|clean_class %}
-{% if ((layoutclean is same as 'text-right') or (layoutclean is same as 'place-content-center-text-right') or (layoutclean is same as 'mt-auto-text-right')) %}
+{% if ((layoutclean == 'text-right') or (layoutclean == 'place-content-center-text-right') or (layoutclean == 'mt-auto-text-right')) %}
   {% set gradient =  'has-gradient-right--after' %}
 {% endif %}
-{% if ((layoutclean is same as 'text-center') or (layoutclean is same as 'place-content-center-text-center')) %}
+{% if ((layoutclean == 'text-center') or (layoutclean == 'place-content-center-text-center')) %}
   {% set gradient =  'has-gradient-top--after' %}
 {% endif %}
-{% if ((layoutclean is same as 'text-left') or (layoutclean is same as 'place-content-center-text-left') or (layoutclean is same as 'mt-auto-text-left') or layout == '') %}
+{% if ((layoutclean == 'text-left') or (layoutclean == 'place-content-center-text-left') or (layoutclean == 'mt-auto-text-left') or layout == '') %}
   {% set gradient =  'has-gradient-left--after' %}
 {% endif %}
-{% if ((layoutclean is same as 'mt-auto-text-center')) %}
+{% if ((layoutclean == 'mt-auto-text-center')) %}
   {% set gradient =  'has-gradient-bottom--after' %}
 {% endif %}
 {%
@@ -69,6 +66,7 @@
     noShadow ? '': 'shadow hover--shadow-lg',
     'group',
     'min-h-[250px]',
+    imageZoom ? 'img-zoom',
     customClasses,
   ]
 %}
@@ -109,16 +107,11 @@
     'link-expand',
   ]
 %}
-{%
-  set button_classes = [
-    buttonClasses ? buttonClasses: 'unit-button unit-button--transparent group-hover--bg-ubc-blue text-sm',
-  ]
-%}
-<article{{ featuretteimageattributes.addClass(classes) }} data-component-id="kraken:featurette">
+<article{{ featurette_attributes.addClass(classes) }} data-component-id="kraken:featurette">
   <figure{{ figure_attributes.addClass(figure_classes) }}>
     {% block media %}{% endblock %}
   </figure>
-  <div{{ featurette_attributes.addClass(content_classes) }}>
+  <div{{ featuretteinner_attributes.addClass(content_classes) }}>
     {% if meta %}
       <div class="text-sm">{{ meta }}</div>
     {% endif %}
