@@ -29,7 +29,6 @@ props:
 slots:
   media:
     title: Image Content
-    required: true
     description: The image / media content
 libraryOverrides:
   dependencies:

@@ -20,7 +20,7 @@
     } %}
     {% endembed %}
 #}
-
+{% set buttonattributes = create_attribute() %}
 {%
   set classes = [
     'unit-button',
@@ -32,7 +32,7 @@
     external ? 'link-external',
 ]
 %}
-<a class="{{ classes|join(" ")|trim }}" href="{{ link }}"{% if target %}
+<a{{ buttonattributes }} class="{{ classes|join(" ")|trim }}" href="{{ link }}"{% if target %}
     target="_blank"{% endif %} {% if id %}
     id="{{ id }}"{% endif %} data-component-id="kraken:button">
   {% block before %}{% endblock %}

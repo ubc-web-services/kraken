@@ -19,10 +19,6 @@ props:
       title: Link
       description: The destination of the featurette link
       examples: ['https://ubc.ca','/news']
-    linkText:
-      type: string
-      title: Link Text
-      description: The text that is linked
     target:
       type: boolean
       title: Target
@@ -65,10 +61,6 @@ props:
       type: boolean
       title: Remove Featurette Shadow
       description: Remove the featurette shadow effect
-    buttonClasses:
-      type: string
-      title: Button Classes
-      description: The classes that will be applied to the button
     customClasses:
       title: Custom Classes
       type: string
@@ -76,7 +68,6 @@ props:
 slots:
   media:
     title: Media Content
-    required: true
     description: The image / media content
   content:
     title: Text Content

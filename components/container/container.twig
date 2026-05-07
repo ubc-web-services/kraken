@@ -23,12 +23,10 @@
     {% endblock %}
   {% endembed %}
 #}
-
 {% set containerattributes = create_attribute() %}
 {% set headerattributes = create_attribute() %}
 {% set titleattributes = create_attribute() %}
 {% set contentattributes = create_attribute() %}
-{% set innercontentattributes = create_attribute() %}
 {% set classes = [
     backgroundColor ? backgroundColor: 'bg-white bg-light',
     verticalSpacing ? verticalSpacing: 'py-0 my-0',

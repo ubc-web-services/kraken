@@ -66,10 +66,13 @@ props:
       title: Custom Classes
       type: string
       description: Custom classes to apply to the masthead
+    customContainerClasses:
+      title: Custom Container Classes
+      type: string
+      description: Custom classes to apply to the masthead container
 slots:
   media:
     title: Image Content
-    required: true
     description: The image / media content
 libraryOverrides:
   dependencies:

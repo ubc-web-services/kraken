@@ -153,9 +153,11 @@
 
 <div id="main-content">
 
-  {% if page.pre_content %}
-    {{ page.pre_content }}
-  {% endif %}
+  {% block pre_content %}
+    {% if page.pre_content %}
+      {{ page.pre_content }}
+    {% endif %}
+  {% endblock pre_content %}
 
   {% block clftop %}
     {% if (clf_version == '8') %}
@@ -296,4 +298,6 @@
 
 </div>
 
-{% include '@kraken/includes/svg.html.twig' %}
+{% block svg %}
+  {% include '@kraken/includes/svg.html.twig' %}
+{% endblock svg %}

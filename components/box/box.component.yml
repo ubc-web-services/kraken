@@ -138,9 +138,8 @@ props:
       type: string
       description: Custom classes to apply to the box
 slots:
-  content: # {% block content %}.
+  content:
     title: Color box Content
-    required: true
     description: The color box content content
 libraryOverrides:
   dependencies:

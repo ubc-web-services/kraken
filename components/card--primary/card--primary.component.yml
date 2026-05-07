@@ -153,7 +153,6 @@ slots:
     description: The image / media content
   content:
     title: Card Content
-    required: true
     description: The card content
   actions:
     title: Card Actions
