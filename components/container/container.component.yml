@@ -5,9 +5,6 @@ group: UBC Web Services
 description: Component to render as a container
 props:
   type: object
-  required:
-    - width
-    - backgroundColor
   properties:
     width:
       type: string
@@ -125,6 +122,3 @@ slots:
   content:
     title: Inner Content
     description: Inner region content
-libraryOverrides:
-  dependencies:
-    - kraken/global

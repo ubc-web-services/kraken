@@ -74,6 +74,3 @@ slots:
   media:
     title: Image Content
     description: The image / media content
-libraryOverrides:
-  dependencies:
-    - kraken/global
