@@ -5,9 +5,6 @@ group: UBC Web Services
 description: Component to render as a Featurette
 props:
   type: object
-  required:
-    - title
-    - layout
   properties:
     title:
       type: string
@@ -75,6 +72,3 @@ slots:
   actions:
     title: Card Actions
     description: The card actions
-libraryOverrides:
-  dependencies:
-    - kraken/global

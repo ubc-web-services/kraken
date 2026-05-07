@@ -19,6 +19,3 @@ slots:
   content:
       title: Content
       description: Content of the tag
-libraryOverrides:
-  dependencies:
-    - kraken/global

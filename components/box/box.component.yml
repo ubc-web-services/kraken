@@ -5,11 +5,6 @@ group: UBC Web Services
 description: Component to render as a coloured box
 props:
   type: object
-  required:
-    - align
-    - background
-    - margin
-    - padding
   properties:
     align:
       type: string
@@ -141,6 +136,3 @@ slots:
   content:
     title: Color box Content
     description: The color box content content
-libraryOverrides:
-  dependencies:
-    - kraken/global

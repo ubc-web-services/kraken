@@ -5,9 +5,6 @@ group: UBC Web Services
 description: Component to render as a Badge
 props:
   type: object
-  required:
-    - background
-    - color
   properties:
     background:
       type: string
@@ -159,6 +156,3 @@ slots:
   content:
     title: Badge Content
     description: The badge content
-libraryOverrides:
-  dependencies:
-    - kraken/global
