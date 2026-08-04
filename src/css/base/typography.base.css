@@ -195,6 +195,7 @@ h6,
   color: var(--heading-color);
 }
 
+/* heading, display size */
 .heading-display,
 .heading-display h1 {
   @apply text-5xl font-semibold;
@@ -206,6 +207,19 @@ h6,
   .heading-display h1 {
     @apply text-2xl;
   }
+}
+
+/* heading with stroke */
+.heading-stroke {
+  @apply flex items-center;
+}
+
+.heading-stroke::before {
+  @apply content-[''] flex-1 border-t border-ubc-blue me-4;
+}
+
+.heading-stroke::after {
+  @apply content-[''] flex-1 border-t border-ubc-blue ms-4;
 }
 
 /* responsive type (20px min to 46px max) - see https://modern-fluid-typography.vercel.app for configuration */
