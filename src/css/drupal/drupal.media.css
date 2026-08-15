@@ -1,7 +1,6 @@
 /** @define drupal.media */
 
 /* drupal media */
-
 figure img,
 img[data-entity-type="file"] {
   @apply mt-0;
@@ -38,8 +37,6 @@ img.align-right,
 .media.align-right {
   @apply float-none mx-auto mb-leading;
 }
-
-
 
 figure.align-center,
 img.align-center,
@@ -105,7 +102,7 @@ img.align-center,
   content: '';
 }
 
-@media (min-width: 768px) {
+@media screen(sm) {
   .media--type-remote-video .field--name-thumbnail:after {
     background-size: 7.5rem 7.5rem;
   }

@@ -3,6 +3,7 @@
 /*
 * This file contains all styles related to the card component.
 */
+
 .ubc-card--vert {
     @apply flex flex-col;
 }

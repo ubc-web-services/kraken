@@ -46,7 +46,7 @@
   @apply mt-3;
 }
 
-@media (min-width: 768px) {
+@media screen(sm) {
   .message {
     @apply flex-row items-center;
   }
@@ -62,4 +62,3 @@
 .message p {
   @apply mt-3;
 }
-

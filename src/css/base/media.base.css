@@ -36,32 +36,3 @@ object {
   height: auto;
   width: 100%;
 }
-
-/* image helpers */
-.img-cover img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.img-zoom {
-  overflow: hidden;
-}
-
-.img-zoom img {
-  transition: transform 0.3s ease-in-out;
-  transform-origin: bottom center;
-}
-
-.img-zoom:hover img {
-  transform: scale(1.05);
-}
-
-.img-rounded img {
-  border-radius: 9999px;
-}
-
-/* image filters */
-.img-greyscale {
-  filter: grayscale(100%);
-}

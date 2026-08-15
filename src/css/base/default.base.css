@@ -1,5 +1,6 @@
 /** @define default.base */
 
+
 /* Set up a decent box model on the root element */
 html {
   box-sizing: border-box;
@@ -37,4 +38,22 @@ button:focus {
 [data-screen="sm"] .hidden--mobile,
 [data-screen="lg"] .hidden--desktop {
   display: none !important;
+}
+
+a,
+button {
+  transition: background-color 0.125s ease, color 0.125s ease;
+}
+
+a {
+  text-decoration: underline;
+  color: var(--default-color-link);
+}
+
+a:hover {
+  color: var(--default-color-link-hover);
+}
+
+a:active {
+  color: var(--default-color-link-active);
 }

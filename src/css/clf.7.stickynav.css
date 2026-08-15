@@ -2,7 +2,7 @@
  * @file
  * Styles used to control the behaviour of the sticky header
  */
-@media (min-width: 980px) {
+@media screen(md) {
 
   .stickynav--pinned {
     position: fixed;
@@ -24,7 +24,7 @@
   }
 }
 
-@media (min-width: 980px) {
+@media screen(md) {
 
   .nav--is-pinned #ubc7-unit {
     margin-bottom: 45px;

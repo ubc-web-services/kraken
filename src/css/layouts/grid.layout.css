@@ -4,36 +4,8 @@
 * This file contains css for layouts
 */
 
-.container-narrow {
-  width: 100%;
-}
-
-.w-constrain {
-  max-width: 1920px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-@media (min-width: 768px) {
-  .container-narrow {
-    max-width: 640px;
-  }
-}
-
-@media (min-width: 980px) {
-  .container-narrow {
-    max-width: 960px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container-narrow {
-    @apply max-w-5xl;
-  }
-}
-
 /* primary layouts */
-@media (min-width: 980px) {
+@media screen(md) {
 
   #sidebar-primary_upper {
     grid-area: a;

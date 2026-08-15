@@ -1,25 +1,8 @@
-/** @define link.base */
+/** @define link.utility */
 
 /*
-* This file contains basic link styles.
+* This file contains link utility styles.
 */
-a,
-button {
-  transition: background-color 0.125s ease, color 0.125s ease;
-}
-
-a {
-  text-decoration: underline;
-  color: var(--default-color-link);
-}
-
-a:hover {
-  color: var(--default-color-link-hover);
-}
-
-a:active {
-  color: var(--default-color-link-active);
-}
 
 /* accessibly hidden links and content */
 .element-invisible,

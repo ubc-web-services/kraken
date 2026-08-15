@@ -2,33 +2,27 @@
  * @file
  * This file is the main entry point for primary styles
  */
+/* add css variables */
 
- /* add css variables */
- @import "config/variables.config.css";
+@import "config/variables.config.css";
 
-/* Add normalize and general base styles */
 @import "tailwindcss/base";
-@import "base/default.base.css";
-@import "base/typography.base.css";
-@import "base/form.base.css";
-@import "base/layout.base.css";
-@import "base/link.base.css";
-@import "base/list.base.css";
-@import "base/media.base.css";
-@import "base/table.base.css";
-@import "base/print.base.css";
 
-/* Add any Drupal specific stylesheets */
-@import "drupal/drupal.entity.moderation.css";
-@import "drupal/drupal.media.css";
-@import "drupal/drupal.node.preview.css";
-@import "drupal/drupal.paragraphs.css";
-@import "drupal/drupal.views.css";
-@import "drupal/drupal.webform.css";
-@import "drupal/drupal.theme.css";
+@import "tailwindcss/components";
+
+/* Add additional base styles */
+@import "base/default.base.css" layer(base);
+@import "base/form.base.css" layer(base);
+@import "base/list.base.css" layer(base);
+@import "base/media.base.css" layer(base);
+@import "base/table.base.css" layer(base);
+@import "base/print.base.css" layer(base);
+@import "base/typography.base.css" layer(base);
+
+@import "layouts/grid.layout.css";
+@import "layouts/container.layout.css";
 
 /* Add styles for specific components */
-@import "tailwindcss/components";
 @import "components/accordion.component.css";
 @import "components/button.component.css";
 @import "components/card.component.css";
@@ -41,17 +35,27 @@
 @import "components/throbber.component.css";
 @import "components/totop.component.css";
 
+/* Add site specific utilities */
+@import "utilities/animate.utility.css";
+@import "utilities/gradient.utility.css";
+@import "utilities/link.utility.css";
+@import "utilities/list.utility.css";
+@import "utilities/margin.utility.css";
+@import "utilities/media.utility.css";
+@import "utilities/table.utility.css";
+@import "utilities/typography.utility.css";
+
+/* Add any Drupal specific stylesheets */
+@import "drupal/drupal.entity.moderation.css";
+@import "drupal/drupal.media.css";
+@import "drupal/drupal.node.preview.css";
+@import "drupal/drupal.paragraphs.css";
+@import "drupal/drupal.views.css";
+@import "drupal/drupal.webform.css";
+@import "drupal/drupal.theme.css";
+
 /* Add site specific styles */
 @import "theme/custom.theme.css";
 
-/* Add site specific utilities */
-@import "utilities/animate.utility.css";
-@import "utilities/container.utility.css";
-@import "utilities/margin.utility.css";
-@import "utilities/skip-link.utility.css";
-@import "utilities/svg.utility.css";
-@import "utilities/ubc-gradient.utility.css";
-@import "utilities/vue.utility.css";
-
-/* Add utility classes last so that they take precedence */
+/* Add utilities last so that they are last in the cascade */
 @import "tailwindcss/utilities";

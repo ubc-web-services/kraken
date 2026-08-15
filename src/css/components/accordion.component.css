@@ -38,16 +38,6 @@
   @apply pt-leading;
 }
 
-/* responsive text style - disabled by default */
-/*
-@media (min-width: 1720px) {
-
-  .widget-accordion h3 {
-    @apply text-2xl;
-  }
-}
-*/
-
 /* summary element */
 summary {
   @apply font-semibold mt-leading;

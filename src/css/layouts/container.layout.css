@@ -1,0 +1,70 @@
+/** @define container.utility */
+
+.container {
+  width: 100%;
+}
+
+/* adds a set of custom containers */
+
+.container-xxs {
+  max-width: 480px;
+}
+
+.container-xs {
+  max-width: 640px;
+}
+
+.container-sm {
+  max-width: 768px;
+}
+
+
+@media screen(md) {
+
+  .container {
+      max-width: 980px;
+  }
+
+}
+
+@media screen(lg) {
+
+  .container {
+      max-width: 1200px;
+  }
+
+}
+
+.container-narrow {
+  width: 100%;
+}
+
+.w-constrain {
+  max-width: 1920px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media screen(xs) {
+
+  .container-narrow {
+    max-width: 640px;
+  }
+
+}
+
+@media screen(md) {
+
+  .container-narrow {
+    max-width: 960px;
+  }
+
+}
+
+@media screen(lg) {
+
+  .container-narrow {
+    @apply max-w-5xl;
+  }
+
+}

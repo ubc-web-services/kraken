@@ -63,7 +63,7 @@
   display: none;
 }
 
-@media (min-width: 980px) {
+@media screen(md) {
 
   .tab-pane.show .tabcordion__content {
     @apply !block opacity-100;
@@ -91,4 +91,5 @@
   .tab-content > .tab-pane {
     @apply !block opacity-100;
   }
+
 }

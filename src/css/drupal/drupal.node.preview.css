@@ -3,6 +3,7 @@
 /*
 * This styles the node preview form.
 */
+
 .node-preview-container {
   @apply border-b border-ubc-blue-sea bg-white/50;
 }
@@ -19,4 +20,3 @@
 .node-preview-container select {
   @apply min-w-[200px];
 }
-
