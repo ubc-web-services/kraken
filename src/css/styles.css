@@ -4,6 +4,8 @@
  */
 /* add css variables */
 
+@layer properties, base, components, ubc.layouts, ubc.components, ubc.utilities, ubc.drupal, theme, utilities;
+
 @import './config/variables.config.css' layer(base);
 
 @import 'tailwindcss';
@@ -17,43 +19,43 @@
 @import './base/print.base.css' layer(base);
 @import './base/typography.base.css' layer(base);
 
-@import './layouts/grid.layout.css' layer(components);
-@import './layouts/container.layout.css' layer(components);
+@import './layouts/grid.layout.css' layer(ubc.layouts);
+@import './layouts/container.layout.css' layer(ubc.layouts);
 
 /* Add styles for specific components */
-@import './components/accordion.component.css' layer(components);
-@import './components/button.component.css' layer(components);
-@import './components/card.component.css' layer(components);
-@import './components/carousel.component.css' layer(components);
-@import './components/chosen.component.css' layer(components);
-@import './components/message.component.css' layer(components);
-@import './components/navigation.component.css' layer(components);
-@import './components/tabcordion.component.css' layer(components);
-@import './components/tag.component.css' layer(components);
-@import './components/throbber.component.css' layer(components);
-@import './components/totop.component.css' layer(components);
+@import './components/accordion.component.css' layer(ubc.components);
+@import './components/button.component.css' layer(ubc.components);
+@import './components/card.component.css' layer(ubc.components);
+@import './components/carousel.component.css' layer(ubc.components);
+@import './components/chosen.component.css' layer(ubc.components);
+@import './components/message.component.css' layer(ubc.components);
+@import './components/navigation.component.css' layer(ubc.components);
+@import './components/tabcordion.component.css' layer(ubc.components);
+@import './components/tag.component.css' layer(ubc.components);
+@import './components/throbber.component.css' layer(ubc.components);
+@import './components/totop.component.css' layer(ubc.components);
 
 /* Add site specific utilities */
-@import './utilities/animate.utility.css' layer(components);
-@import './utilities/gradient.utility.css' layer(components);
-@import './utilities/link.utility.css' layer(components);
-@import './utilities/list.utility.css' layer(components);
-@import './utilities/margin.utility.css' layer(components);
-@import './utilities/media.utility.css' layer(components);
-@import './utilities/table.utility.css' layer(components);
-@import './utilities/typography.utility.css' layer(components);
+@import './utilities/animate.utility.css' layer(ubc.utilities);
+@import './utilities/gradient.utility.css' layer(ubc.utilities);
+@import './utilities/link.utility.css' layer(ubc.utilities);
+@import './utilities/list.utility.css' layer(ubc.utilities);
+@import './utilities/margin.utility.css' layer(ubc.utilities);
+@import './utilities/media.utility.css' layer(ubc.utilities);
+@import './utilities/table.utility.css' layer(ubc.utilities);
+@import './utilities/typography.utility.css' layer(ubc.utilities);
 
 /* Add any Drupal specific stylesheets */
-@import './drupal/drupal.entity.moderation.css' layer(components);
-@import './drupal/drupal.media.css' layer(components);
-@import './drupal/drupal.node.preview.css' layer(components);
-@import './drupal/drupal.paragraphs.css' layer(components);
-@import './drupal/drupal.views.css' layer(components);
-@import './drupal/drupal.webform.css' layer(components);
-@import './drupal/drupal.theme.css' layer(components);
+@import './drupal/drupal.entity.moderation.css' layer(ubc.drupal);
+@import './drupal/drupal.media.css' layer(ubc.drupal);
+@import './drupal/drupal.node.preview.css' layer(ubc.drupal);
+@import './drupal/drupal.paragraphs.css' layer(ubc.drupal);
+@import './drupal/drupal.views.css' layer(ubc.drupal);
+@import './drupal/drupal.webform.css' layer(ubc.drupal);
+@import './drupal/drupal.theme.css' layer(ubc.drupal);
 
 /* Add site specific styles */
-@import './theme/custom.theme.css' layer(components);
+@import './theme/custom.theme.css' layer(theme);
 
 /* Add utilities last so that they are last in the cascade */
 
