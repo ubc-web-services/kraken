@@ -17,7 +17,7 @@
 .crumb {
   margin-right: 0.5em;
   padding-right: 2em;
-  background-image: url("../img/svg/icon-angle--ubc-blue.svg");
+  background-image: url(../img/svg/icon-angle--ubc-blue.svg);
   background-repeat: no-repeat;
   background-position: right center;
   background-size: 1.5em 1.5em;
@@ -71,7 +71,7 @@
 }
 
 .subnav--nested .navlink--secondary {
-  @apply block pl-7 font-normal;
+  @apply block font-normal pl-7;
 
   font-size: 0.875rem;
 }
