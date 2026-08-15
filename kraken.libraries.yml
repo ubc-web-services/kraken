@@ -21,9 +21,8 @@ global:
 ## CLF Version 8
 clf-8:
   version: 8.0.0
-  css:
-    base:
-      css/clf.8.min.css: { minified: true }
+  js:
+    js/ubc-digital-brand.js: { minified: true }
 
 ## CLF Version 7 (legacy)
 ### CLF Shared (legacy)
