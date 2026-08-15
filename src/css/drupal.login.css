@@ -36,7 +36,7 @@ form h2 {
 
 @media (min-width: 640px) {
 
-  .sm--max-w-md {
+  .sm:max-w-md {
     @apply max-w-[34rem]
   }
 }

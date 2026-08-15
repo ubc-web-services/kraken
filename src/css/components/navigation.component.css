@@ -162,7 +162,7 @@
 }
 
 .pager__item.is-active {
-  @apply text-black no-underline bg-unit-tertiary hover--no-underline;
+  @apply text-black no-underline bg-unit-tertiary hover:no-underline;
 }
 
 .pager__item.is-active a {

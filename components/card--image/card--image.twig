@@ -39,12 +39,12 @@
     'relative',
     'min-h-[24rem]',
     'min-h-full',
-    'hover--cursor-pointer',
+    'hover:cursor-pointer',
     'flex',
     'group',
     'isolate',
     'has-gradient--after',
-    noShadow ? '': 'shadow hover--shadow-lg',
+    noShadow ? '': 'shadow hover:shadow-lg',
     imageZoom ? 'img-zoom',
     customClasses,
   ]
@@ -67,7 +67,7 @@
     'first-child--mt-0',
     'w-full',
     'z-20',
-    'md--p-12',
+    'md:p-12',
     'relative',
     'flex',
     'flex-col',
@@ -84,15 +84,15 @@
 {%
   set link_classes = [
     'no-underline',
-    'hover--no-underline',
+    'hover:no-underline',
     '!text-white',
     'link-expand',
-    'hover--!text-ubc-blue-polar',
+    'hover:!text-ubc-blue-polar',
   ]
 %}
 {%
   set button_classes = [
-    buttonClasses ? buttonClasses: 'unit-button unit-button--transparent group-hover--bg-ubc-blue text-sm',
+    buttonClasses ? buttonClasses: 'unit-button unit-button--transparent group-hover:bg-ubc-blue text-sm',
   ]
 %}
 <article{{ imagecard_attributes.addClass(classes) }} data-component-id="kraken:card--image">

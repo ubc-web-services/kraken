@@ -8,7 +8,6 @@ module.exports = {
     "./safelist.txt",
     "./UtilityClasses.md"
   ],
-  separator: "--",
   theme: {
     colors: {
       transparent: "transparent",

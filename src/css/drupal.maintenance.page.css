@@ -103,7 +103,7 @@ body {
 
 @media (min-width: 640px) {
 
-  .sm--max-w-md {
+  .sm:max-w-md {
     max-width: 34rem;
   }
 }

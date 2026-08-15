@@ -36,14 +36,14 @@ ol.item-list,
 
 @media screen(sm) {
 
-  .sm--list-inline li {
+  .sm:list-inline li {
     display: inline;
   }
 }
 
 @media screen(md) {
 
-  .md--list-inline li {
+  .md:list-inline li {
     display: inline;
   }
 }

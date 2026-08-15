@@ -12,14 +12,14 @@ props:
       description: The maximum width of the region
       enum:
         - no-container
-        - container px-4 mx-auto md--px-0
-        - container px-4 mx-auto md--px-0 md--max-w-5xl
+        - container px-4 mx-auto md:px-0
+        - container px-4 mx-auto md:px-0 md:max-w-5xl
       meta:enum:
         'no-container': No container
-        'container px-4 mx-auto md--px-0': Normal container
-        'container px-4 mx-auto md--px-0 md--max-w-5xl': Narrow container
-      default: 'container px-4 mx-auto md--px-0'
-      examples: ['container px-4 mx-auto md--px-0']
+        'container px-4 mx-auto md:px-0': Normal container
+        'container px-4 mx-auto md:px-0 md:max-w-5xl': Narrow container
+      default: 'container px-4 mx-auto md:px-0'
+      examples: ['container px-4 mx-auto md:px-0']
     backgroundColor:
       type: string
       title: Background color

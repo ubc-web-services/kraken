@@ -58,14 +58,14 @@
     <ul{{ attributes.addClass(classes, 'field__items', 'list-none', 'my-0', 'pl-0') }}>
       {% for item in items %}
         <li{{ item.attributes.addClass('field__item') }}>
-          <a href="{{ item.content['#url']|render }}" {% if item.content['#options']['external'] %} target="_blank" {% endif %} class="flex block py-3 underline no-underline text-ubc-blue-cobalt hover--text-ubc-blue">{{ item.content['#title'] }}</a>
+          <a href="{{ item.content['#url']|render }}" {% if item.content['#options']['external'] %} target="_blank" {% endif %} class="flex block py-3 underline no-underline text-ubc-blue-cobalt hover:text-ubc-blue">{{ item.content['#title'] }}</a>
         </li>
       {% endfor %}
     </ul>
   {% else %}
     {% for item in items %}
       <div{{ attributes.addClass(classes, 'field__item') }}>
-        <a href="{{ item.content['#url']|render }}" {% if item.content['#options']['external'] %} target="_blank" {% endif %} class="flex block py-3 underline no-underline text-ubc-blue-cobalt hover--text-ubc-blue">{{ item.content['#title'] }}</a>
+        <a href="{{ item.content['#url']|render }}" {% if item.content['#options']['external'] %} target="_blank" {% endif %} class="flex block py-3 underline no-underline text-ubc-blue-cobalt hover:text-ubc-blue">{{ item.content['#title'] }}</a>
       </div>
     {% endfor %}
   {% endif %}
@@ -77,7 +77,7 @@
     {% endif %}
     {% for item in items %}
       <li{{ item.attributes.addClass('field__item') }}>
-        <a href="{{ item.content['#url']|render }}" {% if item.content['#options']['external'] %} target="_blank" {% endif %} class="flex block py-3 underline no-underline text-ubc-blue-cobalt hover--text-ubc-blue">{{ item.content['#title'] }}</a>
+        <a href="{{ item.content['#url']|render }}" {% if item.content['#options']['external'] %} target="_blank" {% endif %} class="flex block py-3 underline no-underline text-ubc-blue-cobalt hover:text-ubc-blue">{{ item.content['#title'] }}</a>
       </li>
     {% endfor %}
     {% if multiple %}

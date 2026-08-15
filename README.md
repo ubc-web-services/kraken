@@ -59,7 +59,7 @@ The theme makes extensive use of utility classes provided by Tailwind.
 All configuration for Tailwind utilities are set in [`/tailwind.config.js`](https://github.com/ubc-web-services/product-boilerplate/blob/master/web/themes/custom/kraken/tailwind.config.js). The configuration uses UBC default colours, fonts, regular spacing, etc. More details about this file can be found in the [Tailwind documentation](https://tailwindcss.com/docs/configuration).
 
 Two very important places where it diverges fro the documentation:
-- **Separators**: by default, Tailwind uses a colon to separate media query and state prefixes, whereas the config defines the prefix separator as a double dash. For example, `md:text-white hover:text-black` become `md--text-white hover--text-black`
+- **Separators**: by default, Tailwind uses a colon to separate media query and state prefixes, whereas the config defines the prefix separator as a double dash. For example, `md:text-white hover:text-black` become `md:text-white hover--text-black`
 - **Colour palette**: the config excludes Tailwind's default colurs and [replaces them](https://github.com/ubc-web-services/product-boilerplate/blob/master/web/themes/custom/kraken/tailwind.config.js#L12) with UBC colours and a few user-defined colours.
 
 When running the production build script (`npm run prod`), PurgeCSS is used to scan all Twig and Javascript files and remove any Tailwind utilities that are not in use. This allows for us to deliver a considerably smaller set of CSS classes. Note that classes not provided by Tailwind are never purged.
