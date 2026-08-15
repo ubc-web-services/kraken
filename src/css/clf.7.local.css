@@ -70,7 +70,7 @@ html {
   -ms-text-size-adjust: 100%;
 }
 body {
-  @apply m-0 bg-[#ccc] m-0;
+  @apply m-0 bg-[#ccc];
 }
 a:focus {
   @apply -outline-offset-2;
@@ -453,7 +453,7 @@ body.layout--full-width-left {
   @apply clear-both;
 }
 #ubc7-global-header li {
-  @apply block float-left w-[48%] h-[30px] leading-6 mt-2.5 mb-0 mx-[1%] border-b-[#d7e0e7] border-b border-solid sm--w-[23%];
+  @apply block float-left w-[48%] h-[30px] leading-6 mt-2.5 mb-0 mx-[1%] border-b-[#d7e0e7] border-b border-solid xs--w-[23%];
 }
 #ubc7-global-header a {
   @apply no-underline text-[#002145] text-xs hover--underline;
@@ -483,13 +483,13 @@ body.layout--full-width-left {
   @apply h-full;
 }
 .ubc7-campus {
-  @apply absolute block float-left overflow-hidden w-[100px] h-[18px] cursor-pointer left-[35px] bottom-[17px] sm--w-[120px] sm--left-10 sm--bottom-[30px] md--w-[135px] md--left-7 md--bottom-[17px] lg--w-[170px] lg--h-6 lg--left-9 lg--bottom-[19px];
+  @apply absolute block float-left overflow-hidden w-[100px] h-[18px] cursor-pointer left-[35px] bottom-[17px] xs--w-[120px] xs--left-10 xs--bottom-[30px] md--w-[135px] md--left-7 md--bottom-[17px] lg--w-[170px] lg--h-6 lg--left-9 lg--bottom-[19px];
 }
 #ubc7-vancouver-campus {
-  @apply bg-[-1319px_-301px] sm--bg-[-1319px_-301px] md--bg-[-1320px_-122px] lg--bg-[-1320px_-5px];
+  @apply bg-[-1319px_-301px] xs--bg-[-1319px_-301px] md--bg-[-1320px_-122px] lg--bg-[-1320px_-5px];
 }
 #ubc7-okanagan-campus {
-  @apply bg-[-1319px_-329px] sm--bg-[-1319px_-262px] md--bg-[-1320px_-165px] lg--bg-[-1320px_-53px];
+  @apply bg-[-1319px_-329px] xs--bg-[-1319px_-262px] md--bg-[-1320px_-165px] lg--bg-[-1320px_-53px];
 }
 #ubc7-global-utility-no-script,
 #ubc7-global-utility button span,
@@ -543,7 +543,7 @@ body.layout--full-width-left {
   @apply overflow-hidden whitespace-nowrap indent-[200%];
 }
 #ubc7-wordmark-block {
-  @apply relative bg-[-2px_-276px] bg-auto border-l-0 sm--bg-[-1px_-205px];
+  @apply relative bg-[-2px_-276px] bg-auto border-l-0 xs--bg-[-1px_-205px];
 }
 #ubc7-wordmark {
   @apply w-[70%] md--relative md--w-[85%] lg--relative lg--float-left lg--w-[85%];
@@ -560,7 +560,7 @@ body.layout--full-width-left {
   @apply bg-[#002145] bg-[-1229px_-291px];
 }
 .legacy--wg #ubc7-global-utility button span {
-  @apply bg-[-1229px_-324px] sm--bg-[-1233px_-54px] md--bg-[-1233px_-48px];
+  @apply bg-[-1229px_-324px] xs--bg-[-1233px_-54px] md--bg-[-1233px_-48px];
 }
 #ubc7-global-utility button span,
 a#ubc7-global-utility-no-script {
