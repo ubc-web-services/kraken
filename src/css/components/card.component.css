@@ -58,7 +58,7 @@
 
     .ubc-card--horiz .ubc-card__content_wrapper,
     .widget-card--horizontal .ubc-card--horiz .ubc-card__content_wrapper {
-        @apply !col-span-9 col-start-4 row-start-1;
+        @apply col-span-9! col-start-4 row-start-1;
     }
 
 }
@@ -78,7 +78,7 @@
 
     .ubc-card--horiz-rev .ubc-card__content_wrapper,
     .widget-card--horizontal .ubc-card--horiz-rev .ubc-card__content_wrapper {
-        @apply !col-span-9 col-start-1 row-start-1;
+        @apply col-span-9! col-start-1 row-start-1;
     }
 
 }

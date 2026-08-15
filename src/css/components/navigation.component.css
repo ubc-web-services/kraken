@@ -25,7 +25,7 @@
 
 /* subnavigation */
 .navlink--secondary {
-  @apply relative block py-2 px-[14px] pr-10 overflow-hidden no-underline text-ubc-blue border-b !border-ubc-blue-cornflower;
+  @apply relative block py-2 px-[14px] pr-10 overflow-hidden no-underline text-ubc-blue border-b border-ubc-blue-cornflower!;
 }
 
 .navlink--secondary::after {
@@ -71,13 +71,13 @@
 }
 
 .subnav--nested .navlink--secondary {
-  @apply block pl-[1.75rem] font-normal;
+  @apply block pl-7 font-normal;
 
   font-size: 0.875rem;
 }
 
 .subnav--nested .subnav--nested .navlink--secondary {
-  @apply pl-[2.625rem];
+  @apply pl-10.5;
 }
 
 /* ensure collapsed nav is visible on large screens */
@@ -99,7 +99,7 @@
 }
 
 .nav--split .js-reveal__trigger {
-  @apply flex-none inline-flex w-[40px] text-ubc-blue bg-transparent place-content-center place-items-center border-b !border-ubc-blue-cornflower;
+  @apply flex-none inline-flex w-[40px] text-ubc-blue bg-transparent place-content-center place-items-center border-b border-ubc-blue-cornflower!;
 }
 
 .nav--split .js-reveal__trigger svg {

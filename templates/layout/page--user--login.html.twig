@@ -5,10 +5,10 @@
 {% block unitcontent %}
 {{ attach_library('kraken/drupal-login') }}
 <main id="unit-content" class="w-screen h-screen px-2 py-10 bg-ubc-blue">
-  <div class="px-16 py-8 mx-auto rounded shadow-lg bg-grey-50 sm:max-w-md">
+  <div class="px-16 py-8 mx-auto rounded-sm shadow-lg bg-grey-50 sm:max-w-md">
     <h1 class="pb-4 mt-10 text-2xl font-normal text-grey-500">Sign in</h1>
     {% if cwl_option %}
-    <a href="/saml_login?destination=user" class="text-lg rounded-sm unit-button unit-button--dark unit-button--block cwl-login">Sign in with CWL</a>
+    <a href="/saml_login?destination=user" class="text-lg rounded-xs unit-button unit-button--dark unit-button--block cwl-login">Sign in with CWL</a>
     <p class="pb-8 text-base help-block text-grey-500">Sign into {{ unit_name }} using your UBC Campus Wide Login (CWL) account. You will be taken to another service to enter your credentials and then returned to this site.</p>
     <hr class="mb-8 border-b" />
     <h2 class="pb-4 text-lg font-normal text-grey-500">{{ unit_name }}: login</h2>

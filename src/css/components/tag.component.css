@@ -5,7 +5,7 @@
 */
 
 .tag {
-  @apply mr-4 text-xs text-white no-underline rounded bg-ubc-blue pt-[.35em] px-[.75em] pb-[.25em];
+  @apply mr-4 text-xs text-white no-underline rounded-sm bg-ubc-blue pt-[.35em] px-[.75em] pb-[.25em];
 }
 
 .tag a,

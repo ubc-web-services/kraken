@@ -37,14 +37,14 @@
   set classes = [
     'ubc-card',
     'relative',
-    'min-h-[24rem]',
+    'min-h-96',
     'min-h-full',
     'hover:cursor-pointer',
     'flex',
     'group',
     'isolate',
     'has-gradient--after',
-    noShadow ? '': 'shadow hover:shadow-lg',
+    noShadow ? '': 'shadow-sm hover:shadow-lg',
     imageZoom ? 'img-zoom',
     customClasses,
   ]
@@ -85,9 +85,9 @@
   set link_classes = [
     'no-underline',
     'hover:no-underline',
-    '!text-white',
+    'text-white!',
     'link-expand',
-    'hover:!text-ubc-blue-polar',
+    'hover:text-ubc-blue-polar!',
   ]
 %}
 {%

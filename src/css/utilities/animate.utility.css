@@ -54,7 +54,7 @@
   opacity: 0;
 }
 
-@media screen(md) {
+@media (width >= theme(--breakpoint-md)) {
   .fade-alt-leave-active {
     transition: none;
   }

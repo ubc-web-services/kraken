@@ -34,14 +34,14 @@ ol.item-list,
   display: inline;
 }
 
-@media screen(sm) {
+@media (width >= theme(--breakpoint-sm)) {
 
   .sm:list-inline li {
     display: inline;
   }
 }
 
-@media screen(md) {
+@media (width >= theme(--breakpoint-md)) {
 
   .md:list-inline li {
     display: inline;
@@ -97,7 +97,7 @@ ol.item-list,
   background-image: none;
 }
 
-@media screen(xl) {
+@media (width >= theme(--breakpoint-xl)) {
   .list-checked li {
     @apply pl-8;
   }

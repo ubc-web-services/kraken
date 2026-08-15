@@ -2,10 +2,10 @@
  * @file
  * Fullcalendar styles
  */
-@import "lib/fullcalendar/fc.core.css";
-@import "lib/fullcalendar/fc.daygrid.css";
-@import "lib/fullcalendar/fc.timegrid.css";
-@import "lib/fullcalendar/fc.list.css";
+@import './lib/fullcalendar/fc.core.css';
+@import './lib/fullcalendar/fc.daygrid.css';
+@import './lib/fullcalendar/fc.timegrid.css';
+@import './lib/fullcalendar/fc.list.css';
 
 .fc-body .fc-scroller {
   @apply !h-auto

@@ -63,10 +63,10 @@
   display: none;
 }
 
-@media screen(md) {
+@media (width >= theme(--breakpoint-md)) {
 
   .tab-pane.show .tabcordion__content {
-    @apply !block opacity-100;
+    @apply block! opacity-100;
   }
 
   .tabcordion__links {
@@ -89,7 +89,7 @@
 
   .tabcordion__content.show,
   .tab-content > .tab-pane {
-    @apply !block opacity-100;
+    @apply block! opacity-100;
   }
 
 }

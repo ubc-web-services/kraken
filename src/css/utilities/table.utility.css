@@ -12,7 +12,7 @@
 }
 
 .table--plain tr {
-  @apply border-b-0 !bg-transparent;
+  @apply border-b-0 bg-transparent!;
 }
 
 .table--condensed th,

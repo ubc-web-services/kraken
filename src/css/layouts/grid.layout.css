@@ -5,7 +5,7 @@
 */
 
 /* primary layouts */
-@media screen(md) {
+@media (width >= theme(--breakpoint-md)) {
 
   #sidebar-primary_upper {
     grid-area: a;

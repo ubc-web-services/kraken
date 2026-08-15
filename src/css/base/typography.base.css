@@ -226,7 +226,7 @@ samp,
 }
 
 pre {
-  @apply relative p-4 border rounded-sm bg-grey-100 border-grey-300 text-grey-800;
+  @apply relative p-4 border rounded-xs bg-grey-100 border-grey-300 text-grey-800;
   direction: ltr;
   font-style: normal;
   min-width: 200px;
@@ -242,7 +242,7 @@ pre code {
 }
 
 kbd {
-  @apply inline-block text-sm border shadow-sm border-grey-300;
+  @apply inline-block text-sm border shadow-xs border-grey-300;
   text-wrap: nowrap;
   border-radius: 3px;
   font-weight: 600;
@@ -265,7 +265,7 @@ blockquote {
 }
 
 blockquote::before {
-  @apply absolute top-12 left-0 h-8 w-8 bg-center bg-[length:2rem_2rem] bg-no-repeat bg-[url("../img/svg/icon-quote-open--ubc-blue.svg")] bg-transparent;
+  @apply absolute top-12 left-0 h-8 w-8 bg-center bg-size-[2rem_2rem] bg-no-repeat bg-[url("../img/svg/icon-quote-open--ubc-blue.svg")] bg-transparent;
   content: "";
 }
 

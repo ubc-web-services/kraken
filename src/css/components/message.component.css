@@ -46,7 +46,7 @@
   @apply mt-3;
 }
 
-@media screen(sm) {
+@media (width >= theme(--breakpoint-sm)) {
   .message {
     @apply flex-row items-center;
   }
