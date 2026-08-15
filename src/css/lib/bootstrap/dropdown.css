@@ -159,12 +159,14 @@
 
 .dropdown-item:focus,
 .dropdown-item:hover {
-  @apply bg-ubc-blue-frost;
+  background-color: rgba(var(--ubc-blue-frost), 1);
 }
 
 .dropdown-item.active,
 .dropdown-item:active {
-  @apply text-white no-underline bg-ubc-blue-sky;
+  text-decoration: none;
+  color: rgba(var(--white), 1);
+  background-color: rgba(var(--ubc-blue-sky), 1);
 }
 
 .dropdown-item.disabled,
@@ -179,7 +181,7 @@
 }
 
 .dropdown-header {
-  @apply text-grey-500;
+  color: rgba(var(--grey-500), 1);
   display: block;
   margin-bottom: 0;
   padding: 0.5rem 1rem;

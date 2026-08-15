@@ -1,13 +1,11 @@
 module.exports = {
   plugins: [
-    require("postcss-import"),
-    require("tailwindcss"),
+    require("@tailwindcss/postcss"),
     require("postcss-prefix-selector")({
       prefix: ".ck-editor",
       exclude: ["body", "html", ":root", ".anchor-invisible"],
       includeFiles: "src/css/drupal.ckeditor.theme.styles.css",
     }),
-    require("autoprefixer"),
     ...(process.env.NODE_ENV === "production" ? [require("cssnano")] : [])
   ]
 };

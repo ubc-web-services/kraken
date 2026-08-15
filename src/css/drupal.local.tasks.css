@@ -3,90 +3,86 @@
  * Styles for the default drupal tabs
  */
 .tabs {
-  @apply mx-0 mt-4 mb-2 text-base;
+  font-size: 1rem;
+  margin: 1rem 0 0.5rem;
 }
-
 .tabs--primary,
 .tabs--secondary {
-  @apply w-[99%];
+  width: 99%;
 }
-
 .tabs--primary {
-  @apply p-0 list-none whitespace-nowrap mx-0 mt-0 mb-[.5em];
   box-shadow: inset 0 -3px #999;
   line-height: normal;
+  list-style-type: none;
+  margin: 0 0 0.5em;
+  padding: 0;
+  white-space: nowrap;
 }
-
 .tabs--primary li {
-  @apply float-left p-0 m-0;
+  float: left;
+  margin: 0;
+  padding: 0;
 }
-
 .tabs--primary a.is-active {
-  @apply text-ubc-blue-cobalt bg-grey-100;
+  background-color: rgba(var(--grey-100), 1);
   box-shadow: inset 0 -3px #005ca7;
+  color: rgba(var(--ubc-blue-cobalt), 1);
 }
-
 .tabs--primary a.is-active:hover {
-  @apply text-ubc-blue-neptune;
   box-shadow: inset 0 -3px #40b4e5;
+  color: rgba(var(--ubc-blue-neptune), 1);
 }
-
 .tabs--primary a {
+  color: #999;
   display: inline-block;
   margin: 0 3px 0 0;
   padding: 0.25em 1em 0.5em;
-  transition: color 0.3s, box-shadow 0.3s;
   text-decoration: none;
-  color: #999;
+  transition:
+    color 0.3s,
+    box-shadow 0.3s;
 }
-
 .tabs--primary a:hover {
   color: #005ca7;
 }
-
 .tabs--primary a .tab {
   display: block;
   height: 24px;
+  line-height: 20px;
   margin: 0;
   padding: 4px 13px 4px 6px;
-  line-height: 20px;
 }
-
 .tabs--secondary {
+  border-bottom: 1px solid silver;
+  list-style: none;
   margin: 0;
   padding: 0 0 0 5px;
-  list-style: none;
   white-space: nowrap;
-  border-bottom: 1px solid #c0c0c0;
 }
-
 .tabs--secondary li {
+  border-right: none;
   float: left;
   margin: 0 5px 0 0;
   padding: 5px 0;
-  border-right: none;
 }
-
 .tabs--secondary a {
+  border: 1px solid silver;
+  color: #777;
   display: block;
   height: 24px;
   margin: 0;
   padding: 0;
   text-decoration: none;
-  color: #777;
-  border: 1px solid  #c0c0c0;
 }
-
 .tabs--secondary a.is-active,
 .tabs--secondary a.is-active:hover {
+  border: 1px solid silver;
   color: #000;
-  border: 1px solid  #c0c0c0;
 }
-
 .tabs--secondary a .tab {
   display: block;
   height: 18px;
+  line-height: 18px;
   margin: 0;
   padding: 3px 8px;
-  line-height: 18px;
 }

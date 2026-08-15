@@ -57,10 +57,16 @@
 }
 
 .modal-content {
-  @apply relative flex flex-col w-full pointer-events-auto outline-none bg-white shadow;
-
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  outline: none;
+  background-color: rgba(var(--white), 1);
   border-radius: 0.3rem;
   background-clip: padding-box;
+  box-shadow: var(--shadow-md);
 }
 
 .modal-backdrop {

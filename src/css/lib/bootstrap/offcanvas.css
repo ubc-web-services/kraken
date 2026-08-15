@@ -20,15 +20,23 @@
 
 .offcanvas-start,
 .offcanvas-start:focus {
-  @apply shadow top-0 left-0 w-[400px];
+  top: 0;
+  left: 0;
+  width: 400px;
+  box-shadow: var(--shadow-md);
   transform: translateX(-100%);
 }
 
 .offcanvas-top,
 .offcanvas-top:focus {
-  @apply shadow top-0 right-0 left-0 h-[300vh] max-h-full;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 300vh;
+  max-height: 100%;
   transform: translateX(-100%);
   transform: translateY(-100%);
+  box-shadow: var(--shadow-md);
 }
 
 .offcanvas-end,
