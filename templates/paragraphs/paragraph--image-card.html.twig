@@ -38,14 +38,18 @@
  * @ingroup themeable
  */
 #}
-{% set link_text = content.field_paragraph_card_link[0]['#title']|raw %}
-
-{% if content.field_paragraph_card_link["#items"][0].isExternal() == true %}
-	{% set link_url = content.field_paragraph_card_link.0['#url'].uri %}
-	{% set target = true %}
-{% else %}
-	{% set link_url = paragraph.field_paragraph_card_link.0.url %}
-	{% set target = false %}
+{% set target = false %}
+{% set link_url = '' %}
+{% set link_text = '' %}
+{% if not (paragraph.field_paragraph_card_link.isEmpty == true) and content.field_paragraph_card_link is defined %}
+  {% set link_text = content.field_paragraph_card_link.0['#title'] %}
+  {% if content.field_paragraph_card_link["#items"][0].isExternal() == true %}
+    {% set link_url = content.field_paragraph_card_link.0['#url'].uri %}
+    {% set target = true %}
+  {% else %}
+    {% set link_url = paragraph.field_paragraph_card_link.0.url %}
+    {% set target = false %}
+  {% endif %}
 {% endif %}
 
 {% embed 'kraken:card--image' with {
@@ -53,6 +57,7 @@
   link: link_url,
   linkText: link_text,
   layout: paragraph.field_paragraph_position_setting.0.entity.field_class.value,
+  target: target,
 } %}
 	{% block media %}
 		{% if not (paragraph.field_paragraph_card_image.isEmpty == true) and content.field_paragraph_card_image is defined %}
