@@ -93,12 +93,12 @@
 {% endif %}
 
 {% set link_url = url %}
-{% set link_target = '_self' %}
+{% set link_target = false %}
 {% if not (node.field_event_link.isEmpty == true) and content.field_event_link is defined %}
   {% set exturl = content.field_event_link[0]['#url']|raw  %}
   {% set exttitle = content.field_event_link[0]['#title']|raw %}
   {% set link_url = exturl %}
-  {% set link_target = '_blank' %}
+  {% set link_target = true %}
 {% endif %}
 
 {% embed 'kraken:card--image' with {
