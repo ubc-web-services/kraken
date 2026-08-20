@@ -60,6 +60,8 @@ props:
         text-xl: Extra large text
         text-2xl: 2xl text
         text-3xl: 3xl text
+      default: text-base
+      examples: ['text-sm']
     variant:
       type: string
       title: Variant
