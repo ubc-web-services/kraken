@@ -36,9 +36,13 @@ props:
         - 'bg-none'
         - 'bg-white bg-light'
         - 'bg-unit-primary bg-dark'
+        - 'bg-unit-primary bg-light'
+        - 'bg-unit-secondary bg-dark'
         - 'bg-unit-secondary bg-light'
+        - 'bg-unit-tertiary bg-dark'
         - 'bg-unit-tertiary bg-light'
         - 'bg-unit-accent bg-dark'
+        - 'bg-unit-accent bg-light'
         - 'bg-ubc-blue bg-dark'
         - 'bg-ubc-blue-sea bg-dark'
         - 'bg-ubc-blue-cobalt bg-dark'
@@ -66,9 +70,13 @@ props:
         'bg-none': No background
         'bg-white bg-light': White background
         'bg-unit-primary bg-dark': Unit Primary background
-        'bg-unit-secondary bg-light': Unit Secondary background
-        'bg-unit-tertiary bg-light': Unit Tertiary background
+        'bg-unit-primary bg-light': Unit Primary (light) background
+        'bg-unit-secondary bg-dark': Unit Secondary background
+        'bg-unit-secondary bg-light': Unit Secondary (light) background
+        'bg-unit-tertiary bg-dark': Unit Tertiary background
+        'bg-unit-tertiary bg-light': Unit Tertiary (light) background
         'bg-unit-accent bg-dark': Unit Accent background
+        'bg-unit-accent bg-light': Unit Accent (light) background
         'bg-ubc-blue bg-dark': UBC Blue background
         'bg-ubc-blue-sea bg-dark': 'UBC Blue: Sea background'
         'bg-ubc-blue-cobalt bg-dark': 'UBC Blue: Cobalt background'
