@@ -74,7 +74,6 @@
   {% endif %}
 {% endif %}
 
-{% set displaymeta = '' %}
 {% if display_submitted %}
   {% set displaymeta = node.createdtime|format_date('date_readable') %}
 {% endif %}
@@ -94,7 +93,7 @@
   target: link_target,
   layout: 'ubc-card--vert',
   color: 'bg-white bg-light',
-  meta: displaymeta,
+  meta: displaymeta|default(''),
 } %}
   {% block media %}
     {% if not (node.field_landing_feature_image.isEmpty == true) and content.field_landing_feature_image is defined %}
