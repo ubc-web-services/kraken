@@ -107,7 +107,7 @@
   target: link_target,
   layout: 'ubc-card--vert',
   color: 'bg-white bg-light',
-  meta: eventdate,
+  meta: eventdate|default(''),
 } %}
   {% block media %}
     {% if not (node.field_event_image.isEmpty == true) and content.field_event_image is defined %}
