@@ -84,7 +84,7 @@
   {% set title_suffix = content.field_profile_name_suffix.0 %}
 {% endif %}
 
-{% set link_target = '' %}
+{% set link_target = false %}
 {% set link_url = url %}
 
 {% embed 'kraken:card--primary' with {
