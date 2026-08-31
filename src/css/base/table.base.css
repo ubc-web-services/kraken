@@ -60,7 +60,7 @@ table caption {
   max-width: 100%;
   margin: 0;
   -webkit-overflow-scrolling: touch;
-  scrollbar-color:  rgba(var(--ubc-blue-sea), .8) rgba(var(--ubc-blue-sea), .2);
+  scrollbar-color:  rgba(var(--ubc-blue-sea), .8) rgba(var(--grey-100), 1);
   scrollbar-width: thin;
 }
 
