@@ -77,3 +77,22 @@ input[name="custom_composite_table_add"] {
 .webform-element-description {
   @apply my-2 text-xs text-grey-700;
 }
+
+/* webform progress bar */
+.webform-progress-tracker {
+  @apply w-full mx-0 my-6;
+}
+
+.webform-progress-tracker .progress-step .progress-marker::before,
+.webform-progress-tracker .progress-step:last-child,
+.webform-progress-tracker .progress-text {
+  @apply hidden;
+}
+
+.webform-progress-tracker .progress-step .progress-marker::after {
+  @apply top-0 right-0 bg-grey-100;
+}
+
+.webform-progress-tracker .progress-step.is-complete .progress-marker::after {
+  @apply bg-ubc-blue;
+}
