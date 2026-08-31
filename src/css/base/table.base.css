@@ -59,6 +59,9 @@ table caption {
   overflow-x: auto;
   max-width: 100%;
   margin: 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-color:  rgba(var(--ubc-blue-sea), .8) rgba(var(--ubc-blue-sea), .8);
+  scrollbar-width: thin;
 }
 
 .table--plain tr {
