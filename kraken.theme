@@ -302,6 +302,14 @@ function kraken_preprocess_page(&$variables)
   // Add in our custom theme variables so we can use them in page.twig
   // general options.
   $themeSettingsProvider = \Drupal::service('Drupal\Core\Extension\ThemeSettingsProvider');
+  $variables['clf_8_color'] = $themeSettingsProvider->getSetting('clf_8_color', 'kraken');
+  $variables['clf_8_layout'] = $themeSettingsProvider->getSetting('clf_8_layout', 'kraken');
+  $variables['clf_8_campus'] = $themeSettingsProvider->getSetting('clf_8_campus', 'kraken');
+  $variables['clf_8_faculty'] = $themeSettingsProvider->getSetting('clf_8_faculty', 'kraken');
+  $variables['clf_8_name'] = $themeSettingsProvider->getSetting('clf_8_name', 'kraken');
+  $variables['clf_8_show_mobile_nav_trigger'] = $themeSettingsProvider->getSetting('clf_8_show_mobile_nav_trigger', 'kraken');
+  $variables['clf_8_search_path'] = $themeSettingsProvider->getSetting('clf_8_search_path', 'kraken');
+
   $variables['clf_version'] = $themeSettingsProvider->getSetting('clf_version', 'kraken');
   $variables['cwl_option'] = $themeSettingsProvider->getSetting('cwl_site', 'kraken');
   $variables['layout_option'] = $themeSettingsProvider->getSetting('clf_layout', 'kraken');

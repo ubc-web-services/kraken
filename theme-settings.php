@@ -166,11 +166,119 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
 	];
 
 	// UBC unit information.
-	$form['unit'] = [
+	$form['clf_8'] = [
 		'#type' => 'details',
-		'#title' => t('Unit Settings'),
+		'#title' => t('CLF Version 8 Settings'),
 		'#group' => 'clf',
 	];
+
+	$form['clf_8']['clf_8_color'] = [
+		'#type' => 'select',
+		'#title' => t('Theme Colors (CLF version 8 only)'),
+		'#description' => t(
+			'Choose one of the 2 colour theme options for the Brand Identity Header. Grey is no longer an option. You can <a href=":url" target="_blank">compare the theme options here</a>.', [
+				':url' => 'https://clf.ubc.ca/design-specifications/#theme-options',
+			]
+		),
+		'#default_value' => $themeSettingsProvider->getSetting('clf_8_color', 'kraken'),
+		'#options' => [
+			'white' => t('Blue on White (Default)'),
+			'blue' => t('White on Blue'),
+		],
+	];
+
+	$form['clf_8']['clf_8_layout'] = [
+		'#type' => 'select',
+		'#title' => t('CLF Layout (CLF version 8 only)'),
+		'#description' => t(
+			'Make the CLF Full Width and Centered, Fluid Width and Left Aligned, or Fixed Width and Centered. You can <a href=":url" target="_blank">compare the layout options here</a>.', [
+				':url' => 'https://clf.ubc.ca/design-specifications/#layout-options',
+			]
+		),
+		'#default_value' => $themeSettingsProvider->getSetting('clf_8_layout', 'kraken'),
+		'#options' => [
+			'full' => t('Full Width (Default)'),
+			'fixed' => t('Fixed width, centered'),
+			'stretch' => t('Fluid Width, Left-Aligned'),
+		],
+	];
+
+		$form['clf_8']['clf_8_campus'] = [
+		'#type' => 'select',
+		'#title' => t('Campus Identity'),
+		'#prefix' => t('<h2>CLF Version 8 Information</h2>'),
+		'#description' => t(
+			'This field shows your unit\'s campus mandate: Vancouver Campus or Okanagan Campus.<br /><small>If your unit has an institution-wide mandate or if neither choice is applicable, select the third option. See <a href=":url" target="_blank">Campus Identity</a> for guidelines.</small>', [
+				':url' => 'https://clf.ubc.ca/parts-of-the-clf',
+			]
+		),
+		'#default_value' => $themeSettingsProvider->getSetting('clf_8_campus', 'kraken'),
+		'#options' => [
+			'vancouver' => t('Vancouver'),
+			'okanagan' => t('Okanagan'),
+			'' => t('Institution-wide mandate / Not applicable'),
+		],
+	];
+
+	$form['clf_8']['clf_8_faculty'] = [
+		'#type' => 'select',
+		'#title' => t('If yes, choose your Faculty'),
+		'#default_value' => $themeSettingsProvider->getSetting('clf_8_faculty', 'kraken'),
+		'#options' => [
+			'' => t('No Faculty'),
+			'Allard School of Law' => t('Allard School of Law'),
+			'Faculty of Applied Science' => t('Faculty of Applied Science'),
+			'Faculty of Arts' => t('Faculty of Arts'),
+			'Faculty of Dentistry' => t('Faculty of Dentistry'),
+			'Faculty of Education' => t('Faculty of Education'),
+			'Faculty of Forestry' => t('Faculty of Forestry'),
+			'Faculty of Land and Food Systems' => t('Faculty of Land and Food Systems'),
+			'Faculty of Medicine' => t('Faculty of Medicine'),
+			'Faculty of Pharmaceutical Sciences' => t('Faculty of Pharmaceutical Sciences'),
+			'Faculty of Science' => t('Faculty of Science'),
+			'Graduate and Postdoctoral Studies' => t('Graduate and Postdoctoral Studies'),
+			'Sauder School of Business' => t('Sauder School of Business'),
+		],
+	];
+
+	$form['clf_8']['clf_8_name'] = [
+		'#type' => 'textfield',
+		'#title' => t(
+			'This field will populate the <a href=":url_unit_name" title="View the location of the Unit Name" target="_blank">Unit Name</a> in the header and the <a href=":url_unit_sub_footer" title="View the location of the Unit Sub Footer" target="_blank">Unit Sub Footer</a>.', [
+				':url_unit_name' => 'https://clf.ubc.ca/parts-of-the-clf/#unit-name',
+				':url_unit_sub_footer' => 'https://clf.ubc.ca/parts-of-the-clf/#unit-sub-footer',
+			]
+		),
+		'#default_value' => $themeSettingsProvider->getSetting('clf_8_name', 'kraken'),
+		'#size' => 60,
+		'#maxlength' => 128,
+		'#required' => true,
+	];
+
+	$form['clf_8']['clf_8_show_mobile_nav_trigger'] = [
+		'#type' => 'checkbox',
+		'#title' => t('Show the mobile navigation trigger'),
+		'#description' => t('This option shows the mobile navigation trigger on small screens.'),
+		'#default_value' => $themeSettingsProvider->getSetting('clf_8_show_mobile_nav_trigger', 'kraken'),
+	];
+
+	$form['clf_8']['clf_8_search_path'] = [
+		'#type' => 'textfield',
+		'#title' => t('Search path'),
+		'#description' => t('If you want to send the search results to a local path other than "/search", enter the relative path here (starting with /)'),
+		'#default_value' => $themeSettingsProvider->getSetting('clf_8_search_path', 'kraken'),
+		'#size' => 60,
+		'#maxlength' => 128,
+	];
+
+
+
+    // UBC unit information.
+    $form['unit'] = [
+    '#type' => 'details',
+    '#title' => t('Unit Settings'),
+    '#group' => 'clf',
+    ];
 
 	$form['unit']['clf_unit_campus'] = [
 		'#type' => 'select',

@@ -69,6 +69,60 @@ kraken.settings:
             - 'default'
             - 'legacy-dev'
             - 'legacy-prod'
+    clf_8_color:
+      type: string
+      label: 'CLF 8 Color'
+      constraints:
+        Choice:
+          # @see kraken_form_system_theme_settings_alter()
+          choices:
+            - 'blue'
+            - 'white'
+    clf_8_layout:
+      type: string
+      label: 'Layout'
+      constraints:
+        Choice:
+          # @see kraken_form_system_theme_settings_alter()
+          choices:
+            - 'full'
+            - 'fixed'
+            - 'stretch'
+    clf_8_campus:
+      type: text
+      label: 'Faculty name'
+      constraints:
+        Choice:
+          # @see kraken_form_system_theme_settings_alter()
+          choices:
+            - ''
+            - 'Vancouver'
+            - 'Okanagan'
+    clf_8_faculty:
+      type: text
+      label: 'Faculty name'
+      constraints:
+        Choice:
+          # @see kraken_form_system_theme_settings_alter()
+          choices:
+            - ''
+            - 'Allard School of Law'
+            - 'Faculty of Applied Science'
+            - 'Faculty of Arts'
+            - 'Faculty of Dentistry'
+            - 'Faculty of Education'
+            - 'Faculty of Forestry'
+            - 'Faculty of Land and Food Systems'
+            - 'Faculty of Pharmaceutical Sciences'
+            - 'Faculty of Science'
+            - 'Graduate and Postdoctoral Studies'
+            - 'Sauder School of Business'
+    clf_8_name:
+      type: text
+      label: 'Unit name'
+    clf_8_show_mobile_nav_trigger:
+      type: boolean
+      label: 'Show mobile navigation trigger'
     cwl_site:
       type: boolean
       label: 'Show CWL login'
