@@ -165,7 +165,7 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
 		'#default_value' => $themeSettingsProvider->getSetting('clf_sticky', 'kraken'),
 	];
 
-	// UBC unit information.
+	// UBC CLF 8 information.
 	$form['clf_8'] = [
 		'#type' => 'details',
 		'#title' => t('CLF Version 8 Settings'),
