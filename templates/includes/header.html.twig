@@ -1,67 +1,80 @@
-<!--
-        UBC Brand Identity Header and Footer Web Component
+{#
+    UBC Brand Identity Header and Footer Web Component
 
-        Usage:
-            <ubc-header></ubc-header>
-            <ubc-footer></ubc-footer>
+    Usage:
+        <ubc-header></ubc-header>
+        <ubc-footer></ubc-footer>
 
-        <ubc-header> Attributes:
-            colour (string) - Sets the header color theme.
-                Options: "blue", "white"
-                Default: "white"
-            size (string) - Determines the header and footer size.
-                Options: "full", "fixed", "stretch"
-                Default: "full"
-            campus (string) - Specifies the campus.
-                Options: "", "vancouver", "okanagan"
-                Default: ""
-            website-faculty (string) - Name of the faculty.
-                Default: ""
-            website-name (string) - Name of the website.
-                Default: "UBC/Website name"
-            website-url (string) - Root URL for the website link.
-                Default: Current domain root (e.g., "https://www.ubc.ca")
-            search-placeholder (string) - Placeholder text for the search input.
-                Default: "Search this website"
-            search-label (string) - Text to disply in search form.
-                Default: "Search UBC"
-            search-site (string) - Search site filter for UBC Search.
-                Default: "*.ubc.ca"
-            search-type (string) - Type of search integration.
-                Options:
-                    - default: UBC global search (uses `q`, default path `//www.ubc.ca/search/refine/`)
-                    - "wordpress": WordPress site search (uses `s`, default path `/`)
-                    - "drupal": Drupal site search (uses `keys`, default path `/search`)
-                Default: ""
-            search-path (string) - Custom search path for site-specific searches. Relative paths only.
-                Default: ""
-            role (string) - ARIA role attribute for the header element.
-                Default: "banner"
-            no-role (boolean) - If present, omits the role attribute.
-                Default: false
-            show-menu-button (boolean) - If present, displays the menu button for mobile navigation.
-                Default: false
+    <ubc-header> Attributes:
+        colour (string) - Sets the header color theme.
+            Options: "blue", "white"
+            Default: "white"
+        size (string) - Determines the header and footer size.
+            Options: "full", "fixed", "stretch"
+            Default: "full"
+        campus (string) - Specifies the campus.
+            Options: "", "vancouver", "okanagan"
+            Default: ""
+        website-faculty (string) - Name of the faculty.
+            Default: ""
+        website-name (string) - Name of the website.
+            Default: "UBC/Website name"
+        website-url (string) - Root URL for the website link.
+            Default: Current domain root (e.g., "https://www.ubc.ca")
+        search-placeholder (string) - Placeholder text for the search input.
+            Default: "Search this website"
+        search-label (string) - Text to disply in search form.
+            Default: "Search UBC"
+        search-site (string) - Search site filter for UBC Search.
+            Default: "*.ubc.ca"
+        search-type (string) - Type of search integration.
+            Options:
+                - default: UBC global search (uses `q`, default path `//www.ubc.ca/search/refine/`)
+                - "wordpress": WordPress site search (uses `s`, default path `/`)
+                - "drupal": Drupal site search (uses `keys`, default path `/search`)
+            Default: ""
+        search-path (string) - Custom search path for site-specific searches. Relative paths only.
+            Default: ""
+        role (string) - ARIA role attribute for the header element.
+            Default: "banner"
+        no-role (boolean) - If present, omits the role attribute.
+            Default: false
+        show-menu-button (boolean) - If present, displays the menu button for mobile navigation.
+            Default: false
 
-        <ubc-footer> Attributes:
-            role (string) - ARIA role attribute for the footer element.
-                Default: "contentinfo"
-            no-role (boolean) - If present, omits the role attribute.
-                Default: false
+    <ubc-footer> Attributes:
+        role (string) - ARIA role attribute for the footer element.
+            Default: "contentinfo"
+        no-role (boolean) - If present, omits the role attribute.
+            Default: false
 
-        Example with options:
-            <ubc-header
-                colour=""
-                campus=""
-                size="full"
-                website-faculty=""
-                website-name="UBC/Website name"
-                website-url=""
-                search-placeholder="Search this website"
-                search-label="Search UBC"
-                search-site="*.ubc.ca"
-                search-type=""
-                search-path=""
-                role="banner">
-            </ubc-header>
-    -->
+    Example with options:
+        <ubc-header
+            colour=""
+            campus=""
+            size="full"
+            website-faculty=""
+            website-name="UBC/Website name"
+            website-url=""
+            search-placeholder="Search this website"
+            search-label="Search UBC"
+            search-site="*.ubc.ca"
+            search-type=""
+            search-path=""
+            role="banner">
+        </ubc-header>
+#}
 <ubc-header colour="{{ clf_8_color }}" size="{{ clf_8_layout }}" campus="{{ clf_8_campus }}" website-faculty="{{ clf_8_faculty }}" website-name="{{ clf_8_name }}" search-placeholder="Search {{ clf_8_name }}" search-site="{{ url('<front>')|render }}" search-type="drupal"{% if clf_8_search_path %} search-path="{{ clf_8_search_path }}"{% endif %}{% if clf_8_show_mobile_nav_trigger %} show-menu-button{% endif %}></ubc-header>
+{% if clf_sticky %}
+  <nav class="sticky top-0 z-50 py-0 navbar expand clf-required" id="ubc7-unit-menu">
+{% else %}
+  <nav class="py-0 navbar expand clf-required" id="ubc7-unit-menu">
+{% endif %}
+  <div class="navbar-inner expand">
+    <div class="nav-collapse collapse" id="ubc7-unit-navigation">
+      <div class="clf-container">{{ page.primary_menu }}</div>
+      <div class="clf-container">{{ page.secondary_menu }}</div>
+    </div>
+  </div>
+</nav>
+{{ page.alert_region }}

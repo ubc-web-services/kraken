@@ -241,6 +241,7 @@ function kraken_preprocess_html(&$variables)
   $variables['attributes']['class'][] = 'js-bootstrap';
 
   // Add inline banner colour.
+  $clf_version = $themeSettingsProvider->getSetting('clf_version', 'kraken');
   $unitbar_color = $themeSettingsProvider->getSetting('clf_theme_unitbar_colour', 'kraken');
   $link_color = $themeSettingsProvider->getSetting('clf_theme_link_colour', 'kraken');
   $link_hover_color = $themeSettingsProvider->getSetting('clf_theme_link_hover_colour', 'kraken');
@@ -270,11 +271,33 @@ function kraken_preprocess_html(&$variables)
         --text-font-stack: ' . $sansseriffonts . ';
         --alternate-font-stack: ' . $seriffonts . ';
         --code-font-stack:  ' . $codefonts . ';
-      }
-      #ubc7-unit { background-color: ' . $unitbar_color . ' !important; }',
+      }',
     ],
     'unit-colour-css',
   ];
+
+  if ($clf_version != '8') {
+    $variables['page']['#attached']['html_head'][] = [
+      [
+        '#tag' => 'style',
+        '#value' => '#ubc7-unit { background-color: ' . $unitbar_color . ' !important; }',
+      ],
+      'unit-bar-css',
+    ];
+  } else {
+    $variables['page']['#attached']['html_head'][] = [
+      [
+        '#tag' => 'style',
+        '#value' => 'ubc-header {
+          --ubc-unit-background-color: ' . $unitbar_color . ' ;
+          --ubc-unit-text-color: #fff;
+          --button-bg: #fff;
+        }',
+      ],
+      'unit-bar-css',
+    ];
+
+  }
 }
 
 /**
