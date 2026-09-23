@@ -20,7 +20,6 @@ global:
 
 ## CLF Version 8
 clf-8:
-  version: 8.0.0
   css:
     base:
       css/clf.8.min.css: { minified: true }
@@ -29,6 +28,15 @@ clf-8:
     ## js/ubc-digital-brand.js: { minified: true }
     ## production version
     https://cdndevl2.cdn.ubc.ca/ubc/ubc-brand/latest/js/ubc-digital-brand.js: { type: external, minified: true, attributes: { defer: true, charset: utf-8, type: module } }
+    js/kraken.clf8.js: { minified: true }
+
+clf-8-extra:
+  js:
+    js/kraken.clf8.js: { minified: true }
+  dependencies:
+    - core/drupal
+    - core/once
+    - kraken/clf-8
 
 ## CLF Version 7 (legacy)
 ### CLF Shared (legacy)
