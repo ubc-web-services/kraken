@@ -2,3 +2,456 @@
  * @file
  * Styles related to UBC Common Look and Feel, v.8.
  */
+/**
+ * @file
+ * Styles to provide a local equivalent to the CDN version of the CLF
+ */
+ /* utilities from bootstrap for visibility */
+.collapse:not(.show):not(.in) {
+  display: none;
+}
+
+.collapsing {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  transition: height 0.35s ease;
+}
+
+.collapse.in,
+.collapse.show {
+  height: auto;
+}
+
+.open > .dropdown-menu,
+.dropdown-menu.show {
+  display: block !important;
+}
+
+/* CLF resets */
+.clearfix {
+  zoom: 1;
+}
+
+.clearfix::before,
+.clearfix::after {
+  @apply table content-[""] leading-[0];
+}
+
+.clearfix::after {
+  @apply clear-both;
+}
+
+.hide-text {
+  @apply text-transparent bg-transparent border-0;
+  text-shadow: none;
+  font: 0/0 a;
+}
+
+.input-block-level {
+  @apply block box-border w-full min-h-[30px];
+}
+
+/* utilities from bootstrap for visibility */
+.js-bootstrap .collapse:not(.show, .in) {
+  @apply hidden;
+}
+
+.collapsing {
+  @apply relative overflow-hidden h-0 transition-[height] duration-[0.35s] ease-[ease];
+}
+
+.collapse.in,
+.collapse.show {
+  @apply h-auto;
+}
+
+.open > .dropdown-menu,
+.dropdown-menu.show {
+  @apply block;
+}
+
+/* fix for width of component */
+/* :host,
+ubc-header,
+ubc-logo-bar,
+ubc-global-menu,
+ubc-unit,
+ubc-footer {
+  width: 100% !important;
+  max-width: 100% !important;
+} */
+
+/* Centered layout */
+.layout--centered body,
+.layout--centered #main-content {
+  background: #ccc;
+}
+
+.layout--centered #unit-content,
+.layout--centered #unit-footer {
+  background: #fff;
+}
+
+@media screen and (min-width: 980px) {
+
+  .layout--centered #unit-content {
+    @apply w-[980px] mx-auto;
+  }
+
+}
+
+@media screen and (min-width: 1200px) {
+
+  .layout--centered #unit-content {
+    @apply w-[1200px] mx-auto;
+  }
+
+}
+
+/* clf-container */
+.clf-container {
+  @apply px-5 py-0 sm--w-auto sm--mx-auto sm--my-0 sm--px-[15px] lg--w-[1170px];
+}
+
+@media screen and (min-width: 980px) {
+
+  .layout--full-width-left .clf-container {
+    @apply w-auto;
+  }
+
+}
+
+/* Unit menu */
+#ubc7-unit-menu {
+  @apply box-content;
+}
+
+#ubc7-unit-menu .btn {
+  @apply inline-block mb-0 leading-5 align-middle;
+}
+
+#ubc7-unit-menu .btn {
+  @apply cursor-pointer text-center no-underline text-[#fff] border bg-[#002145] bg-[linear-gradient(180deg,#002145,#191938)] bg-[-moz-linear-gradient(top,#002145,#191938)] bg-repeat-x shadow-[inset_0_1px_0_hsla(0,0%,100%,0.2),0_1px_2px_rgba(0,0,0,0.05)] text-sm px-3 py-1 rounded-none border-solid border-[#002145];
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr="#002145", endColorstr="#191938", GradientType=0);
+  filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+  text-shadow: none;
+}
+
+#ubc7-unit-menu .btn:active,
+#ubc7-unit-menu .btn:hover {
+  @apply transition-[background-position] duration-[0.1s] ease-linear text-[#fff] bg-[#2f5d7c] border-[#2f5d7c];
+}
+
+#ubc7-unit-menu,
+#ubc7-unit-menu .navbar-inner {
+  @apply overflow-visible;
+  background: #fff;
+}
+
+#ubc7-unit-menu .nav {
+  @apply pl-0 m-0;
+  list-style: none;
+}
+
+#ubc7-unit-navigation {
+  @apply relative shadow-[0_3px_6px_#ccc] -mx-5 md--shadow-none md--mx-0;
+}
+
+#ubc7-unit-menu .navbar-inner {
+  background: #fff;
+}
+
+#ubc7-unit-menu li {
+  @apply leading-5 border-b-[#c3d0db] border-b border-solid md--leading-5 md--border-b-0 lg--leading-6;
+}
+
+#ubc7-unit-menu .btn-group {
+  @apply relative inline-block w-full align-middle whitespace-nowrap text-[0] md--relative md--inline-block md--align-middle md--whitespace-nowrap md--text-[0] md--hover--bg-[#002145];
+}
+
+#ubc7-unit-menu .btn-group .btn {
+  @apply block text-left text-[#002145] mr-10 pl-5 border-b-[#c3d0db] border-0 border-b border-solid md--block md--text-left md--text-[#002145] md--mr-10 md--pl-3 md--border-0;
+  background: #fff;
+}
+
+@media screen and (max-width: 979px) {
+  #ubc7-unit-menu
+    .menu-item--active-trail
+    > .btn-group
+    > .btn:not(.dropdown-toggle) {
+    @apply shadow-[inset_0_3px_8px_rgba(0,0,0,0.125)];
+    background: #d7e0e7;
+  }
+  #ubc7-unit-menu
+    .menu-item--active-trail
+    > .btn-group:hover
+    > .btn:not(.dropdown-toggle) {
+    @apply text-[#fff];
+    background: #002145;
+  }
+}
+
+#ubc7-unit-menu .btn-group:hover .btn {
+  @apply text-[#fff];
+  background: #002145;
+}
+
+#ubc7-unit-menu .dropdown .btn-group .btn,
+#ubc7-unit-menu .dropdown .btn-group button {
+  @apply z-[1] box-border bg-none shadow-[0_0_0_transparent] leading-10 my-0 py-0 rounded-none;
+}
+
+#ubc7-unit-menu .dropdown .btn-group a.btn {
+  @apply block pl-5 mr-0 text-left md--pl-3;
+}
+
+#ubc7-unit-menu .dropdown .btn-group:hover button,
+#ubc7-unit-menu .dropdown .btn-group button {
+  @apply absolute w-10 h-[41px] mr-0 px-0 border-l-[#c3d0db] border-l border-solid right-0 top-0;
+}
+
+#ubc7-unit-menu .dropdown .btn-group button:hover {
+  @apply bg-[#193056];
+}
+
+#ubc7-unit-menu .dropdown .btn-group button .ubc7-arrow {
+  @apply inline-block w-[15px] h-[15px] align-text-top ml-[15px] mt-0 md--ml-1 md--mb-1.5;
+  text-decoration: inherit;
+}
+
+
+#ubc7-unit-menu .nav-collapse .dropdown-menu {
+  @apply static hidden max-w-none bg-transparent shadow-none text-sm p-0 rounded-none border-0 left-auto top-auto md--absolute md--z-[100] md--hidden md--border md--border md--bg-[#fff] md--bg-clip-padding md--shadow-[0_5px_10px_rgba(0,0,0,0.2)] md--m-0 md--p-0 md--rounded-none md--border-solid md--border-[#ccc] md--border-[rgba(0,0,0,0.2)];
+}
+
+#ubc7-unit-menu .nav-collapse .open > .dropdown-menu,
+#ubc7-unit-menu .nav-collapse .is-open > .dropdown-menu {
+  @apply block;
+}
+
+#ubc7-unit-menu .btn-group > .btn,
+#ubc7-unit-menu .btn-group > .dropdown-menu {
+  @apply text-sm;
+}
+
+#ubc7-unit-menu .nav-collapse .dropdown-menu a,
+#ubc7-unit-menu .nav-collapse .nav > li > a {
+  @apply block whitespace-nowrap no-underline text-[#002145] text-sm leading-5;
+}
+
+#ubc7-unit-menu .nav-collapse .nav > li > a {
+  @apply px-5 py-2.5 md--text-sm md--leading-5 md--p-2.5 lg--leading-[25px];
+}
+#ubc7-unit-menu .nav-collapse .nav > li .dropdown-menu a {
+  @apply pl-[35px] pr-[25px] py-[9px];
+}
+
+#ubc7-unit-menu .nav-collapse .dropdown-menu a:hover,
+#ubc7-unit-menu .nav-collapse .nav > li > a:hover {
+  @apply no-underline text-[#fff] bg-[#002145];
+}
+
+#ubc7-unit-menu .nav > li.menu-item--active-trail > a,
+#ubc7-unit-menu .nav > li.menu-item--active-trail > .btn-group,
+#ubc7-unit-menu .nav > li > a.is-active {
+  @apply shadow-[inset_0_3px_8px_rgba(0,0,0,0.125)];
+  background: #d7e0e7;
+}
+
+#ubc7-unit-menu .nav > li.menu-item--active-trail > a:hover,
+#ubc7-unit-menu .nav > li.menu-item--active-trail > .btn-group:hover,
+#ubc7-unit-menu .nav > li > a.is-active:hover {
+  @apply text-[#fff];
+  background: #002145;
+}
+
+#ubc7-unit-menu .dropdown .dropdown-menu .nav-header {
+  @apply block uppercase text-[#193056] text-[11px] font-[bold] leading-5 mt-[9px] pl-[35px] pr-[25px] py-[3px];
+}
+
+#ubc7-unit-menu .nav-collapse .dropdown-menu a {
+  @apply bg-[#fff] hover--bg-[#002145];
+}
+
+#ubc7-unit-menu .nav-collapse .dropdown-menu a.active {
+  @apply bg-[none];
+}
+
+/* dropdown arrows */
+#ubc7-unit-menu .ubc7-arrow {
+  @apply bg-no-repeat !my-0 !ml-[11px] !mr-0;
+  background-image: url("../img/svg/icon-caret--ubc-blue.svg");
+  background-position: center;
+  background-size: 1.5em 1.5em;
+}
+
+#ubc7-unit-menu .btn-group:hover .ubc7-arrow {
+  background-image: url("../img/svg/icon-caret--white.svg");
+}
+
+#ubc7-unit-menu [aria-expanded="true"] .ubc7-arrow {
+  @apply rotate-90;
+}
+
+@media screen and (min-width: 980px) {
+
+  #ubc7-unit-menu .dropdown-toggle {
+    @apply !leading-none;
+  }
+
+  #ubc7-unit-menu .ubc7-arrow {
+    @apply !w-full !h-full !max-h-[24px] rotate-90 !ml-0;
+  }
+
+  #ubc7-unit-menu [aria-expanded="true"] .ubc7-arrow {
+    @apply -rotate-90;
+  }
+
+}
+
+/* medium screen nav */
+@media screen and (min-width: 980px) {
+
+  #ubc7-unit-menu,
+  #ubc7-unit-menu .navbar-inner {
+    background: #e6e6e6;
+  }
+
+  #ubc7-unit-menu .navbar-inner {
+    @apply min-h-[32px] bg-none border-0;
+  }
+
+  #ubc7-unit-menu .nav-collapse.collapse {
+    @apply block h-auto overflow-visible;
+  }
+
+  #ubc7-unit-menu.navbar .nav {
+    @apply relative left-0 block m-0;
+  }
+
+  #ubc7-unit-menu.navbar .nav.dropdown-menu {
+    @apply absolute;
+  }
+
+  #ubc7-unit-menu.navbar .nav > li {
+    @apply float-left;
+  }
+
+  #ubc7-unit-menu {
+    @apply block;
+  }
+
+  #ubc7-unit-menu .btn-group .btn {
+    background: transparent;
+  }
+
+  #ubc7-unit-menu .dropdown .btn-group a.btn,
+  #ubc7-unit-menu .dropdown .btn-group > span.btn,
+  #ubc7-unit-menu .dropdown .btn-group button {
+    @apply relative z-[1] inline-block h-10 bg-none shadow-[0_0_0_transparent] my-0 py-0 rounded-none border-0;
+  }
+
+  #ubc7-unit-menu .dropdown .btn-group > span.btn {
+    margin-right: 0;
+  }
+
+  #ubc7-unit-menu .dropdown .btn-group:hover button,
+  #ubc7-unit-menu .dropdown .btn-group button {
+    @apply relative w-6 h-[22px] mr-0 px-0 border-l-[#c3d0db] border-l border-solid;
+  }
+
+  #ubc7-unit-menu .btn-group a.btn,
+  #ubc7-unit-menu .btn-group > span.btn {
+    @apply pr-[7px];
+  }
+
+  #ubc7-unit-menu .dropdown .btn-group button .ubc7-arrow {
+    vertical-align: initial;
+  }
+
+  #ubc7-unit-menu .dropdown .btn-group:hover button {
+    @apply bg-transparent;
+  }
+
+  #ubc7-unit-menu .dropdown .btn-group:hover button .ubc7-arrow {
+    @apply mb-auto align-text-top;
+  }
+
+  #ubc7-unit-menu .nav-collapse .disclose__content {
+    @apply absolute z-[1000] min-w-[160px] left-0 top-full;
+  }
+
+  #ubc7-unit-menu .nav-collapse .dropdown-menu {
+    list-style: none;
+  }
+
+  #ubc7-unit-menu .nav-collapse .dropdown-menu li {
+    @apply float-none;
+  }
+
+  #ubc7-unit-menu .open > .dropdown-menu,
+  #ubc7-unit-menu .is-open > .dropdown-menu {
+    @apply block;
+  }
+
+  #ubc7-unit-menu .dropdown-menu li {
+    @apply border-b-[#d7e0e7] border-b border-solid;
+  }
+
+  #ubc7-unit-menu .nav-collapse .dropdown-menu a,
+  #ubc7-unit-menu .nav-collapse .nav > li > a,
+  #ubc7-unit-menu .nav-collapse .nav > li .dropdown-menu a {
+    @apply block clear-both whitespace-nowrap text-[#002145] font-normal;
+  }
+
+  #ubc7-unit-menu .nav-collapse .dropdown-menu a:hover,
+  #ubc7-unit-menu .nav-collapse .nav > li > a:hover,
+  #ubc7-unit-menu .nav-collapse .nav > li .dropdown-menu a:hover {
+    @apply text-[#fff];
+  }
+
+  #ubc7-unit-menu .nav-collapse .nav > li .dropdown-menu a,
+  #ubc7-unit-menu .nav-collapse .nav > li .dropdown-menu .nav-header {
+    @apply px-5 py-[3px];
+  }
+
+}
+
+@media screen and (min-width: 1200px) {
+
+  #ubc7-unit-menu .dropdown .btn-group button {
+    @apply h-[22px];
+  }
+
+  #ubc7-unit-menu .dropdown .btn-group:hover button,
+  #ubc7-unit-menu .dropdown .btn-group a.btn,
+  #ubc7-unit-menu .dropdown .btn-group > span.btn {
+    @apply h-[45px] leading-[45px];
+  }
+
+  #ubc7-unit-menu .nav-collapse .dropdown-menu > li > a {
+    @apply leading-5;
+  }
+
+}
+
+@media screen and (min--moz-device-pixel-ratio: 0) and (min-width: 1200px) {
+
+  #ubc7-unit-menu .nav > li > a {
+    @apply pt-[11px];
+  }
+
+  #ubc7-unit-menu .navbar-item {
+    @apply max-h-[45px];
+  }
+
+}
+
+@media print {
+
+  #ubc7-unit-menu {
+    display: none;
+  }
+
+}
