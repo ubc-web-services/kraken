@@ -64,16 +64,17 @@
             role="banner">
         </ubc-header>
 #}
+  {{ attach_library('kraken/clf-8-extra') }}
 <ubc-header colour="{{ clf_8_color }}" size="{{ clf_8_layout }}" campus="{{ clf_8_campus }}" website-faculty="{{ clf_8_faculty }}" website-name="{{ clf_8_name }}" search-placeholder="Search {{ clf_8_name }}" search-site="{{ url('<front>')|render }}" search-type="drupal"{% if clf_8_search_path %} search-path="{{ clf_8_search_path }}"{% endif %}{% if clf_8_show_mobile_nav_trigger %} show-menu-button{% endif %}></ubc-header>
 {% if clf_sticky %}
-  <nav class="sticky top-0 z-50 py-0 navbar expand clf-required" id="ubc7-unit-menu">
+  <nav class="sticky top-0 z-50 py-0 navbar expand clf-required bg-[#e6e6e6]" id="ubc7-unit-menu">
 {% else %}
-  <nav class="py-0 navbar expand clf-required" id="ubc7-unit-menu">
+  <nav class="navbar clf-required bg-[#e6e6e6]" id="ubc7-unit-menu">
 {% endif %}
-  <div class="navbar-inner expand">
+  <div class="navbar-inner bg-[#e6e6e6]">
     <div class="nav-collapse collapse" id="ubc7-unit-navigation">
-      <div class="clf-container">{{ page.primary_menu }}</div>
-      <div class="clf-container">{{ page.secondary_menu }}</div>
+      <div class="flow-root clf-container">{{ page.primary_menu }}</div>
+      <div class="flow-root clf-container">{{ page.secondary_menu }}</div>
     </div>
   </div>
 </nav>

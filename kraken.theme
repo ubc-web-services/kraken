@@ -174,7 +174,8 @@ function kraken_preprocess_html(&$variables)
 
   $variables['clf_sticky'] = $themeSettingsProvider->getSetting('clf_sticky', 'kraken') ? TRUE : FALSE;
   $variables['layout_option'] = $themeSettingsProvider->getSetting('clf_layout', 'kraken');
-  $variables['color_version'] = $themeSettingsProvider->getSetting('clf_version', 'kraken');
+  $variables['clf_version'] = $themeSettingsProvider->getSetting('clf_version', 'kraken');
+  $variables['clf_8_layout'] = $themeSettingsProvider->getSetting('clf_8_layout', 'kraken');
 
   // Add a NOFOLLOW tag if the site is not meant for production.
   if ($themeSettingsProvider->getSetting('clf_noindex', 'kraken') == TRUE) {
@@ -237,11 +238,14 @@ function kraken_preprocess_html(&$variables)
     $variables['attributes']['class'][] = 'show-faculty';
   }
 
+  // Add version info
+  $clf_version = $themeSettingsProvider->getSetting('clf_version', 'kraken');
+  $clf_8_layout = $themeSettingsProvider->getSetting('clf_8_layout', 'kraken');
+
   /* add a body class if we are using the bootstrap js framework */
   $variables['attributes']['class'][] = 'js-bootstrap';
 
   // Add inline banner colour.
-  $clf_version = $themeSettingsProvider->getSetting('clf_version', 'kraken');
   $unitbar_color = $themeSettingsProvider->getSetting('clf_theme_unitbar_colour', 'kraken');
   $link_color = $themeSettingsProvider->getSetting('clf_theme_link_colour', 'kraken');
   $link_hover_color = $themeSettingsProvider->getSetting('clf_theme_link_hover_colour', 'kraken');
