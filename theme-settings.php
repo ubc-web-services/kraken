@@ -83,7 +83,7 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
     ),
     '#default_value' => $themeSettingsProvider->getSetting('clf_version', 'kraken'),
     '#options' => [
-      '8' => t('8.0.0 (not yet released)'),
+      '8' => t('8.0.0'),
       'legacy--bw' => t('7.0.4  - Blue on White'),
       'legacy--wb' => t('7.0.4  - White on Blue'),
       'legacy--wg' => t('7.0.4  - White on Grey'),
@@ -176,6 +176,8 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
 	$form['clf_8']['clf_8_color'] = [
 		'#type' => 'select',
 		'#title' => t('Theme Colors (CLF version 8 only)'),
+    '#prefix' => t('<h2>CLF Version 8 Settings</h2><small>Note that these changes override  settings defined elsewhere when you are using CLF version 8. (CLF version is chosen in the <b>General Settings</b>)</small>'),
+
 		'#description' => t(
 			'Choose one of the 2 colour theme options for the Brand Identity Header. Grey is no longer an option. You can <a href=":url" target="_blank">compare the theme options here</a>.', [
 				':url' => 'https://clf.ubc.ca/design-specifications/#theme-options',
@@ -204,10 +206,23 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
 		],
 	];
 
+  	$form['clf_8']['clf_8_name'] = [
+		'#type' => 'textfield',
+		'#title' => t(
+			'This field will populate the <a href=":url_unit_name" title="View the location of the Unit Name" target="_blank">Unit Name</a> in the header and the <a href=":url_unit_sub_footer" title="View the location of the Unit Sub Footer" target="_blank">Unit Sub Footer</a>.', [
+				':url_unit_name' => 'https://clf.ubc.ca/parts-of-the-clf/#unit-name',
+				':url_unit_sub_footer' => 'https://clf.ubc.ca/parts-of-the-clf/#unit-sub-footer',
+			]
+		),
+		'#default_value' => $themeSettingsProvider->getSetting('clf_8_name', 'kraken'),
+		'#size' => 60,
+		'#maxlength' => 128,
+		'#required' => true,
+	];
+
 		$form['clf_8']['clf_8_campus'] = [
 		'#type' => 'select',
 		'#title' => t('Campus Identity'),
-		'#prefix' => t('<h2>CLF Version 8 Information</h2>'),
 		'#description' => t(
 			'This field shows your unit\'s campus mandate: Vancouver Campus or Okanagan Campus.<br /><small>If your unit has an institution-wide mandate or if neither choice is applicable, select the third option. See <a href=":url" target="_blank">Campus Identity</a> for guidelines.</small>', [
 				':url' => 'https://clf.ubc.ca/parts-of-the-clf',
@@ -240,20 +255,6 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
 			'Graduate and Postdoctoral Studies' => t('Graduate and Postdoctoral Studies'),
 			'Sauder School of Business' => t('Sauder School of Business'),
 		],
-	];
-
-	$form['clf_8']['clf_8_name'] = [
-		'#type' => 'textfield',
-		'#title' => t(
-			'This field will populate the <a href=":url_unit_name" title="View the location of the Unit Name" target="_blank">Unit Name</a> in the header and the <a href=":url_unit_sub_footer" title="View the location of the Unit Sub Footer" target="_blank">Unit Sub Footer</a>.', [
-				':url_unit_name' => 'https://clf.ubc.ca/parts-of-the-clf/#unit-name',
-				':url_unit_sub_footer' => 'https://clf.ubc.ca/parts-of-the-clf/#unit-sub-footer',
-			]
-		),
-		'#default_value' => $themeSettingsProvider->getSetting('clf_8_name', 'kraken'),
-		'#size' => 60,
-		'#maxlength' => 128,
-		'#required' => true,
 	];
 
 	$form['clf_8']['clf_8_show_mobile_nav_trigger'] = [
