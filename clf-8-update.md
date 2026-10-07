@@ -9,7 +9,7 @@
 7. Add kraken.clf8.js
 8. Update webpack.common.js (kraken.clf8.js)
 9. Update clf.8.css
-10. Update tailwind.config media queries
+10. Update tailwind.config media queries and update 980 media queries (should now be 970)
 11. Add clf.8.extended.css, clf.8.extended.plus.css
 12. Update footer.html.twig, header.html.twig
 13. Recompile (npm run css, npm run js)
