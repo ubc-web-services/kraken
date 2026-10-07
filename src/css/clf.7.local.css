@@ -362,7 +362,7 @@ body.layout--full-width-left {
   font-family: Arial, sans-serif !important;
 }
 .dialog-off-canvas-main-canvas > .container {
-  @apply w-full bg-[#fff] md--w-[980px] md--mx-auto lg--w-[1200px];
+  @apply w-full bg-[#fff] md--w-[970px] md--mx-auto lg--w-[1200px];
 }
 #ubc7-global-menu .clf-container,
 #ubc7-header .clf-container,
@@ -849,7 +849,7 @@ a#ubc7-global-utility-no-script {
     @apply w-[57.18232044198895%];
   }
 }
-@media screen and (min-width: 980px) {
+@media screen and (min-width: 970px) {
   #ubc7-global-menu .clf-container,
   #ubc7-header .clf-container,
   #ubc7-unit .clf-container,
@@ -1112,9 +1112,9 @@ a#ubc7-global-utility-no-script {
 .layout--centered #main-content {
   background: #fff;
 }
-@media screen and (min-width: 980px) {
+@media screen and (min-width: 970px) {
   .layout--centered #main-content {
-    @apply w-[980px] mx-auto;
+    @apply w-[970px] mx-auto;
   }
 }
 @media screen and (min-width: 1200px) {

@@ -27,7 +27,7 @@
 }
 
 /* adjustment for views sticky header - probably don't need this */
-@media screen and (min-width: 980px) {
+@media screen and (min-width: 970px) {
 
   .nav--is-pinned table.sticky-header {
     top: 45px !important;

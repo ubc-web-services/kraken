@@ -71,39 +71,49 @@
   @apply block;
 }
 
-/* fix for width of component */
-/* :host,
-ubc-header,
-ubc-logo-bar,
-ubc-global-menu,
-ubc-unit,
-ubc-footer {
-  width: 100% !important;
-  max-width: 100% !important;
-} */
-
 /* Centered layout */
-.layout--centered body,
-.layout--centered #main-content {
-  background: #ccc;
-}
+
 
 .layout--centered #unit-content,
 .layout--centered #unit-footer {
   background: #fff;
 }
 
-@media screen and (min-width: 980px) {
+@media screen and (max-width: 969px) {
 
-  .layout--centered #unit-content {
-    @apply w-[980px] mx-auto;
+  main .container,
+  #unit-footer {
+    @apply w-full max-w-full mx-0;
+  }
+
+}
+
+@media screen and (min-width: 970px) {
+
+  .layout--centered body,
+  .layout--centered #main-content {
+    background: #ccc;
+  }
+
+  .layout--centered #unit-content,
+  .layout--centered hr.footer-separator {
+    @apply w-[970px] mx-auto;
+  }
+
+  .layout--centered hr.footer-separator {
+    @apply pb-12 my-0 bg-white;
+  }
+
+  .layout--centered #main-grid {
+    @apply pb-12 mb-0;
   }
 
 }
 
 @media screen and (min-width: 1200px) {
 
-  .layout--centered #unit-content {
+  .layout--centered #unit-content,
+  .layout--centered hr.footer-separator {
     @apply w-[1200px] mx-auto;
   }
 
@@ -114,7 +124,7 @@ ubc-footer {
   @apply px-5 py-0 sm--w-auto sm--mx-auto sm--my-0 sm--px-[15px] lg--w-[1170px];
 }
 
-@media screen and (min-width: 980px) {
+@media screen and (min-width: 970px) {
 
   .layout--full-width-left .clf-container {
     @apply w-auto;
@@ -294,7 +304,7 @@ ubc-footer {
   @apply rotate-90;
 }
 
-@media screen and (min-width: 980px) {
+@media screen and (min-width: 970px) {
 
   #ubc7-unit-menu .dropdown-toggle {
     @apply !leading-none;
@@ -311,7 +321,7 @@ ubc-footer {
 }
 
 /* medium screen nav */
-@media screen and (min-width: 980px) {
+@media screen and (min-width: 970px) {
 
   #ubc7-unit-menu,
   #ubc7-unit-menu .navbar-inner {

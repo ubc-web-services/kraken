@@ -108,7 +108,7 @@ ol.item-list,
   }
 }
 
-@media (min-width: 980px) {
+@media (min-width: 970px) {
 
   .md--list-inline li {
     display: inline;

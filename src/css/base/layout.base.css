@@ -20,7 +20,7 @@
   }
 }
 
-@media (min-width: 980px) {
+@media (min-width: 970px) {
   .container-narrow {
     max-width: 960px;
   }
@@ -33,7 +33,7 @@
 }
 
 /* primary layouts */
-@media (min-width: 980px) {
+@media (min-width: 970px) {
 
   #sidebar-primary_upper {
     grid-area: a;

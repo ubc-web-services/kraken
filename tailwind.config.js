@@ -49,10 +49,10 @@ module.exports = {
     screens: {
       xs: "480px",
       sm: "768px",
-      md: "980px",
+      md: "970px",
       lg: "1200px",
-      xl: "1720px",
-      xxl: "2400px",
+      //xl: "1720px",
+      //xxl: "2400px",
     },
     fontFamily: {
       sans: "var(--text-font-stack)",
