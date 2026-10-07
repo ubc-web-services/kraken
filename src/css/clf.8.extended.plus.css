@@ -1,0 +1,16 @@
+/**
+ * @file
+ * Styles for a 2400px wide version of the CLF
+ */
+ @media (min-width: 2400px) {
+
+  .container:not(.layout--centered .container),
+  .clf-container:not(.layout--centered .clf-container) {
+      max-width: 2400px;
+  }
+
+  .clf-container:not(.layout--centered .clf-container) {
+    width: 2368px;
+  }
+
+}

@@ -33,9 +33,18 @@ function kraken_page_attachments_alter(array &$page)
     $page['#attached']['library'][] = 'kraken/clf-legacy--widen';
   }
 
-  $clf_widen = $themeSettingsProvider->getSetting('clf_widen_more', 'kraken');
-  if ($clf_widen && $clf_version != '8') {
+  if ($clf_widen && $clf_version = '8') {
+    $page['#attached']['library'][] = 'kraken/clf-8-extended';
+  }
+
+  $clf_widen_more = $themeSettingsProvider->getSetting('clf_widen_more', 'kraken');
+  if ($clf_widen_more && $clf_version != '8') {
     $page['#attached']['library'][] = 'kraken/clf-legacy--widen-more';
+  }
+
+  $clf_widen_more = $themeSettingsProvider->getSetting('clf_widen_more', 'kraken');
+  if ($clf_widen_more && $clf_version = '8') {
+    $page['#attached']['library'][] = 'kraken/clf-8-extended-plus';
   }
 
   $clf_sticky = $themeSettingsProvider->getSetting('clf_sticky', 'kraken');
