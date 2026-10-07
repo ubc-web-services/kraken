@@ -27,7 +27,7 @@ clf-8:
     ## local version for testing
     ## js/ubc-digital-brand.js: { minified: true }
     ## production version
-    https://cdndevl2.cdn.ubc.ca/ubc/ubc-brand/latest/js/ubc-digital-brand.js: { type: external, minified: true, attributes: { defer: true, charset: utf-8, type: module } }
+    https://cdndevl2.cdn.ubc.ca/ubc/ubc-brand/1.4.0-issue-32.0/js/ubc-digital-brand.js: { type: external, minified: true, attributes: { defer: true, charset: utf-8, type: module } }
     js/kraken.clf8.js: { minified: true }
 
 clf-8-extra:
