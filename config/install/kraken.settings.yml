@@ -81,4 +81,5 @@ clf_8_layout: 'full'
 clf_8_campus: ''
 clf_8_faculty: ''
 clf_8_name: ''
+clf_8_unit_text: false
 clf_8_show_mobile_nav_trigger: true

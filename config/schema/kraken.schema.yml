@@ -120,6 +120,9 @@ kraken.settings:
     clf_8_name:
       type: text
       label: 'Unit name'
+    clf_8_unit_text:
+      type: boolean
+      label: 'Change the unit name colour to allow light coloured backgrounds'
     clf_8_show_mobile_nav_trigger:
       type: boolean
       label: 'Show mobile navigation trigger'

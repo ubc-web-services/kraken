@@ -289,12 +289,16 @@ function kraken_preprocess_html(&$variables)
       'unit-bar-css',
     ];
   } else {
+    $unitbar_text = '#000';
+    if ($themeSettingsProvider->getSetting('clf_8_unit_text', 'kraken') == false ) {
+      $unitbar_text = '#fff';
+    }
     $variables['page']['#attached']['html_head'][] = [
       [
         '#tag' => 'style',
         '#value' => 'ubc-header {
           --ubc-unit-background-color: ' . $unitbar_color . ' ;
-          --ubc-unit-text-color: #fff;
+          --ubc-unit-text-color: ' . $unitbar_text . ';
           --button-bg: #fff;
         }',
       ],

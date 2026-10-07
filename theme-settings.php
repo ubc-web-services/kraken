@@ -257,6 +257,12 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
 		],
 	];
 
+  $form['clf_8']['clf_8_unit_text'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Change the Unit name in the header to black (defaults to white)'),
+    '#default_value' => $themeSettingsProvider->getSetting('clf_8_unit_text', 'kraken'),
+    ];
+
 	$form['clf_8']['clf_8_show_mobile_nav_trigger'] = [
 		'#type' => 'checkbox',
 		'#title' => t('Show the mobile navigation trigger'),
