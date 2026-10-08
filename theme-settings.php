@@ -273,7 +273,7 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
 	$form['clf_8']['clf_8_search_path'] = [
 		'#type' => 'textfield',
 		'#title' => t('Search path'),
-		'#description' => t('If you want to send the search results to a local path other than "/search", enter the relative path here (starting with /)'),
+		'#description' => t('If you want to use this as an internal search, enter the relative path here (e.g. <code>/search</code>, making sure to include the opening backslash.)'),
 		'#default_value' => $themeSettingsProvider->getSetting('clf_8_search_path', 'kraken'),
 		'#size' => 60,
 		'#maxlength' => 128,
