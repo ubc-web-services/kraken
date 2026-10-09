@@ -58,23 +58,9 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
     '#group' => 'clf',
     ];
 
-    $form['general']['clf_unitname'] = [
-    '#type' => 'textfield',
-    '#prefix' => t('<h2>General Site Information</h2>'),
-    '#title' => t(
-        'This field will populate the <a href=":url_unit_name" title="View the location of the Unit Name" target="_blank">Unit Name</a> in the header and the <a href=":url_unit_sub_footer" title="View the location of the Unit Sub Footer" target="_blank">Unit Sub Footer</a>.', [
-        ':url_unit_name' => 'https://clf.ubc.ca/parts-of-the-clf/#unit-name',
-        ':url_unit_sub_footer' => 'https://clf.ubc.ca/parts-of-the-clf/#unit-sub-footer',
-        ]
-    ),
-    '#default_value' => $themeSettingsProvider->getSetting('clf_unitname', 'kraken'),
-    '#size' => 60,
-    '#maxlength' => 128,
-    '#required' => true,
-    ];
-
     $form['general']['clf_version'] = [
     '#type' => 'select',
+    '#prefix' => t('<h2>General Site Settings</h2>'),
     '#title' => t('CLF Version'),
     '#description' => t(
         'Select the version of the CLF you\'d like to use. View <a href=":url" target="_blank">colour theme options</a> and design specifications. Note that CLF 7 verions load a minimal copy of the CLF files from Drupal, which is much better for performance.<br><strong>Warning</strong>: Advanced users only. This will require creating and adding your own css for non-clf regions of the site, including navigation.', [
@@ -89,55 +75,6 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
       'legacy--wg' => t('7.0.4  - White on Grey'),
       'legacy--gw' => t('7.0.4  - Grey on White'),
     ],
-    ];
-
-    $form['general']['clf_layout'] = [
-    '#type' => 'select',
-    '#title' => t('Layout (CLF version 7 only)'),
-    '#description' => t(
-        'Make the CLF Full Width and Centered, Fluid Width and Left Aligned, or Fixed Width and Centered. You can <a href=":url" target="_blank">compare the layout options here</a>.', [
-        ':url' => 'https://clf.ubc.ca/design-specifications/#layout-options',
-        ]
-    ),
-    '#default_value' => $themeSettingsProvider->getSetting('clf_layout', 'kraken'),
-    '#options' => [
-      'full' => t('Full Width (Default)'),
-      'centered' => t('Fixed width, centered with Grey Background'),
-      'fluid' => t('Fluid Width, Left-Aligned'),
-    ],
-    ];
-
-    $form['general']['clf_widen'] = [
-    '#type' => 'checkbox',
-    '#title' => t('Widen the CLF (v.7) to 1720px'),
-    '#description' => t('By default, version 7 of the CLF is constrained to 1200px wide. This option adds an additional 1720px (adjustable in CSS) breakpoint to the CLF required regions (does not effect content regions)'),
-    '#default_value' => $themeSettingsProvider->getSetting('clf_widen', 'kraken'),
-    ];
-
-    $form['general']['clf_widen_more'] = [
-    '#type' => 'checkbox',
-    '#title' => t('Widen the CLF (v.7) to 2400px'),
-    '#description' => t('This option adds an additional 2400px (adjustable in CSS) breakpoint to the CLF required regions (does not effect content regions)'),
-    '#default_value' => $themeSettingsProvider->getSetting('clf_widen_more', 'kraken'),
-    ];
-
-    $form['general']['clf_dark_mode'] = [
-      '#type' => 'checkbox',
-      '#title' => t('Load Dark Mode stylesheet'),
-      '#description' => t('Allow a Dark Mode option to be loaded if a user\'s preferences ask for it. This option requires additional CSS and is only supported for CLF 8+.'),
-      '#default_value' => $themeSettingsProvider->getSetting('clf_dark_mode', 'kraken'),
-    ];
-
-    $form['general']['cwl_site'] = [
-    '#type' => 'checkbox',
-    '#title' => t('Display a CWL Login option'),
-    '#description' => t(
-        '<strong>Check this option if the site should display a CWL Login option on the <a href=":url" target="_blank">drupal login page</a>.</strong><br />Note that this does not implement CWL protection, but simply adds the form to the login page. If you are using a module like <strong><a href=":url2" target="_blank">Gin Login</a></strong>, you should disable it.', [
-        ':url' => '/user',
-        ':url2' => 'https://www.drupal.org/project/gin_login',
-        ]
-    ),
-    '#default_value' => $themeSettingsProvider->getSetting('cwl_site', 'kraken'),
     ];
 
     $form['general']['clf_fonts'] = [
@@ -166,6 +103,112 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
 		'#default_value' => $themeSettingsProvider->getSetting('clf_sticky', 'kraken'),
 	];
 
+  $form['general']['cwl_site'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Display a CWL Login option'),
+    '#description' => t(
+        '<strong>Check this option if the site should display a CWL Login option on the <a href=":url" target="_blank">drupal login page</a>.</strong><br />Note that this does not implement CWL protection, but simply adds the form to the login page. If you are using a module like <strong><a href=":url2" target="_blank">Gin Login</a></strong>, you should disable it.', [
+        ':url' => '/user',
+        ':url2' => 'https://www.drupal.org/project/gin_login',
+        ]
+    ),
+    '#default_value' => $themeSettingsProvider->getSetting('cwl_site', 'kraken'),
+  ];
+
+  // UBC CLF 8 information.
+	$form['clf_7'] = [
+		'#type' => 'details',
+		'#title' => t('CLF Version 7 Settings'),
+		'#group' => 'clf',
+	];
+
+  $form['clf_7']['clf_unitname'] = [
+    '#type' => 'textfield',
+    '#prefix' => t('<h2>CLF Version 7 Settings</h2><small>Note that these changes have no effect unless you have chosen CLF version 7. (CLF version is chosen in the <b>General Settings</b>)</small>'),
+    '#title' => t(
+        'This field will populate the <a href=":url_unit_name" title="View the location of the Unit Name" target="_blank">Unit Name</a> in the header and the <a href=":url_unit_sub_footer" title="View the location of the Unit Sub Footer" target="_blank">Unit Sub Footer</a>.', [
+        ':url_unit_name' => 'https://clf.ubc.ca/parts-of-the-clf/#unit-name',
+        ':url_unit_sub_footer' => 'https://clf.ubc.ca/parts-of-the-clf/#unit-sub-footer',
+        ]
+    ),
+    '#default_value' => $themeSettingsProvider->getSetting('clf_unitname', 'kraken'),
+    '#size' => 60,
+    '#maxlength' => 128,
+    '#required' => true,
+    ];
+
+    $form['clf_7']['clf_layout'] = [
+    '#type' => 'select',
+    '#title' => t('Layout'),
+    '#description' => t(
+        'Make the CLF Full Width and Centered, Fluid Width and Left Aligned, or Fixed Width and Centered. You can <a href=":url" target="_blank">compare the layout options here</a>.', [
+        ':url' => 'https://clf.ubc.ca/design-specifications/#layout-options',
+        ]
+    ),
+    '#default_value' => $themeSettingsProvider->getSetting('clf_layout', 'kraken'),
+    '#options' => [
+      'full' => t('Full Width (Default)'),
+      'centered' => t('Fixed width, centered with Grey Background'),
+      'fluid' => t('Fluid Width, Left-Aligned'),
+    ],
+    ];
+
+    $form['clf_7']['clf_unit_campus'] = [
+    '#type' => 'select',
+    '#title' => t('Campus Identity'),
+    '#description' => t(
+        'This field shows your unit\'s campus mandate: Vancouver Campus or Okanagan Campus.<br /><small>If your unit has an institution-wide mandate or if neither choice is applicable, select the third option. See <a href=":url" target="_blank">Campus Identity</a> for guidelines.</small>', [
+        ':url' => 'https://clf.ubc.ca/parts-of-the-clf',
+        ]
+    ),
+    '#default_value' => $themeSettingsProvider->getSetting('clf_unit_campus', 'kraken'),
+    '#options' => [
+      'vancouver' => t('Vancouver'),
+      'okanagan' => t('Okanagan'),
+      '' => t('Institution-wide mandate / Not applicable'),
+    ],
+    ];
+
+    $form['clf_7']['clf_faculty'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Is your unit part of a Faculty?'),
+    '#default_value' => $themeSettingsProvider->getSetting('clf_faculty', 'kraken'),
+    ];
+
+    $form['clf_7']['clf_faculty_name'] = [
+    '#type' => 'select',
+    '#title' => t('If yes, choose your Faculty'),
+    '#default_value' => $themeSettingsProvider->getSetting('clf_faculty_name', 'kraken'),
+    '#options' => [
+      'Allard School of Law' => t('Allard School of Law'),
+      'Faculty of Applied Science' => t('Faculty of Applied Science'),
+      'Faculty of Arts' => t('Faculty of Arts'),
+      'Faculty of Dentistry' => t('Faculty of Dentistry'),
+      'Faculty of Education' => t('Faculty of Education'),
+      'Faculty of Forestry' => t('Faculty of Forestry'),
+      'Faculty of Land and Food Systems' => t('Faculty of Land and Food Systems'),
+      'Faculty of Medicine' => t('Faculty of Medicine'),
+      'Faculty of Pharmaceutical Sciences' => t('Faculty of Pharmaceutical Sciences'),
+      'Faculty of Science' => t('Faculty of Science'),
+      'Graduate and Postdoctoral Studies' => t('Graduate and Postdoctoral Studies'),
+      'Sauder School of Business' => t('Sauder School of Business'),
+    ],
+    ];
+
+    $form['clf_7']['clf_widen'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Widen the CLF to 1720px'),
+    '#description' => t('By default, version 7 of the CLF is constrained to 1200px wide. This option adds an additional 1720px (adjustable in CSS) breakpoint to the CLF required regions (does not effect content regions)'),
+    '#default_value' => $themeSettingsProvider->getSetting('clf_widen', 'kraken'),
+    ];
+
+    $form['clf_7']['clf_widen_more'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Widen the CLF to 2400px'),
+    '#description' => t('This option adds an additional 2400px (adjustable in CSS) breakpoint to the CLF required regions (does not effect content regions)'),
+    '#default_value' => $themeSettingsProvider->getSetting('clf_widen_more', 'kraken'),
+    ];
+
 	// UBC CLF 8 information.
 	$form['clf_8'] = [
 		'#type' => 'details',
@@ -173,11 +216,24 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
 		'#group' => 'clf',
 	];
 
+  $form['clf_8']['clf_8_name'] = [
+		'#type' => 'textfield',
+    '#prefix' => t('<h2>CLF Version 8 Settings</h2><small>Note that these changes have no effect unless you have chosen CLF version 8. (CLF version is chosen in the <b>General Settings</b>)</small>'),
+		'#title' => t(
+			'This field will populate the <a href=":url_unit_name" title="View the location of the Unit Name" target="_blank">Unit Name</a> in the header and the <a href=":url_unit_sub_footer" title="View the location of the Unit Sub Footer" target="_blank">Unit Sub Footer</a>.', [
+				':url_unit_name' => 'https://clf.ubc.ca/parts-of-the-clf/#unit-name',
+				':url_unit_sub_footer' => 'https://clf.ubc.ca/parts-of-the-clf/#unit-sub-footer',
+			]
+		),
+		'#default_value' => $themeSettingsProvider->getSetting('clf_8_name', 'kraken'),
+		'#size' => 60,
+		'#maxlength' => 128,
+		'#required' => true,
+	];
+
 	$form['clf_8']['clf_8_color'] = [
 		'#type' => 'select',
-		'#title' => t('Theme Colors (CLF version 8 only)'),
-    '#prefix' => t('<h2>CLF Version 8 Settings</h2><small>Note that these changes override  settings defined elsewhere when you are using CLF version 8. (CLF version is chosen in the <b>General Settings</b>)</small>'),
-
+		'#title' => t('Theme Colors)'),
 		'#description' => t(
 			'Choose one of the 2 colour theme options for the Brand Identity Header. Grey is no longer an option. You can <a href=":url" target="_blank">compare the theme options here</a>.', [
 				':url' => 'https://clf.ubc.ca/design-specifications/#theme-options',
@@ -192,7 +248,7 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
 
 	$form['clf_8']['clf_8_layout'] = [
 		'#type' => 'select',
-		'#title' => t('CLF Layout (CLF version 8 only)'),
+		'#title' => t('CLF Layout'),
 		'#description' => t(
 			'Make the CLF Full Width and Centered, Fluid Width and Left Aligned, or Fixed Width and Centered. You can <a href=":url" target="_blank">compare the layout options here</a>.', [
 				':url' => 'https://clf.ubc.ca/design-specifications/#layout-options',
@@ -206,21 +262,7 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
 		],
 	];
 
-  	$form['clf_8']['clf_8_name'] = [
-		'#type' => 'textfield',
-		'#title' => t(
-			'This field will populate the <a href=":url_unit_name" title="View the location of the Unit Name" target="_blank">Unit Name</a> in the header and the <a href=":url_unit_sub_footer" title="View the location of the Unit Sub Footer" target="_blank">Unit Sub Footer</a>.', [
-				':url_unit_name' => 'https://clf.ubc.ca/parts-of-the-clf/#unit-name',
-				':url_unit_sub_footer' => 'https://clf.ubc.ca/parts-of-the-clf/#unit-sub-footer',
-			]
-		),
-		'#default_value' => $themeSettingsProvider->getSetting('clf_8_name', 'kraken'),
-		'#size' => 60,
-		'#maxlength' => 128,
-		'#required' => true,
-	];
-
-		$form['clf_8']['clf_8_campus'] = [
+	$form['clf_8']['clf_8_campus'] = [
 		'#type' => 'select',
 		'#title' => t('Campus Identity'),
 		'#description' => t(
@@ -273,11 +315,18 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
 	$form['clf_8']['clf_8_search_path'] = [
 		'#type' => 'textfield',
 		'#title' => t('Search path'),
-		'#description' => t('If you want to use this as an internal search, enter the relative path here (e.g. <code>/search</code>, making sure to include the opening backslash.)'),
+		'#description' => t('If you want to use the dropdown CLF search region as an internal search, enter the relative path here (e.g. <code>/search</code>, making sure to include the opening backslash.)'),
 		'#default_value' => $themeSettingsProvider->getSetting('clf_8_search_path', 'kraken'),
 		'#size' => 60,
 		'#maxlength' => 128,
 	];
+
+      $form['clf_8']['clf_dark_mode'] = [
+      '#type' => 'checkbox',
+      '#title' => t('Load Dark Mode stylesheet'),
+      '#description' => t('Allow a Dark Mode option to be loaded if a user\'s preferences ask for it. This option is currently a placeholder.'),
+      '#default_value' => $themeSettingsProvider->getSetting('clf_dark_mode', 'kraken'),
+    ];
 
 
 
@@ -288,51 +337,11 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
     '#group' => 'clf',
     ];
 
-    $form['unit']['clf_unit_campus'] = [
-    '#type' => 'select',
-    '#title' => t('Campus Identity'),
-    '#prefix' => t('<h2>General Unit Information</h2>'),
-    '#description' => t(
-        'This field shows your unit\'s campus mandate: Vancouver Campus or Okanagan Campus.<br /><small>If your unit has an institution-wide mandate or if neither choice is applicable, select the third option. See <a href=":url" target="_blank">Campus Identity</a> for guidelines.</small>', [
-        ':url' => 'https://clf.ubc.ca/parts-of-the-clf',
-        ]
-    ),
-    '#default_value' => $themeSettingsProvider->getSetting('clf_unit_campus', 'kraken'),
-    '#options' => [
-      'vancouver' => t('Vancouver'),
-      'okanagan' => t('Okanagan'),
-      '' => t('Institution-wide mandate / Not applicable'),
-    ],
-    ];
 
-    $form['unit']['clf_faculty'] = [
-    '#type' => 'checkbox',
-    '#title' => t('Is your unit part of a Faculty?'),
-    '#default_value' => $themeSettingsProvider->getSetting('clf_faculty', 'kraken'),
-    ];
-
-    $form['unit']['clf_faculty_name'] = [
-    '#type' => 'select',
-    '#title' => t('If yes, choose your Faculty'),
-    '#default_value' => $themeSettingsProvider->getSetting('clf_faculty_name', 'kraken'),
-    '#options' => [
-      'Allard School of Law' => t('Allard School of Law'),
-      'Faculty of Applied Science' => t('Faculty of Applied Science'),
-      'Faculty of Arts' => t('Faculty of Arts'),
-      'Faculty of Dentistry' => t('Faculty of Dentistry'),
-      'Faculty of Education' => t('Faculty of Education'),
-      'Faculty of Forestry' => t('Faculty of Forestry'),
-      'Faculty of Land and Food Systems' => t('Faculty of Land and Food Systems'),
-      'Faculty of Medicine' => t('Faculty of Medicine'),
-      'Faculty of Pharmaceutical Sciences' => t('Faculty of Pharmaceutical Sciences'),
-      'Faculty of Science' => t('Faculty of Science'),
-      'Graduate and Postdoctoral Studies' => t('Graduate and Postdoctoral Studies'),
-      'Sauder School of Business' => t('Sauder School of Business'),
-    ],
-    ];
 
     $form['unit']['clf_theme_unitbar_colour'] = [
     '#type' => 'color',
+    '#prefix' => t('<h2>General Unit Settings</h2>'),
     '#title' => t('Unit Bar Colour'),
     '#description' => t(
         'See design specifications for <a href=":url" title="Learn more about the Unit Name background colours" target="_blank">Unit Name background colours</a>.', [
@@ -498,7 +507,7 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
     $form['location']['clf_streetaddr'] = [
     '#type' => 'textfield',
     '#title' => t('Street Address'),
-    '#prefix' => t('<h2>Address and Location Information</h2>'),
+    '#prefix' => t('<h2>Location and Contact Settings</h2>'),
     '#default_value' => $themeSettingsProvider->getSetting('clf_streetaddr', 'kraken'),
     '#size' => 60,
     '#maxlength' => 128,
