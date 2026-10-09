@@ -60,7 +60,7 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
 
     $form['general']['clf_version'] = [
     '#type' => 'select',
-    '#prefix' => t('<h2>General Site Settings</h2>'),
+    '#prefix' => t('<h2>General Settings</h2>'),
     '#title' => t('CLF Version'),
     '#description' => t(
         'Select the version of the CLF you\'d like to use. View <a href=":url" target="_blank">colour theme options</a> and design specifications. Note that CLF 7 verions load a minimal copy of the CLF files from Drupal, which is much better for performance.<br><strong>Warning</strong>: Advanced users only. This will require creating and adding your own css for non-clf regions of the site, including navigation.', [
@@ -341,7 +341,7 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
 
     $form['unit']['clf_theme_unitbar_colour'] = [
     '#type' => 'color',
-    '#prefix' => t('<h2>General Unit Settings</h2>'),
+    '#prefix' => t('<h2>Unit Settings</h2><small>Unit settings for colours, spacing.</small>'),
     '#title' => t('Unit Bar Colour'),
     '#description' => t(
         'See design specifications for <a href=":url" title="Learn more about the Unit Name background colours" target="_blank">Unit Name background colours</a>.', [
@@ -588,7 +588,7 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
     $form['social']['clf_social_facebook'] = [
     '#type' => 'textfield',
     '#title' => t('Facebook Account Link'),
-    '#prefix' => t('<h2>Add Social Media icons/links to the unit footer</h2>'),
+    '#prefix' => t('<h2>Social Media Settings</h2><small>Add Social Media icons/links to the unit footer</small>'),
     '#default_value' => $themeSettingsProvider->getSetting('clf_social_facebook', 'kraken'),
     '#size' => 60,
     '#maxlength' => 128,
@@ -642,7 +642,7 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
     '#type' => 'textfield',
     '#title' => t('Search Domain'),
     '#default_value' => $themeSettingsProvider->getSetting('clf_searchdomain', 'kraken'),
-    '#prefix' => t('<h2>Default Search Settings</h2>'),
+    '#prefix' => t('<h2>Search Settings</h2>'),
     '#size' => 60,
     '#maxlength' => 128,
     '#description' => t('This option allows you to limit search results in the global UBC search field to a specific domain other than this site. e.g. <strong>*.arts.ubc.ca</strong> or <strong>www.publicaffairs.ubc.ca/category/</strong>. The default searches only this site.'),
@@ -684,6 +684,7 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
 
     $form['icons']['svg_icon_cart'] = [
     '#type' => 'checkbox',
+    '#prefix' => t('<h2>Icon Settings</h2><small>Choose additional icons to load</small>'),
     '#title' => t(
         '<svg id="icon-cart" viewBox="0 0 64 64" aria-labelledby="title-icon-cart" aria-describedby="description-icon-cart" role="img" style="width:2rem;height:2rem;display:inline-block;">
     <title id="title-icon-cart">E-commerce Cart</title>
@@ -694,7 +695,6 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
     <path stroke="currentColor" stroke-miterlimit="10" d="M59 30H26m30 8H28" stroke-linejoin="round" stroke-linecap="round" fill="none"></path>
   </svg> Cart icon.'
     ),
-    '#prefix' => t('<h2>Choose additional icons to load</h2>'),
     '#description' => t('Add a cart icon that can be referenced on each page.'),
     '#default_value' => $themeSettingsProvider->getSetting('svg_icon_cart', 'kraken'),
     ];
@@ -956,7 +956,7 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
     $form['extra']['clf_noindex'] = [
     '#type' => 'checkbox',
     '#title' => t('<strong>Do <em>not</em> allow the site to be indexed</strong>'),
-    '#prefix' => t('<h2>Additional miscellaneous options</h2>'),
+    '#prefix' => t('<h2>Extra Settings</h2><small>Additional miscellaneous options</small>'),
     '#description' => t('If this is <strong>not</strong> a production website, this checkbox will add a "nofollow" meta tag to all pages.'),
     '#default_value' => $themeSettingsProvider->getSetting('clf_noindex', 'kraken'),
     ];
