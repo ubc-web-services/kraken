@@ -2,35 +2,35 @@
 
 /* gradients */
 .gradient-bottom--ubc-blue {
-  @apply bg-gradient-to-b from-ubc-blue/0 to-ubc-blue;
+  @apply bg-linear-to-b from-ubc-blue/0 to-ubc-blue;
 }
 
 .gradient-bottom--ubc-blue-full {
-  @apply bg-gradient-to-b from-ubc-blue/60 to-ubc-blue;
+  @apply bg-linear-to-b from-ubc-blue/60 to-ubc-blue;
 }
 
 .gradient-top--ubc-blue {
-  @apply bg-gradient-to-t from-ubc-blue/0 to-ubc-blue;
+  @apply bg-linear-to-t from-ubc-blue/0 to-ubc-blue;
 }
 
 .gradient-top--ubc-blue-full {
-  @apply bg-gradient-to-t from-ubc-blue/60 to-ubc-blue;
+  @apply bg-linear-to-t from-ubc-blue/60 to-ubc-blue;
 }
 
 .gradient-bottom--grey {
-  @apply bg-gradient-to-b from-grey-300/0 to-grey-300;
+  @apply bg-linear-to-b from-grey-300/0 to-grey-300;
 }
 
 .gradient-bottom--grey-full {
-  @apply bg-gradient-to-b from-grey-300/60 to-grey-300;
+  @apply bg-linear-to-b from-grey-300/60 to-grey-300;
 }
 
 .gradient-top--grey {
-  @apply bg-gradient-to-t from-grey-300/0 to-grey-300;
+  @apply bg-linear-to-t from-grey-300/0 to-grey-300;
 }
 
 .gradient-top--grey-full {
-  @apply bg-gradient-to-t from-grey-300/60 to-grey-300;
+  @apply bg-linear-to-t from-grey-300/60 to-grey-300;
 }
 
 
@@ -42,11 +42,11 @@
 
 .has-gradient--after::after,
 .has-gradient-bottom--after::after {
-  @apply absolute top-0 left-0 w-full h-full bg-gradient-to-b from-ubc-blue/0 to-ubc-blue;
+  @apply absolute top-0 left-0 w-full h-full bg-linear-to-b from-ubc-blue/0 to-ubc-blue;
   content: "";
 }
 
 .has-gradient-top--after::after {
-  @apply absolute top-0 left-0 w-full h-full bg-gradient-to-t from-ubc-blue/0 to-ubc-blue;
+  @apply absolute top-0 left-0 w-full h-full bg-linear-to-t from-ubc-blue/0 to-ubc-blue;
   content: "";
 }

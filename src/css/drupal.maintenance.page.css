@@ -1,16 +1,13 @@
-/**
- * @file
- * Styles for the drupal maintenance page
- */
+
 html {
-  @apply !bg-ubc-blue;
+  background-color: rgba(var(--ubc-blue), 1) !important;
   color: var(--text-color);
   font-family: var(--text-font-stack);
   font-size: 100%;
 }
 
 body {
-  @apply !bg-ubc-blue;
+  background-color: rgba(var(--ubc-blue), 1) !important;
   font-family: var(--text-font-stack);
   font-size: var(--base-font-size);
   line-height: var(--leading);
@@ -103,7 +100,7 @@ body {
 
 @media (min-width: 640px) {
 
-  .sm--max-w-md {
+  .sm:max-w-md {
     max-width: 34rem;
   }
 }

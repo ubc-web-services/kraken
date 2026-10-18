@@ -116,7 +116,7 @@
 }
 
 .unit-button--capped {
-  @apply flex pl-0 -mt-[1px] transition-all bg-transparent border-y border-x-0 border-unit-primary relative text-left pl-[1em];
+  @apply flex pl-0 -mt-px transition-all bg-transparent border-y border-x-0 border-unit-primary relative text-left pl-[1em];
   background-position: right 2em center;
   background-size: 1em 1em;
   background-repeat: no-repeat;

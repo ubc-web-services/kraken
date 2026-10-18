@@ -3,55 +3,73 @@
  * This file is the main entry point for primary styles
  */
 
- /* add css variables */
- @import "config/variables.config.css";
+/* add css variables */
+@import './config/variables.config.css' layer(base);
 
 /* Add normalize and general base styles */
-@import "tailwindcss/base";
-@import "base/default.base.css";
-@import "base/typography.base.css";
-@import "base/form.base.css";
-@import "base/layout.base.css";
-@import "base/link.base.css";
-@import "base/list.base.css";
-@import "base/media.base.css";
-@import "base/table.base.css";
-@import "base/print.base.css";
+
+@import './base/default.base.css' layer(base);
+@import './base/typography.base.css' layer(base);
+@import './base/form.base.css' layer(base);
+@import './base/layout.base.css' layer(base);
+@import './base/link.base.css' layer(base);
+@import './base/list.base.css' layer(base);
+@import './base/media.base.css' layer(base);
+@import './base/table.base.css' layer(base);
+@import './base/print.base.css' layer(base);
 
 /* Add any Drupal specific stylesheets */
-@import "drupal/drupal.entity.moderation.css";
-@import "drupal/drupal.media.css";
-@import "drupal/drupal.node.preview.css";
-@import "drupal/drupal.paragraphs.css";
-@import "drupal/drupal.views.css";
-@import "drupal/drupal.webform.css";
-@import "drupal/drupal.theme.css";
+@import './drupal/drupal.entity.moderation.css' layer(base);
+@import './drupal/drupal.media.css' layer(base);
+@import './drupal/drupal.node.preview.css' layer(base);
+@import './drupal/drupal.paragraphs.css' layer(base);
+@import './drupal/drupal.views.css' layer(base);
+@import './drupal/drupal.webform.css' layer(base);
+@import './drupal/drupal.theme.css' layer(base);
 
 /* Add styles for specific components */
-@import "tailwindcss/components";
-@import "components/accordion.component.css";
-@import "components/button.component.css";
-@import "components/card.component.css";
-@import "components/carousel.component.css";
-@import "components/chosen.component.css";
-@import "components/message.component.css";
-@import "components/navigation.component.css";
-@import "components/tabcordion.component.css";
-@import "components/tag.component.css";
-@import "components/throbber.component.css";
-@import "components/totop.component.css";
+@import './components/accordion.component.css' layer(components);
+@import './components/button.component.css' layer(components);
+@import './components/card.component.css' layer(components);
+@import './components/carousel.component.css' layer(components);
+@import './components/chosen.component.css' layer(components);
+@import './components/message.component.css' layer(components);
+@import './components/navigation.component.css' layer(components);
+@import './components/tabcordion.component.css' layer(components);
+@import './components/tag.component.css' layer(components);
+@import './components/throbber.component.css' layer(components);
+@import './components/totop.component.css' layer(components);
 
 /* Add site specific styles */
-@import "theme/custom.theme.css";
+@import './theme/custom.theme.css' layer(components);
 
 /* Add site specific utilities */
-@import "utilities/animate.utility.css";
-@import "utilities/container.utility.css";
-@import "utilities/margin.utility.css";
-@import "utilities/skip-link.utility.css";
-@import "utilities/svg.utility.css";
-@import "utilities/ubc-gradient.utility.css";
-@import "utilities/vue.utility.css";
+@import './utilities/animate.utility.css' layer(components);
+@import './utilities/container.utility.css' layer(components);
+@import './utilities/margin.utility.css' layer(components);
+@import './utilities/skip-link.utility.css' layer(components);
+@import './utilities/svg.utility.css' layer(components);
+@import './utilities/ubc-gradient.utility.css' layer(components);
+@import './utilities/vue.utility.css' layer(components);
 
 /* Add utility classes last so that they take precedence */
-@import "tailwindcss/utilities";
+@import 'tailwindcss';
+@config '../../tailwind.config.js';
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}

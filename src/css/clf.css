@@ -1,0 +1,174 @@
+/**
+ * @file
+ * Styles related to UBC Common Look and Feel, v.8.
+ */
+/**
+ * @file
+ * Styles to provide a local equivalent to the CDN version of the CLF
+ */
+ /* utilities from bootstrap for visibility */
+.collapse:not(.show):not(.in) {
+  display: none;
+}
+
+.collapsing {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  transition: height 0.35s ease;
+}
+
+.collapse.in,
+.collapse.show {
+  height: auto;
+}
+
+.open > .dropdown-menu,
+.dropdown-menu.show {
+  display: block !important;
+}
+
+/* CLF resets */
+.clearfix {
+  zoom: 1;
+}
+
+.clearfix::before,
+.clearfix::after {
+  display: table;
+  content: "";
+  leading: 0;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+.hide-text {
+  background-color: transparent;
+  color: transparent;
+  border: none;
+  text-shadow: none;
+  font: 0/0 a;
+}
+
+.input-block-level {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 30px;
+}
+
+/* utilities from bootstrap for visibility */
+.js-bootstrap .collapse:not(.show, .in) {
+  display: none;
+}
+
+.collapsing {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+  transition-timing-function: ease;
+  transition-duration: 0.35s;
+
+}
+
+.collapse.in,
+.collapse.show {
+  height: auto;
+}
+
+.open > .dropdown-menu,
+.dropdown-menu.show {
+  display: block;
+}
+
+/* Centered layout */
+.layout--centered #unit-content,
+.layout--centered #unit-footer {
+  background: #fff;
+}
+
+@media screen and (max-width: 969px) {
+
+  main .container,
+  #unit-footer {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+}
+
+@media screen and (min-width: 970px) {
+
+  .layout--centered body,
+  .layout--centered #main-content {
+    background: #ccc;
+  }
+
+  .layout--centered #unit-content,
+  .layout--centered hr.footer-separator {
+    margin-left: auto;
+    margin-right: auto;
+    width: 970px;
+  }
+
+  .layout--centered hr.footer-separator {
+    padding-bottom: 3rem;
+    margin-bottom: 0;
+    background-color: rgba(var(--white), 1);
+  }
+
+  .layout--centered #main-grid {
+    padding-bottom: 3rem;
+    margin-bottom: 0;
+  }
+
+}
+
+@media screen and (min-width: 1200px) {
+
+  .layout--centered #unit-content,
+  .layout--centered hr.footer-separator {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
+/* clf-container */
+.clf-container {
+  padding: 0 1.25rem;
+}
+
+@media screen and (min-width: 768px) {
+
+  .clf-container {
+    width: auto;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+}
+
+@media screen and (min-width: 1200px) {
+
+  .clf-container {
+    width: 1170px;
+  }
+
+}
+
+@media screen and (min-width: 970px) {
+
+  .layout--full-width-left .clf-container {
+    width: auto;
+  }
+
+}
+

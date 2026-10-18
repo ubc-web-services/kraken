@@ -4,7 +4,7 @@
 * This file contains all styles related to the tag component.
 */
 .tag {
-  @apply mr-4 text-xs text-white no-underline rounded bg-ubc-blue;
+  @apply mr-4 text-xs text-white no-underline rounded-sm bg-ubc-blue;
 
   padding: 0.35em 0.75em 0.25em;
 }

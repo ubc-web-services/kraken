@@ -52,7 +52,7 @@
 
 .chosen-container .chosen-drop,
 .chosen-container-active .chosen-drop {
-  @apply border border-t-0 shadow-lg !border-grey-300;
+  @apply border border-t-0 shadow-lg border-grey-300!;
 }
 
 .chosen-container-single .chosen-search input[type="text"] {

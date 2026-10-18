@@ -113,7 +113,7 @@ img.align-center,
 
 /* File icons. */
 .file {
-  @apply inline-block pl-[1.5em] bg-no-repeat bg-[left_center];
+  @apply inline-block pl-[1.5em] bg-no-repeat bg-position-[left_center];
   background-size: .875em .875em;
 }
 

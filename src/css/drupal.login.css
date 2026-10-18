@@ -5,11 +5,14 @@
 
 html,
 body {
-  @apply bg-ubc-blue;
+  background-color: rgba(var(--ubc-blue), 1) !important;
 }
 
 form h2 {
-  @apply pb-4 text-xl font-normal text-grey-500;
+  padding-bottom: 1rem;
+  font-size: 1.25rem;
+  font-style: normal;
+  color: rgba(var(--grey-500), 1);
 }
 
 .rounded {
@@ -37,43 +40,64 @@ form h2 {
 @media (min-width: 640px) {
 
   .sm--max-w-md {
-    @apply max-w-[34rem]
+    max-width: 34rem;
   }
 }
 
 .tabs--primary {
-  @apply text-sm;
+  font-size: .875rem;
 }
 
 .description {
-  @apply py-[.5em] px-0;
+  padding: .5em 0;
 }
 
 .form-checkbox,
 .form-radio {
-  @apply flex-wrap;
+  flex-wrap: wrap;
 }
 
 .user-pass p {
-  @apply mb-leading;
+  margin-bottom: calc(var(--leading) * var(--base-font-size));
 }
 
 .user-register-form .form-submit,
 .user-pass .form-submit,
 .user-login-form .form-submit {
-  @apply block w-full text-[1.125rem]
+  display: block;
+  width: 100%;
+  font-size: 1.125rem;
 }
 
 .form-managed-file .form-submit {
-  @apply block px-6 py-3 text-center no-underline bg-white border text-ubc-blue-cobalt border-ubc-blue-cobalt;
+  display: block;
+  padding: .75rem 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  background-color: #fff;
+  color: rgba(var(--ubc-blue-cobalt), 1);
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(var(--ubc-blue-cobalt), 1);
 }
 
 .form-managed-file .form-submit:hover {
-  @apply text-white border bg-ubc-blue-cobalt border-ubc-blue-cobalt;
+  color: #fff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(var(--ubc-blue-cobalt), 1);
+  background-color: rgba(var(--ubc-blue-cobalt), 1);
 }
 
 .button.samlauth-auth-login-link {
-  @apply text-lg rounded-sm block text-center no-underline border px-[2em] py-[.65em] cursor-pointer text-center;
+  text-align: center;
+  display: block;
+  padding: .65em 2em;
+  border-radius: var(--radius-sm);
+  border-width: 1px;
+  font-size: 1.125rem;
+  text-decoration: none;
+  cursor: pointer;
   color: rgba(var(--white), 1);
   background-color: rgba(var(--ubc-blue), 1);
   border-color: transparent;

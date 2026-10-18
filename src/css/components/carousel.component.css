@@ -133,7 +133,7 @@
 }
 
 .carousel-indicators {
-  @apply absolute right-0 bottom-0 left-0 z-[200] flex p-0 mr-[15%] mb-4 ml-[15%];
+  @apply absolute right-0 bottom-0 left-0 z-200 flex p-0 mr-[15%] mb-4 ml-[15%];
   justify-content: center;
 }
 
@@ -155,7 +155,7 @@
 */
 
 .carousel-caption {
-  @apply text-white absolute right-[15%] bottom-[1.25rem] left-[15%] py-5 text-center;
+  @apply text-white absolute right-[15%] bottom-5 left-[15%] py-5 text-center;
 }
 
 .carousel-dark .carousel-control-prev-icon,
