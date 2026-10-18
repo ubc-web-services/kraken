@@ -5,10 +5,8 @@ module.exports = {
     "./templates/**/*.{twig,html}",
     "./src/**/*.{js,jsx,ts,tsx}",
     "./kraken.theme",
-    "./safelist.txt",
-    "./UtilityClasses.md"
+    "./safelist.txt"
   ],
-  separator: "--",
   theme: {
     colors: {
       transparent: "transparent",

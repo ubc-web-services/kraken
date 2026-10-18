@@ -76,12 +76,12 @@
     'container',
     'grid',
     'grid-cols-1',
-    'md--grid-cols-12',
+    'md:grid-cols-12',
     'gap-8',
     'my-12',
     'px-5',
     'mx-auto',
-    'md--px-4',
+    'md:px-4',
   ]
 %}
 {% if sidebar_primary_upper_exists %}
@@ -160,11 +160,7 @@
   {% endblock pre_content %}
 
   {% block clftop %}
-    {% if (clf_version == '8') %}
-      {% include '@kraken/includes/header.html.twig' %}
-    {% else %}
-      {% include '@kraken/includes/header.clf7.html.twig' %}
-    {% endif %}
+    {% include '@kraken/includes/header.html.twig' %}
   {% endblock clftop %}
 
   {% block alert_region %}
@@ -187,7 +183,7 @@
 
         {% block breadcrumb %}
           {% if page.breadcrumb %}
-            <div{{ breadcrumb_attributes.addClass('container', 'px-5', 'mx-auto', 'md--px-4') }}>
+            <div{{ breadcrumb_attributes.addClass('container', 'px-5', 'mx-auto', 'md:px-4') }}>
               {{ page.breadcrumb }}
             </div>
           {% endif %}
@@ -260,7 +256,7 @@
 
         {% block grid %}
           {% if page.grid %}
-            <section id="grid-region" class="container grid grid-cols-1 gap-12 px-5 mx-auto my-12 md--px-4 sm--grid-cols-2 md--grid-cols-3">
+            <section id="grid-region" class="container grid grid-cols-1 gap-12 px-5 mx-auto my-12 md:px-4 sm:grid-cols-2 md:grid-cols-3">
               {{ page.grid }}
             </section>
           {% endif %}
@@ -269,7 +265,7 @@
 
         {% block secondary_content %}
           {% if page.secondary_content %}
-            <section{{ secondary_content_attributes.setAttribute('id', 'secondary-content').addClass('container', 'px-5', 'mx-auto', 'md--px-4') }}>
+            <section{{ secondary_content_attributes.setAttribute('id', 'secondary-content').addClass('container', 'px-5', 'mx-auto', 'md:px-4') }}>
               {{ page.secondary_content }}
             </section>
           {% endif %}
@@ -288,11 +284,7 @@
   {% endblock unitcontent %}
 
   {% block clfbottom %}
-    {% if (clf_version == '8') %}
-      {% include '@kraken/includes/footer.html.twig' %}
-    {% else %}
-      {% include '@kraken/includes/footer.clf7.html.twig' %}
-    {% endif %}
+    {% include '@kraken/includes/footer.html.twig' %}
     {% include '@kraken/includes/totop-button.html.twig' %}
   {% endblock clfbottom %}
 

@@ -35,38 +35,16 @@
 {% if clf_sticky %}
   {%
     set stickyClasses = [
-      'md--scroll-pt-[60px]',
+      'md:scroll-pt-[60px]',
     ]
   %}
 {% endif %}
-{% if clf_version == '8' and clf_8_layout == 'fixed' %}
+{% if clf_8_layout == 'fixed' %}
   {%
     set newLayoutClasses = [
       'layout--centered',
     ]
   %}
-{% endif %}
-{% if clf_version != '8' %}
-  {% if layout_option == 'full' %}
-    {%
-      set layoutClasses = [
-        'layout--full-width',
-      ]
-    %}
-  {% elseif layout_option == 'fluid' %}
-    {%
-      set layoutClasses = [
-        'layout--full-width',
-        'layout--full-width-left',
-      ]
-    %}
-  {% else %}
-    {%
-      set layoutClasses = [
-        'layout--centered',
-      ]
-    %}
-  {% endif %}
 {% endif %}
 <!DOCTYPE html>
 <html{{ html_attributes.addClass(newLayoutClasses, layoutClasses, stickyClasses, 'smooth-scroll') }}>
