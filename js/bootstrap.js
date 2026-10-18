@@ -2,14 +2,14 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "../../../../src/js/bootstrap.js":
-/*!***************************************!*\
-  !*** ../../../../src/js/bootstrap.js ***!
-  \***************************************/
+/***/ "./src/js/bootstrap.js":
+/*!*****************************!*\
+  !*** ./src/js/bootstrap.js ***!
+  \*****************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap */ "../../../../node_modules/bootstrap/dist/js/bootstrap.esm.js");
+/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
 /*
  * File: bootstrap.js
  *
@@ -183,7 +183,7 @@ window.bootstrap = bootstrap__WEBPACK_IMPORTED_MODULE_0__;
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors~bootstrap"], function() { return __webpack_require__("../../../../src/js/bootstrap.js"); })
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors~bootstrap"], function() { return __webpack_require__("./src/js/bootstrap.js"); })
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
