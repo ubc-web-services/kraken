@@ -14,46 +14,6 @@ use Drupal\Component\Utility\Html;
 use Drupal\Component\Utility\Color;
 
 /**
- * Implements hook_page_attachments_alter().
- */
-function kraken_page_attachments_alter(array &$page)
-{
-
-  $themeSettingsProvider = \Drupal::service('Drupal\Core\Extension\ThemeSettingsProvider');
-  $clf_version = $themeSettingsProvider->getSetting('clf_version', 'kraken');
-  $page['#attached']['library'][] = 'kraken/clf-' . $clf_version;
-
-  $dark_mode = $themeSettingsProvider->getSetting('clf_dark_mode', 'kraken');
-  if ($dark_mode) {
-    $page['#attached']['library'][] = 'kraken/clf-dark-mode';
-  }
-
-  $clf_widen = $themeSettingsProvider->getSetting('clf_widen', 'kraken');
-  if ($clf_widen && $clf_version != '8') {
-    $page['#attached']['library'][] = 'kraken/clf-legacy--widen';
-  }
-
-  if ($clf_widen && $clf_version = '8') {
-    $page['#attached']['library'][] = 'kraken/clf-8-extended';
-  }
-
-  $clf_widen_more = $themeSettingsProvider->getSetting('clf_widen_more', 'kraken');
-  if ($clf_widen_more && $clf_version != '8') {
-    $page['#attached']['library'][] = 'kraken/clf-legacy--widen-more';
-  }
-
-  $clf_widen_more = $themeSettingsProvider->getSetting('clf_widen_more', 'kraken');
-  if ($clf_widen_more && $clf_version = '8') {
-    $page['#attached']['library'][] = 'kraken/clf-8-extended-plus';
-  }
-
-  $clf_sticky = $themeSettingsProvider->getSetting('clf_sticky', 'kraken');
-  if ($clf_sticky) {
-    $page['#attached']['library'][] = 'kraken/sticky-header';
-  }
-}
-
-/**
  * Implements hook_preprocess_HOOK() for HTML document templates.
  *
  * Adds body classes if certain regions have content.
@@ -182,8 +142,6 @@ function kraken_preprocess_html(&$variables)
   }
 
   $variables['clf_sticky'] = $themeSettingsProvider->getSetting('clf_sticky', 'kraken') ? TRUE : FALSE;
-  $variables['layout_option'] = $themeSettingsProvider->getSetting('clf_layout', 'kraken');
-  $variables['clf_version'] = $themeSettingsProvider->getSetting('clf_version', 'kraken');
   $variables['clf_8_layout'] = $themeSettingsProvider->getSetting('clf_8_layout', 'kraken');
 
   // Add a NOFOLLOW tag if the site is not meant for production.
@@ -226,29 +184,11 @@ function kraken_preprocess_html(&$variables)
     $variables['page']['#attached']['html_head'][] = [$bingverify, 'bingverify'];
   }
 
-  // Add information about the number of sidebars.
-  if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
-    $variables['attributes']['class'][] = 'layout-two-sidebars';
-  } elseif (!empty($variables['page']['sidebar_first'])) {
-    $variables['attributes']['class'][] = 'layout-one-sidebar';
-    $variables['attributes']['class'][] = 'layout-sidebar-first';
-  } elseif (!empty($variables['page']['sidebar_second'])) {
-    $variables['attributes']['class'][] = 'layout-one-sidebar';
-    $variables['attributes']['class'][] = 'layout-sidebar-second';
-  } else {
-    $variables['attributes']['class'][] = 'layout-no-sidebars';
-  }
-
   if (!empty($variables['page']['featured'])) {
     $variables['attributes']['class'][] = 'featured';
   }
 
-  if ($themeSettingsProvider->getSetting('clf_faculty', 'kraken') == TRUE) {
-    $variables['attributes']['class'][] = 'show-faculty';
-  }
-
-  // Add version info
-  $clf_version = $themeSettingsProvider->getSetting('clf_version', 'kraken');
+  // Add layout info
   $clf_8_layout = $themeSettingsProvider->getSetting('clf_8_layout', 'kraken');
 
   /* add a body class if we are using the bootstrap js framework */
@@ -286,34 +226,42 @@ function kraken_preprocess_html(&$variables)
         --code-font-stack:  ' . $codefonts . ';
       }',
     ],
-    'unit-colour-css',
+    'unit-variables-css',
   ];
 
-  if ($clf_version != '8') {
-    $variables['page']['#attached']['html_head'][] = [
-      [
-        '#tag' => 'style',
-        '#value' => '#ubc7-unit { background-color: ' . $unitbar_color . ' !important; }',
-      ],
-      'unit-bar-css',
-    ];
-  } else {
-    $unitbar_text = '#000';
-    if ($themeSettingsProvider->getSetting('clf_8_unit_text', 'kraken') == false ) {
-      $unitbar_text = '#fff';
-    }
-    $variables['page']['#attached']['html_head'][] = [
-      [
-        '#tag' => 'style',
-        '#value' => 'ubc-header {
-          --ubc-unit-background-color: ' . $unitbar_color . ' ;
-          --ubc-unit-text-color: ' . $unitbar_text . ';
-          --button-bg: #fff;
-        }',
-      ],
-      'unit-bar-css',
-    ];
+  $unitbar_text = '#000';
+  if ($themeSettingsProvider->getSetting('clf_8_unit_text', 'kraken') == false ) {
+    $unitbar_text = '#fff';
+  }
+  $variables['page']['#attached']['html_head'][] = [
+    [
+      '#tag' => 'style',
+      '#value' => 'ubc-header {
+        --ubc-unit-background-color: ' . $unitbar_color . ' ;
+        --ubc-unit-text-color: ' . $unitbar_text . ';
+        --button-bg: #fff;
+      }',
+    ],
+    'unit-bar-css',
+  ];
+}
 
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function kraken_page_attachments_alter(array &$page)
+{
+
+  $themeSettingsProvider = \Drupal::service('Drupal\Core\Extension\ThemeSettingsProvider');
+
+  $dark_mode = $themeSettingsProvider->getSetting('clf_dark_mode', 'kraken');
+  if ($dark_mode) {
+    $page['#attached']['library'][] = 'kraken/clf-dark-mode';
+  }
+
+  $clf_sticky = $themeSettingsProvider->getSetting('clf_sticky', 'kraken');
+  if ($clf_sticky) {
+    $page['#attached']['library'][] = 'kraken/sticky-header';
   }
 }
 
@@ -322,22 +270,6 @@ function kraken_preprocess_html(&$variables)
  */
 function kraken_preprocess_page(&$variables)
 {
-  // Since the title and the shortcut link are both block level elements,
-  // positioning them next to each other is much simpler with a wrapper div.
-  if (!empty($variables['title_suffix']['add_or_remove_shortcut']) && $variables['title']) {
-    // Add a wrapper div using the title_prefix and title_suffix render
-    // elements.
-    $variables['title_prefix']['shortcut_wrapper'] = [
-      '#markup' => '<div class="clearfix shortcut-wrapper">',
-      '#weight' => 100,
-    ];
-    $variables['title_suffix']['shortcut_wrapper'] = [
-      '#markup' => '</div>',
-      '#weight' => -99,
-    ];
-    // Make sure the shortcut link is the first item in title_suffix.
-    $variables['title_suffix']['add_or_remove_shortcut']['#weight'] = -100;
-  }
 
   // Add in our custom theme variables so we can use them in page.twig
   // general options.
@@ -349,19 +281,10 @@ function kraken_preprocess_page(&$variables)
   $variables['clf_8_name'] = $themeSettingsProvider->getSetting('clf_8_name', 'kraken');
   $variables['clf_8_show_mobile_nav_trigger'] = $themeSettingsProvider->getSetting('clf_8_show_mobile_nav_trigger', 'kraken');
   $variables['clf_8_search_path'] = $themeSettingsProvider->getSetting('clf_8_search_path', 'kraken');
-
-  $variables['clf_version'] = $themeSettingsProvider->getSetting('clf_version', 'kraken');
   $variables['cwl_option'] = $themeSettingsProvider->getSetting('cwl_site', 'kraken');
-  $variables['layout_option'] = $themeSettingsProvider->getSetting('clf_layout', 'kraken');
-  $variables['campus_option'] = $themeSettingsProvider->getSetting('clf_unit_campus', 'kraken');
-  $variables['faculty_option'] = $themeSettingsProvider->getSetting('clf_faculty', 'kraken') ? FALSE : TRUE;
-  $variables['faculty_name'] = $themeSettingsProvider->getSetting('clf_faculty_name', 'kraken');
-  $variables['unit_name'] = $themeSettingsProvider->getSetting('clf_unitname', 'kraken');
-
   // Search options.
   $variables['searchlabel_option'] = $themeSettingsProvider->getSetting('clf_searchlabel', 'kraken');
   $variables['searchdomain_option'] = $themeSettingsProvider->getSetting('clf_searchdomain', 'kraken');
-
   // Footer options.
   $variables['address_option'] = $themeSettingsProvider->getSetting('clf_streetaddr', 'kraken');
   $variables['locality_option'] = $themeSettingsProvider->getSetting('clf_locality', 'kraken');
@@ -372,14 +295,12 @@ function kraken_preprocess_page(&$variables)
   $variables['fax_option'] = $themeSettingsProvider->getSetting('clf_fax', 'kraken');
   $variables['email_option'] = $themeSettingsProvider->getSetting('clf_email', 'kraken');
   $variables['website_option'] = $themeSettingsProvider->getSetting('clf_website', 'kraken');
-
   // Social media options.
   $variables['facebook_option'] = $themeSettingsProvider->getSetting('clf_social_facebook', 'kraken');
   $variables['instagram_option'] = $themeSettingsProvider->getSetting('clf_social_instagram', 'kraken');
   $variables['linkedin_option'] = $themeSettingsProvider->getSetting('clf_social_linkedin', 'kraken');
   $variables['twitter_option'] = $themeSettingsProvider->getSetting('clf_social_twitter', 'kraken');
   $variables['youtube_option'] = $themeSettingsProvider->getSetting('clf_social_youtube', 'kraken');
-
   // Svg options.
   $variables['icon_cart'] = $themeSettingsProvider->getSetting('svg_icon_cart', 'kraken') ? TRUE : FALSE;
   $variables['icon_clock'] = $themeSettingsProvider->getSetting('svg_icon_clock', 'kraken') ? TRUE : FALSE;
@@ -494,41 +415,14 @@ function kraken_theme_suggestions_block_alter(array &$suggestions, array $variab
 }
 
 /**
- * Implements hook_preprocess_HOOK() for block.html.twig.
- */
-function kraken_preprocess_block(&$variables)
-{
-  // Add a clearfix class to system branding blocks.
-  if ($variables['plugin_id'] == 'system_branding_block') {
-    $variables['attributes']['class'][] = 'clearfix';
-  }
-}
-
-/**
- * Implements hook_preprocess_HOOK() for field.html.twig.
- *
- * @see template_preprocess_field()
- */
-function kraken_preprocess_field(&$variables)
-{
-  $element = $variables['element'];
-  if ($element['#field_type'] == 'taxonomy_term_reference') {
-    $variables['title_attributes']['class'][] = 'field-label';
-    if ($variables['element']['#label_display'] == 'inline') {
-      $variables['title_attributes']['class'][] = 'inline';
-    }
-  }
-}
-
-/**
  * Implements hook_form_FORM_ID_alter() for search_form.
  */
 function kraken_form_search_form_alter(&$form, FormStateInterface $form_state, $form_id)
 {
-  $form['basic']['#attributes']['class'][] = 'sm--flex';
+  $form['basic']['#attributes']['class'][] = 'sm:flex';
   $form['basic']['keys']['#attributes']['placeholder'] = t('Search...');
   $form['basic']['keys']['#attributes']['class'][] = 'py-[.65em]';
-  $form['basic']['submit']['#attributes']['class'][] = 'unit-button--dark self-end flex-none mt-6 sm--mt-0';
+  $form['basic']['submit']['#attributes']['class'][] = 'unit-button--dark self-end flex-none mt-6 sm:mt-0';
   $form['help_link']['#options']['attributes']['class'] = 'unit-button--light text-xs mt-6';
   $form['advanced']['submit']['#attributes']['class'][] = 'unit-button--dark';
 }
@@ -602,31 +496,6 @@ function kraken_theme_suggestions_page_alter(array &$suggestions, array $variabl
 }
 
 /**
- * Implements hook_preprocess_breadcrumb().
- */
-function kraken_preprocess_breadcrumb(&$variables)
-{
-  if (($node = \Drupal::request()->attributes->get('node')) && $variables['breadcrumb'] && (strpos($_SERVER['REQUEST_URI'], "revisions") == false)) {
-
-    $variables['breadcrumb'][] = [
-      'text' => $node->getTitle()
-    ];
-    // need to cache via path
-    $variables['#cache']['contexts'][] = 'url.path';
-    $variables['#cache']['tags'][] = "node:{$node->nid->value}";
-  }
-}
-
-/**
- * Implements template_preprocess_links()
- */
-function kraken_preprocess_links(&$variables)
-{
-  $variables['links']['node-readmore']['link']['#options']['attributes']['class'][] = 'unit-button unit-button--simple unit-button--has-icon-right unit-button--animate-icon mt-4';
-  $variables['links']['node-readmore']['link']['#title'] = Markup::create('Explore <svg role="img" class="unit-button__icon" viewBox="0 0 64 64"><use xlink:href="#icon-caret"></use></svg>');
-}
-
-/**
  * Implements hook_theme_suggestions_HOOK().
  *
  * To correct this core issue:
@@ -636,66 +505,10 @@ function kraken_theme_suggestions_views_view(array $variables)
 {
   $suggestions = [];
   $view = $variables['view'];
-
-  // theme view more link
-  $variables['more']['#options']['attributes']['class'][] = 'text-sm unit-button unit-button--light';
-
   $suggestions[] = 'views_view__' . $view->id();
   $suggestions[] = 'views_view__' . $view->current_display;
   $suggestions[] = 'views_view__' . $view->id() . '__' . $view->current_display;
-
   return $suggestions;
-}
-
-/**
- * Implements hook_preprocess_HOOK() for form_element.
- */
-function kraken_preprocess_form_element(&$variables) {
-  $element = $variables['element'];
-  // Modify the label classes per element type (alaso see form-element-label.html.twig)
-  // Ensure the label attribute array exists.
-  if (empty($variables['label']['#attributes']['class'])) {
-    $variables['label']['#attributes']['class'] = [];
-  }
-
-  // Base classes for all form labels.
-  $base_classes = ['form-label', 'js-form-label'];
-
-  // Type-specific classes.
-  $type_classes = [
-    'checkbox' => ['form-label--checkbox', 'flex-1', 'ms-2'],
-    'checkboxes' => ['form-label--checkboxes', 'pb-1'],
-    'radio' => ['form-label--radio', 'flex-1', 'ms-2'],
-    'radios' => ['form-label--radios', 'pb-1'],
-  ];
-
-  // Default/fallback classes (when no type-specific set is found).
-  $default_classes = ['form-label--default', 'pb-1'];
-
-  // Merge base classes first.
-  $variables['label']['#attributes']['class'] = array_merge(
-    $variables['label']['#attributes']['class'],
-    $base_classes
-  );
-
-  // Determine the element type, if present.
-  $type = $element['#type'] ?? NULL;
-
-  if ($type && isset($type_classes[$type])) {
-    // Merge in type-specific classes.
-    $variables['label']['#attributes']['class'] = array_merge(
-      $variables['label']['#attributes']['class'],
-      $type_classes[$type]
-    );
-  }
-  else {
-    // Fallback: merge in default classes.
-    $variables['label']['#attributes']['class'] = array_merge(
-      $variables['label']['#attributes']['class'],
-      $default_classes
-    );
-  }
-
 }
 
 /**
@@ -735,43 +548,5 @@ function kraken_theme_suggestions_fieldset_alter(array &$suggestions, array $var
   }
   if (isset($element['#webform_key'])) {
     $suggestions[] = 'fieldset__' . $element['#webform_key'];
-  }
-}
-
-/**
- * Implements template_preprocess_entity_embed().
- */
-function kraken_preprocess_entity_embed_container(&$variables)
-{
-  if (!empty($variables['attributes']['class'][1])) {
-    $class_custom = $variables['attributes']['class'][1];
-    unset($variables['attributes']['class'][1]);
-    $html_string = $variables['children']->__toString();
-    $DOM_object = Html::load($html_string);
-    foreach ($DOM_object->getElementsByTagName('img') as $img) {
-      $class = $img->getAttribute('class');
-      if (!empty($class)) {
-        $img->setAttribute('class', $class . ' ' . $class_custom);
-      } else {
-        $img->setAttribute('class', $class_custom);
-      }
-    }
-    $html_string = Html::serialize($DOM_object);
-    $variables['children'] = $variables['children']->create($html_string);
-  }
-}
-
-/**
- * Implements hook_preprocess_image_widget().
- */
-function kraken_preprocess_image_widget(array &$variables) {
-  $data = &$variables['data'];
-
-  // This prevents image widget templates from rendering preview container HTML
-  // to users that do not have permission to access these previews.
-  // @todo revisit in https://drupal.org/node/953034
-  // @todo revisit in https://drupal.org/node/3114318
-  if (isset($data['preview']['#access']) && $data['preview']['#access'] === FALSE) {
-    unset($data['preview']);
   }
 }

@@ -14,20 +14,12 @@ favicon:
   use_default: false
   path: ''
 
-clf_unitname: 'Unit Name'
-clf_version: 'legacy--bw'
-clf_layout: 'full'
-clf_widen: false
-clf_widen_more: false
 clf_dark_mode: false
-clf_js: 'js-bootstrap'
 clf_css: 'css-dev'
 clf_fonts: 'legacy-dev'
 cwl_site: false
 clf_sticky: false
 clf_navoption: false
-clf_unit_campus: ''
-clf_faculty: false
 clf_fontawesome: false
 clf_theme_unitbar_colour: '#002145'
 clf_theme_unit_colour: '#002145'

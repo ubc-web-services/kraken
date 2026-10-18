@@ -4,9 +4,13 @@
 global:
   css:
     theme:
+      css/clf.min.css: { minified: true }
+      css/clf.navigation.min.css: { minified: true }
       css/bootstrap.5.min.css: { minified: true }
       css/styles.min.css: { minified: true, preprocess: false }
   js:
+    https://cdndevl2.cdn.ubc.ca/ubc/ubc-brand/1.4.0-issue-32.0/js/ubc-digital-brand.js: { type: external, minified: true, attributes: { defer: true, charset: utf-8, type: module } }
+    js/kraken.clf.js: { minified: true }
     js/kraken.dismiss.min.js: { minified: true }
     js/kraken.video.min.js: { minified: true }
     js/kraken.misc.min.js: { minified: true }
@@ -18,72 +22,13 @@ global:
     - core/once
     - core/drupalSettings
 
-## CLF Version 8
-clf-8:
-  css:
-    theme:
-      css/clf.8.min.css: { minified: true }
-      css/clf.8.navigation.min.css: { minified: true }
-  js:
-    ## production version
-    https://cdndevl2.cdn.ubc.ca/ubc/ubc-brand/1.4.0-issue-32.0/js/ubc-digital-brand.js: { type: external, minified: true, attributes: { defer: true, charset: utf-8, type: module } }
-    js/kraken.clf8.js: { minified: true }
-  dependencies:
-    - core/drupal
-    - core/once
-    - kraken/global
-
-## CLF Version 7 (legacy)
-### CLF Shared (legacy)
-clf-legacy:
-  version: 7.0.4
-  css:
-    base:
-      css/clf.7.local.min.css: { minified: true, preprocess: false }
-
-### CLF (blue on white)
-clf-legacy--bw:
-  dependencies:
-    - kraken/clf-legacy
-
-### CLF (white on blue)
-clf-legacy--wb:
-  dependencies:
-    - kraken/clf-legacy
-
-### CLF (white on grey)
-clf-legacy--wg:
-  dependencies:
-    - kraken/clf-legacy
-
-### CLF (grey on white)
-clf-legacy--gw:
-  dependencies:
-    - kraken/clf-legacy
-
-## CLF 7 Additional Styles
-### Widen the CLF (1780px)
-clf-legacy--widen:
-  css:
-    theme:
-      css/clf.7.extended.min.css: { minified: true }
-  dependencies:
-    - kraken/clf-legacy
-
-### Widen the CLF more (2400px)
-clf-legacy--widen-more:
-  css:
-    theme:
-      css/clf.7.extended.plus.min.css: { minified: true }
-  dependencies:
-    - kraken/clf-legacy--widen
 
 ### CLF Dark Mode (one day...)
 clf-dark-mode:
   version: VERSION
   css:
     base:
-      css/clf.8.dark.mode.min.css: { minified: true }
+      css/clf.dark.mode.min.css: { minified: true }
 
 ## Whitney Font
 ### Development Version
@@ -183,7 +128,7 @@ sticky-header:
   version: VERSION
   css:
     theme:
-      css/clf.7.stickynav.min.css: { minified: true }
+      css/clf.stickynav.min.css: { minified: true }
   js:
     js/kraken.sticky.min.js: { minified: true }
   dependencies:

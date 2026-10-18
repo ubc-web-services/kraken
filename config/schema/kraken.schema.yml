@@ -4,51 +4,9 @@ kraken.settings:
   type: theme_settings
   label: 'kraken settings'
   mapping:
-    clf_unitname:
-      type: text
-      label: 'Unit name'
-    clf_version:
-      type: string
-      label: 'Version'
-      constraints:
-        Choice:
-          # @see kraken_form_system_theme_settings_alter()
-          choices:
-            - '8'
-            - 'legacy--bw'
-            - 'legacy--wb'
-            - 'legacy--bw'
-            - 'legacy--wg'
-            - 'legacy--gw'
-    clf_layout:
-      type: string
-      label: 'Layout'
-      constraints:
-        Choice:
-          # @see kraken_form_system_theme_settings_alter()
-          choices:
-            - 'full'
-            - 'centered'
-            - 'fluid'
-    clf_widen:
-      type: boolean
-      label: 'Widen'
-    clf_widen_more:
-      type: boolean
-      label: 'Widen more'
     clf_dark_mode:
       type: boolean
       label: 'Dark mode'
-    clf_js:
-      type: string
-      label: 'Javascript version'
-      constraints:
-        Choice:
-          # @see kraken_form_system_theme_settings_alter()
-          choices:
-            - 'js-dev'
-            - 'js-prod'
-            - 'js-bootstrap'
     clf_css:
       type: string
       label: 'CSS version'
