@@ -10,7 +10,7 @@ global:
       css/styles.min.css: { minified: true, preprocess: false }
   js:
     https://cdndevl2.cdn.ubc.ca/ubc/ubc-brand/1.4.0-issue-32.0/js/ubc-digital-brand.js: { type: external, minified: true, attributes: { defer: true, charset: utf-8, type: module } }
-    js/kraken.clf.js: { minified: true }
+    js/kraken.clf.min.js: { minified: true }
     js/kraken.dismiss.min.js: { minified: true }
     js/kraken.video.min.js: { minified: true }
     js/kraken.misc.min.js: { minified: true }
