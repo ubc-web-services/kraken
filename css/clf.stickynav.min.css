@@ -15,18 +15,26 @@
     will-change: transform;
   }
 
+  .layout--fixed .stickynav--pinned {
+    width: 970px;
+    height: 40px;
+    inset: 0;
+    margin: 0 auto;
+  }
+
   .stickynav--unpinned {
     transform: translate3d(0, -100%, 0);
   }
 
-  .nav--is-pinned #ubc7-unit {
-    margin-bottom: 40px;
-  }
 }
 
-@media (min-width: 970px) {
+@media (min-width: 1200px) {
 
-  .nav--is-pinned #ubc7-unit {
-    margin-bottom: 45px;
+  .layout--fixed .stickynav--pinned {
+    width: 1200px;
+    height: 45px;
+    inset: 0;
+    margin: 0 auto;
   }
+
 }

@@ -4,7 +4,6 @@
  */
 /* import unstyled components styles from local bootstrap copy
 This allows you to use the bootstrap behaviours without inheriting any styles. Note that this is a subset of the available javascript components at the moment. For a full list, see https://getbootstrap.com/docs/5.1/getting-started/introduction/#components */
-
 .carousel {
   position: relative;
 }
@@ -211,6 +210,7 @@ This allows you to use the bootstrap behaviours without inheriting any styles. N
   text-align: center;
   color: #fff;
 }
+
 .collapse:not(.show) {
   display: none;
 }
@@ -226,6 +226,7 @@ This allows you to use the bootstrap behaviours without inheriting any styles. N
     transition: none;
   }
 }
+
 .btn-group {
   position: relative;
 }
@@ -422,6 +423,7 @@ This allows you to use the bootstrap behaviours without inheriting any styles. N
   padding: 0.25rem 1rem;
   color: var(--text-color);
 }
+
 .fade {
   transition: opacity 0.15s linear;
 }
@@ -435,6 +437,7 @@ This allows you to use the bootstrap behaviours without inheriting any styles. N
 .fade:not(.show) {
   opacity: 0;
 }
+
 .modal {
   position: fixed;
   z-index: 1055;
@@ -613,6 +616,7 @@ This allows you to use the bootstrap behaviours without inheriting any styles. N
 .modal-fullscreen .modal-footer {
   border-radius: 0;
 }
+
 .offcanvas {
   position: fixed;
   z-index: 1045;
@@ -714,6 +718,7 @@ This allows you to use the bootstrap behaviours without inheriting any styles. N
   flex-grow: 1;
   padding: 1rem;
 }
+
 .tab-content > .tab-pane {
   display: none;
 }

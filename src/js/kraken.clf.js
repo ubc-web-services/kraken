@@ -9,7 +9,7 @@
     attach(context) {
       once('ubc-button-click', document.documentElement).forEach(() => {
         document.addEventListener('ubc-button-click', (event) => {
-          const nav = document.querySelector('#ubc7-unit-navigation');
+          const nav = document.querySelector('#ubc-unit-navigation');
           if (!nav) {
             return;
           }

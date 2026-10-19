@@ -1,7 +1,7 @@
 /*
  * File: sticky.js
  *
- * Desc: js for adding intersection observer to the nav to make it sticky when the direct DOM sibling leaves the viewport (#ubc7-unit).
+ * Desc: js for adding intersection observer to the nav to make it sticky when the direct DOM sibling leaves the viewport (#ubc-unit).
  *
  */
 (function(Drupal) {
@@ -9,7 +9,7 @@
     attach(context, settings) {
       const body = document.querySelector("body");
       const unitarea = document.querySelector("#clf7__header");
-      const menu = document.querySelector("#ubc7-unit-menu");
+      const menu = document.querySelector("#ubc-unit-menu");
       const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
           if (entry.intersectionRatio <= 0) {
