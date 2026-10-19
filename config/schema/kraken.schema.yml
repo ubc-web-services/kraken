@@ -99,9 +99,6 @@ kraken.settings:
     clf_faculty:
       type: boolean
       label: 'Unit is part of faculty'
-    clf_fontawesome:
-      type: boolean
-      label: 'Load Fontawesome'
     clf_theme_unitbar_colour:
       type: color_hex
       label: 'Unit bar color'
@@ -201,60 +198,3 @@ kraken.settings:
     clf_noindex:
       type: boolean
       label: 'Do not index option'
-    svg_icon_cart:
-      type: boolean
-      label: 'Cart icon'
-    svg_icon_clock:
-      type: boolean
-      label: 'Clock icon'
-    svg_icon_discussion:
-      type: boolean
-      label: 'Discussion icon'
-    svg_icon_facebook:
-      type: boolean
-      label: 'Facebook icon'
-    svg_icon_home:
-      type: boolean
-      label: 'Home icon'
-    svg_icon_instagram:
-      type: boolean
-      label: 'Instagram icon'
-    svg_icon_linkedin:
-      type: boolean
-      label: 'Linkedin icon'
-    svg_icon_location:
-      type: boolean
-      label: 'Location icon'
-    svg_icon_mail:
-      type: boolean
-      label: 'Mail icon'
-    svg_icon_pencil:
-      type: boolean
-      label: 'Pencil icon'
-    svg_icon_phone:
-      type: boolean
-      label: 'Phone icon'
-    svg_icon_play:
-      type: boolean
-      label: 'Play icon'
-    svg_icon_settings:
-      type: boolean
-      label: 'Settings icon'
-    svg_icon_speech:
-      type: boolean
-      label: 'Speech icon'
-    svg_icon_star:
-      type: boolean
-      label: 'Star icon'
-    svg_icon_twitter:
-      type: boolean
-      label: 'Twitter icon'
-    svg_icon_user:
-      type: boolean
-      label: 'User icon'
-    svg_icon_vimeo:
-      type: boolean
-      label: 'Vimeo icon'
-    svg_icon_youtube:
-      type: boolean
-      label: 'Youtube icon'
