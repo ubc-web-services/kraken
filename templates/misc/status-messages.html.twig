@@ -36,8 +36,12 @@
   {{ attach_library('kraken/messages') }}
   <div aria-label="{{ status_headings[type] }}"{{ attributes.setAttribute('class', classes)|without('role', 'aria-label').setAttribute('role', 'status').setAttribute('aria-live', 'polite') }}>
       <button class="js-dismiss__trigger message__close" data-dismiss="message">&times;</button>
-      <svg role="img" class="message__icon">
-        <use xlink:href="#icon-alert"></use>
+      <svg role="img" class="message__icon" aria-labelledby="title-icon-alert" aria-describedby="description-icon-alert" role="img" viewBox="0 0 64 64">
+        <title id="title-icon-alert">Urgent Message</title>
+        <desc id="description-icon-alert">An exclamation mark in a speech bubble.</desc>
+        <path stroke="currentColor" stroke-miterlimit="10" d="M2 8v40h18v11l12-11h30V8H2z" stroke-linejoin="round" stroke-linecap="round"></path>
+        <path d="M34 32a2 2 0 0 1-2 2 2.2 2.2 0 0 1-2-2l-1-15a2.8 2.8 0 0 1 3-3 2.7 2.7 0 0 1 3 3z" stroke="currentColor" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+        <circle cx="32" cy="40" r="2" stroke="currentColor" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></circle>
       </svg>
       <div class="message__content">
       {% if status_headings[type] %}

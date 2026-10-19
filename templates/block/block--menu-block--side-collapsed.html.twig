@@ -68,8 +68,12 @@
   {{ title_prefix }}
     <button class="js-reveal__trigger hidden--desktop" aria-expanded="false">
         <h2 id="{{ heading_id }}"{{ title_attributes.addClass(title_classes) }}>
-            <svg role="presentation" class="inline-block w-[1em] h-[1em] -mt-[.25em] text-unit-primary">
-                <use xlink:href="#icon-menu"></use>
+            <svg role="presentation" class="inline-block w-[1em] h-[1em] mt-[-.25em] text-unit-primary" viewBox="0 0 64 64" aria-labelledby="title-icon-menu" aria-describedby="description-icon-menu">
+              <title id="title-icon-menu">Menu</title>
+              <desc id="description-icon-menu">Three horizontal lines indicating a menu.</desc>
+              <path stroke="currentColor" stroke-miterlimit="10" d="M14 18h36M14 32h36" stroke-linejoin="round" stroke-linecap="round"></path>
+              <path stroke="currentColor" stroke-miterlimit="10" d="M14 46h36" stroke-linejoin="round" stroke-linecap="round">
+              </path>
             </svg> {{ configuration.label }} Subnavigation
         </h2>
     </button>

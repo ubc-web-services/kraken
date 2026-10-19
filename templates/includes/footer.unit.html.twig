@@ -1,6 +1,6 @@
 
 <hr class="mt-0 footer-separator" />
-<div class="container px-4 pb-12 mx-auto unit-content" id="unit-footer">
+<div class="px-4 pb-12 mx-auto lg:container unit-content" id="unit-footer">
   {% if sig_url %}
   <a class="inline-block mb-6" href="/">
     <image src="{{ sig_url }}" class="h-6 max-w-full sm:max-w-lg" alt="{{ unit_name }} signature" />
@@ -10,7 +10,7 @@
     <div class="grid-area-a">
       <h2 class="font-semibold normal-case h4 text-ubc-blue">{{ unit_name }}</h2>
       {% if campus_option %}
-      <div id="ubc7-address-campus">{% if campus_option == 'vancouver' %}Vancouver Campus{% endif %}{% if campus_option == 'okanagan' %}Okanagan Campus{% endif %}</div>
+      <div id="ubc-address-campus">{% if campus_option == 'vancouver' %}Vancouver Campus{% endif %}{% if campus_option == 'okanagan' %}Okanagan Campus{% endif %}</div>
       {% endif %}
       <p class="text-sm">
       {% if address_option %}{{ address_option }}<br />{% endif %}
@@ -35,20 +35,68 @@
     <ul id="unit-social-icons" class="pt-8 my-0 grid-area-b list-inline list-unstyled md:text-right">
         {% if facebook_option %}
         <li class="pb-2 pr-2">
-          <a href="{{ facebook_option }}" title="Find us on Facebook"><span class="visually-hidden">Find us on Facebook</span><svg role="img" class="inline-block w-4 h-4 md:h-6 md:w-6 text-ubc-blue hover:text-ubc-blue-cobalt"><use xlink:href="#icon-facebook" /></svg>
-          </a></li>{% endif %}
-        {% if twitter_option %}<li class="pb-2 pr-2"><a href="{{ twitter_option }}" title="Follow us on Twitter"><span class="visually-hidden">Follow us on Twitter</span><svg role="img" class="inline-block w-4 h-4 md:h-6 md:w-6 text-ubc-blue hover:text-ubc-blue-cobalt">
-        <use xlink:href="#icon-twitter" />
-      </svg></a></li>{% endif %}
-        {% if youtube_option %}<li class="pb-2 pr-2"><a href="{{ youtube_option }}" title="Watch us on Youtube"><span class="visually-hidden">Watch us on Youtube</span><svg role="img" class="inline-block w-4 h-4 md:h-6 md:w-6 text-ubc-blue hover:text-ubc-blue-cobalt">
-        <use xlink:href="#icon-youtube" />
-      </svg></a></li>{% endif %}
-        {% if linkedin_option %}<li class="pb-2 pr-2"><a href="{{ linkedin_option }}" title="Connect with us on Linkedin"><span class="visually-hidden">Connect with us on Linkedin</span><svg role="img" class="inline-block w-4 h-4 md:h-6 md:w-6 text-ubc-blue hover:text-ubc-blue-cobalt">
-        <use xlink:href="#icon-linkedin" />
-      </svg></a></li>{% endif %}
-      {% if instagram_option %}<li class="pb-2 pr-2"><a href="{{ instagram_option }}" title="See us on Instagram"><span class="visually-hidden">See us on Instagram</span><svg role="img" class="inline-block w-4 h-4 md:h-6 md:w-6 text-ubc-blue hover:text-ubc-blue-cobalt">
-        <use xlink:href="#icon-instagram" />
-      </svg></a></li>{% endif %}
+          <a href="{{ facebook_option }}" title="Find us on Facebook">
+            <span class="visually-hidden">Find us on Facebook</span>
+            <svg role="img" class="inline-block w-4 h-4 md:h-6 md:w-6 text-ubc-blue hover:text-ubc-blue-cobalt" aria-labelledby="title-icon-facebook" aria-describedby="description-icon-facebook" viewBox="0 0 64 64">
+              <title id="title-icon-facebook">Facebook</title>
+              <desc id="description-icon-facebook">The logo for the Facebook social media service.</desc>
+              <path d="M39.312 13.437H47V2h-9.094C26.938 2.469 24.688 8.656 24.5 15.125v5.719H17V32h7.5v30h11.25V32h9.281l1.781-11.156H35.75v-3.469a3.714 3.714 0 0 1 3.562-3.938z" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-linejoin="round"></path>
+            </svg>
+          </a>
+        </li>
+        {% endif %}
+        {% if twitter_option %}
+        <li class="pb-2 pr-2">
+          <a href="{{ twitter_option }}" title="Follow us on Twitter">
+            <span class="visually-hidden">Follow us on Twitter</span>
+            <svg role="img" class="inline-block w-4 h-4 md:h-6 md:w-6 text-ubc-blue hover:text-ubc-blue-cobalt" aria-labelledby="title-icon-twitter" aria-describedby="description-icon-twitter" viewBox="0 0 64 64">
+              <title id="title-icon-twitter">Twitter</title>
+              <desc id="description-icon-twitter">The logo for the Twitter social media service.</desc>
+              <path d="M60.448 15.109a24.276 24.276 0 0 1-3.288.968.5.5 0 0 1-.451-.853 15.146 15.146 0 0 0 3.119-4.263.5.5 0 0 0-.677-.662 18.6 18.6 0 0 1-6.527 2.071 12.92 12.92 0 0 0-9-3.75A12.363 12.363 0 0 0 31.25 20.994a12.727 12.727 0 0 0 .281 2.719c-9.048-.274-19.61-4.647-25.781-12.249a.5.5 0 0 0-.83.073 12.475 12.475 0 0 0 2.956 14.79.5.5 0 0 1-.344.887 7.749 7.749 0 0 1-3.1-.8.5.5 0 0 0-.725.477 11.653 11.653 0 0 0 7.979 10.567.5.5 0 0 1-.09.964 12.567 12.567 0 0 1-2.834 0 .506.506 0 0 0-.536.635c.849 3.282 5.092 7.125 9.839 7.652a.5.5 0 0 1 .267.87 20.943 20.943 0 0 1-14 4.577.5.5 0 0 0-.255.942 37.29 37.29 0 0 0 17.33 4.266 34.5 34.5 0 0 0 34.687-36.182v-.469a21.11 21.11 0 0 0 4.934-4.839.5.5 0 0 0-.58-.765z" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-linejoin="round"></path>
+            </svg>
+          </a>
+        </li>
+        {% endif %}
+        {% if youtube_option %}
+        <li class="pb-2 pr-2">
+          <a href="{{ youtube_option }}" title="Watch us on Youtube">
+            <span class="visually-hidden">Watch us on Youtube</span>
+            <svg role="img" class="inline-block w-4 h-4 md:h-6 md:w-6 text-ubc-blue hover:text-ubc-blue-cobalt" aria-labelledby="title-icon-youtube" aria-describedby="description-icon-youtube" viewBox="0 0 64 64">
+              <title id="title-icon-youtube">Youtube</title>
+              <desc id="description-icon-youtube">The logo for the YouTube video sharing service.</desc>
+              <path d="M49.539 12H14.461A12.4 12.4 0 0 0 2 24.327v17.346A12.4 12.4 0 0 0 14.461 54h35.078A12.4 12.4 0 0 0 62 41.673V24.327A12.4 12.4 0 0 0 49.539 12z" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-linejoin="round"></path>
+              <path d="M41.111 33.844L24.7 41.585a.658.658 0 0 1-.938-.585V25.031a.659.659 0 0 1 .956-.581l16.407 8.225a.649.649 0 0 1-.014 1.169z" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-linejoin="round"></path>
+            </svg>
+          </a>
+        </li>
+        {% endif %}
+        {% if linkedin_option %}
+        <li class="pb-2 pr-2">
+          <a href="{{ linkedin_option }}" title="Connect with us on Linkedin">
+            <span class="visually-hidden">Connect with us on Linkedin</span>
+            <svg role="img" class="inline-block w-4 h-4 md:h-6 md:w-6 text-ubc-blue hover:text-ubc-blue-cobalt" aria-labelledby="title-icon-linkedin" aria-describedby="description-icon-linkedin" viewBox="0 0 64 64">
+              <title id="title-icon-linkedin">Linkedin</title>
+              <desc id="description-icon-linkedin">The logo for the LinkedIn social media service.</desc>
+              <path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" d="M3.078 22.331h12.188v36.844H3.078z" stroke-linejoin="round"></path>
+              <path d="M46.719 21.112c-5.344 0-8.531 1.969-11.906 6.281v-5.062H22.625v36.844h12.281V39.206c0-4.219 2.156-8.344 7.031-8.344s7.781 4.125 7.781 8.25v20.063H62V38.269c0-14.532-9.844-17.157-15.281-17.157z" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-linejoin="round"></path>
+              <path d="M9.219 4.425C5.188 4.425 2 7.331 2 10.894s3.188 6.469 7.219 6.469 7.219-2.906 7.219-6.469-3.188-6.469-7.219-6.469z" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-linejoin="round"></path>
+            </svg>
+          </a>
+        </li>
+        {% endif %}
+      {% if instagram_option %}
+      <li class="pb-2 pr-2">
+        <a href="{{ instagram_option }}" title="See us on Instagram">
+          <span class="visually-hidden">See us on Instagram</span>
+          <svg role="img" class="inline-block w-4 h-4 md:h-6 md:w-6 text-ubc-blue hover:text-ubc-blue-cobalt" aria-labelledby="title-icon-instagram" aria-describedby="description-icon-instagram" viewBox="0 0 64 64">
+            <title id="title-icon-instagram">Instagram</title>
+            <desc id="description-icon-instagram">The logo for the Instagram social media service.</desc>
+            <path d="M44.122 2H19.87A17.875 17.875 0 0 0 2 19.835v24.2a17.875 17.875 0 0 0 17.87 17.834h24.252A17.875 17.875 0 0 0 62 44.034v-24.2A17.875 17.875 0 0 0 44.122 2zM55.96 44.034a11.825 11.825 0 0 1-11.838 11.812H19.87A11.825 11.825 0 0 1 8.032 44.034v-24.2A11.825 11.825 0 0 1 19.87 8.022h24.252A11.825 11.825 0 0 1 55.96 19.835zm0 0" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-linejoin="round"></path>
+            <path d="M32 16.45a15.484 15.484 0 1 0 15.514 15.484A15.519 15.519 0 0 0 32 16.45zm0 24.95a9.461 9.461 0 1 1 9.482-9.461A9.472 9.472 0 0 1 32 41.4zm19.263-24.834a3.719 3.719 0 1 1-3.719-3.711 3.714 3.714 0 0 1 3.719 3.711zm0 0" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+      </li>
+      {% endif %}
     </ul>
     {% endif %}
   </div>

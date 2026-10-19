@@ -39,15 +39,13 @@
     ]
   %}
 {% endif %}
-{% if clf_8_layout == 'fixed' %}
-  {%
-    set newLayoutClasses = [
-      'layout--centered',
-    ]
-  %}
-{% endif %}
+{%
+  set newLayoutClasses = [
+    'layout--' ~ clf_8_layout,
+  ]
+%}
 <!DOCTYPE html>
-<html{{ html_attributes.addClass(newLayoutClasses, layoutClasses, stickyClasses, 'smooth-scroll') }}>
+<html{{ html_attributes.addClass(newLayoutClasses, stickyClasses, 'smooth-scroll') }}>
   <head>
     <head-placeholder token="{{ placeholder_token|raw }}">
     <title>{{ head_title|safe_join(' | ') }}</title>
