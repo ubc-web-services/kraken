@@ -25,6 +25,10 @@
   @apply block w-full text-center;
 }
 
+.unit-button--disabled {
+  @apply border-y border-x-0 text-grey-500! bg-grey-100! cursor-not-allowed;
+}
+
 .unit-button--light {
   color: var(--button-light-text);
   background-color: var(--button-light-bg);

@@ -72,4 +72,35 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentcolor);
   }
+
+  /* define type base styles here to override preflight settings */
+  h1 {
+    font-size: var(--text-4xl);
+    font-weight: var(--font-weight-bold);
+  }
+
+  h2 {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  h3 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-semibold); }
+
+  h4 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  h5 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  h6 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-semibold);
+  }
+
 }
