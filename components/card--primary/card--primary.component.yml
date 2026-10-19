@@ -41,11 +41,11 @@ props:
       title: Image Zoom
       description: Add the image zoom effect
     figureStyles:
-      type: boolean
+      type: string
       title: Figure Styles
       description: Add styles to the figure element
     titleStyles:
-      type: boolean
+      type: string
       title: Title Styles
       description: Add styles to the title element
     noShadow:

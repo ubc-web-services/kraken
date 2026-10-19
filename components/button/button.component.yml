@@ -66,6 +66,10 @@ props:
       type: string
       title: Variant
       description: Add a variant to alter the style further
+    buttonElement:
+      type: boolean
+      title: Render as button
+      description: Render as button element (defaults to an 'a' element)
     disabled:
       type: boolean
       title: Disabled

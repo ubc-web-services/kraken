@@ -21,6 +21,10 @@
     {% endembed %}
 #}
 {% set buttonattributes = create_attribute() %}
+{% set element = 'a' %}
+{% if buttonElement %}
+  {% set element = 'button' %}
+{% endif %}
 {%
   set classes = [
     'unit-button',
@@ -32,10 +36,8 @@
     external ? 'link-external',
 ]
 %}
-<a{{ buttonattributes }} class="{{ classes|join(" ")|trim }}" href="{{ link }}"{% if target %}
-    target="_blank"{% endif %} {% if id %}
-    id="{{ id }}"{% endif %} data-component-id="kraken:button">
+<{{ element }}{{ buttonattributes }} class="{{ classes|join(" ")|trim }}" href="{{ link }}"{% if target %} target="_blank" {% endif %}{% if id %} id="{{ id }}" {% endif %}{% if disabled %} disabled {% endif %}data-component-id="kraken:button">
   {% block before %}{% endblock %}
   {{ text }}
   {% block after %}{% endblock %}
-</a>
+</{{ element }}>
