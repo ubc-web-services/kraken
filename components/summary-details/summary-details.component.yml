@@ -1,0 +1,54 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json"
+name: Summary and Details
+status: stable
+group: UBC Web Services
+description: Component to render as a collapsible accordion
+props:
+  type: object
+  required:
+    - title
+  properties:
+    headingLevel:
+      type: string
+      title: Heading Level
+      description: Choose a heading level to use as the summary trigger
+      # Limit the available options by using enums.
+      enum:
+        - h2
+        - h3
+        - h4
+        - h5
+        - h6
+      default: h3
+    title:
+      type: string
+      title: Title
+      description: The title to use as a trigger
+    isOpen:
+      type: boolean
+      title: Is open
+      description: Make the details open by default
+    id:
+      type: string
+      title: ID
+      description: The ID of the region
+    titleClasses:
+      title: Title Classes
+      type: string
+      description: Custom classes to apply to the title inside the summary (not used if headingLevel is undefined)
+      examples:
+        - my-class another-class
+    customClasses:
+      title: Custom Classes
+      type: string
+      description: Custom classes to apply to the region
+      examples:
+        - my-class another-class
+slots:
+  content: # {% block content %}.
+    title: Accordion Content
+    required: true
+    description: The accordion content
+libraryOverrides:
+  dependencies:
+    - kraken/global

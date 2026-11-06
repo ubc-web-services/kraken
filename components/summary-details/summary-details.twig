@@ -1,0 +1,19 @@
+{% set accordionattributes = create_attribute() %}
+{% set classes = [
+  'ws-accordion',
+  customClasses,
+] %}
+<div {% if id %}id="{{ id }}"{% endif %} {{ accordionattributes.addClass(classes) }} data-component-id="kraken:summary-details">
+	<details {% if isOpen %} open {% endif %}>
+		<summary>
+			{% if headingLevel %}
+			<{{ headingLevel }}{% if titleClasses %} class="{{ titleClasses }}"{% endif %}>
+				{{ title }}
+			</{{ headingLevel }}>
+			{% else %}
+				{{ title }}
+			{% endif %}
+		</summary>
+		{% block content %}{% endblock %}
+	</details>
+</div>
