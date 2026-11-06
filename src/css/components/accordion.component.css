@@ -4,7 +4,8 @@
 * This file contains all styles related to the accordion component.
 */
 
-.accordion__trigger {
+.accordion__trigger,
+details > summary {
   @apply relative w-full py-4 pr-12 mt-2 overflow-hidden text-left border-b text-ubc-blue border-grey-300;
   background-image: url(../img/svg/icon-plus--ubc-blue.svg);
   background-repeat: no-repeat;
@@ -12,12 +13,22 @@
   background-size: 1rem 1rem;
 }
 
-.accordion__trigger:hover {
+details > summary {
+  @apply w-auto list-none;
+}
+
+details > summary::-webkit-details-marker {
+  @apply hidden;
+}
+
+.accordion__trigger:hover,
+details > summary:hover {
   @apply border-b cursor-pointer border-unit-secondary;
 }
 
-.accordion__trigger.is-open {
-  @apply font-semibold border-b border-unit-primary;
+.accordion__trigger.is-open,
+details[open] > summary {
+  @apply font-semibold border-b border-unit-primary mb-leading;
   background-image: url(../img/svg/icon-minus--ubc-blue.svg);
 }
 
@@ -34,35 +45,37 @@
   @apply mt-0 text-base;
 }
 
-.accordion__content {
-  @apply pt-leading;
+details > summary {
+  @apply text-base pr-[2em];
+  letter-spacing: 0.025em;
+  font-family: var(--text-font-stack);
+  font-weight: 400;
+  line-height: 1.4;;
 }
 
-/* responsive text style - disabled by default */
-/*
-@media (min-width: 1720px) {
+/* remove the top margin of the second element (the first will be the summary) */
+details :nth-child(2) {
+  @apply mt-0;
+}
 
-  .widget-accordion h3 {
-    @apply text-2xl;
+/* add fade effect */
+details::details-content {
+  block-size: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: block-size 0.25s linear, opacity 0.25s linear, content-visibility 0.25s allow-discrete;
+}
+
+details[open]::details-content {
+  block-size: auto;
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  details > summary {
+    transition: none;
   }
-}
-*/
 
-/* summary element */
-summary {
-  @apply font-semibold mt-leading;
-  list-style-image: url(../img/svg/icon-plus--ubc-blue.svg);
 }
 
-summary:focus {
-  list-style-image: url(../img/svg/icon-minus--ubc-blue.svg);
-}
-
-summary::-webkit-details-marker {
-  color: transparent;
-  background: url(../img/svg/icon-plus--ubc-blue.svg);
-}
-
-summary:focus::-webkit-details-marker {
-  background: url(../img/svg/icon-minus--ubc-blue.svg);
-}
