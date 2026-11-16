@@ -15,11 +15,12 @@ use Drupal\Component\Utility\Color;
 
 /**
  * Implements hook_page_attachments_alter().
+ * @param array<string, mixed> $page
  */
-function kraken_page_attachments_alter(array &$page)
+function kraken_page_attachments_alter(array &$page): void
 {
 
-  $themeSettingsProvider = \Drupal::service('Drupal\Core\Extension\ThemeSettingsProvider');
+  $themeSettingsProvider = \Drupal::service(\Drupal\Core\Extension\ThemeSettingsProvider::class);
   $clf_version = $themeSettingsProvider->getSetting('clf_version', 'kraken');
   $page['#attached']['library'][] = 'kraken/clf-' . $clf_version;
 
@@ -48,8 +49,9 @@ function kraken_page_attachments_alter(array &$page)
  * Implements hook_preprocess_HOOK() for HTML document templates.
  *
  * Adds body classes if certain regions have content.
+ * @param array<string, mixed> $variables
  */
-function kraken_preprocess_html(&$variables)
+function kraken_preprocess_html(&$variables): void
 {
 
   // Add meta tags and links.
@@ -158,7 +160,7 @@ function kraken_preprocess_html(&$variables)
   $variables['page']['#attached']['html_head'][] = [$apple_touch_icon, 'apple-touch-icon'];
   $variables['page']['#attached']['html_head'][] = [$mask_icon, 'mask-icon'];
 
-  $themeSettingsProvider = \Drupal::service('Drupal\Core\Extension\ThemeSettingsProvider');
+  $themeSettingsProvider = \Drupal::service(\Drupal\Core\Extension\ThemeSettingsProvider::class);
 
   if ($themeSettingsProvider->getSetting('clf_fonts', 'kraken') == 'default') {
     $variables['page']['#attached']['html_head'][] = [$google_fonts_preconnect, 'google-fonts-preconnect'];
@@ -279,8 +281,10 @@ function kraken_preprocess_html(&$variables)
 
 /**
  * Implements hook_preprocess_HOOK() for page templates.
+ *
+ * @param array<string, mixed> $variables
  */
-function kraken_preprocess_page(&$variables)
+function kraken_preprocess_page(&$variables): void
 {
   // Since the title and the shortcut link are both block level elements,
   // positioning them next to each other is much simpler with a wrapper div.
@@ -301,7 +305,7 @@ function kraken_preprocess_page(&$variables)
 
   // Add in our custom theme variables so we can use them in page.twig
   // general options.
-  $themeSettingsProvider = \Drupal::service('Drupal\Core\Extension\ThemeSettingsProvider');
+  $themeSettingsProvider = \Drupal::service(\Drupal\Core\Extension\ThemeSettingsProvider::class);
   $variables['clf_version'] = $themeSettingsProvider->getSetting('clf_version', 'kraken');
   $variables['cwl_option'] = $themeSettingsProvider->getSetting('cwl_site', 'kraken');
   $variables['layout_option'] = $themeSettingsProvider->getSetting('clf_layout', 'kraken');
@@ -364,8 +368,10 @@ function kraken_preprocess_page(&$variables)
 
 /**
  * Implements hook_preprocess_HOOK() for maintenance-page.html.twig.
+ *
+ * @param array<string, mixed> $variables
  */
-function kraken_preprocess_maintenance_page(&$variables)
+function kraken_preprocess_maintenance_page(&$variables): void
 {
   // By default, site_name is set to Drupal if no db connection is available
   // or during site installation. Setting site_name to an empty string makes
@@ -381,8 +387,10 @@ function kraken_preprocess_maintenance_page(&$variables)
 
 /**
  * Implements hook_preprocess_HOOK() for node.html.twig.
+ *
+ * @param array<string, mixed> $variables
  */
-function kraken_preprocess_node(&$variables)
+function kraken_preprocess_node(&$variables): void
 {
   // Remove the "Add new comment" link on teasers or when the comment form is
   // displayed on the page.
@@ -434,10 +442,13 @@ function kraken_preprocess_node(&$variables)
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter() for form templates.
- * @param array $suggestions
- * @param array $variables
+ *
+ * @param array<int, string> $suggestions
+ *   An array of alternate, more specific template suggestions.
+ * @param array<string, mixed> $variables
+ *   An array of variables passed to the page template.
  */
-function kraken_theme_suggestions_block_alter(array &$suggestions, array $variables)
+function kraken_theme_suggestions_block_alter(array &$suggestions, array $variables): void
 {
   // Block suggestions for custom block bundles.
   if (isset($variables['elements']['content']['#block_content'])) {
@@ -447,8 +458,10 @@ function kraken_theme_suggestions_block_alter(array &$suggestions, array $variab
 
 /**
  * Implements hook_preprocess_HOOK() for block.html.twig.
+*
+ * @param array<string, mixed> $variables
  */
-function kraken_preprocess_block(&$variables)
+function kraken_preprocess_block(&$variables): void
 {
   // Add a clearfix class to system branding blocks.
   if ($variables['plugin_id'] == 'system_branding_block') {
@@ -460,8 +473,9 @@ function kraken_preprocess_block(&$variables)
  * Implements hook_preprocess_HOOK() for field.html.twig.
  *
  * @see template_preprocess_field()
+ * @param array<string, mixed> $variables
  */
-function kraken_preprocess_field(&$variables)
+function kraken_preprocess_field(&$variables): void
 {
   $element = $variables['element'];
   if ($element['#field_type'] == 'taxonomy_term_reference') {
@@ -474,8 +488,15 @@ function kraken_preprocess_field(&$variables)
 
 /**
  * Implements hook_form_FORM_ID_alter() for search_form.
+ *
+ * @param array<string, mixed> $form
+ *   The form render array.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The current state of the form.
+ * @param string $form_id
+ *   The form ID.
  */
-function kraken_form_search_form_alter(&$form, FormStateInterface $form_state, $form_id)
+function kraken_form_search_form_alter(&$form, FormStateInterface $form_state, $form_id): void
 {
   $form['basic']['#attributes']['class'][] = 'sm--flex';
   $form['basic']['keys']['#attributes']['placeholder'] = t('Search...');
@@ -487,8 +508,15 @@ function kraken_form_search_form_alter(&$form, FormStateInterface $form_state, $
 
 /**
  * Implements hook_form_FORM_ID_alter() for search_block_form.
+ *
+ * @param array<string, mixed> $form
+ *   The form render array.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The current state of the form.
+ * @param string $form_id
+ *   The form ID.
  */
-function kraken_form_search_block_form_alter(&$form, FormStateInterface $form_state, $form_id)
+function kraken_form_search_block_form_alter(&$form, FormStateInterface $form_state, $form_id): void
 {
   $form['keys']['#theme_wrappers'] = NULL;
   $form['keys']['#prefix'] = '<div class="flex">';
@@ -501,8 +529,15 @@ function kraken_form_search_block_form_alter(&$form, FormStateInterface $form_st
 
 /**
  * Implements hook_form_FORM_ID_alter() for user_login_form.
+ *
+ * @param array<string, mixed> $form
+ *   The form render array.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The current state of the form.
+ * @param string $form_id
+ *   The form ID.
  */
-function kraken_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id)
+function kraken_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id): void
 {
   $form['actions']['#theme_wrappers'] = NULL;
   $form['actions']['submit']['#attributes']['class'][] = 'mt-6';
@@ -511,8 +546,15 @@ function kraken_form_user_login_form_alter(&$form, FormStateInterface $form_stat
 
 /**
  * Implements hook_form_FORM_ID_alter().
+ *
+ * @param array<string, mixed> $form
+ *   The form render array.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The current state of the form.
+ * @param string $form_id
+ *   The form ID.
  */
-function kraken_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id)
+function kraken_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id): void
 {
   $form['actions']['#attributes']['class'][] = 'flex justify-end';
   $form['actions']['submit']['#attributes']['class'][] = 'unit-button--block';
@@ -521,12 +563,17 @@ function kraken_form_views_exposed_form_alter(&$form, FormStateInterface $form_s
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter() for page.html.twig.
+ *
+ * @param array<int, string> $suggestions
+ *   An array of alternate, more specific template suggestions.
+ * @param array<string, mixed> $variables
+ *   An array of variables passed to the page template.
  */
-function kraken_theme_suggestions_page_alter(array &$suggestions, array $variables)
+function kraken_theme_suggestions_page_alter(array &$suggestions, array $variables): void
 {
   // Get current node.
   // Added check for revisions path due to fatal error as per https://www.drupal.org/forum/support/theme-development/2015-07-02/how-to-add-in-drupal-8-a-custom-suggestion-page-template
-  if (($node = \Drupal::request()->attributes->get('node')) && (strpos($_SERVER['REQUEST_URI'], "revisions") == false)) {
+  if (($node = \Drupal::request()->attributes->get('node')) && (!str_contains($_SERVER['REQUEST_URI'], "revisions"))) {
     array_splice($suggestions, 1, 0, 'page__node_type__' . $node->getType());
   }
   // check the system path
@@ -555,10 +602,12 @@ function kraken_theme_suggestions_page_alter(array &$suggestions, array $variabl
 
 /**
  * Implements hook_preprocess_breadcrumb().
+ *
+ * @param array<string, mixed> $variables
  */
-function kraken_preprocess_breadcrumb(&$variables)
+function kraken_preprocess_breadcrumb(&$variables): void
 {
-  if (($node = \Drupal::request()->attributes->get('node')) && $variables['breadcrumb'] && (strpos($_SERVER['REQUEST_URI'], "revisions") == false)) {
+  if (($node = \Drupal::request()->attributes->get('node')) && $variables['breadcrumb'] && (!str_contains($_SERVER['REQUEST_URI'], "revisions"))) {
 
     $variables['breadcrumb'][] = [
       'text' => $node->getTitle()
@@ -571,8 +620,10 @@ function kraken_preprocess_breadcrumb(&$variables)
 
 /**
  * Implements template_preprocess_links()
+ *
+ * @param array<string, mixed> $variables
  */
-function kraken_preprocess_links(&$variables)
+function kraken_preprocess_links(&$variables): void
 {
   $variables['links']['node-readmore']['link']['#options']['attributes']['class'][] = 'unit-button unit-button--simple unit-button--has-icon-right unit-button--animate-icon mt-4';
   $variables['links']['node-readmore']['link']['#title'] = Markup::create('Explore <svg role="img" class="unit-button__icon" viewBox="0 0 64 64"><use xlink:href="#icon-caret"></use></svg>');
@@ -583,8 +634,14 @@ function kraken_preprocess_links(&$variables)
  *
  * To correct this core issue:
  * https://www.drupal.org/project/drupal/issues/2839945
+ *
+ * @param array<string, mixed> $variables
+ *   The variables array for the views_view theme hook.
+ *
+ * @return string[]
+ *   An array of theme suggestions.
  */
-function kraken_theme_suggestions_views_view(array $variables)
+function kraken_theme_suggestions_views_view(array $variables): array
 {
   $suggestions = [];
   $view = $variables['view'];
@@ -601,8 +658,10 @@ function kraken_theme_suggestions_views_view(array $variables)
 
 /**
  * Implements hook_preprocess_HOOK() for form_element.
+ *
+ * @param array<string, mixed> $variables
  */
-function kraken_preprocess_form_element(&$variables) {
+function kraken_preprocess_form_element(&$variables): void {
   $element = $variables['element'];
   // Modify the label classes per element type (alaso see form-element-label.html.twig)
   // Ensure the label attribute array exists.
@@ -652,8 +711,13 @@ function kraken_preprocess_form_element(&$variables) {
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter() for form_element.
+ *
+ * @param array<int, string> $suggestions
+ *   An array of alternate, more specific template suggestions.
+ * @param array<string, mixed> $variables
+ *   An array of variables passed to the page template.
  */
-function kraken_theme_suggestions_form_element_alter(array &$suggestions, array $variables) {
+function kraken_theme_suggestions_form_element_alter(array &$suggestions, array $variables): void {
   $element = $variables['element'];
 
   // Add suggestion based on element type
@@ -679,8 +743,13 @@ function kraken_theme_suggestions_form_element_alter(array &$suggestions, array 
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter() for form_element.
+ *
+ * @param array<int, string> $suggestions
+ *   An array of alternate, more specific template suggestions.
+ * @param array<string, mixed> $variables
+ *   An array of variables passed to the page template.
  */
-function kraken_theme_suggestions_fieldset_alter(array &$suggestions, array $variables) {
+function kraken_theme_suggestions_fieldset_alter(array &$suggestions, array $variables): void {
   $element = $variables['element'];
   if (isset($element['#type'])) {
     $suggestions[] = 'fieldset__' . $element['#type'];
@@ -692,8 +761,10 @@ function kraken_theme_suggestions_fieldset_alter(array &$suggestions, array $var
 
 /**
  * Implements template_preprocess_entity_embed().
+ *
+ * @param array<string, mixed> $variables
  */
-function kraken_preprocess_entity_embed_container(&$variables)
+function kraken_preprocess_entity_embed_container(&$variables): void
 {
   if (!empty($variables['attributes']['class'][1])) {
     $class_custom = $variables['attributes']['class'][1];
@@ -715,8 +786,10 @@ function kraken_preprocess_entity_embed_container(&$variables)
 
 /**
  * Implements hook_preprocess_image_widget().
+ *
+ * @param array<string, mixed> $variables
  */
-function kraken_preprocess_image_widget(array &$variables) {
+function kraken_preprocess_image_widget(array &$variables): void {
   $data = &$variables['data'];
 
   // This prevents image widget templates from rendering preview container HTML
