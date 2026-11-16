@@ -6,15 +6,17 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\file\FileInterface;
 
 /**
  * Implements hook_form_system_theme_settings_alter().
+ *
+ * @param array<string, mixed> $form
  */
-
-function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$form_state)
+function kraken_form_system_theme_settings_alter(array &$form, FormStateInterface $form_state): void 
 {
     // Inject the ThemeSettingsProvider service where possible.
-    $themeSettingsProvider = \Drupal::service('Drupal\Core\Extension\ThemeSettingsProvider');
+    $themeSettingsProvider = \Drupal::service(\Drupal\Core\Extension\ThemeSettingsProvider::class);
     // Move the default theme settings to our custom vertical tabs for core theme
     // settings.
     $form['core'] = [
@@ -857,14 +859,16 @@ function kraken_form_system_theme_settings_alter(&$form, FormStateInterface &$fo
       '#description' => t('This option allows an SVG of signature to be uploaded, which is then displayed in the unit footer.<br><strong>* ensure that svg is trimmed to artwork bounds.</strong>'),
       '#default_value' => $themeSettingsProvider->getSetting('unit_signature', 'kraken'),
       '#upload_location' => 'public://unit-signature/',
-      '#upload_validators' => array(
-        'file_validate_extensions' => array('svg'),
-      ),
+      '#upload_validators' => [
+        'file_validate_extensions' => ['svg'],
+      ],
       ];
 
     if ($file_id = $form_state->getValue(['unit_signature', '0'])) {
-        $file = \Drupal::entityTypeManager()->getStorage('file')->load($file_id);
+      $file = \Drupal::entityTypeManager()->getStorage('file')->load($file_id);
+      if ($file instanceof FileInterface) {
         $file->setPermanent();
         $file->save();
+      }
     }
 }
