@@ -852,6 +852,9 @@ function kraken_form_system_theme_settings_alter(array &$form, FormStateInterfac
     '#default_value' => $themeSettingsProvider->getSetting('clf_fontawesome', 'kraken'),
     ];
 
+
+
+
     $form['extra']['unit_signature'] = [
       '#type' => 'managed_file',
       '#required' => false,
@@ -860,15 +863,17 @@ function kraken_form_system_theme_settings_alter(array &$form, FormStateInterfac
       '#default_value' => $themeSettingsProvider->getSetting('unit_signature', 'kraken'),
       '#upload_location' => 'public://unit-signature/',
       '#upload_validators' => [
-        'file_validate_extensions' => ['svg'],
+        'FileExtension' => [
+          'extensions' => 'svg',
+        ]
       ],
-      ];
+    ];
 
     if ($file_id = $form_state->getValue(['unit_signature', '0'])) {
-      $file = \Drupal::entityTypeManager()->getStorage('file')->load($file_id);
-      if ($file instanceof FileInterface) {
-        $file->setPermanent();
-        $file->save();
-      }
+    $file = \Drupal::entityTypeManager()->getStorage('file')->load($file_id);
+    if ($file instanceof FileInterface) {
+      $file->setPermanent();
+      $file->save();
     }
+  }
 }
