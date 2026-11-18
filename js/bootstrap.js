@@ -18,7 +18,7 @@ __webpack_require__.r(__webpack_exports__);
  */
 /* Import all plugins from bootstrap */
 
-
+window.bootstrap = bootstrap__WEBPACK_IMPORTED_MODULE_0__;
 /* Export all plugins from bootstrap */
 /* harmony default export */ __webpack_exports__["default"] = (bootstrap__WEBPACK_IMPORTED_MODULE_0__);
 
@@ -45,6 +45,12 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
+/******/ 		if (!(moduleId in __webpack_modules__)) {
+/******/ 			delete __webpack_module_cache__[moduleId];
+/******/ 			var e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
+/******/ 		}
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
